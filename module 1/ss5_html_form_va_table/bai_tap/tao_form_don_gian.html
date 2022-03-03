@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+    <style>
+        body {
+            width: 500px;
+            height: 500px;
+            border: 20px solid greenyellow;
+        }
+        label {
+            color: red;
+        }
+        form {
+            color: blue;
+        }
+        input {
+            width: 150px;
+            right: 50px;
+            margin-bottom: 5px;
+        }
+        form{
+            padding-left: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table bgcolor="#d2691e" width="100%">
+    <tr><td>
+        <h1>Sở Thích Của Bạn</h1>
+    </td></tr>
+</table><br>
+
+<form action="/action_page.php">
+    Họ và tên:
+    <input name="Họ và tên"><br>
+    Email:
+    <input name="Email"><br>
+    Sở thích:<br>
+    <label><input name="hobby" value="sport" type="checkbox"/> Thể thao</label><br>
+    <label><input name="hobby" value="sport" type="checkbox"/> Lướt web</label> <br/>
+    <label><input name="hobby" value="sport" type="checkbox"/> Du lịch</label> <br/>
+    <label><input name="hobby" value="sport" type="checkbox"/> Âm nhạc</label> <br/>
+    <label><input name="hobby" value="sport" type="checkbox"/> Chơi game</label> <br/>
+    <label><input name="hobby" value="sport" type="checkbox"/> Đọc sách</label> <br/>
+    <label><input name="hobby" value="sport" type="checkbox"/> Điện ảnh</label> <br/>
+    <button type="submit">Xác nhận</button>
+    <button type="reset">Làm mới</button>
+
+</form>
+</body>
+</html>
