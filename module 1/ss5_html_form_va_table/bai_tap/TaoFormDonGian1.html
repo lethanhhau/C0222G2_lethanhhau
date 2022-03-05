@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+    <style>
+        body {
+            width: 600px;
+            height: 300px;
+            border: 20px solid greenyellow
+        }
+
+        table {
+            width: 600px;
+            height: 300px;
+        }
+
+        td, th {
+            border: 0px;
+        }
+
+        label {
+            color: red;
+        }
+
+        .color {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+
+        <tr bgcolor="orange">
+            <th colspan="4">
+                Sở thích của bạn
+            </th>
+        </tr>
+        <tr>
+            <td class="color">họ và tên:</td>
+            <td><input type="textbox" class="yourname" name="Họ và tên"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="color">Email:</td>
+            <td><input type="textbox" class="email" name="email"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="color">sở thích:</td>
+            <td><label><input name="hobby" value="sport" type="checkbox"/> Thể thao</label>
+                <label><input name="hobby" value="sport" type="checkbox"/> Âm nhạc</label>
+                <label><input name="hobby" value="sport" type="checkbox"/> Đọc sách</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><label><input name="hobby" value="sport" type="checkbox"/> Lướt Wed</label>
+                <label><input name="hobby" value="sport" type="checkbox"/> Chơi game</label>
+                <label><input name="hobby" value="sport" type="checkbox"/> Điện ảnh</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><label><input name="hobby" value="sport" type="checkbox"/> Du lịch</label></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Gửi thông tin</button>
+                <button type="reset">Nhập lại</button>
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+    <form>
+</body>
+</html>

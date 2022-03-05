@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+    <style>
+        body {
+            width: 500px;
+            height: 300px;
+            background-color: darkgoldenrod;
+
+        }
+
+        td, th {
+            border: 0px
+        }
+        h1{
+            background-color: aqua;
+        }
+        table{
+            width: 390px;
+            height: 190px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Đăng ký học viên</h1>
+<table>
+    <tr>
+        <td>Họ và tên</td>
+        <td colspan="2"><input type="text" name="họ và tên" class="yournam" ></td>
+    </tr>
+        <td>Ngày sinh</td>
+        <td colspan="2"><input type="text" name="ngày sinh" class="birthday"></td>
+    <tr>
+        <td>Giới tính</td>
+        <td colspan="2"><input type="radio" name="sex" class="sex">Nam <input type="radio" name="sex" class="sex">Nữ</td>
+    </tr>
+    <tr>
+        <td>Địa chỉ</td>
+        <td colspan="2" rowspan="2"><input type="text" name="address" class="address"> </td>
+
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Lớp</td>
+        <td colspan="2"><select name="lớp">
+            <option value="cl">Chọn lớp</option>
+            <option value="a1">12A1</option>
+            <option value="a2">12A2</option>
+            <option value="a3">12A3</option>
+            <option value="a4">12A4</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td colspan="2"><input type="textbox" name="email" class="email"></td>
+    </tr>
+    <tr>
+        <td>Số điện thoại</td>
+        <td colspan="2"><input type="text" name="phone" class="phone"></td>
+    </tr>
+    <tr>
+        <form>
+        <td></td>
+        <td colspan="2"><button type="submit">Đăng ký</button>
+                        <button type="reset">Nhập lại</button>
+        </td>
+        </form>
+    </tr>
+
+</table>
+</body>
+</html>
