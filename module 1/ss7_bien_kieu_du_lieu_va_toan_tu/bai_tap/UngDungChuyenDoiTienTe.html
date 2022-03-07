@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <style>
+        table{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr >
+        <th>Amount</th>
+        <th>Fomt currency</th>
+        <th>To currency</th>
+        <th></th>
+    </tr>
+    <tr>
+<td><input type="text" id="input"></td>
+        <td><select name="" id="from">
+    <option value="vnd">VietNam</option>
+</select></td>
+<td><select name="" id="to">
+    <option value="vnd">VietNam</option>
+    <option value="usa">USA</option>
+    <option value="won">won</option>
+</select></td>
+
+<td><button onclick="convert()">convert</button></td>
+    </tr>
+    <tr>
+        <td colspan="3"><p style="color: blue">Result:</p></td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let input = document.getElementById('input').value;
+        let from = document.getElementById('from').value;
+        let to = document.getElementById('to').value;
+        if (from === to) {
+            document.write(input);
+        }
+        if (from === 'vnd' && to === 'usa')
+        {
+            // document.write("Result:" + input/24000);
+           document.getElementById(input).innerHTML="Result:" +input/24000;
+        }
+        if (from === 'vnd' && to === 'won') {
+            document.write('input/20= result+input/20');
+        }
+    }
+</script>
+</body>
+</html>
