@@ -31,7 +31,7 @@
 <td><button onclick="convert()">convert</button></td>
     </tr>
     <tr>
-        <td colspan="3"><p style="color: blue">Result:</p></td>
+        <td colspan="3"><p style="color: blue" id="relats">Result:</p></td>
     </tr>
 </table>
 <script>
@@ -44,8 +44,7 @@
         }
         if (from === 'vnd' && to === 'usa')
         {
-            // document.write("Result:" + input/24000);
-           document.getElementById(input).innerHTML="Result:" +input/24000;
+            document.write("Result:" + input/24000);
         }
         if (from === 'vnd' && to === 'won') {
             document.write('input/20= result+input/20');
