@@ -4,34 +4,36 @@
     <meta charset="UTF-8">
     <title>Chuyển Đổi Tiền Tệ</title>
     <style>
-        table{
-            width: 500px;
-        }
+       input{
+           color: blue;
+       }
     </style>
 </head>
 <body>
 <table>
-    <tr >
+    <tr>
         <th>Amount</th>
         <th>Fomt currency</th>
         <th>To currency</th>
         <th></th>
     </tr>
     <tr>
-<td><input type="text" id="input"></td>
+        <td><input type="text" id="input"></td>
         <td><select name="" id="from">
-    <option value="vnd">VietNam</option>
-</select></td>
-<td><select name="" id="to">
-    <option value="vnd">VietNam</option>
-    <option value="usa">USA</option>
-    <option value="won">won</option>
-</select></td>
+            <option value="vnd">VietNam</option>
+        </select></td>
+        <td><select name="" id="to">
+            <option value="vnd">VietNam</option>
+            <option value="usa">USA</option>
+            <option value="won">won</option>
+        </select></td>
 
-<td><button onclick="convert()">convert</button></td>
+        <td>
+            <button style="background-color: cornflowerblue" onclick="convert()">convert</button>
+        </td>
     </tr>
     <tr>
-        <td colspan="3"><p style="color: blue" id="relats">Result:</p></td>
+        <td colspan="3" style="color: blue">Result:<input  style="border: 0px" type="text" id="result"></td>
     </tr>
 </table>
 <script>
@@ -40,14 +42,16 @@
         let from = document.getElementById('from').value;
         let to = document.getElementById('to').value;
         if (from === to) {
-            document.write(input);
+        result= input;
+        document.getElementById('result').value= result;
         }
-        if (from === 'vnd' && to === 'usa')
-        {
-            document.write("Result:" + input/24000);
+        if (from === 'vnd' && to === 'usa') {
+            result= input/23000;
+            document.getElementById('result').value= result;
         }
         if (from === 'vnd' && to === 'won') {
-            document.write('input/20= result+input/20');
+            result= input/20;
+            document.getElementById('result').value= result;
         }
     }
 </script>

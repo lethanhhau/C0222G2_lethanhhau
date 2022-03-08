@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng máy tính</title>
-    <style>
-        table{
-            width: 600px;
-        }
-        td{
-            border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
-<table>
-    <tr>
-        <td colspan="7"><input type="text" id="nhap"></td>
-    </tr>
-    <tr>
-        <td>Rad</td>
-        <td></td>
-        <td>x!</td>
-        <td>(</td>
-        <td>)</td>
-        <td>%</td>
-        <td>AC</td>
-    </tr>
-    <tr>
-        <td>Inv</td>
-        <td>sin</td>
-        <td>In</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-        <td></td>
-    </tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-</table>
+       <input type="text" id="number1"></td>
+        <input type="text" id="number2"></td><br>
+        <button type="submit" onclick="addi()">Addition(+)</button>
+       <button type="submit" onclick="subtrac()">Subtraction(-)</button>
+       <button type="submit" onclick="multiplica()">Multiplication(X)</button>
+       <button type="submit" onclick="divi()">Divition(/)</button><br>
+        Result Divison:<input style="border: 0px" type="text" id="result">
+<script>
+    function addi() {
+        let a=parseInt(document.getElementById('number1').value);
+        let b=parseInt(document.getElementById('number2').value);
+        result= a+b;
+        document.getElementById('result').value = result;
+    }
+    function subtrac() {
+        let a=parseInt(document.getElementById('number1').value);
+        let b=parseInt(document.getElementById('number2').value);
+        result = a-b;
+        document.getElementById('result').value = result;
+    }
+    function multiplica() {
+        let a=parseInt(document.getElementById('number1').value);
+        let b=parseInt(document.getElementById('number2').value);
+        result = a*b;
+        document.getElementById('result').value= result;
+    }
+    function divi() {
+        let a=parseInt(document.getElementById('number1').value);
+        let b=parseInt(document.getElementById('number2').value);
+        result = a/b;
+        document.getElementById('result').value= result;
+    }
+</script>
 </body>
 </html>
