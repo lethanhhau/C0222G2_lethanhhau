@@ -8,6 +8,22 @@
 <input type="text" id="number1">
 <input type="text" id="number2">
 <input type="text" id="number3">
-<button></button>
+<button onclick="tamGiac()">return</button>
+<p id="in" value = ''></p>
+<script>
+    function tamGiac() {
+        let a = parseFloat(document.getElementById('number1').value);
+        let b = parseFloat(document.getElementById('number2').value);
+        let c = parseFloat(document.getElementById('number3').value);
+        if(a > 0 && b> 0 && c> 0){
+            if(a+b > c && b+c > a && a+c > b){
+                document.getElementById('in').innerHTML = 'a,b,c là cạnh của 1 tam giác';
+            }else {
+                document.getElementById('in').innerHTML = 'a,b,c không phải là cạnh của tam giác';
+        }
+        }
+
+    }
+</script>
 </body>
 </html>

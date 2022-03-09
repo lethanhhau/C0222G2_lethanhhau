@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 10</title>
+</head>
+<body>
+<input type="text" id="electricity">
+<button type="submit" onclick="tienDien()">thanhTien</button>
+<p id="in" value=''></p>
+<script>
+    function tienDien() {
+        let elec = parseFloat(document.getElementById('electricity').value);
+        if(elec < 201){
+            document.getElementById('in').innerHTML = 'tiền điện=' + ((50 * 1678) + (50 * 1734) + ((elec - 100) * 2014));
+        }
+        if (elec < 101){
+            document.getElementById('in').innerHTML = 'tiền điện=' + ((50 * 1678) + ((elec-50) * 1734));
+        }
+        if (elec < 51){
+            document.getElementById('in').innerHTML = 'tiền điện=' + elec * 1678;
+        }
+    }
+</script>
+</body>
+</html>
