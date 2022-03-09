@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<input type="text" id="number1">
+<input type="text" id="number2">
+<input type="text" id="number3">
+<button type="submit" onclick="giaiPhuongTrinh()">test</button>
+<br>
+<p id="in" value = ''></p>
+<script>
+    function giaiPhuongTrinh() {
+        let a = parseFloat(document.getElementById('number1').value);
+        let b = parseFloat(document.getElementById('number2').value);
+        let c = parseFloat(document.getElementById('number3').value);
+        let delta = (b * 2) - (4 * a * c);
+        if (delta < 0) {
+            document.getElementById('in').innerHTML = 'Phương trình vô nghiệm'
+        } else if (delta = 0) {
+            document.getElementById('in').innerHTML = 'Phương trình bậc 2 có nghiệm kép =' + (-b / 2 * a);
+        } else {
+            document.getElementById('in').innerHTML = 'phương trình có 2 nghiệm=' + (b - (Math.sqrtdelta) / (2 * a));
+        }
+    }
+</script>
+</body>
+</html>

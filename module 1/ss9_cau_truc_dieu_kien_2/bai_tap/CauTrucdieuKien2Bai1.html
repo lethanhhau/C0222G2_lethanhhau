@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1</title>
+</head>
+<body>
+<input type="text" id="number2">
+<button type="submit" onclick="click2()">độ f</button>
+<br>
+<input style="border: 0px" type="text" id="in">
+<script>
+  function click2() {
+    let c = parseFloat(document.getElementById('number2').value)
+    let F = c * 9/5 + 32;
+    document.getElementById('in').value = "độ f =" + F;
+  }
+</script>
+</body>
+</html>

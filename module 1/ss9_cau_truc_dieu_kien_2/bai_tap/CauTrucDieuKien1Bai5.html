@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<input style="border: 0px" type="text" id="result">
+<script>
+let score = parseInt(prompt("score"));
+if(score > 80){
+    document.getElementById("result").value = 'loại giỏi';
+}else if(score > 65){
+    document.getElementById("result").value = 'loại khá';
+}else if(score > 50){
+    document.getElementById("result").value = 'loại trung bình';
+}else {
+    document.getElementById("result").value = 'loại yếu';
+}
+</script>
+
+</body>
+</html>

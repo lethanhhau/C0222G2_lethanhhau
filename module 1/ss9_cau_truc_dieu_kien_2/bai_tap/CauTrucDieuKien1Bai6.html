@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<input type="text" id="product">
+<input type="text" id="price">
+<button onclick="click1()">hoa hồng</button>
+<br>
+<input style="border: 0px"  type="text" id="result">
+<script>
+    function click1(){
+    let product = parseInt(document.getElementById('product').value);
+    let price = parseInt(document.getElementById('price').value);
+    let rose = (product * price)/10;
+    document.getElementById('result').value = rose;
+    }
+</script>
+</body>
+</html>

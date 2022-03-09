@@ -5,17 +5,34 @@
     <title>câu lệnh switch case</title>
 </head>
 <body>
-<input type="text" id="input">
-<button onclick="countday ()">Date</button><br>
-<input type="text" id="result">
+<input type="text" id="number">
+<button type="submit" onclick="countday()">Tính số ngày</button>
+<br>
+<input style="border: 0px" type="text" id="result">
 <script>
     function countday() {
-  let input =  document.getElementById('input').value;
-  input = result;
-    switch (input) {
-        case 1:
-            document.getElementById(input).value = tháng + result + có + 31 + ngày;
-    }
+        let input = parseInt(document.getElementById('number').value);
+        let result = input;
+        switch (result) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('result').value = 'tháng  có 31 ngày';
+                break;
+            case 2:
+                document.getElementById('result').value = 'tháng 2 có 28 hoặc 29 ngày';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('result').value = 'tháng có 30 ngày';
+                break;
+        }
     }
 </script>
 </body>
