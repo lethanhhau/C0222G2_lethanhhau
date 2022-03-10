@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>số nguyên tố</title>
+</head>
+<body>
+<input type="text" id="numbers">
+<button onclick="soNguyenTo()">số nguyên tố</button>
+<p id="in" value = ''></p>
+<script>
+    function soNguyenTo() {
+        let numbers = parseInt(document.getElementById('numbers').value);
+        let count =0;
+        for (let n=2;n<(numbers-1) ;n++){
+             if(numbers % n !==0){
+            document.getElementById('in').innerHTML = numbers;
+            count=count+1;
+            }
+        }
+    }
+</script>
+</body>
+</html>
