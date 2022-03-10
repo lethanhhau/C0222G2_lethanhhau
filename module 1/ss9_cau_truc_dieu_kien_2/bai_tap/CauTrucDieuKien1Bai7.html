@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<input type="text" id="minute">
+<button onclick="phone()">tính cước</button>
+<p id="in" value = ''></p>
+<script>
+    function phone(){
+    let minute = parseFloat(document.getElementById('minute').value);
+    if(minute > 200){
+        document.getElementById('in').innerHTML = 'cước điện thoại ='+ (25000 + (50 * 600) + ( 150*400 ) + (minute - 200)*200) + 'vnd';
+    }
+    else if (minute > 50){
+        document.getElementById('in').innerHTML = 'cước điện thoại ='+ (25000 + (50 * 600) + (minute - 50)*400) + 'vnd';
+    }
+    else if(minute > 0) {
+        document.getElementById('in').innerHTML = 'cước điện thoại ='+ (25000 + minute * 600) + 'vnd';
+    }
+    else{
+        document.getElementById('in').innerHTML = 'nhập sai vui lòng nhập lại'
+    }
+    }
+</script>
+</body>
+</html>

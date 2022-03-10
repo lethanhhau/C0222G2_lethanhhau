@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 11</title>
+</head>
+<body>
+<input type="text" id="luong">
+<button onclick="thue()">thuế</button>
+<p id="in" value=""></p>
+<script>
+    function thue() {
+        let luong = parseFloat(document.getElementById('luong').value);
+        let thueSuat = luong - 11000000;
+        if (thueSuat > 80000000) {
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 35) / 100;
+        }else if (thueSuat > 52000000){
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 30) / 100;
+        }else if (thueSuat > 32000000){
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 25) / 100;
+        }else if(thueSuat > 18000000){
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 20) / 100;
+        }else if (thueSuat > 10000000){
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 15) / 100;
+        }else if (thueSuat > 5000000){
+            document.getElementById('in').innerHTML = 'tiền thuế là =' + (thueSuat * 10) / 100;
+        }else if (thueSuat > 0){
+            document.getElementById('in').innerHTML ='tiền thuế là =' + (thueSuat * 5) / 100;
+        } else {
+            document.getElementById('in').innerHTML = 'không phải đóng thuế';
+        }
+    }
+</script>
+</body>
+</html>
