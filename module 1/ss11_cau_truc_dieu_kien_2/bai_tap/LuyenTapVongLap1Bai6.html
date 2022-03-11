@@ -6,7 +6,18 @@
 </head>
 <body>
 <script>
-
+    let count =0;
+    let total =0;
+    let i = 1;
+  while (count <= 29){
+        if (i%7 === 0){
+            count += 1;
+            total+=i;
+            document.write(i + '<br>');
+        }
+        i++
+  }
+  document.write('tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: ' +total);
 </script>
 </body>
 </html>
