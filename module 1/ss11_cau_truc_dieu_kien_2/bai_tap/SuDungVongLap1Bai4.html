@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let fibonacci;
+    let fibonacci1;
+    let fibonacci2;
+    for (let i = 0; i < 20; i++) {
+        if (i === 0) {
+            fibonacci1 = 1;
+            fibonacci2 = 1;
+        } else {
+            fibonacci = fibonacci1 + fibonacci2;
+            fibonacci1 = fibonacci2;
+            fibonacci2 = fibonacci;
+            if (fibonacci % 5 == 0) {
+                break;
+            }
+        }
+    }document.write(' số đầu tiên trong dãy fibonacci chia hết cho 5 là :' + fibonacci);
+
+</script>
+</body>
+</html>

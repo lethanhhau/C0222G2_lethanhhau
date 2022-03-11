@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    let fibonacci = 0;
+    let fibonacci1 = 0;
+    let fibonacci2 = 1;
+    for (let i = 0; i < 20; i++){
+            fibonacci = fibonacci1 + fibonacci2;
+            fibonacci1 = fibonacci2;
+            fibonacci2 = fibonacci;
+        document.write(fibonacci);
+        document.write('<br>');
+        }
+</script>
+</body>
+</html>

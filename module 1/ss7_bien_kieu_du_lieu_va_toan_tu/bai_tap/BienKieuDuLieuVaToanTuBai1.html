@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-    let a;
-    let b;
-    let c;
-    a = parseInt(prompt("Nhập điểm lý: "));
-    b = parseInt(prompt("Nhập điểm hoá: "));
-    c = parseInt(prompt("Nhập điểm sinh: "));
-    avg = (a+b+c)/3;
-    total = a+b+c;
+    let physical;
+    let chemical;
+    let born;
+    physical = parseInt(prompt("Nhập điểm lý: "));
+    chemical = parseInt(prompt("Nhập điểm hoá: "));
+    born = parseInt(prompt("Nhập điểm sinh: "));
+    let avg = (physical + chemical + born)/3;
+    let total = physical + chemical + born;
     document.write('avg= ' +avg);
     document.write('<br>');
     document.write('total= ' +total);
