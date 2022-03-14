@@ -5,83 +5,20 @@
     <title>bài 6:vẽ hình trái tim</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th></th>
-        <th>*</th>
-        <th>*</th>
-        <th></th>
-        <th>*</th>
-        <th>*</th>
-        <th></th>
-    </tr>
-    <tr>
-        <th>*</th>
-        <th></th>
-        <th></th>
-        <th>*</th>
-        <th></th>
-        <th></th>
-        <th>*</th>
-    </tr>
-    <tr>
-        <th>*</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>*</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th>*</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>*</th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th>*</th>
-        <th></th>
-        <th>*</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th>*</th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-</table>
 <script>
-    let board;
-    board = "<table width = '1000px'>"
-    for (i = 1; i <= 6; i++) {
-        board = board + "<tr>";
+    for (let i = 1; i <= 6; i++) {
         for (j = 1; j <= 7; j++) {
-            board = board + "<td>"
-            if ((i == 1 && (j == 2 || j == 3 || j == 5 || j == 6))
-                || (i == 2 && (j == 1 || j == 4 || j == 7))
-                || (i == 3 && (j == 1 || j == 7))
-                || (i == 4 && (j == 2 || j == 6))
-                || (i == 5 && (j == 3 || j == 5))
-                || (i == 6 && (j == 4))) {
-                document.write('*')
-                document.write('<br>')
+            if(i === 1 && (j === 2 || j === 3 || j === 5 || j===6)
+                || i === 2 && (j===1 || j===4 || j===7)
+                || i === 3 && (j===1 || j===7)
+                || i === 4 && (j === 2 || j === 6)
+                || i === 5 && (j === 3 || j === 5)
+                || i === 6 && (j === 4)){
+               document.write('*');
             } else {
                 document.write("&nbsp&nbsp");
             }
-            board = board + "<td>"
-        }
-        board = board + "<tr>";
+        }document.write('<br>')
     }
 </script>
 </body>
