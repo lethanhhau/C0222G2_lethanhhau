@@ -9,11 +9,11 @@
     let goc = parseFloat(prompt('nhập tiền gửi'));
     let lai = parseFloat(prompt('nhập lãi suât'));
     let thang = parseInt(prompt('nhập tháng gửi'));
-    let total = goc * lai * (thang/12);
     for (let i=1;i<=thang;i++){
-        total+=total;
+        let rose = goc * lai;
+        goc+=rose;
     }
-    document.write(total);
+    document.write(goc);
 </script>
 </body>
 </html>

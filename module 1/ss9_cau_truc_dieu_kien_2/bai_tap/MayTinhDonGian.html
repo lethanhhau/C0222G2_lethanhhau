@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4"> <input id="window"></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhap(1)">1</button></td>
+        <td><button onclick="nhap(2)">2</button></td>
+        <td><button onclick="nhap(3)">3</button></td>
+        <td><button onclick="nhap('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+        <td><button>-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="bang()">=</button></td>
+        <td><button onclick="xoa()">C</button></td>
+    </tr>
+</table>
+<script>
+    function nhap(so) {
+        document.getElementById("window").value +=so;
+    }
+    function bang() {
+        let string = document.getElementById("window").value;
+        let ketQua = eval(string);
+        document.getElementById("window").value= ketQua;
+    }
+    function xoa() {
+        document.getElementById("window").value="";
+    }
+</script>
+</body>
+</html>

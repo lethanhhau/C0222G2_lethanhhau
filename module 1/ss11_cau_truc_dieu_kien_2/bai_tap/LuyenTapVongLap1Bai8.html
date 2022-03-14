@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<button type="submit" onclick="choi()">Chơi</button>
+<script>
+    function choi() {
+        let min = parseInt(prompt('nhập min'));
+        let max = parseFloat(prompt('nhập max'));
+        let random = Math.floor(Math.random()*(max - min)+ min);
+        let number;
+        while (random != number){
+             number = prompt('Nhập số đoán');
+            if (random < number){
+                alert('số lớn hơn');
+            }else if (random > number){
+                alert('số bé hơn')
+            }
+        }alert('xin chúc mừng')
+    }
+
+</script>
+</body>
+</html>
