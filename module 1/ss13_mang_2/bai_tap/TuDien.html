@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="in">
+<button type="submit" onclick="timKiem()">tìm kiếm</button>
+<script>
+    let str = document.getElementById('in').value;
+    let english = ["result","rose","import","export","log in","hello"];
+    let vietNamese = ["kết quả","hoa hồng","nhập","xuất","đăng nhập","xin chào"];
+    function timKiem() {
+        for (let i = 0; i < english.length; i++) {
+            if (english[i] === str) {
+                document.write(vietNamese[i]);
+            }
+        }document.write('không tìm thấy');
+
+    }
+
+</script>
+</body>
+</html>
