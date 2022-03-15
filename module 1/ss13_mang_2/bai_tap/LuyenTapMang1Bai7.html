@@ -7,13 +7,13 @@
 <body>
 <script>
     let arr = [];
-    for (let i = 0; i < 10; i++){
-        arr[i] = parseInt(prompt("NHập phan tu: "))
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử: "))
     }
     let v = prompt('Nhập V');
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] == v) {
-            arr.splice(i,1);
+            arr.splice(i, 1);
         }
     }
     document.write(arr)
