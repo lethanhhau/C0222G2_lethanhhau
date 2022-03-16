@@ -5,8 +5,16 @@
     <title>bài 3</title>
 </head>
 <body>
-<script>
-    let arr = ['1','a','4','6','9','d','e','0','2'];
-</script>
 </body>
+<script>
+    let arr = ["hoa",1,2,3,"hong",5,6,8,9]
+    let count = 0;
+    for (let i=0;i<arr.length;i++){
+        if (!isNaN(arr[i])){
+            count++;
+        }
+    }
+    document.write(arr + '<br>');
+    document.write('có '+ count + ' ký tự số trong mảng');
+</script>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 4</title>
+</head>
+<body>
+<script>
+    // let str1 = prompt('nhập chuỗi 1 ');
+    // let str2 = prompt('nhập chuỗi 2')
+    // let str3 =str1.localeCompare(str2);
+    // if (str3===0){
+    //     document.write('hai chuỗi giống nhau')
+    // }else {
+    //     document.write('hai chuỗi khác nhau')
+    // }
+
+
+    let str1 = prompt('Nhập chuỗi 1');
+    let str2 = prompt('Nhập chuỗi 2');
+    let arr1 = str1.split();
+    let arr2 = str2.split();
+    if (arr1.length !== arr2.length) {
+        document.write('hai chuỗi không giống nhau')
+    } else {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === arr2[i]) {
+                document.write('hai chuỗi giống nhau')
+            } else {
+                document.write('hai chuỗi không giống nhau')
+            }
+        }
+    }
+</script>
+</body>
+</html>
