@@ -5,11 +5,16 @@
     <title>chuyển đổi giữa feet và meters</title>
 </head>
 <body>
+<input type="number" id="meters">
+<button type="submit" onclick="doi()">Đổi</button>
+<input type="number" id="feet">
 <script>
-    function footToMeter(foot){
-
+    function doi() {
+        let meters = document.getElementById('meters').value = 0.305 * feet;
+        let feet = document.getElementById('feet').value = 3.279 * meters;
+        return meters
     }
-
+    document.getElementById('meters').innerHTML = doi();
 </script>
 </body>
 </html>

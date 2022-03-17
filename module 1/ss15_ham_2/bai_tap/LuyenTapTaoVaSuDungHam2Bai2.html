@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    let radius = prompt('nhập bán kính hình tròn');
+    const PI = 3.14;
+    function countAcreage(){
+    let S = radius*radius*PI;
+    return S;
+    }
+    function countperimeter() {
+        let C = 2*radius*PI;
+        return C;
+    }
+    document.write(countAcreage() + '<br>');
+    document.write(countperimeter());
+</script>
+</body>
+</html>

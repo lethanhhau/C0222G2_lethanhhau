@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 8</title>
+</head>
+<body>
+<script>
+    let str = prompt('nhập chuỗi')
+    let arr = str.split("");
+    function doIsland() {
+        let arr1 = [];
+        for (i = arr.length - 1; i >= 0; i--) {
+            arr1.push(arr[i])
+        }
+        return arr1
+    }
+    document.write(doIsland())
+</script>
+</body>
+</html>

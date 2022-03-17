@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<script>
+   function changePosition(a,b) {
+        let arr = [a,b];
+       for (let i =0;i<arr.length;i++){
+           arr[0] = 0;
+           arr[1] = 1;
+       }
+       let c = arr[0];
+        arr[0] = arr[1];
+        arr[1] = c;
+       return arr
+   }
+   document.write(changePosition())
+</script>
+</body>
+</html>

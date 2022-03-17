@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomSao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let saoTim = prompt("Nhap ngoi sao muon tim: ");
+    let flag = false;
+    function timSao(sao) {
+        let result ='';
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (sao === ngoiSao[i]) {
+                flag = true;
+                result = chomSao[i];
+                break;
+            }
+        }
+        if (flag){
+            return result
+        }else {
+            return 'không có sao'
+        }
+    }
+    document.write(timSao(saoTim))
+</script>
+</body>
+</html>
