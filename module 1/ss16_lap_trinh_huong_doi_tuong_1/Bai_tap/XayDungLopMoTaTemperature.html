@@ -14,15 +14,18 @@
         getDegreec() {
             return this.degreeC;
         }
-        getDegreeF(){
+
+        getDegreeF() {
             this.DegreeF = (25 * 1.8) + 32;
             return this.DegreeF;
         }
-        getDegreeKenvin(){
-            this.DegreeKenvin = 25 +  273,15;
+
+        getDegreeKenvin() {
+            this.DegreeKenvin = 25 + 273, 15;
             return this.DegreeKenvin;
         }
     }
+
     let temperature = new Temperature(25);
     let degreeF = temperature.getDegreeF();
     let degreeKenvin = temperature.getDegreeKenvin()

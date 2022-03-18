@@ -7,32 +7,39 @@
 <body>
 <script>
     class Date {
-        constructor(day,month, year) {
+        constructor(day, month, year) {
             this.day = day;
             this.month = month;
             this.year = year;
         }
+
         getDay() {
             return this.day;
         }
+
         getMonth() {
             return this.month;
         }
+
         getYear() {
             return this.year;
         }
+
         setDay(day) {
             this.day = day;
         }
+
         setMonth(month) {
             this.month = month;
         }
+
         setYear(year) {
             this.year = year;
         }
     }
-    let date = new Date(30,10,1995)
-    let day =date.getDay();
+
+    let date = new Date(30, 10, 1995)
+    let day = date.getDay();
     let month = date.getMonth();
     let year = date.getYear();
     document.write(day + "/" + month + "/" + year);

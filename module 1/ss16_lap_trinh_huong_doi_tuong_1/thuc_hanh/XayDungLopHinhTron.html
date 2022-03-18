@@ -7,12 +7,18 @@
 <body>
 <script>
     class Circle {
-        constructor(radius) {
+        constructor(radius, color) {
             this.radius = radius;
+            this.color = color
         }
 
         getRadius() {
             return this.radius;
+        }
+
+        getColor() {
+            return this.color;
+
         }
 
         getArea() {
@@ -21,10 +27,11 @@
         }
     }
 
-    let circle = new Circle(2);
+    let circle = new Circle(2, 'red');
     let radius = circle.getRadius();
     let area = circle.getArea();
-    document.write("radius: " + radius + "; area: " + area);
+    let color = circle.getColor();
+    document.write("radius: " + radius + '<br>' + " area: " + area + '<br>' + "color :" + color);
 
 
 </script>
