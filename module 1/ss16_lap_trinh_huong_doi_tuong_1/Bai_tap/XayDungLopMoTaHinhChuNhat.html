@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<script>class Rectangle {
+    constructor(long, wide) {
+        this.long = long;
+        this.wide = wide;
+    }
+
+    getLong() {
+        return this.long;
+    }
+
+    getWide() {
+        return this.wide;
+    }
+
+    getArea() {
+        this.area = long * wide;
+        return this.area;
+    }
+
+    getPerimeter() {
+        this.perimeter = (long + wide) * 2;
+        return this.perimeter;
+    }
+}
+
+let rectangle = new Rectangle(2, 4);
+let long = rectangle.getLong();
+let wide = rectangle.getWide();
+let Area = rectangle.getArea();
+let Perimeter = rectangle.getPerimeter();
+document.write("long :" + long + '<br>' + "wide :" + wide + '<br>' + "Area :" + Area + '<br>' + "perimeter :" + Perimeter)
+</script>
+</body>
+</html>
