@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-    function findInteger() {
-        let number = parseFloat(prompt('nhập số'));
+    function findInteger(number) {
+        number = parseFloat(prompt('nhập số'));
         let flag = false;
-        if (number % 2 == 0) {
+        if (number % 2 === 0) {
             flag = true;
             return true;
         } else {

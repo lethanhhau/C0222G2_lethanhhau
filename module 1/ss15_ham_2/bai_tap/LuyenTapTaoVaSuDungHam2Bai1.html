@@ -6,13 +6,14 @@
 </head>
 <body>
 <script>
-    function countSquare(){
-  let number1 = prompt()
-    let number2=0;
-  number2 = number1 * number1;
-  return number2
+    function countSquare(number1) {
+        number1 = prompt('nhập 1 số ')
+        let number2 = 0;
+        number2 = number1 * number1;
+        return number2
     }
-    document.write(countSquare())
+
+    document.write('bình phương là ' + countSquare())
 </script>
 </body>
 </html>

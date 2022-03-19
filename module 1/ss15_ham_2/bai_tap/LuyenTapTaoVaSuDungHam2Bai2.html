@@ -8,16 +8,16 @@
 <script>
     let radius = prompt('nhập bán kính hình tròn');
     const PI = 3.14;
-    function countAcreage(){
-    let S = radius*radius*PI;
+    function countAcreage(S){
+    S = radius*radius*PI;
     return S;
     }
-    function countperimeter() {
-        let C = 2*radius*PI;
+    function countperimeter(C) {
+        C = 2*radius*PI;
         return C;
     }
-    document.write(countAcreage() + '<br>');
-    document.write(countperimeter());
+    document.write('diện tích hình tròn là ' + countAcreage() + '<br>');
+    document.write('chu vi hình tròn là ' + countperimeter());
 </script>
 </body>
 </html>

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <title>bai 4</title>
 </head>
 <body>
 <script>
-    function checkCharacters() {
-        let flag = false
-        let characters = prompt('nhap ky tu')
+    function checkCharacters(characters) {
+        characters = prompt('nhap ky tu');
+        let flag = false;
         if (!isNaN(characters)) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
-    document.write(checkCharacters())
+    document.write(checkCharacters());
 </script>
 </body>
 </html>

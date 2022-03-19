@@ -26,13 +26,12 @@
     // else document.write(n + " không phải là số nguyên tố");
 
 
-
-    function isprime(n){
+    function isPrime(n) {
         let flag = true;
-        if (n <2) return flag = false;
+        if (n < 2) return flag = false;
         let i = 2;
-        while(i <n){
-            if( n%i==false ) {
+        while (i < n) {
+            if (n % i == false) {
                 flag = false;
                 break;
             }
@@ -40,11 +39,12 @@
         }
         return flag;
     }
-    let n= prompt(" nhap mot so n: ");
-    let i = false, check=false, result ="";
-    while ( i < n){
-        check = isprime(i);
-        if( check == true ) result += i + " ";
+
+    let n = prompt(" nhap mot so n: ");
+    let i = false, check = false, result = "";
+    while (i < n) {
+        check = isPrime(i);
+        if (check == true) result += i + " ";
         ++i;
     }
     document.write(result);

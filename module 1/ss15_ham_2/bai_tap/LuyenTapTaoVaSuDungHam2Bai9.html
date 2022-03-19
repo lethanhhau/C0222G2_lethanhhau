@@ -6,12 +6,12 @@
 </head>
 <body>
 <script>
-    let str = prompt('nhap chuỗi ký tự')
+    let str = prompt('Nhập chuỗi ký tự')
     let arr = str.split("");
 
-    function findCharacters() {
+    function findCharacters(a) {
         let flag = false;
-        let a = prompt('nhập 1 ký tự')
+        a = prompt('nhập 1 ký tự')
         let count = 0
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] === a) {
@@ -19,10 +19,10 @@
                 count++;
             }
         }
-        if (flag = true) {
+        if (flag === true) {
             return 'số lần xuất hiện của ' + a + ' là ' + count;
         } else {
-            return false;
+            return -1;
         }
     }
 

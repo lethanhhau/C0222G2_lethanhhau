@@ -14,16 +14,18 @@
     //                 U: update (sửa) , D :delete (xóa)
     let danhSachSP = ["nokia", "sam Sung", "iphone"];
     display(danhSachSP);
-    function themMoiSP() {
-        let newProduct = document.getElementById("nhap").value;
-        if (newProduct!=""){
+
+    function themMoiSP(newProduct) {
+        newProduct = document.getElementById("nhap").value;
+        if (newProduct != "") {
             danhSachSP.push(newProduct);
-        }else {
+        } else {
             alert("Bạn cần phải nhập tên sản phẩm");
         }
         display(danhSachSP);
-        document.getElementById("nhap").value="";
+        document.getElementById("nhap").value = "";
     }
+
     function display(danhSach) {
         let tabeString = '<table border="1">\n' +
             '    <tr>\n' +
@@ -47,15 +49,15 @@
 
     function sua(id) {
         let newProduct = prompt("Nhập tên sản phẩm cần sửa");
-        danhSachSP[id]=newProduct;
+        danhSachSP[id] = newProduct;
         display(danhSachSP);
-
     }
+
     function xoa(id) {
-        let conf = confirm("Bạn có muốn xóa sản phẩm : "+ danhSachSP[id]+ " không ?");
-        if (conf){
-            danhSachSP.splice(id,1);
-        }else {
+        let conf = confirm("Bạn có muốn xóa sản phẩm : " + danhSachSP[id] + " không ?");
+        if (conf) {
+            danhSachSP.splice(id, 1);
+        } else {
             alert("bạn đã không xóa")
         }
         display(danhSachSP);

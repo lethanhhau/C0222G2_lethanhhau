@@ -6,15 +6,15 @@
 </head>
 <body>
 <script>
-    function countfactorial() {
-        let number = prompt('Nhập số')
+    function countFactorial(number) {
+        number = prompt('Nhập số')
         let factorial = 1;
         for (let i = 1; i <= number; i++) {
             factorial = factorial * i;
         }
         return factorial;
     }
-    document.write(countfactorial());
+    document.write('giai thừ là ' + countFactorial());
 </script>
 </body>
 </html>
