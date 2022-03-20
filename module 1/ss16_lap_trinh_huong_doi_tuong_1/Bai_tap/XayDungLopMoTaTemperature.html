@@ -20,16 +20,16 @@
             return this.DegreeF;
         }
 
-        getDegreeKenvin() {
-            this.DegreeKenvin = 25 + 273, 15;
+        getDegreeKenVin() {
+            this.DegreeKenvin = 25 + 273.15;
             return this.DegreeKenvin;
         }
     }
 
     let temperature = new Temperature(25);
     let degreeF = temperature.getDegreeF();
-    let degreeKenvin = temperature.getDegreeKenvin()
-    document.write("degreeF :" + degreeF + '<br>' + "degreeKenvin :" + degreeKenvin)
+    let degreeKenVin = temperature.getDegreeKenVin()
+    document.write("degreeF :" + degreeF + '<br>' + "degreeKenVin :" + degreeKenVin)
 </script>
 </body>
 </html>
