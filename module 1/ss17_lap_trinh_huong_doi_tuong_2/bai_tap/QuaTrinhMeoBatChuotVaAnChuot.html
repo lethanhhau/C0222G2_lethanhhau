@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Chuot{
+        constructor() {
+            this.ten = ten;
+            this.khoiluong = khoiluong;
+            this.speed = speed;
+            this.keu = ' ';
+            this.status = true;
+        }
+        getSpeed(){
+            this.speed
+        }
+        checkChuot(){
+            if (this.status){
+                alert('chuột sống');
+            }else {
+                alert('chuột chết');
+            }
+        }
+    }
+    class Meo extends Chuot{
+        constructor(ten,khoiluong,speed,keu) {
+            super(ten,khoiluong,speed,keu);
+        }
+    }
+</script>
+</body>
+</html>

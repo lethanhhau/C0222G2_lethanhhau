@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> sự tương tác giữa công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class BongDen {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOff() {
+            this.status = false;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        checkBongden() {
+            if (this.status) {
+                alert('đèn đang bật')
+            } else {
+                alert('đèn đang tắt')
+            }
+        }
+    }
+
+    class Swicht {
+        constructor() {
+            this.status = false;
+            this.lamp = null;
+        }
+
+        ketNoiBongDen(bongDen) {
+            this.lamp = bongDen;
+        }
+        swichtOn() {
+            this.status = true;
+            this.lamp.turnOn();
+        }
+        swichtOff() {
+            this.status = false
+            this.lamp.turnOff();
+        }
+    }
+
+    let bongDen1 = new BongDen();
+    let congtac = new Swicht();
+    congtac.ketNoiBongDen(bongDen1);
+
+    for (let i = 0; i < 10; i++) {
+        congtac.swichtOn();
+        console.log(bongDen1.checkBongden())
+        congtac.swichtOff();
+        console.log(bongDen1.checkBongden())
+    }
+</script>
+</body>
+</html>

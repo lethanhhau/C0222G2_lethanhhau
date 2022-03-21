@@ -13,20 +13,22 @@
         getPiece() {
             return this.piece;
         }
-        getDecreasePiece() {
+        setPiece(){
+            return this.piece;
+        }
+        decreasePiece() {
             if (this.piece > 0) {
-                return this.piece--;
+                this.piece--;
             } else {
-                return this.piece = 0;
+                this.piece = 0;
             }
         }
     }
     class Human {
-        constructor(name, gender, weight, say) {
+        constructor(name,gender,weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
-            this.say = say;
         }
         getWeight() {
             return this.weight;
@@ -34,31 +36,29 @@
         setApple(apple) {
             this.apple = apple;
         }
-
         getAppleInt() {
             return this.apple.getPiece();
         }
-
         getBiteShot() {
             if (this.status) {
                 this.weight++;
-                document.write(this.name + this.say + '<br>');
+                document.write(this.name + this.gender + '<br>' );
             }
         }
-
         getOneShot() {
             this.status = true;
-            return this.apple.getDecreasePiece();
+            return this.apple.decreasePiece();
         }
     }
-    let adam = new Human('Adam', ' say "my turn"', 'Male', 55);
-    let eva = new Human('eva', 'say "give me"', 'Femal', 45);
-    let apple = new Apple();
-    apple.setPiece(10);
+    let adam = new Human('Adam',' Male', 55);
+    let eva = new Human('eva', ' Femal', 45);
+    let apple = new Apple(10);
+    apple.setPiece();
     adam.setApple(apple);
     eva.setApple(apple);
 
     for (let i = 0; i < 5; i++) {
+
         eva.getOneShot();
         eva.getBiteShot();
         document.write('Weight of Eva: ' + eva.getWeight() + '.' + ' The remain of the apple: ' + eva.getAppleInt() + '<br>');
