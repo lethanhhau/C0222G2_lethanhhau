@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<!--Cho một danh sách các phân số, hãy tìm chỉ số của phân số lớn nhất-->
+<script>
+    let numerators =   [2,4,8,6,5];
+    let denominators = [4,6,5,9,8];
+    let fractionMax =numerators[0]/denominators[0];
+    let dem =0
+    for (let i=0;i<numerators.length;i++){
+        if(fractionMax < numerators[i]/denominators[i]){
+            fractionMax = (numerators[i]/denominators[i]);
+            dem = i;
+        }
+    }
+    document.write('phân số lớn nhất là : '+ numerators[dem]+'/'+denominators[dem] + ' có chỉ số là : '+ dem);
+</script>
+</body>
+</html>

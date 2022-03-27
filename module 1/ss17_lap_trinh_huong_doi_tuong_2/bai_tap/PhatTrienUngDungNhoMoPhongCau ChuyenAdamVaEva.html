@@ -8,14 +8,9 @@
 <script>
     class Apple {
         constructor(piece) {
-            this.piece = piece;
+            this.piece = 10;
         }
-        getPiece() {
-            return this.piece;
-        }
-        setPiece(){
-            return this.piece;
-        }
+
         decreasePiece() {
             if (this.piece > 0) {
                 this.piece--;
@@ -23,34 +18,50 @@
                 this.piece = 0;
             }
         }
+
+        isEmpty() {
+            if (this.piece == 0) {
+                console.log('táo đã hêt')
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
+
     class Human {
-        constructor(name,gender,weight) {
+        constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
         }
+
         getWeight() {
             return this.weight;
         }
+
         setApple(apple) {
             this.apple = apple;
         }
+
         getAppleInt() {
             return this.apple.getPiece();
         }
+
         getBiteShot() {
             if (this.status) {
                 this.weight++;
-                document.write(this.name + this.gender + '<br>' );
+                document.write(this.name + this.gender + '<br>');
             }
         }
+
         getOneShot() {
             this.status = true;
             return this.apple.decreasePiece();
         }
     }
-    let adam = new Human('Adam',' Male', 55);
+
+    let adam = new Human('Adam', ' Male', 55);
     let eva = new Human('eva', ' Femal', 45);
     let apple = new Apple(10);
     apple.setPiece();

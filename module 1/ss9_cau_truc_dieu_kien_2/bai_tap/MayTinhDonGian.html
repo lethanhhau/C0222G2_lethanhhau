@@ -3,40 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table {
+            -webkit-text-fill-color: blue;
+        }
+
+        body {
+            margin: auto;
+            width: 180px;
+            height: 150px;
+            border: 3px solid black;
+        }
+    </style>
 </head>
 <body>
 <table>
     <tr>
-        <td colspan="4"> <input id="window"></td>
+        <td colspan="4"><input id="window"></td>
     </tr>
     <tr>
-        <td><button onclick="nhap(1)">1</button></td>
-        <td><button onclick="nhap(2)">2</button></td>
-        <td><button onclick="nhap(3)">3</button></td>
-        <td><button onclick="nhap('+')">+</button></td>
+        <td>
+            <button onclick="nhap(1)">1</button>
+        </td>
+        <td>
+            <button onclick="nhap(2)">2</button>
+        </td>
+        <td>
+            <button onclick="nhap(3)">3</button>
+        </td>
+        <td>
+            <button onclick="nhap('+')">+</button>
+        </td>
     </tr>
     <tr>
-        <td><button>4</button></td>
-        <td><button>5</button></td>
-        <td><button>6</button></td>
-        <td><button>-</button></td>
+        <td>
+            <button onclick="nhap(4)">4</button>
+        </td>
+        <td>
+            <button onclick="nhap(5)">5</button>
+        </td>
+        <td>
+            <button onclick="nhap(6)">6</button>
+        </td>
+        <td>
+            <button onclick="nhap('-')">-</button>
+        </td>
     </tr>
     <tr>
-        <td><button onclick="bang()">=</button></td>
-        <td><button onclick="xoa()">C</button></td>
+        <td>
+            <button onclick="nhap(7)">7</button>
+        </td>
+        <td>
+            <button onclick="nhap(8)">8</button>
+        </td>
+        <td>
+            <button onclick="nhap(9)">9</button>
+        </td>
+        <td>
+            <button onclick="nhap('*')">X</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="xoa()">C</button>
+        </td>
+        <td>
+            <button onclick="nhap(0)">0</button>
+        </td>
+        <td>
+            <button onclick="bang('=')">=</button>
+        </td>
+        <td>
+            <button onclick="nhap('/')">/</button>
+        </td>
     </tr>
 </table>
 <script>
     function nhap(so) {
-        document.getElementById("window").value +=so;
+        document.getElementById("window").value += so;
     }
+
     function bang() {
         let string = document.getElementById("window").value;
         let ketQua = eval(string);
-        document.getElementById("window").value= ketQua;
+        document.getElementById("window").value = ketQua;
     }
+
     function xoa() {
-        document.getElementById("window").value="";
+        document.getElementById("window").value = "";
     }
 </script>
 </body>

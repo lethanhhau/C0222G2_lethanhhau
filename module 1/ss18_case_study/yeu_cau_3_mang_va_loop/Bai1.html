@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng mảng b là prefix sums của mảng a </title>
+</head>
+<body>
+<script>
+    let arrA =[1,2,3];
+    let arrB = [];
+    arrB[0]=arrA[0];
+    for (let i = 1; i < arrA.length; i++) {
+        arrB[i] = arrB[i-1] + arrA[i];
+    }
+    document.write(arrB);
+</script>
+</body>
+</html>

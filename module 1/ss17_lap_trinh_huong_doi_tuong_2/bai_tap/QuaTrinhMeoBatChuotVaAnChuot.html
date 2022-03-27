@@ -6,29 +6,75 @@
 </head>
 <body>
 <script>
-    class Chuot{
+    class chuot {
         constructor() {
             this.ten = ten;
-            this.khoiluong = khoiluong;
-            this.speed = speed;
-            this.keu = ' ';
+            this.khoiluong = 20;
+            this.speed = 2;
             this.status = true;
         }
-        getSpeed(){
-            this.speed
+        getTen(){
+            return this.ten
         }
-        checkChuot(){
-            if (this.status){
+        setTen(){
+            this.ten = ten;
+        }
+        getKhoiLuong(){
+            return this.khoiluong
+        }
+        setKhoiluong(){
+            this.khoiluong = khoiluong;
+        }
+        getSpeed(){
+            return this.speed
+        }
+        setSpeed(){
+            this.speed = speed;
+        }
+        keu(keu){
+            return keu
+        }
+        checkChuot() {
+            if (this.status) {
                 alert('chuột sống');
-            }else {
+            } else {
                 alert('chuột chết');
             }
         }
     }
-    class Meo extends Chuot{
-        constructor(ten,khoiluong,speed,keu) {
-            super(ten,khoiluong,speed,keu);
+
+    class Meo{
+        constructor() {
+            this.ten = ten;
+            this.khoiluong = 60;
+            this.speed = 4;
+            this.status = true;
         }
+        getTen(){
+            return this.ten
+        }
+        setTen(){
+            this.ten = ten;
+        }
+        getKhoiLuong(){
+            return this.khoiluong
+        }
+        setKhoiluong(){
+            this.khoiluong = khoiluong;
+        }
+        getSpeed(){
+            return this.speed
+        }
+        setSpeed(){
+            this.speed = speed;
+        }
+        keu(keu){
+            return keu
+        }
+        batchuot(){
+            if()
+        }
+
     }
 </script>
 </body>

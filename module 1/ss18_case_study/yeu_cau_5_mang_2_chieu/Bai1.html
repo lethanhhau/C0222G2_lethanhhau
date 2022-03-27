@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1</title>
+</head>
+<body>
+<!--Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+
+<script>
+    let n = parseInt(prompt('nhap so hang'));
+    let m = parseInt(prompt('nhập so cot'));
+    let total = 0;
+    let arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr[i] = new Array(m);
+        for (let j = 0; j < m; j++) {
+            arr[i][j] = parseInt(prompt('nhap'));
+            if (arr[i][j] % 2 === 0) {
+                total += arr[i][j];
+            }
+        }
+    }
+    document.write('tổng các số chẳn là : ' + total);
+</script>
+</body>
+</html>

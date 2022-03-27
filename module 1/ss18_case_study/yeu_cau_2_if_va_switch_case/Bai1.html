@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân và lương ròng</title>
+</head>
+<body>
+<script>
+    let wage = parseFloat(prompt('nhập lương:'));
+    let receive = 0;
+    let tax = 0;
+    if (wage >= 15000000) {
+        tax = wage * 0.2;
+        receive = wage - tax;
+        document.write('tiền lương ròng là : ' + receive + '<br>');
+        document.write('tiền thuế phải nộp là :' + tax);
+    } else if (wage >= 7000000) {
+        tax = wage * 0.1;
+        receive = wage - tax;
+        document.write('tiền lương ròng là : ' + receive + '<br>');
+        document.write('tiền thuế phải nộp là :' + tax);
+    } else {
+        tax = wage * 0.05;
+        receive = wage - tax;
+        document.write('tiền lương ròng là : ' + receive + '<br>');
+        document.write('tiền thuế phải nộp là :' + tax);
+    }
+</script>
+</body>
+</html>

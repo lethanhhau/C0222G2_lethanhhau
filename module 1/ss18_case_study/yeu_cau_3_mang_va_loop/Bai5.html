@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let num;
+    let soluong = 0;
+    let gia = 0;
+    let total = 0;
+    let tam = '';
+    while (num !== 7) {
+        num = parseInt(prompt('(1)' + ' cafe' + '\n' + '(2)' + 'cam vắt' + '\n' + '(3)' + 'nước ép cà rốt' + '\n' + '(4)' +
+            'nước ép cà chua' + '\n' + '(5)' + 'nước lọc' + '\n' + '(6)' + 'nước dừa' + '\n' + '(7)' + 'thoát gọi món'))
+        switch (num) {
+            case 1:
+                gia = 7000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn đã chon :' + soluong + ' ly cafe ' + ' hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break
+            case 2:
+                gia = 20000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn chon :' + soluong + ' cam vắt ' + ' hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break;
+            case 3:
+                gia = 30000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn chon :' + soluong + ' nước ép cà rốt ' + ' hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break;
+            case 4:
+                gia = 30000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn chon :' + soluong + ' nước ép cà chua ' + ' hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break;
+            case 5:
+                gia = 5000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn chon :' + soluong + ' nước lọc ' + 'hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break;
+            case 6:
+                gia = 20000;
+                soluong = parseInt(prompt('nhập số lượng'));
+                tam += 'bạn chon :' + soluong + ' nước dừa ' + ' hết ' + (soluong * gia).toLocaleString() + 'vnd' + '\n'
+                total += soluong * gia;
+                break;
+        }
+    }
+    alert(tam + '\n' + 'hoá đơn của bạn hết ' + total + 'vnd')
+</script>
+</body>
+</html>
