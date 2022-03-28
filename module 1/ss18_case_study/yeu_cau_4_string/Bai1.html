@@ -6,7 +6,6 @@
 </head>
 <body>
 <script>
-    let abc = prompt('nhập 1 xâu')
     function Character(str) {
         str = str.toLowerCase();
         str = str.trim();
@@ -14,30 +13,39 @@
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] === " " && arr[i + 1] === " ") {
                 arr.splice(i, 1);
+                i--;
+            }
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " ") {
                 arr[i + 1] = arr[i + 1].toUpperCase();
                 arr[0] = arr[0].toUpperCase();
-                i--;
             }
         }
         return arr.join("");
     }
+
     function LongMax(str) {
         let a = []
         a = Character(str).split(" ")
         let max = a[0].length;
         let b = a[0];
-        for (let i=0;i<a.length;i++){
-            if (max<a[i].length){
-                max=a[i].length;
-                b=a[i];
+        for (let i = 0; i < a.length; i++) {
+            if (max < a[i].length) {
+                max = a[i].length;
+                b = a[i];
             }
         }
         return b;
     }
-    document.write(Character(abc)+'<br>')
-    document.write('từ dài nhất trong xâu là:' + LongMax(abc));
 
+    function Main() {
+        let str = prompt("nhập vào 1 chuỗi")
+        document.write(Character(str) + '<br>')
+        document.write('từ dài nhất trong xâu là:' + LongMax(str));
+    }
 
+    Main();
 </script>
 </body>
 </html>
