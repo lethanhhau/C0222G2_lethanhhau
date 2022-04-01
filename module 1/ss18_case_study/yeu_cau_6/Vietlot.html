@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng ứng dụng vietlot</title>
+</head>
+<body>
+<div>
+    <div>
+        <p id=result></p>
+    </div>
+    <button onclick="goMenu()">Mua vé</button>
+    <button>kết quả</button>
+</div>
+<script>
+    class Vietlot {
+        constructor(num1, num2, num3, num4, num5, num6, giaiThuong = "") {
+            this.num1 = num1;
+            this.num2 = num2;
+            this.num3 = num3;
+            this.num4 = num4;
+            this.num5 = num5;
+            this.num6 = num6;
+            this.giaiThuong = giaiThuong;
+        }
+
+        setNum1(so1) {
+            this.num1 = so1;
+        }
+
+        getNum1() {
+            return this.num1;
+        }
+
+        setNum2(so2) {
+            this.num2 = so2;
+        }
+
+        getNum2() {
+            return this.num2;
+        }
+
+        setNum3(so3) {
+            this.num3 = so3;
+        }
+
+        getNum3() {
+            return this.num3;
+        }
+
+        setNum4(so4) {
+            this.num4 = so4;
+        }
+
+        getNum4() {
+            return this.num4;
+        }
+
+        setNum5(so5) {
+            this.num5 = so5;
+        }
+
+        getNum5() {
+            return this.num5;
+        }
+
+        setNum6(so6) {
+            this.num6 = so6;
+        }
+
+        getNum6() {
+            return this.num6;
+        }
+
+        setGiaiThuong(giaiThuong) {
+            this.giaiThuong = giaiThuong;
+        }
+
+        getGiaiThuong() {
+            return this.giaiThuong;
+        }
+
+        getNumber() {
+            return [this.num1, this.num2, this.num3, this.num4, this.num5, this.num6];
+        }
+
+        getRanDomnumber() {
+            this.setNum1(Math.floor(Math.random() * 99));
+            this.setNum2(Math.floor(Math.random() * 99));
+            this.setNum3(Math.floor(Math.random() * 99));
+            this.setNum4(Math.floor(Math.random() * 99));
+            this.setNum5(Math.floor(Math.random() * 99));
+            this.setNum6(Math.floor(Math.random() * 99));
+        }
+
+        getKiemTra() {
+            return "vé số" + this.getNumber().join(" ") + this.giaiThuong
+        }
+    }
+
+    let arrVietLot = [];
+
+    function goMenu() {
+        let choson;
+        if (arrVietLot.length < 4) {
+            choson = parseInt(prompt("bạn có 2 lựa chọn \n" +
+                "1.bạn muốn tự chọn vé số \n" +
+                "2.bạn muốn hệ thống tự chọn"));
+            if (choson === 1) {
+                inputVietlot();
+            } else if (choson === 2) {
+                randomVietlot();
+            }
+        }else {
+            alert("bạn chỉ được mua 4 vé số")
+        }
+
+    }
+
+    function draVietlot(arr) {
+        let vietlot;
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+            str += "<input value='" + arr[i].getNum1() + "'>" +
+                "<input value='" + arr[i].getNum2() + "'>" +
+                "<input value='" + arr[i].getNum3() + "'>" +
+                "<input value='" + arr[i].getNum4() + "'>" +
+                "<input value='" + arr[i].getNum5() + "'>" +
+                "<input value='" + arr[i].getNum6() + "'>";
+        }
+        document.getElementById("result").innerHTML = str;
+    }
+
+    function randomVietlot() {
+        let vietlot = new Vietlot();
+        vietlot.getRanDomnumber();
+        arrVietLot.push(vietlot);
+        draVietlot(arrVietLot);
+
+    }
+
+    function inputVietlot() {
+        let arrnum = [];
+        for (let i = 0; i < 6; i++) {
+            arrnum[i] = parseInt(prompt("nhập vào số thư " + (i + 1) + " của vé số"));
+        }
+        let vietlot = new Vietlot(arrnum[0], arrnum[1], arrnum[2], arrnum[3], arrnum[4], arrnum[5]);
+        arrVietLot.push(vietlot);
+        draVietlot(arrVietLot);
+    }
+
+</script>
+</body>
+</html>
