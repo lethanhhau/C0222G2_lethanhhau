@@ -1,10 +1,44 @@
 package ss3_mang_va_phuong_thuc_trong_java.bai_tap;
 
+import java.util.Arrays;
 import java.util.Scanner;
 //xóa phần tử khỏi mảng.
 
 public class Bai1RemoveElementFromArray {
     public static void main(String[] args) {
+        int[] arr = new int[10];
+        arr[0] = 4;
+        arr[1] = 8;
+        arr[2] = 5;
+        arr[3] = 9;
+        arr[4] = 2;
+        System.out.println(Arrays.toString(arr));
+        Scanner sc = new Scanner(System.in);
+        System.out.print("nhập X là số cần xóa:");
+        int X = sc.nextInt();
+        int index = -1;
+        boolean check = false;
+        for (int i =0;i< arr.length;i++){
+            if (arr[i] == X){
+                index = i;
+                check = true;
+                break;
+            }
+        }
+        if (check) {
+            for (int i = index; i < arr.length - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+            System.out.println(Arrays.toString(arr));
+        }
+        else {
+            System.out.println(X + " không có trong mảng");
+        }
+    }
+}
+
+//cách 2: xóa phần tử khỏi mảng và trả về mảng mới có chiều dài = length -1;
+   /* public static void main(String[] args) {
         int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         Scanner sc = new Scanner(System.in);
         System.out.print("nhập số cần xoá X:");
@@ -41,4 +75,4 @@ public class Bai1RemoveElementFromArray {
         }
         return daySoMoi;
     }
-}
+}*/
