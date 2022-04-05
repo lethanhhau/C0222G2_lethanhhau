@@ -3,7 +3,7 @@ package ss2_vong_lap_trong_java.thuc_hanh;
 import java.util.Scanner;
 //Kiểm tra số nguyên tố.
 
-public class Bai1CheckingForPrimeNumbers {
+public class SS1CheckingForPrimeNumbers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("nhập số cần kiểm tra: ");

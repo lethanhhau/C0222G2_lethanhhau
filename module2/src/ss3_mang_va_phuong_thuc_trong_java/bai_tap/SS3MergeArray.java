@@ -4,7 +4,7 @@ package ss3_mang_va_phuong_thuc_trong_java.bai_tap;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Bai3MergeArray {
+public class SS3MergeArray {
     public static void main(String[] args) {
         int[] arr = new int[3];
         int[] arr1 = new int[2];

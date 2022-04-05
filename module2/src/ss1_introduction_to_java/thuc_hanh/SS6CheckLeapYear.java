@@ -3,7 +3,7 @@ package ss1_introduction_to_java.thuc_hanh;
 import java.util.Scanner;
 //Kiểm tra năm nhuận.
 
-public class Bai6CheckLeapYear {
+public class SS6CheckLeapYear {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập năm muốn kiểm tra: ");

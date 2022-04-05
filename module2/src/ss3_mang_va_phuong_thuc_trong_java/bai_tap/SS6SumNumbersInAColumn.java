@@ -3,7 +3,7 @@ package ss3_mang_va_phuong_thuc_trong_java.bai_tap;
 
 import java.util.Scanner;
 
-public class Bai6SumNumbersInAColumn {
+public class SS6SumNumbersInAColumn {
     public static void main(String[] args) {
         int[][]arr ={
                 {2,4,5,6},

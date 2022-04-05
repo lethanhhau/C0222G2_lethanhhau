@@ -1,7 +1,7 @@
 package ss3_mang_va_phuong_thuc_trong_java.thuc_hanh;
 //Tìm giá trị nhỏ nhất trong mảng sử dụng phương thức;
 
-public class bai5FindTheSmallestValue {
+public class SS5FindTheSmallestValue {
     public static void main(String[] args) {
         int[] arr= {2,8,6,1,4,6};
         int index = minValue(arr);

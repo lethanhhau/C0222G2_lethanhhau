@@ -3,7 +3,7 @@ package ss2_vong_lap_trong_java.thuc_hanh;
 import java.util.Scanner;
 //Tìm ước số chung lớn nhấtAssignment;
 
-public class Bai3FindGreatestCommonDivisor {
+public class SS3FindGreatestCommonDivisor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("nhập số a: ");

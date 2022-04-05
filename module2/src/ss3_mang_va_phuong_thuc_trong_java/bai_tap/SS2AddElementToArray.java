@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 //thêm phần tử vào mảng
 
-public class Bai2AddElementToArray {
+public class SS2AddElementToArray {
     public static void main(String[] args) {
         int[] arr = new int[10];
         arr[0] = 10;

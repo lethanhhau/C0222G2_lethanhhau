@@ -1,7 +1,7 @@
 package ss1_introduction_to_java.thuc_hanh;
 //Khai báo và sử dụng biến
 
-public class Bai2DeclareAndUseVariables {
+public class SS2DeclareAndUseVariables {
     public static void main(String[] args){
         int i = 10;
         float f = 20.5f;

@@ -3,7 +3,7 @@ package ss2_vong_lap_trong_java.bai_tap;
 import java.util.Scanner;
 //Hiển thị các loại hình.
 
-public class Bai1ShowTypes {
+public class SS1ShowTypes {
     public static void main(String[] args) {
         int choice;
         do {

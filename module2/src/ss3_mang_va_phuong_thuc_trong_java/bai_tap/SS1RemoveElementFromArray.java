@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 //xóa phần tử khỏi mảng.
 
-public class Bai1RemoveElementFromArray {
+public class SS1RemoveElementFromArray {
     public static void main(String[] args) {
         int[] arr = new int[10];
         arr[0] = 4;

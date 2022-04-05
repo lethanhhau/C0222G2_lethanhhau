@@ -3,7 +3,7 @@ package ss1_introduction_to_java.thuc_hanh;
 import java.util.Scanner;
 //Giải phương trình bậc nhất.
 
-public class Bai4SolvingFirstDegreeEquations {
+public class SS4SolvingFirstDegreeEquations {
     public static void main(String[] args){
         float a,b;
         Scanner scanner =new  Scanner(System.in);

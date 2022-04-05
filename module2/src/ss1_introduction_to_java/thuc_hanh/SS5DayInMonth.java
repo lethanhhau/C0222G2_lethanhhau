@@ -3,7 +3,7 @@ package ss1_introduction_to_java.thuc_hanh;
 import java.util.Scanner;
 //Tính số ngày trong tháng
 
-public class Bai5DayInMonth {
+public class SS5DayInMonth {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("nhập tháng: ");

@@ -4,7 +4,7 @@ import java.util.Scanner;
 //Tìm phần tử lớn nhất trong mảng hai chiều.
 
 
-public class Bai4LargestElement {
+public class SS4LargestElement {
     public static void main(String[] args) {
         float[][] arr = {
                 {6, 2, 7},

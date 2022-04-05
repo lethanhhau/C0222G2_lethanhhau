@@ -1,6 +1,6 @@
 package ss2_vong_lap_trong_java.bai_tap;
 //Hiển thị các số nguyên tố nhỏ hơn 100.
-public class Bai3ShowPrimesLessThan100 {
+public class SS3ShowPrimesLessThan100 {
     public static void main(String[] args) {
         String number = "";
         for (int i = 2; i < 100; i++) {

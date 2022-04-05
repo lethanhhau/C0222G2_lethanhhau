@@ -3,7 +3,7 @@ package ss2_vong_lap_trong_java.thuc_hanh;
 import java.util.Scanner;
 //Thiết kế menu cho ứng dụng.
 
-public class Bai4MenuDesign {
+public class SS4MenuDesign {
     public static void main(String[] args) {
         int choice;
         Scanner sc = new Scanner(System.in);

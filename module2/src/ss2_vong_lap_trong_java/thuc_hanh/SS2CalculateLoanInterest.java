@@ -3,7 +3,7 @@ package ss2_vong_lap_trong_java.thuc_hanh;
 import java.util.Scanner;
 //Ứng dụng tính tiền lãi cho vay
 
-public class Bai2CalculateLoanInterest {
+public class SS2CalculateLoanInterest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("nhập số tiền gửi: ");

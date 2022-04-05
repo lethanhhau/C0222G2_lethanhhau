@@ -3,7 +3,7 @@ package ss1_introduction_to_java.thuc_hanh;
 import java.util.Scanner;
 //Tính chỉ số cân nặng của cơ thể.
 
-public class Bai7BodyWeightIndex {
+public class SS7BodyWeightIndex {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("nhập cân nặng: ");

@@ -3,7 +3,7 @@ package ss1_introduction_to_java.bai_tap;
 import java.util.Scanner;
 //Chuyển đổi tiền tệ.
 
-public class Bai3CurrencyConversion {
+public class SS3CurrencyConversion {
     public static void main(String[] args) {
         Scanner money = new Scanner(System.in);
         System.out.print("Nhập tiền usd muốn chuyển :");
