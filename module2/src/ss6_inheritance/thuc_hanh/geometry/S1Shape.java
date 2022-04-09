@@ -7,6 +7,9 @@ public class S1Shape {
 
     }
 
+    public S1Shape(String color){
+        this.color = color;
+    }
     public String getColor() {
         return color;
     }
