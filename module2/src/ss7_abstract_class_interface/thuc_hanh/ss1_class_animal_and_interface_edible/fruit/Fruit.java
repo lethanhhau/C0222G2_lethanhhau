@@ -1,0 +1,6 @@
+package ss7_abstract_class_interface.thuc_hanh.ss1_class_animal_and_interface_edible.fruit;
+
+import ss7_abstract_class_interface.thuc_hanh.ss1_class_animal_and_interface_edible.edible.InterfaceEdible;
+
+public abstract class Fruit implements InterfaceEdible { }
+

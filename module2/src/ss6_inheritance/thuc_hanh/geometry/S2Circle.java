@@ -1,30 +1,30 @@
 package ss6_inheritance.thuc_hanh.geometry;
 
 public class S2Circle extends S1Shape {
-    public double darius = 1.0;
+    public double radius = 1.0;
     public S2Circle(){
 
     }
-    public S2Circle(Double darius){
-        this.darius = darius;
+    public S2Circle(Double radius){
+        this.radius = radius;
     }
-    public S2Circle(Double darius,String color,boolean filled){
+    public S2Circle(Double radius,String color,boolean filled){
         super(color, filled);
-        this.darius = darius;
+        this.radius = radius;
     }
 
-    public double getDarius() {
-        return darius;
+    public double getRadius() {
+        return radius;
     }
 
-    public void setDarius(double darius) {
-        this.darius = darius;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
-    public double getarea(){
-        return (this.darius*this.darius)*Math.PI;
+    public double getArea(){
+        return (this.radius*this.radius)*Math.PI;
     }
     public double getPerimeter(){
-        return (2*this.darius)*Math.PI;
+        return (2*this.radius)*Math.PI;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class S2Circle extends S1Shape {
         return "S2Circle{" +
                 "color='" + color + '\'' +
                 ", filled=" + filled +
-                ", darius=" + darius +
+                ", darius=" + radius +
                 '}';
     }
 }

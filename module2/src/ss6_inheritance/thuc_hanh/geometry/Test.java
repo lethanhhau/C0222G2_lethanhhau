@@ -14,7 +14,7 @@ public class Test {
         System.out.println(circle.toString());
         circle = new S2Circle(4.0,"red",false);
         System.out.println(circle.toString());
-        System.out.println("Area = "+circle.getarea());
+        System.out.println("Area = "+circle.getArea());
         System.out.println("Perimeter = "+circle.getPerimeter());
         System.out.println("============================================");
 
