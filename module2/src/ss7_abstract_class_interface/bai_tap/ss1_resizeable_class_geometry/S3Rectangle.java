@@ -1,16 +1,16 @@
-package ss6_inheritance.thuc_hanh.geometry;
+package ss7_abstract_class_interface.bai_tap.ss1_resizeable_class_geometry;
 
-public class S3Rectangle extends S1Shape {
+public class S3Rectangle extends Shape {
     public double width =1.0;
     public double length =1.0;
     public S3Rectangle(){
 
     }
-   public S3Rectangle(double width,double length){
+   public S3Rectangle(double width, double length){
         this.width = width;
         this.length = length;
    }
-   public S3Rectangle(double width,double length,String color,boolean filled){
+   public S3Rectangle(double width, double length, String color, boolean filled){
         super(color,filled);
         this.width = width;
         this.length = length;
@@ -45,6 +45,12 @@ public class S3Rectangle extends S1Shape {
                 ", length=" + length + "\n" +
                 super.toString()+
                 '}';
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.width *= percent;
+        this.length *= percent;
     }
 
 }

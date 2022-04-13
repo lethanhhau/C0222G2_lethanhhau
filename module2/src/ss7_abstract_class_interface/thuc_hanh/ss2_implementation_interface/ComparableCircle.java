@@ -7,6 +7,7 @@ public class ComparableCircle extends S2Circle implements Comparable<ComparableC
     public ComparableCircle() {
     }
 
+
     public ComparableCircle(double radius) {
         super(radius);
     }

@@ -1,4 +1,4 @@
-package ss6_inheritance.thuc_hanh.geometry;
+package ss6_inheritance.bai_tap.ss4_class_triangle;
 
 public abstract class S1Shape {
     public String color = "green";

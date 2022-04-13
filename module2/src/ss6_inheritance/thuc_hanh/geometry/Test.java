@@ -4,9 +4,11 @@ import java.awt.*;
 
 public class Test {
     public static void main(String[] args) {
-        S1Shape shape = new S1Shape();
+        S1Shape shape = new S1Shape() {
+        };
         System.out.println(shape.toString());
-        shape = new S1Shape("blue",true);
+        shape = new S1Shape("blue", true) {
+        };
         System.out.println(shape.toString());
         System.out.println("============================================");
 

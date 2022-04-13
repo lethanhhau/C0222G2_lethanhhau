@@ -1,19 +1,19 @@
-package ss6_inheritance.thuc_hanh.geometry;
+package ss7_abstract_class_interface.bai_tap.ss1_resizeable_class_geometry;
 
-public abstract class S1Shape {
+public abstract class Shape implements Resizeable  {
     public String color = "green";
     public boolean filled = true;
-    public S1Shape(){
+    public Shape(){
 
     }
 
-    public S1Shape(String color){
+    public Shape(String color){
         this.color = color;
     }
     public String getColor() {
         return color;
     }
-    public S1Shape(String color, boolean filled){
+    public Shape(String color, boolean filled){
         this.color = color;
         this.filled = filled;
     }
@@ -37,4 +37,8 @@ public abstract class S1Shape {
                 + (isFilled() ? "filled" : "not filled");
     }
 
+    @Override
+    public void resize(double percent) {
+
+    }
 }

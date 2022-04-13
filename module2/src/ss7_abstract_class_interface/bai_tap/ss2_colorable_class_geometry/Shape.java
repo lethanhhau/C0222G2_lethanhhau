@@ -1,22 +1,21 @@
-package ss6_inheritance.thuc_hanh.geometry;
+package ss7_abstract_class_interface.bai_tap.ss2_colorable_class_geometry;
 
-public abstract class S1Shape {
-    public String color = "green";
-    public boolean filled = true;
-    public S1Shape(){
+public class Shape implements Colorable {
+    private String color = "green";
+    private boolean filled = true;
 
+    public Shape() {
     }
 
-    public S1Shape(String color){
-        this.color = color;
-    }
-    public String getColor() {
-        return color;
-    }
-    public S1Shape(String color, boolean filled){
+    public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
+
+    public String getColor() {
+        return color;
+    }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -37,4 +36,8 @@ public abstract class S1Shape {
                 + (isFilled() ? "filled" : "not filled");
     }
 
+    @Override
+    public String howToColor() {
+        return null;
+    }
 }
