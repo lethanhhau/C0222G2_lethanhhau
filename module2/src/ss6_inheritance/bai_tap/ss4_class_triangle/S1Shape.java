@@ -1,8 +1,8 @@
 package ss6_inheritance.bai_tap.ss4_class_triangle;
 
 public abstract class S1Shape {
-    public String color = "green";
-    public boolean filled = true;
+    private String color = "green";
+    boolean filled = true;
     public S1Shape(){
 
     }

@@ -1,8 +1,8 @@
 package ss6_inheritance.bai_tap.ss3_class_point_and_moveable_point;
 
 public class MoveablePoint extends Point {
-    public float xSpeed;
-    public float ySpeed;
+    private float xSpeed;
+    private float ySpeed;
 
     public MoveablePoint() {
 

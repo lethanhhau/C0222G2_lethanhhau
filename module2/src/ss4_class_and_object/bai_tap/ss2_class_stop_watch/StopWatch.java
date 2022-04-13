@@ -1,7 +1,8 @@
 package ss4_class_and_object.bai_tap.ss2_class_stop_watch;
 
 public class StopWatch {
-        long startTime,endTime;
+       private long startTime;
+       private long endTime;
     public StopWatch(){
 
     }

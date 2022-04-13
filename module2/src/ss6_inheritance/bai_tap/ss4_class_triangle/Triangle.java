@@ -1,9 +1,11 @@
 package ss6_inheritance.bai_tap.ss4_class_triangle;
 
+import ss6_inheritance.thuc_hanh.geometry.S1Shape;
+
 public class Triangle extends S1Shape {
-    private double side1;
-    private double side2;
-    private double side3;
+    public double side1;
+    public double side2;
+    public double side3;
     public Triangle(){
 
     }

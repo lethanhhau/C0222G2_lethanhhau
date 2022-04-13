@@ -10,7 +10,7 @@ public class Test {
         System.out.println("before: \n " + Arrays.toString(shapes));
         for (Shape shap : shapes) {
             if (shap != null) {
-                shap.resize((int) ((Math.random() * 99) + 1));
+                shap.resize((int) (Math.random() * 100));
             }
         }
         System.out.println("After: \n" + Arrays.toString(shapes));

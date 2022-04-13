@@ -18,14 +18,14 @@ public class Cylinder extends Circle{
         this.height = height;
     }
     public double getVolume(){
-        return Math.PI*Math.pow(radius,2)*height;
+        return Math.PI*Math.pow(getRadius(),2)*height;
     }
 
     @Override
     public String toString() {
         return "Cylinder{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
+                "radius=" + getRadius() +
+                ", color='" + getColor() + '\'' +
                 ", height=" + height +
                 '}';
     }
