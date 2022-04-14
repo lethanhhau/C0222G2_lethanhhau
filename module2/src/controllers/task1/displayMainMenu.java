@@ -1,6 +1,6 @@
 package controllers.task1;
 
-import controllers.task2.Vila;
+import controllers.task2.the_infrastructure.Vila;
 
 public class displayMainMenu {
     public static void main(String[] args) {
