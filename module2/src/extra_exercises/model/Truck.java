@@ -1,6 +1,6 @@
 package extra_exercises.model;
 
-import extra_exercises.service.Transport;
+import java.util.Scanner;
 
 public class Truck extends Transport {
     private double tonnage;
@@ -27,29 +27,18 @@ public class Truck extends Transport {
     }
 
     @Override
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        super.input();
+        System.out.print("Enter seats number: ");
+        this.tonnage = Double.parseDouble(sc.nextLine());
+    }
+
+    @Override
     public String toString() {
         return "Truck{" +
+                super.toString() +
                 "tonnage=" + tonnage +
                 '}';
-    }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void display() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void search() {
-
     }
 }

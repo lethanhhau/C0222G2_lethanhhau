@@ -1,10 +1,12 @@
-package extra_exercises.service;
+package extra_exercises.model;
 
-public abstract class Transport implements IService {
-    public String seaOfControl;
-    public String manufacturersName;
-    public int yearOfManufacture;
-    public String owner;
+import java.util.Scanner;
+
+public abstract class Transport {
+    private String seaOfControl;
+    private String manufacturersName;
+    private int yearOfManufacture;
+    private String owner;
 
     public Transport() {
 
@@ -16,6 +18,7 @@ public abstract class Transport implements IService {
         this.yearOfManufacture = yearOfManufacture;
         this.owner = owner;
     }
+
 
     public String getSeaOfControl() {
         return seaOfControl;
@@ -47,6 +50,19 @@ public abstract class Transport implements IService {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter sea control: ");
+        this.seaOfControl = sc.nextLine();
+        System.out.println("Enter manufacturers Name: ");
+        this.manufacturersName = sc.nextLine();
+        System.out.print("Enter manufacturer year: ");
+        this.yearOfManufacture = Integer.parseInt(sc.nextLine());
+        System.out.print("Enter owner: ");
+        this.owner = sc.nextLine();
     }
 
     @Override

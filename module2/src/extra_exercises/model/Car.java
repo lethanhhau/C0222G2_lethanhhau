@@ -1,11 +1,14 @@
 package extra_exercises.model;
 
-import extra_exercises.service.Transport;
-import ss10_list.bai_tap.array_list.MyArrayList;
+import java.util.Scanner;
 
 public class Car extends Transport {
     private int numberOfSeats;
     private String vehicleType;
+
+    public Car(){
+
+    }
 
     public Car(String seaOfControl, String manufacturersName, int yearOfManufacture, String owner, int numberOfSeats, int vehicleType){
 
@@ -39,29 +42,21 @@ public class Car extends Transport {
     }
 
     @Override
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        super.input();
+        System.out.print("Enter seats number: ");
+        this.numberOfSeats = Integer.parseInt(sc.nextLine());
+        System.out.print("Enter vehicle type: ");
+        this.vehicleType = sc.nextLine();
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
+                super.toString() +
                 "numberOfSeats=" + getNumberOfSeats() +
                 ", vehicleType='" + getVehicleType() + '\'' +
                 '}';
-    }
-
-    @Override
-    public void add() {
-
-    }
-    @Override
-    public void display() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void search() {
-
     }
 }

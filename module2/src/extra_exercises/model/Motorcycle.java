@@ -1,6 +1,6 @@
 package extra_exercises.model;
 
-import extra_exercises.service.Transport;
+import java.util.Scanner;
 
 public class Motorcycle extends Transport {
     private double wattage;
@@ -25,31 +25,20 @@ public class Motorcycle extends Transport {
     public void setWattage(double wattage) {
         this.wattage = wattage;
     }
+    @Override
+    public void input() {
+        Scanner sc = new Scanner(System.in);
+        super.input();
+        System.out.print("Enter seats number: ");
+        this.wattage = Double.parseDouble(sc.nextLine());
+    }
 
     @Override
     public String toString() {
         return "Motorcycle{" +
+                super.toString() +
                 "wattage=" + wattage +
                 '}';
     }
 
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void display() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void search() {
-
-    }
 }
