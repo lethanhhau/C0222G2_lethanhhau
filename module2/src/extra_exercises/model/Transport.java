@@ -57,7 +57,7 @@ public abstract class Transport {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter sea control: ");
         this.seaOfControl = sc.nextLine();
-        System.out.println("Enter manufacturers Name: ");
+        System.out.print("Enter manufacturers Name: ");
         this.manufacturersName = sc.nextLine();
         System.out.print("Enter manufacturer year: ");
         this.yearOfManufacture = Integer.parseInt(sc.nextLine());

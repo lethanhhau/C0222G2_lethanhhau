@@ -16,24 +16,27 @@ public class MainController {
                         "2.Display Vehicle" + "\n" +
                         "3.Delete Vehicle" + "\n" +
                         "4.Search Vehicle" + "\n" +
-                        "5.Exit" + "\n" +
-                        "Enter the choise: ");
+                        "0.Exit" + "\n" +
+                        "Enter choise: ");
                 choice = Integer.parseInt(sc.nextLine());
 
                 switch (choice) {
                     case 1:
                         transportManager.add();
+                        break;
                     case 2:
                         transportManager.display();
+                        break;
                     case 3:
                         transportManager.delete();
+                        break;
                     case 4:
                         transportManager.search();
-                    case 5:
+                        break;
+                    case 0:
                         check = false;
                         break;
                     default:
-                        check = false;
                         break;
                 }
             } while (check);
