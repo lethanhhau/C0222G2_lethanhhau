@@ -5,5 +5,4 @@ public interface IService {
     void display();
     void delete();
     void search();
-
 }

@@ -9,10 +9,6 @@ public class Car extends Transport {
     public Car(){
 
     }
-
-    public Car(String seaOfControl, String manufacturersName, int yearOfManufacture, String owner, int numberOfSeats, int vehicleType){
-
-    }
     public Car(int numberOfSeats,String vehicleType){
         this.numberOfSeats = numberOfSeats;
         this.vehicleType = vehicleType;
