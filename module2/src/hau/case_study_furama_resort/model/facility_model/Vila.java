@@ -1,5 +1,7 @@
 package hau.case_study_furama_resort.model.facility_model;
 
+import java.util.Scanner;
+
 public class Vila extends Facility{
     private String roomStandard;
     private Double swimmingPoolArea;
@@ -46,13 +48,32 @@ public class Vila extends Facility{
         this.numberOfFloors = numberOfFloors;
     }
 
+    public void input(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter serviceName: ");
+        String serviceName = scanner.nextLine();
+        System.out.print("enter usableArea: ");
+        String usableArea = scanner.nextLine();
+        System.out.print("enter rentalCosts: ");
+        Double rentalCosts = Double.parseDouble(scanner.nextLine());
+        System.out.print("enter maximumPerson: ");
+        int maximumPerson = Integer.parseInt(scanner.nextLine());
+        System.out.print("enter rentalType: ");
+        String rentalType = scanner.nextLine();
+        System.out.print("enter roomStandard: ");
+        String roomStandard = scanner.nextLine();
+        System.out.print("enter swimmingPoolArea: ");
+        Double swimmingPoolArea = Double.parseDouble(scanner.nextLine());
+        System.out.print("enter numberOfFloors: ");
+        int numberOfFloors = Integer.parseInt(scanner.nextLine());
+    }
+
     @Override
     public String toString() {
-        return "Vila{" +
+        return
                 super.toString() +
-                "roomStandard='" + roomStandard + '\'' +
-                ", swimmingPoolArea=" + swimmingPoolArea +
-                ", numberOfFloors=" + numberOfFloors +
-                '}';
+                ", roomStandard= " + roomStandard +
+                ", swimmingPoolArea= " + swimmingPoolArea +
+                ", numberOfFloors= " + numberOfFloors ;
     }
 }

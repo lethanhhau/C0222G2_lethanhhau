@@ -13,9 +13,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     {
         Employee employee1 = new Employee("le thanh hau", "12/8/95", "nam", 1,
-                847362, "email@.com", "gda", "đại học", "giám đốc1", 100000000d);
+                848776545, "email@.com", "gda", "đại học", "giám đốc1", 100000000d);
         Employee employee2 = new Employee("Trần phương", "23/2/99", "nam", 2,
-                536575, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d);
+                847686575, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d);
         employees.add(employee1);
         employees.add(employee2);
     }

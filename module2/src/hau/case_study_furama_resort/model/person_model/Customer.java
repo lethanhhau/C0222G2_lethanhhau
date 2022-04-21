@@ -47,11 +47,10 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "Customer: " +
                 super.toString() +
-                "customerCode='" + customerCode + '\'' +
-                ", typeOfGuest='" + typeOfGuest + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+                "customerCode= " + customerCode +
+                ", typeOfGuest= " + typeOfGuest +
+                ", address= " + address;
     }
 }

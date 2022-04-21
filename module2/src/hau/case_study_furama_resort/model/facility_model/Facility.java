@@ -1,5 +1,7 @@
 package hau.case_study_furama_resort.model.facility_model;
 
+import java.util.Scanner;
+
 public abstract class Facility {
     private String serviceName;
     private String usableArea;
@@ -58,14 +60,27 @@ public abstract class Facility {
         this.rentalType = rentalType;
     }
 
+  public void input(){
+      Scanner scanner = new Scanner(System.in);
+      System.out.print("enter serviceName: ");
+      String serviceName = scanner.nextLine();
+      System.out.print("enter usableArea: ");
+      String usableArea = scanner.nextLine();
+      System.out.print("enter rentalCosts: ");
+      Double rentalCosts = Double.parseDouble(scanner.nextLine());
+      System.out.print("enter maximumPerson: ");
+      int maximumPerson = Integer.parseInt(scanner.nextLine());
+      System.out.print("enter rentalType: ");
+      String rentalType = scanner.nextLine();
+
+  }
+
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
-                ", usableArea='" + usableArea + '\'' +
+        return "serviceName= " + serviceName +
+                ", usableArea= " + usableArea +
                 ", rentalCosts=" + rentalCosts +
-                ", maximumPerson=" + maximumPerson +
-                ", rentalType=" + rentalType +
-                '}';
+                ", maximumPerson= " + maximumPerson +
+                ", rentalType= " + rentalType;
     }
 }

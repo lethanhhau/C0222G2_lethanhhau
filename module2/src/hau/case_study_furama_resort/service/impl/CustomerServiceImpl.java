@@ -1,16 +1,16 @@
 package hau.case_study_furama_resort.service.impl;
 
 import hau.case_study_furama_resort.model.person_model.Customer;
-import hau.case_study_furama_resort.model.person_model.Employee;
 import hau.case_study_furama_resort.service.ICustomerService;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ICustomerService {
     private Scanner scanner = new Scanner(System.in);
-    public static List<Customer> customers = new ArrayList<>();
+    public static List<Customer> customers = new LinkedList<>();
 
     {
         Customer customer1 = new Customer("le van A", "6/8/1996", "nam", 1242,
