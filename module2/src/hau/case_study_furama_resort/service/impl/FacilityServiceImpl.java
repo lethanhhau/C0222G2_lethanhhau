@@ -11,6 +11,7 @@ import java.util.*;
 public class FacilityServiceImpl implements IFacilityService {
     private Scanner scanner = new Scanner(System.in);
     private static Map<Facility, Integer> facilities = new LinkedHashMap<Facility, Integer>();
+    private static List<Facility> maintenancefacilities = new ArrayList<>();
 
 
     {
@@ -38,11 +39,25 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public void add() {
-
+    public void add(Facility facility) {
+        Set<Facility> facilitySet = facilities.keySet();
+        if (facilities.isEmpty()){
+            facilities.put(facility,1);
+        }else {
+            boolean check = true;
+            for (Facility key:facilitySet) {
+                if (facility.equals(key)){
+                    maintenanceCheck(key);
+                    facilities.put(key,facilities.get(key)+1);
+                    check = false;
+                    break;
+                }
+            }
+            if (check){
+                facilities.put(facility,1);
+            }
+        }
     }
-
-
 
     @Override
     public void addHouse() {
@@ -64,7 +79,7 @@ public class FacilityServiceImpl implements IFacilityService {
         int numberOfFloors = Integer.parseInt(scanner.nextLine());
         Vila vila = new Vila(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard,
                 swimmingPoolArea, numberOfFloors);
-        facilities.put(vila, 7);
+        facilities.put(vila,null);
 
     }
 
@@ -83,7 +98,7 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.print("enter freeServiceAttached: ");
         String freeServiceAttached = scanner.nextLine();
         Room room = new Room(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, freeServiceAttached);
-        facilities.put(room, 0);
+        facilities.put(room, null);
     }
 
     @Override
@@ -108,18 +123,31 @@ public class FacilityServiceImpl implements IFacilityService {
 
         Vila vila = new Vila(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard, swimmingPoolArea,
                 numberOfFloors);
-        facilities.put(vila, 0);
+        facilities.put(vila, null);
     }
 
     @Override
     public void displayListFacilityMaintenance() {
-
+        for (Facility facility:maintenancefacilities) {
+            System.out.println(facility);
+        }
 
     }
 
-
+    @Override
+    public void maintenanceCheck(Facility facility) {
+        if (facilities.get(facility)>=5){
+            System.out.println("Service is under maintenance!");
+            maintenancefacilities.add(facility);
+            facilities.put(facility,0);
+        }
+    }
     @Override
     public void edit() {
+
+    }
+    @Override
+    public void add() {
 
     }
 

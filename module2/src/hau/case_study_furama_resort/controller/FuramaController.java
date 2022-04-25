@@ -49,7 +49,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
-                    System.out.println("chon lai di thang ngu lam deo gi co so " + choice);
+                    System.out.println("Choice again!");
+                    break;
             }
         }
     }
@@ -79,6 +80,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
+                    System.out.println("Choice again!");
+                    break;
             }
         }
     }
@@ -106,6 +109,9 @@ public class FuramaController {
                 case 4:
                     check = false;
                     break;
+                default:
+                    System.out.println("Choice again!");
+                    break;
             }
         }
 
@@ -128,10 +134,13 @@ public class FuramaController {
                     choiceFacilityServiceImpl();
                     break;
                 case 3:
-
+                    iFacilityService.displayListFacilityMaintenance();
                     break;
                 case 4:
                     check = false;
+                    break;
+                default:
+                    System.out.println("Choice again!");
                     break;
             }
         }
@@ -158,6 +167,9 @@ public class FuramaController {
                     iFacilityService.addVila();
                 case 4:
                     check = false;
+                    break;
+                default:
+                    System.out.println("Choice again!");
                     break;
             }
         }
