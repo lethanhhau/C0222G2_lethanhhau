@@ -12,9 +12,9 @@ public class Room extends Facility{
         this.freeServiceAttached = freeServiceAttached;
     }
 
-    public Room(String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
+    public Room(String serviceCode,String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
                 String freeServiceAttached) {
-        super(serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
+        super(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
         this.freeServiceAttached = freeServiceAttached;
     }
 
@@ -28,6 +28,8 @@ public class Room extends Facility{
 
     public void input(){
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter serviceCode: ");
+        String serviceCode = scanner.nextLine();
         System.out.print("enter serviceName: ");
         String serviceName = scanner.nextLine();
         System.out.print("enter usableArea: ");

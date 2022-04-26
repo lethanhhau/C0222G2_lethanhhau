@@ -3,46 +3,29 @@ package module2.ss17_binary_file_and_serialization.bai_tap.ss1_product_manager_s
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-        private final static String FILE_NAME ="src/module2/ss17_binary_file_and_serialization/bai_tap/ss1_product_" +
-                "manager_saves_to_binary_files/Product_Management.csv";
+
 
     public static void main(String[] args) {
-        List<ProductManagement> productManagements = new ArrayList<>();
-        productManagements.add(new ProductManagement("A1234","haohao",
-                "media",5000d));
-        productManagements.add(new ProductManagement("B1234","honda",
-                "honda",50000000d));
-        productManagements.add(new ProductManagement("C1234","kfc",
-                "kfc",50000d));
-        writerToFile(FILE_NAME,productManagements);
-        List<ProductManagement> productManagementDataFromFile = readDataFromFile(FILE_NAME);
-    }
-
-    private static void writerToFile(String fileName, List<ProductManagement> productManagements) {
-        try {
-            FileOutputStream fos = new FileOutputStream(fileName);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(productManagements);
-            oos.close();
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        Scanner scanner = new Scanner(System.in);
+        boolean check = true;
+        while (check) {
+            System.out.print("1.Display ProductManagements \n" +
+                    "2.Add new ProductManagements \n" +
+                    "3.Search ProductManagements \n" +
+                    "4.Exit \n" +
+                    "Enter Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+            }
         }
     }
-    public static List<ProductManagement> readDataFromFile(String path){
-        List<ProductManagement> productManagements = new ArrayList<>();
-        try{
-            FileInputStream fis = new FileInputStream(path);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            productManagements = (List<ProductManagement>) ois.readObject();
-            fis.close();
-            ois.close();
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        return productManagements;
-        }
-    }
-
+}

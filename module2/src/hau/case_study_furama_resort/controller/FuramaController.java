@@ -19,15 +19,14 @@ public class FuramaController {
         boolean check = true;
         while (check) {
             Scanner sc = new Scanner(System.in);
-            System.out.print(
-                    "---Resort Management Application Furama-- \n" +
-                            "1.Employee Management \n" +
-                            "2.Customer Management\n" +
-                            "3.Facility Management \n" +
-                            "4.Booking Management \n" +
-                            "5.Promotion Management \n" +
-                            "6.Exit \n" +
-                            "enter choice: ");
+            System.out.print("---Resort Management Application Furama-- \n" +
+                    "1.Employee Management \n" +
+                    "2.Customer Management\n" +
+                    "3.Facility Management \n" +
+                    "4.Booking Management \n" +
+                    "5.Promotion Management \n" +
+                    "6.Exit \n" +
+                    "enter choice: ");
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
@@ -58,12 +57,11 @@ public class FuramaController {
     public void choiceEmployees() {
         boolean check = true;
         while (check) {
-            System.out.print(
-                    "1	Display list employees \n" +
-                            "2	Add new employee \n" +
-                            "3	Edit employee \n" +
-                            "4	Return main menu \n" +
-                            "Enter choice: ");
+            System.out.print("1	Display list employees \n" +
+                    "2	Add new employee \n" +
+                    "3	Edit employee \n" +
+                    "4	Return main menu \n" +
+                    "Enter choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
@@ -89,12 +87,11 @@ public class FuramaController {
     public void choiceCustomer() {
         boolean check = true;
         while (check) {
-            System.out.print(
-                    "1.Display list customers\n" +
-                            "2.Add new customer\n" +
-                            "3.Edit customer\n" +
-                            "4.Return main menu\n" +
-                            "Enter choi: ");
+            System.out.print("1.Display list customers\n" +
+                    "2.Add new customer\n" +
+                    "3.Edit customer\n" +
+                    "4.Return main menu\n" +
+                    "Enter choi: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -116,15 +113,15 @@ public class FuramaController {
         }
 
     }
-    public void choiceFacility(){
+
+    public void choiceFacility() {
         boolean check = true;
         while (check) {
-            System.out.print(
-                    "1.Display list facility\n" +
-                            "2.Add new facility\n" +
-                            "3.Display list facility maintenance\n" +
-                            "4.Return main menu\n" +
-                            "Enter choi: ");
+            System.out.print("1.Display list facility\n" +
+                    "2.Add new facility\n" +
+                    "3.Display list facility maintenance\n" +
+                    "4.Return main menu\n" +
+                    "Enter choi: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -146,17 +143,16 @@ public class FuramaController {
         }
     }
 
-    public void choiceFacilityServiceImpl(){
+    public void choiceFacilityServiceImpl() {
         boolean check = true;
-        while (check){
-            System.out.print(
-                    "1.	Add New Villa \n" +
-                            "2.	Add New House \n" +
-                            "3.	Add New Room \n" +
-                            "4.	Back to menu \n" +
-                            "Enter Choice: ");
+        while (check) {
+            System.out.print("1.Add New Villa \n" +
+                    "2.	Add New House \n" +
+                    "3.	Add New Room \n" +
+                    "4.	Back to menu \n" +
+                    "Enter Choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            switch (choice) {
                 case 1:
                     iFacilityService.addHouse();
                     break;
@@ -174,18 +170,19 @@ public class FuramaController {
             }
         }
     }
-    public void choiceBooking(){
+
+    public void choiceBooking() {
         boolean check = true;
-        while (check){
+        while (check) {
             System.out.print(" 1.Add new booking \n" +
                     "2.Display list booking \n" +
                     "3.Create new constracts \n" +
                     "4.Display list contracts \n" +
                     "5.Edit contracts \n" +
-                    "6.Return main menu \n"+
+                    "6.Return main menu \n" +
                     "Enter choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            switch (choice) {
                 case 1:
                 case 2:
                 case 3:
@@ -197,15 +194,16 @@ public class FuramaController {
             }
         }
     }
-    public void choicePromotion(){
+
+    public void choicePromotion() {
         boolean check = true;
-        while (check){
+        while (check) {
             System.out.print("1.Display list customers use service\n" +
                     "2.Display list customers get voucher\n" +
                     "3.Return main menu \n" +
                     "Enter choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            switch (choice) {
                 case 1:
                 case 2:
                 case 3:

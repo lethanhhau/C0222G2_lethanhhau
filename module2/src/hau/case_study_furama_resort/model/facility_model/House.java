@@ -14,9 +14,9 @@ public class House extends Facility{
         this.numberOfFloors = numberOfFloors;
     }
 
-    public House(String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
+    public House(String serviceCode,String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
                  String roomStandard, Integer numberOfFloors) {
-        super(serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
+        super(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
         this.roomStandard = roomStandard;
         this.numberOfFloors = numberOfFloors;
     }
@@ -39,6 +39,8 @@ public class House extends Facility{
 
     public void input(){
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter serviceCode: ");
+        String serviceCode = scanner.nextLine();
         System.out.print("enter serviceName: ");
         String serviceName = scanner.nextLine();
         System.out.print("enter usableArea: ");

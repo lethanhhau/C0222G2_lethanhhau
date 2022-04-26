@@ -1,5 +1,9 @@
 package hau.case_study_furama_resort.service.impl;
 
+import hau.case_study_furama_resort.common.validate.ValidateFacility;
+import hau.case_study_furama_resort.common.validate.ValidateHouse;
+import hau.case_study_furama_resort.common.validate.ValidateRom;
+import hau.case_study_furama_resort.common.validate.ValidateVila;
 import hau.case_study_furama_resort.model.facility_model.Facility;
 import hau.case_study_furama_resort.model.facility_model.House;
 import hau.case_study_furama_resort.model.facility_model.Room;
@@ -16,17 +20,17 @@ public class FacilityServiceImpl implements IFacilityService {
 
     {
 
-        facilities.put(new House("house1", "200m", 600d, 6,
+        facilities.put(new House("SVHO-1234","house1", "200m", 600d, 6,
                 "theo năm", "3*", 2), 1);
-        facilities.put(new House("house2", "300m", 800d, 8,
+        facilities.put(new House("SVHO-3456","house2", "300m", 800d, 8,
                 "theo năm", "3*", 2), 2);
-        facilities.put(new Room("room", "100m", 200d, 2, "theo giờ",
+        facilities.put(new Room("SVRO-8934","room", "100m", 200d, 2, "theo giờ",
                 "bữa sáng"), 4);
-        facilities.put(new Room("rom1", "120m", 300d, 2, "theo giờ",
+        facilities.put(new Room("SVRO-0198","rom1", "120m", 300d, 2, "theo giờ",
                 "ăn sáng"), 5);
-        facilities.put(new Vila("villa", "600m", 1800d, 12, "theo tháng",
+        facilities.put(new Vila("SVVL-7932","villa", "600m", 1800d, 12, "theo tháng",
                 "4*", 120d, 1), 5);
-        facilities.put(new Vila("vila1", "800m", 2000d, 15, "theo tháng",
+        facilities.put(new Vila("SVVL-9642","vila1", "800m", 2000d, 15, "theo tháng",
                 "5*", 200d, 1), 6);
     }
 
@@ -61,8 +65,18 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void addHouse() {
+        System.out.print("Enter serviceCode: ");
+        String serviceCode = scanner.nextLine();
+        while (!ValidateVila.isMatchesServiceCode(serviceCode)){
+            System.out.println("service code malformed!");
+            serviceCode = scanner.nextLine();
+        }
         System.out.print("enter serviceName: ");
         String serviceName = scanner.nextLine();
+        while (!ValidateFacility.isMatchesServiceName(serviceName)){
+            System.out.println("service code malformed!");
+            serviceName = scanner.nextLine();
+        }
         System.out.print("enter usableArea: ");
         String usableArea = scanner.nextLine();
         System.out.print("enter rentalCosts: ");
@@ -77,7 +91,7 @@ public class FacilityServiceImpl implements IFacilityService {
         Double swimmingPoolArea = Double.parseDouble(scanner.nextLine());
         System.out.print("enter numberOfFloors: ");
         int numberOfFloors = Integer.parseInt(scanner.nextLine());
-        Vila vila = new Vila(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard,
+        Vila vila = new Vila(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard,
                 swimmingPoolArea, numberOfFloors);
         facilities.put(vila,null);
 
@@ -85,8 +99,18 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void addRoom() {
+        System.out.print("Enter serviceCode: ");
+        String serviceCode = scanner.nextLine();
+        while (!ValidateRom.isMatchesServiceCode(serviceCode)){
+            System.out.println("service code malformed!");
+            serviceCode = scanner.nextLine();
+        }
         System.out.print("enter serviceName: ");
         String serviceName = scanner.nextLine();
+        while (!ValidateFacility.isMatchesServiceName(serviceName)){
+            System.out.println("service code malformed!");
+            serviceName = scanner.nextLine();
+        }
         System.out.print("enter usableArea: ");
         String usableArea = scanner.nextLine();
         System.out.print("enter rentalCosts: ");
@@ -97,15 +121,25 @@ public class FacilityServiceImpl implements IFacilityService {
         String rentalType = scanner.nextLine();
         System.out.print("enter freeServiceAttached: ");
         String freeServiceAttached = scanner.nextLine();
-        Room room = new Room(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, freeServiceAttached);
+        Room room = new Room(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType, freeServiceAttached);
         facilities.put(room, null);
     }
 
     @Override
     public void addVila() {
-
+        System.out.print("Enter serviceCode: ");
+        String serviceCode = scanner.nextLine();
+        while (!ValidateHouse.isMatchesServiceCode(serviceCode)){
+            System.out.println("service code malformed!");
+            serviceCode = scanner.nextLine();
+        }
         System.out.print("enter serviceName: ");
         String serviceName = scanner.nextLine();
+        while (!ValidateFacility.isMatchesServiceName(serviceName)){
+            System.out.println("service code malformed!");
+            serviceName = scanner.nextLine();
+        }
+
         System.out.print("enter usableArea: ");
         String usableArea = scanner.nextLine();
         System.out.print("enter rentalCosts: ");
@@ -121,7 +155,7 @@ public class FacilityServiceImpl implements IFacilityService {
         System.out.print("enter numberOfFloors: ");
         int numberOfFloors = Integer.parseInt(scanner.nextLine());
 
-        Vila vila = new Vila(serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard, swimmingPoolArea,
+        Vila vila = new Vila(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType, roomStandard, swimmingPoolArea,
                 numberOfFloors);
         facilities.put(vila, null);
     }
