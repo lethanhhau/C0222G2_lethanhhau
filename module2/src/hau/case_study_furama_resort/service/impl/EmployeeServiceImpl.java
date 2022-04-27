@@ -2,30 +2,35 @@ package hau.case_study_furama_resort.service.impl;
 
 import hau.case_study_furama_resort.model.person_model.Employee;
 import hau.case_study_furama_resort.service.IEmployeeService;
+import hau.case_study_furama_resort.util.ReadFile;
+import hau.case_study_furama_resort.util.WriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
+    private static final String FILE_EMPLOYEE = "src/hau/case_study_furama_resort/data/employee.csv";
+    private static final String COMMA = ",";
     private Scanner scanner = new Scanner(System.in);
     private static List<Employee> employees = new ArrayList<>();
 
     {
-        Employee employee1 = new Employee("le thanh hau", "12/8/95", "nam", 1,
-                848776545, "email@.com", "gda", "đại học", "giám đốc1", 100000000d);
-        Employee employee2 = new Employee("Trần phương", "23/2/99", "nam", 2,
-                847686575, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d);
-        employees.add(employee1);
-        employees.add(employee2);
+        employees.add(new Employee("le thanh hau", "12/8/95", "nam", 1,
+                848776545, "email@.com", "gda", "đại học", "giám đốc1", 100000000d));
+        employees.add(new Employee("Trần phương", "23/2/99", "nam", 2,
+                847686575, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d));
+
+       WriteFile.writeEmployee(employees,false);
+
     }
 
     @Override
     public void display() {
-        for (Employee employee : employees) {
-            System.out.println(employee);
+        List<Employee> employeeList = ReadFile.readFileEmployee();
+        for (int i = 0; i < employeeList.size(); i++) {
+            System.out.println((i + 1) + "." + employeeList.get(i).toString());
         }
-
     }
 
     @Override
@@ -54,6 +59,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
         Employee employee = new Employee(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, employeeCode, level,
                 location, wage);
         employees.add(employee);
+
+        WriteFile.writeEmployee(employees,false);
 
 
     }

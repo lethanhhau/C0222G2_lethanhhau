@@ -2,6 +2,7 @@ package hau.case_study_furama_resort.service.impl;
 
 import hau.case_study_furama_resort.model.person_model.Customer;
 import hau.case_study_furama_resort.service.ICustomerService;
+import hau.case_study_furama_resort.util.WriteFile;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,12 +14,13 @@ public class CustomerServiceImpl implements ICustomerService {
     public static List<Customer> customers = new LinkedList<>();
 
     {
-        Customer customer1 = new Customer("le van A", "6/8/1996", "nam", 1242,
-                728362, "email.ccom", "123", "đqư", "dn");
-        Customer customer2 = new Customer("nguyen van B", "1/2/1990", "nam", 1864,
-                942351, "email.ccom", "38", "hhd", "Qn");
-        customers.add(customer1);
-        customers.add(customer2);
+        customers.add(new Customer("le van A", "6/8/1996", "nam", 1242,
+                728362, "email.com", "123", "đqư", "dn"));
+        customers.add(new Customer("nguyen van B", "1/2/1990", "nam", 1864,
+                942351, "email.com", "38", "hhd", "Qn"));
+
+        WriteFile.writeCustomer(customers,false);
+
     }
 
     @Override
@@ -52,6 +54,8 @@ public class CustomerServiceImpl implements ICustomerService {
 
         Customer customer = new Customer(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, customerCode, typeOfGuest, address);
         customers.add(customer);
+
+        WriteFile.writeCustomer(customers,false);
     }
 
 

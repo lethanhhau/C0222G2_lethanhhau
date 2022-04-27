@@ -1,6 +1,7 @@
 package hau.case_study_furama_resort.model.person_model;
 
 public class Customer extends Person{
+    private static final String COMMA = ",";
     private String customerCode;
     private String typeOfGuest;
     private String address;
@@ -52,5 +53,9 @@ public class Customer extends Person{
                 "customerCode= " + customerCode +
                 ", typeOfGuest= " + typeOfGuest +
                 ", address= " + address;
+    }
+    public String getInfoCustormer(){
+        return super.getInfoPerson() + COMMA + this.getCustomerCode() + COMMA + this.getTypeOfGuest() + COMMA +
+                this.getAddress();
     }
 }

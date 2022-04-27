@@ -1,34 +1,44 @@
 package module2.ss17_binary_file_and_serialization.bai_tap.ss1_product_manager_saves_to_binary_files;
 
+import module2.ss12_java_collection_framework.bai_tap.practice_using_array_list_and_linked_list.model.Product;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WriteAndRead {
-    private final static String FILE_NAME = "src/module2/ss17_binary_file_and_serialization/bai_tap/ss1_product_" +
-            "manager_saves_to_binary_files/Product_Management.csv";
-    private static void writerToFile(String fileName, List<ProductManagement> productManagements) {
+    public static void writerFile(List<Product> list) {
         try {
-            FileOutputStream fos = new FileOutputStream(FILE_NAME);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(productManagements);
-            oos.close();
-            fos.close();
+            FileOutputStream fileOutputStream = new FileOutputStream("src/ss17_io_binary_file_and_serialization/bai_tap/common/data/data.dat");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(list);
+            objectOutputStream.close();
+            fileOutputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
-    public static List<ProductManagement> readDataFromFile(String path){
-        List<ProductManagement> productManagements = new ArrayList<>();
-        try{
-            FileInputStream fis = new FileInputStream(path);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            productManagements = (List<ProductManagement>) ois.readObject();
-            fis.close();
-            ois.close();
-        }catch(Exception ex){
-            ex.printStackTrace();
+
+    public static List<Product> readFile() {
+        List<Product> products = new ArrayList<>();
+        try {
+
+            FileInputStream fileInputStream = new FileInputStream("src/ss17_io_binary_file_and_serialization/bai_tap/common/data/data.dat");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            products = (List<Product>) objectInputStream.readObject();
+            objectInputStream.close();
+            fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        return productManagements;
+        return products;
     }
 }

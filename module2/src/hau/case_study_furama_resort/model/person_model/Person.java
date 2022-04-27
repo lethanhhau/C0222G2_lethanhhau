@@ -1,6 +1,7 @@
 package hau.case_study_furama_resort.model.person_model;
 
 public abstract class Person {
+    private static final String COMMA = ",";
     private String fullName;
     private String dateOfBirth;
     private String sex;
@@ -76,5 +77,10 @@ public abstract class Person {
                 ", idNumber= " + idNumber +
                 ", phoneNumber= " + phoneNumber +
                 ", email= " + email;
+    }
+
+    public String getInfoPerson(){
+        return this.getFullName() + COMMA + this.getDateOfBirth() + COMMA + this.getSex() + COMMA + this.getIdNumber() +
+                this.getPhoneNumber() + COMMA + this.getEmail();
     }
 }

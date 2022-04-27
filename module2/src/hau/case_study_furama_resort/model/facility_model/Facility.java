@@ -3,17 +3,18 @@ package hau.case_study_furama_resort.model.facility_model;
 import java.util.Scanner;
 
 public abstract class Facility {
+    private static final String COMMA = ",";
     private String serviceCode;
     private String serviceName;
     private String usableArea;
-    private Double rentalCosts;
+    private Integer rentalCosts;
     private Integer maximumPerson;
     private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String serviceCode,String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType) {
+    public Facility(String serviceCode,String serviceName, String usableArea, Integer rentalCosts, Integer maximumPerson, String rentalType) {
         this.serviceCode = serviceCode;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
@@ -46,11 +47,11 @@ public abstract class Facility {
         this.usableArea = usableArea;
     }
 
-    public Double getRentalCosts() {
+    public Integer getRentalCosts() {
         return rentalCosts;
     }
 
-    public void setRentalCosts(Double rentalCosts) {
+    public void setRentalCosts(Integer rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
@@ -95,5 +96,11 @@ public abstract class Facility {
                 ", rentalCosts=" + rentalCosts +
                 ", maximumPerson= " + maximumPerson +
                 ", rentalType= " + rentalType;
+    }
+
+
+    public String getInfoFacility(){
+        return this.getServiceCode() + COMMA + this.getServiceName() + COMMA + this.getUsableArea() + COMMA +
+                this.getRentalCosts() + this.getMaximumPerson() + COMMA + this.getRentalType();
     }
 }

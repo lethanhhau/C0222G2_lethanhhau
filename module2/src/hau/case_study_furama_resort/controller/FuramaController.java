@@ -121,7 +121,7 @@ public class FuramaController {
                     "2.Add new facility\n" +
                     "3.Display list facility maintenance\n" +
                     "4.Return main menu\n" +
-                    "Enter choi: ");
+                    "Enter choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -147,20 +147,20 @@ public class FuramaController {
         boolean check = true;
         while (check) {
             System.out.print("1.Add New Villa \n" +
-                    "2.	Add New House \n" +
-                    "3.	Add New Room \n" +
-                    "4.	Back to menu \n" +
+                    "2.Add New House \n" +
+                    "3.Add New Room \n" +
+                    "4.Back to menu \n" +
                     "Enter Choice: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iFacilityService.addHouse();
+                    iFacilityService.addVila();
                     break;
                 case 2:
-                    iFacilityService.addRoom();
+                    iFacilityService.addHouse();
                     break;
                 case 3:
-                    iFacilityService.addVila();
+                    iFacilityService.addRoom();
                 case 4:
                     check = false;
                     break;
@@ -174,7 +174,7 @@ public class FuramaController {
     public void choiceBooking() {
         boolean check = true;
         while (check) {
-            System.out.print(" 1.Add new booking \n" +
+            System.out.print("1.Add new booking \n" +
                     "2.Display list booking \n" +
                     "3.Create new constracts \n" +
                     "4.Display list contracts \n" +

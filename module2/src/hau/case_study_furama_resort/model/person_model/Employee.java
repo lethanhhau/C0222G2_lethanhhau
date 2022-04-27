@@ -1,6 +1,7 @@
 package hau.case_study_furama_resort.model.person_model;
 
 public class Employee extends Person{
+    private static final String COMMA = ",";
     private String employeeCode;
     private String level;
     private String location;
@@ -65,5 +66,13 @@ public class Employee extends Person{
                 ", level='" + level +
                 ", location='" + location +
                 ", wage=" + wage;
+    }
+    public String getInfoToCSV(){
+        return this.getEmployeeCode()+","+this.getEmployeeCode()+
+                ","+this.getLocation()+","+this.getLocation();
+    }
+    public String getInfoEmployee(){
+        return super.getInfoPerson() + COMMA + this.getEmployeeCode() + COMMA + this.getLevel() + COMMA +
+                this.getLocation() + COMMA + this.getWage();
     }
 }

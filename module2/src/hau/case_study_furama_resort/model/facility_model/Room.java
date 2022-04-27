@@ -3,6 +3,7 @@ package hau.case_study_furama_resort.model.facility_model;
 import java.util.Scanner;
 
 public class Room extends Facility{
+    private static final String COMMA = ",";
     private String freeServiceAttached;
 
     public Room() {
@@ -12,7 +13,7 @@ public class Room extends Facility{
         this.freeServiceAttached = freeServiceAttached;
     }
 
-    public Room(String serviceCode,String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
+    public Room(String serviceCode,String serviceName, String usableArea, Integer rentalCosts, Integer maximumPerson, String rentalType,
                 String freeServiceAttached) {
         super(serviceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
         this.freeServiceAttached = freeServiceAttached;
@@ -35,7 +36,7 @@ public class Room extends Facility{
         System.out.print("enter usableArea: ");
         String usableArea = scanner.nextLine();
         System.out.print("enter rentalCosts: ");
-        Double rentalCosts = Double.parseDouble(scanner.nextLine());
+        int rentalCosts = Integer.parseInt(scanner.nextLine());
         System.out.print("enter maximumPerson: ");
         int maximumPerson = Integer.parseInt(scanner.nextLine());
         System.out.print("enter rentalType: ");
@@ -49,5 +50,9 @@ public class Room extends Facility{
         return
                 super.toString() +
                 ", freeServiceAttached=" + freeServiceAttached;
+    }
+
+    public String getInfoRoom(){
+        return super.getInfoFacility() + COMMA + this.getFreeServiceAttached();
     }
 }

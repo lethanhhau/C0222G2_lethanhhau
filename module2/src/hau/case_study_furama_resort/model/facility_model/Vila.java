@@ -3,6 +3,7 @@ package hau.case_study_furama_resort.model.facility_model;
 import java.util.Scanner;
 
 public class Vila extends Facility{
+    private static final String COMMA = ",";
     private String roomStandard;
     private Double swimmingPoolArea;
     private Integer numberOfFloors;
@@ -16,7 +17,7 @@ public class Vila extends Facility{
         this.numberOfFloors = numberOfFloors;
     }
 
-    public Vila(String servicceCode,String serviceName, String usableArea, Double rentalCosts, Integer maximumPerson, String rentalType,
+    public Vila(String servicceCode,String serviceName, String usableArea, Integer rentalCosts, Integer maximumPerson, String rentalType,
                 String roomStandard, Double swimmingPoolArea, Integer numberOfFloors) {
         super(servicceCode,serviceName, usableArea, rentalCosts, maximumPerson, rentalType);
         this.roomStandard = roomStandard;
@@ -48,28 +49,6 @@ public class Vila extends Facility{
         this.numberOfFloors = numberOfFloors;
     }
 
-    public void input(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter serviceCode: ");
-        String serviceCode = scanner.nextLine();
-        System.out.print("enter serviceName: ");
-        String serviceName = scanner.nextLine();
-        System.out.print("enter usableArea: ");
-        String usableArea = scanner.nextLine();
-        System.out.print("enter rentalCosts: ");
-        Double rentalCosts = Double.parseDouble(scanner.nextLine());
-        System.out.print("enter maximumPerson: ");
-        int maximumPerson = Integer.parseInt(scanner.nextLine());
-        System.out.print("enter rentalType: ");
-        String rentalType = scanner.nextLine();
-        System.out.print("enter roomStandard: ");
-        String roomStandard = scanner.nextLine();
-        System.out.print("enter swimmingPoolArea: ");
-        Double swimmingPoolArea = Double.parseDouble(scanner.nextLine());
-        System.out.print("enter numberOfFloors: ");
-        int numberOfFloors = Integer.parseInt(scanner.nextLine());
-    }
-
     @Override
     public String toString() {
         return
@@ -77,5 +56,9 @@ public class Vila extends Facility{
                 ", roomStandard= " + roomStandard +
                 ", swimmingPoolArea= " + swimmingPoolArea +
                 ", numberOfFloors= " + numberOfFloors ;
+    }
+    public String getInfoVila(){
+        return super.getInfoFacility() + COMMA + this.getRoomStandard() + COMMA + this.getSwimmingPoolArea() + COMMA +
+                this.getNumberOfFloors();
     }
 }
