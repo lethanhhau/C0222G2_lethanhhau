@@ -1,34 +1,34 @@
 package hau.case_study_furama_resort.service.impl;
 
+import hau.case_study_furama_resort.common.exception.CheckException;
 import hau.case_study_furama_resort.model.person_model.Customer;
 import hau.case_study_furama_resort.service.ICustomerService;
-import hau.case_study_furama_resort.util.WriteFile;
+import hau.case_study_furama_resort.common.write_read_file.WriteReadFile;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ICustomerService {
     private Scanner scanner = new Scanner(System.in);
-    public static List<Customer> customers = new LinkedList<>();
+    public static List<Customer> customerList = new LinkedList<>();
 
     {
-        customers.add(new Customer("le van A", "6/8/1996", "nam", 1242,
-                728362, "email.com", "123", "đqư", "dn"));
-        customers.add(new Customer("nguyen van B", "1/2/1990", "nam", 1864,
-                942351, "email.com", "38", "hhd", "Qn"));
+        customerList.add(new Customer("le van A", "6/8/1996", "nam", 1242l,
+                728362l, "email.com", "123", "đqư", "dn"));
+        customerList.add(new Customer("nguyen van B", "1/2/1990", "nam", 1864l,
+                942351l, "email.com", "38", "hhd", "Qn"));
 
-        WriteFile.writeCustomer(customers,false);
+        WriteReadFile.writeCustomer(customerList,false);
 
     }
 
     @Override
     public void display() {
-        for (Customer customer : customers) {
+        customerList = WriteReadFile.readFileCustomer();
+        for (Customer customer:customerList) {
             System.out.println(customer);
         }
-
     }
 
     @Override
@@ -40,9 +40,11 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.print("enter sex: ");
         String sex = scanner.nextLine();
         System.out.print("enter idNumber: ");
-        int idNumber = Integer.parseInt(scanner.nextLine());
+        long idNumber = 0;
+        idNumber = CheckException.checkLong(idNumber);
         System.out.print("enter phoneNumber: ");
-        int phoneNumber = Integer.parseInt(scanner.nextLine());
+        long phoneNumber = 0;
+        phoneNumber = CheckException.checkLong(phoneNumber);
         System.out.print("enter email: ");
         String email = scanner.nextLine();
         System.out.print("enter customerCode: ");
@@ -53,48 +55,50 @@ public class CustomerServiceImpl implements ICustomerService {
         String address = scanner.nextLine();
 
         Customer customer = new Customer(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, customerCode, typeOfGuest, address);
-        customers.add(customer);
+        customerList.add(customer);
 
-        WriteFile.writeCustomer(customers,false);
+        WriteReadFile.writeCustomer(customerList,false);
     }
 
 
     @Override
     public void edit() {
         boolean check = false;
+        customerList = WriteReadFile.readFileCustomer();
         System.out.print("Enter customer code edit: ");
         String customerCodeEdit = scanner.nextLine();
 
-        for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getCustomerCode().equals(customerCodeEdit)) {
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getCustomerCode().equals(customerCodeEdit)) {
                 check = true;
                 break;
             }
         }
         if (check) {
-            for (int i = 0; i < customers.size(); i++) {
-                if (customers.get(i).getCustomerCode().equals(customerCodeEdit)) {
+            for (int i = 0; i < customerList.size(); i++) {
+                if (customerList.get(i).getCustomerCode().equals(customerCodeEdit)) {
                     System.out.print("enter fullName: ");
-                    customers.get(i).setFullName(scanner.nextLine());
+                    customerList.get(i).setFullName(scanner.nextLine());
                     System.out.print("enter dateOfBirth: ");
-                    customers.get(i).setDateOfBirth(scanner.nextLine());
+                    customerList.get(i).setDateOfBirth(scanner.nextLine());
                     System.out.print("enter sex: ");
-                    customers.get(i).setSex(scanner.nextLine());
+                    customerList.get(i).setSex(scanner.nextLine());
                     System.out.print("enter idNumber: ");
-                    customers.get(i).setIdNumber(Integer.parseInt(scanner.nextLine()));
+                    customerList.get(i).setIdNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter phoneNumber: ");
-                    int phoneNumber = Integer.parseInt(scanner.nextLine());
+                    customerList.get(i).setPhoneNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter email: ");
-                    String email = scanner.nextLine();
+                    customerList.get(i).setEmail(scanner.nextLine());
                     System.out.print("enter customerCode: ");
-                    String customerCode = scanner.nextLine();
+                    customerList.get(i).setCustomerCode(scanner.nextLine());
                     System.out.print("enter typeOfGuest: ");
-                    String typeOfGuest = scanner.nextLine();
+                    customerList.get(i).setTypeOfGuest(scanner.nextLine());
                     System.out.print("enter address: ");
-                    String address = scanner.nextLine();
+                    customerList.get(i).setAddress(scanner.nextLine());
                     break;
                 }
             }
+            WriteReadFile.writeCustomer(customerList,false);
         } else {
             System.out.println("Employee code not found: " + customerCodeEdit);
         }

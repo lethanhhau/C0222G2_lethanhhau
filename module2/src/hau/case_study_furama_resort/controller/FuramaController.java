@@ -1,5 +1,6 @@
 package hau.case_study_furama_resort.controller;
 
+import hau.case_study_furama_resort.common.exception.CheckException;
 import hau.case_study_furama_resort.service.ICustomerService;
 import hau.case_study_furama_resort.service.IEmployeeService;
 import hau.case_study_furama_resort.service.IFacilityService;
@@ -16,8 +17,7 @@ public class FuramaController {
     private static IFacilityService iFacilityService = new FacilityServiceImpl();
 
     public void displayMainMenu() {
-        boolean check = true;
-        while (check) {
+        while (true) {
             Scanner sc = new Scanner(System.in);
             System.out.print("---Resort Management Application Furama-- \n" +
                     "1.Employee Management \n" +
@@ -26,8 +26,9 @@ public class FuramaController {
                     "4.Booking Management \n" +
                     "5.Promotion Management \n" +
                     "6.Exit \n" +
-                    "enter choice: ");
-            int choice = Integer.parseInt(sc.nextLine());
+                    "Enter choice: ");
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                     choiceEmployees();
@@ -45,10 +46,11 @@ public class FuramaController {
                     choicePromotion();
                     break;
                 case 6:
-                    check = false;
+                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Choice again!");
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }
@@ -62,8 +64,8 @@ public class FuramaController {
                     "3	Edit employee \n" +
                     "4	Return main menu \n" +
                     "Enter choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
-
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                     iEmployeeService.display();
@@ -78,7 +80,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
-                    System.out.println("Choice again!");
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }
@@ -92,7 +95,8 @@ public class FuramaController {
                     "3.Edit customer\n" +
                     "4.Return main menu\n" +
                     "Enter choi: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                     iCustomerService.display();
@@ -107,7 +111,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
-                    System.out.println("Choice again!");
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }
@@ -122,7 +127,8 @@ public class FuramaController {
                     "3.Display list facility maintenance\n" +
                     "4.Return main menu\n" +
                     "Enter choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                     iFacilityService.display();
@@ -137,7 +143,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
-                    System.out.println("Choice again!");
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }
@@ -151,7 +158,8 @@ public class FuramaController {
                     "3.Add New Room \n" +
                     "4.Back to menu \n" +
                     "Enter Choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                     iFacilityService.addVila();
@@ -165,7 +173,8 @@ public class FuramaController {
                     check = false;
                     break;
                 default:
-                    System.out.println("Choice again!");
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }
@@ -181,7 +190,8 @@ public class FuramaController {
                     "5.Edit contracts \n" +
                     "6.Return main menu \n" +
                     "Enter choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                 case 2:
@@ -191,9 +201,15 @@ public class FuramaController {
                 case 6:
                     check = false;
                     break;
+                default:
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
+                    break;
             }
         }
     }
+
+
 
     public void choicePromotion() {
         boolean check = true;
@@ -202,12 +218,17 @@ public class FuramaController {
                     "2.Display list customers get voucher\n" +
                     "3.Return main menu \n" +
                     "Enter choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = 0;
+            choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
                 case 2:
                 case 3:
                     check = false;
+                    break;
+                default:
+                    System.err.println("Enter Choice again!");
+                    System.out.println();
                     break;
             }
         }

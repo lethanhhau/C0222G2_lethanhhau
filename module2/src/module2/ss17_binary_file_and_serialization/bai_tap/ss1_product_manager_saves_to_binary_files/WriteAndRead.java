@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriteAndRead {
-    public static void writerFile(List<Product> list) {
+    private static void writerFile(List<Product> list) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream("src/ss17_io_binary_file_and_serialization/bai_tap/common/data/data.dat");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);

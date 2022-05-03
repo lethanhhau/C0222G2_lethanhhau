@@ -1,4 +1,4 @@
-package hau.case_study_furama_resort.model;
+package hau.case_study_furama_resort.model.bookings;
 
 public class Booking {
     private String bookingcode;

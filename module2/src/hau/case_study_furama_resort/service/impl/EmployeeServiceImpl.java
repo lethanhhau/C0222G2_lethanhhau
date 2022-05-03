@@ -1,35 +1,33 @@
 package hau.case_study_furama_resort.service.impl;
 
+import hau.case_study_furama_resort.common.exception.CheckException;
 import hau.case_study_furama_resort.model.person_model.Employee;
 import hau.case_study_furama_resort.service.IEmployeeService;
-import hau.case_study_furama_resort.util.ReadFile;
-import hau.case_study_furama_resort.util.WriteFile;
+import hau.case_study_furama_resort.common.write_read_file.WriteReadFile;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
-    private static final String FILE_EMPLOYEE = "src/hau/case_study_furama_resort/data/employee.csv";
-    private static final String COMMA = ",";
     private Scanner scanner = new Scanner(System.in);
-    private static List<Employee> employees = new ArrayList<>();
+    private static List<Employee> employeeList = new ArrayList<>();
 
     {
-        employees.add(new Employee("le thanh hau", "12/8/95", "nam", 1,
-                848776545, "email@.com", "gda", "đại học", "giám đốc1", 100000000d));
-        employees.add(new Employee("Trần phương", "23/2/99", "nam", 2,
-                847686575, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d));
+        employeeList.add(new Employee("le thanh hau", "12/8/95", "nam", 1l,
+                848776545l, "email@.com", "gda", "đại học", "giám đốc1", 100000000d));
+        employeeList.add(new Employee("Trần phương", "23/2/99", "nam", 2l,
+                847686575l, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d));
 
-       WriteFile.writeEmployee(employees,false);
+       WriteReadFile.writeEmployee(employeeList,false);
 
     }
 
     @Override
     public void display() {
-        List<Employee> employeeList = ReadFile.readFileEmployee();
-        for (int i = 0; i < employeeList.size(); i++) {
-            System.out.println((i + 1) + "." + employeeList.get(i).toString());
+        employeeList = WriteReadFile.readFileEmployee();
+        for (Employee employee:employeeList) {
+            System.out.println(employee);
         }
     }
 
@@ -42,9 +40,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
         System.out.print("enter sex: ");
         String sex = scanner.nextLine();
         System.out.print("enter idNumber: ");
-        int idNumber = Integer.parseInt(scanner.nextLine());
+        long idNumber = 0;
+        idNumber = CheckException.checkLong(idNumber);
         System.out.print("enter phoneNumber: ");
-        int phoneNumber = Integer.parseInt(scanner.nextLine());
+        long phoneNumber = 0;
+        phoneNumber = CheckException.checkLong(phoneNumber);
         System.out.print("enter email: ");
         String email = scanner.nextLine();
         System.out.print("enter employeeCode: ");
@@ -54,13 +54,14 @@ public class EmployeeServiceImpl implements IEmployeeService {
         System.out.print("enter location: ");
         String location = scanner.nextLine();
         System.out.print("enter wage: ");
-        double wage = Double.parseDouble(scanner.nextLine());
+        double wage = 0.0;
+        wage = CheckException.checkDouble(wage);
 
         Employee employee = new Employee(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, employeeCode, level,
                 location, wage);
-        employees.add(employee);
+        employeeList.add(employee);
 
-        WriteFile.writeEmployee(employees,false);
+        WriteReadFile.writeEmployee(employeeList,false);
 
 
     }
@@ -68,40 +69,42 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public void edit() {
         boolean check = true;
+        employeeList = WriteReadFile.readFileEmployee();
         System.out.print("Enter employee code edit: ");
         String employeecodeEdit = scanner.nextLine();
-        for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i).getEmployeeCode().equals(employeecodeEdit)) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getEmployeeCode().equals(employeecodeEdit)) {
                 check = true;
                 break;
             }
         }
         if (check) {
-            for (int i = 0; i < employees.size(); i++) {
-                if (employees.get(i).getEmployeeCode().equals(employeecodeEdit)) {
+            for (int i = 0; i < employeeList.size(); i++) {
+                if (EmployeeServiceImpl.employeeList.get(i).getEmployeeCode().equals(employeecodeEdit)) {
                     System.out.print("enter fullName: ");
-                    employees.get(i).setFullName(scanner.nextLine());
+                    EmployeeServiceImpl.employeeList.get(i).setFullName(scanner.nextLine());
                     System.out.print("enter dateOfBirth: ");
-                    employees.get(i).setDateOfBirth(scanner.nextLine());
+                    EmployeeServiceImpl.employeeList.get(i).setDateOfBirth(scanner.nextLine());
                     System.out.print("enter sex: ");
-                    employees.get(i).setSex(scanner.nextLine());
+                    EmployeeServiceImpl.employeeList.get(i).setSex(scanner.nextLine());
                     System.out.print("enter idNumber: ");
-                    employees.get(i).setIdNumber(Integer.parseInt(scanner.nextLine()));
+                    EmployeeServiceImpl.employeeList.get(i).setIdNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter phoneNumber: ");
-                    int phoneNumber = Integer.parseInt(scanner.nextLine());
+                    EmployeeServiceImpl.employeeList.get(i).setPhoneNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter email: ");
-                    String email = scanner.nextLine();
+                    EmployeeServiceImpl.employeeList.get(i).setEmail(scanner.nextLine());
                     System.out.print("enter employeeCode: ");
-                    String employeeCode = scanner.nextLine();
+                    EmployeeServiceImpl.employeeList.get(i).setEmployeeCode(scanner.nextLine());
                     System.out.print("enter level: ");
-                    String level = scanner.nextLine();
+                    EmployeeServiceImpl.employeeList.get(i).setLevel(scanner.nextLine());
                     System.out.print("enter location: ");
-                    String location = scanner.nextLine();
+                    EmployeeServiceImpl.employeeList.get(i).setLocation(scanner.nextLine());
                     System.out.print("enter wage: ");
-                    double wage = Double.parseDouble(scanner.nextLine());
+                    EmployeeServiceImpl.employeeList.get(i).setWage(Double.parseDouble(scanner.nextLine()));
                     break;
                 }
             }
+            WriteReadFile.writeEmployee(employeeList,false);
         } else {
             System.out.println("Employee code not found: " + employeecodeEdit);
         }

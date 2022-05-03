@@ -101,6 +101,6 @@ public abstract class Facility {
 
     public String getInfoFacility(){
         return this.getServiceCode() + COMMA + this.getServiceName() + COMMA + this.getUsableArea() + COMMA +
-                this.getRentalCosts() + this.getMaximumPerson() + COMMA + this.getRentalType();
+                this.getRentalCosts() +COMMA + this.getMaximumPerson() + COMMA + this.getRentalType();
     }
 }

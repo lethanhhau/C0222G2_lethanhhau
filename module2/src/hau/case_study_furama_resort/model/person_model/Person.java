@@ -5,14 +5,14 @@ public abstract class Person {
     private String fullName;
     private String dateOfBirth;
     private String sex;
-    private Integer idNumber;
-    private Integer phoneNumber;
+    private Long idNumber;
+    private Long phoneNumber;
     private String email ;
 
     public Person(){
     }
 
-    public Person(String fullName, String dateOfBirth, String sex, Integer idNumber, Integer phoneNumber, String email) {
+    public Person(String fullName, String dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
@@ -45,19 +45,19 @@ public abstract class Person {
         this.sex = sex;
     }
 
-    public Integer getIdNumber() {
+    public Long getIdNumber() {
         return idNumber;
     }
 
-    public void setIdNumber(Integer idNumber) {
+    public void setIdNumber(Long idNumber) {
         this.idNumber = idNumber;
     }
 
-    public Integer getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -81,6 +81,6 @@ public abstract class Person {
 
     public String getInfoPerson(){
         return this.getFullName() + COMMA + this.getDateOfBirth() + COMMA + this.getSex() + COMMA + this.getIdNumber() +
-                this.getPhoneNumber() + COMMA + this.getEmail();
+               COMMA + this.getPhoneNumber() + COMMA + this.getEmail();
     }
 }

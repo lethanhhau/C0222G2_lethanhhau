@@ -6,6 +6,6 @@ public interface IService<T> {
 
     void add();
 
-    void edit();
+
 
 }

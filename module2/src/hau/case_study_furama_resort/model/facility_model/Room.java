@@ -27,24 +27,6 @@ public class Room extends Facility{
         this.freeServiceAttached = freeServiceAttached;
     }
 
-    public void input(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter serviceCode: ");
-        String serviceCode = scanner.nextLine();
-        System.out.print("enter serviceName: ");
-        String serviceName = scanner.nextLine();
-        System.out.print("enter usableArea: ");
-        String usableArea = scanner.nextLine();
-        System.out.print("enter rentalCosts: ");
-        int rentalCosts = Integer.parseInt(scanner.nextLine());
-        System.out.print("enter maximumPerson: ");
-        int maximumPerson = Integer.parseInt(scanner.nextLine());
-        System.out.print("enter rentalType: ");
-        String rentalType = scanner.nextLine();
-        System.out.print("enter freeServiceAttached: ");
-        String freeServiceAttached = scanner.nextLine();
-    }
-
     @Override
     public String toString() {
         return

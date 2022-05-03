@@ -7,6 +7,8 @@ public class ValidateFacility {
     private static final String REGEX_NUMBER_OF_FLOORS = "^(([1-9])|([1-9][0-9]+))$";
     private static final String REGEX_MAXIMUM_PERSON = "^(([1-9])|([1][0-9]))$";
 
+    private static final String REGEX_TEST = "^((([1-9])|([1-2][0-9])|([3][0-1]))/(([1-9])|([1][0-2])))/(([1][9][2-9]{2})|([2][0][0][1-4]))$";
+
     public static Boolean isMatchesServiceName(String serviceName) {
         return serviceName.matches(REGEX_SERVICE_NAME);
     }
@@ -25,5 +27,9 @@ public class ValidateFacility {
 
     public static Boolean isMatchesMaximumPerson(String maximumPerson) {
         return maximumPerson.matches(REGEX_MAXIMUM_PERSON);
+    }
+
+    public static Boolean isTest(String maximumPerson) {
+        return maximumPerson.matches(REGEX_TEST);
     }
 }
