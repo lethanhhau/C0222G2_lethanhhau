@@ -1,12 +1,14 @@
 package hau.case_study_furama_resort.model.person_model;
 
+import java.util.Date;
+
 public class Customer extends Person{
     private static final String COMMA = ",";
     private String customerCode;
     private String typeOfGuest;
     private String address;
 
-    public Customer(){
+    public Customer(String fullName, Date date, String sex, long idNumber, long phoneNumber, String email, String customerCode, String typeOfGuest, String address){
     }
 
     public Customer(String customerCode, String typeOfGuest, String address) {
@@ -50,12 +52,12 @@ public class Customer extends Person{
     public String toString() {
         return "Customer: " +
                 super.toString() +
-                "customerCode= " + customerCode +
+                ", customerCode= " + customerCode +
                 ", typeOfGuest= " + typeOfGuest +
                 ", address= " + address;
     }
     public String getInfoCustormer(){
-        return super.getInfoPerson() + COMMA + this.getCustomerCode() + COMMA + this.getTypeOfGuest() + COMMA +
+        return super.getInfoPerson() + COMMA +  this.getCustomerCode() + COMMA + this.getTypeOfGuest() + COMMA +
                 this.getAddress();
     }
 }

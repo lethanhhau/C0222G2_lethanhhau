@@ -1,5 +1,7 @@
 package hau.case_study_furama_resort.common.write_read_file;
 
+import hau.case_study_furama_resort.model.bookings.Booking;
+import hau.case_study_furama_resort.model.bookings.Contract;
 import hau.case_study_furama_resort.model.facility_model.House;
 import hau.case_study_furama_resort.model.facility_model.Room;
 import hau.case_study_furama_resort.model.facility_model.Vila;
@@ -16,6 +18,8 @@ public class WriteReadFile {
     private static final String FILE_VILA = "src/hau/case_study_furama_resort/common/data/villa.csv";
     private static final String FILE_HOUSE = "src/hau/case_study_furama_resort/common/data/house.csv";
     private static final String FILE_ROOM = "src/hau/case_study_furama_resort/common/data/room.csv";
+    private static final String FILE_BOOKING = "src/hau/case_study_furama_resort/common/data/booking.csv";
+    private static final String FILE_CONTRACT = "src/hau/case_study_furama_resort/common/data/contract.csv";
 
     /**
      * ghi File
@@ -93,6 +97,27 @@ public class WriteReadFile {
         writeFile(stringList,FILE_ROOM,flag);
     }
 
+    /**
+     * hàm riêng Booking
+     */
+    public static void writeBooking(List<Booking> bookingList,Boolean flag){
+        List<String> stringList = new ArrayList<>();
+        for (Booking booking:bookingList){
+            stringList.add(booking.getInFoBooking());
+        }
+        writeFile(stringList,FILE_BOOKING,flag);
+    }
+
+    /**
+     * hàm riêng Contract
+     */
+    public static void writeContract(List<Contract> contractList, Boolean flag){
+        List<String> stringList = new ArrayList<>();
+        for (Contract contract:contractList){
+            stringList.add(contract.getInFoContract());
+        }
+        writeFile(stringList,FILE_CONTRACT,flag);
+    }
 
     /**
      * đọc File
@@ -120,6 +145,7 @@ public class WriteReadFile {
     }
 
     /**
+     * Đọc file
      * hàm riêng Employee
      */
     public static List<Employee> readFileEmployee() {
@@ -194,5 +220,32 @@ public class WriteReadFile {
             roomList.add(room);
         }
         return roomList;
+    }
+
+    public static List<Booking> readFileBooking(){
+        List<String> stringList = readFile(FILE_BOOKING);
+        List<Booking> bookingList = new ArrayList<>();
+        String[] array = null;
+        Booking booking = null;
+        for (String str : stringList){
+            array = str.split(",");
+            booking = new Booking(array[0],array[1],array[2],array[3],array[4],array[5],array[6]);
+            bookingList.add(booking);
+        }
+        return bookingList;
+    }
+
+    public static List<Contract> readFileContract(){
+        List<String> stringList = readFile(FILE_CONTRACT);
+        List<Contract> contractList = new ArrayList<>();
+        String[] array = null;
+        Contract contract = null;
+        for (String str:stringList){
+            array = str.split("'");
+            contract = new Contract(Long.parseLong(array[0]),array[1],Double.parseDouble(array[2]),
+                    Double.parseDouble(array[3]),array[4]);
+            contractList.add(contract);
+        }
+        return contractList;
     }
 }

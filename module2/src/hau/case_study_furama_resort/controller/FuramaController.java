@@ -1,9 +1,11 @@
 package hau.case_study_furama_resort.controller;
 
 import hau.case_study_furama_resort.common.exception.CheckException;
+import hau.case_study_furama_resort.service.IBookingService;
 import hau.case_study_furama_resort.service.ICustomerService;
 import hau.case_study_furama_resort.service.IEmployeeService;
 import hau.case_study_furama_resort.service.IFacilityService;
+import hau.case_study_furama_resort.service.impl.BookingServiceImpl;
 import hau.case_study_furama_resort.service.impl.CustomerServiceImpl;
 import hau.case_study_furama_resort.service.impl.EmployeeServiceImpl;
 import hau.case_study_furama_resort.service.impl.FacilityServiceImpl;
@@ -15,6 +17,7 @@ public class FuramaController {
     private static IEmployeeService iEmployeeService = new EmployeeServiceImpl();
     private static ICustomerService iCustomerService = new CustomerServiceImpl();
     private static IFacilityService iFacilityService = new FacilityServiceImpl();
+    private static IBookingService iBookingService = new BookingServiceImpl();
 
     public void displayMainMenu() {
         while (true) {
@@ -59,7 +62,8 @@ public class FuramaController {
     public void choiceEmployees() {
         boolean check = true;
         while (check) {
-            System.out.print("1	Display list employees \n" +
+            System.out.print("---Menu Employee Management--- \n"+
+                    "1	Display list employees \n" +
                     "2	Add new employee \n" +
                     "3	Edit employee \n" +
                     "4	Return main menu \n" +
@@ -90,7 +94,8 @@ public class FuramaController {
     public void choiceCustomer() {
         boolean check = true;
         while (check) {
-            System.out.print("1.Display list customers\n" +
+            System.out.print("---Menu Customer Management---\n"+
+                    "1.Display list customers\n" +
                     "2.Add new customer\n" +
                     "3.Edit customer\n" +
                     "4.Return main menu\n" +
@@ -122,7 +127,8 @@ public class FuramaController {
     public void choiceFacility() {
         boolean check = true;
         while (check) {
-            System.out.print("1.Display list facility\n" +
+            System.out.print("---Menu Facility Management--- \n"+
+                    "1.Display list facility\n" +
                     "2.Add new facility\n" +
                     "3.Display list facility maintenance\n" +
                     "4.Return main menu\n" +
@@ -153,7 +159,8 @@ public class FuramaController {
     public void choiceFacilityServiceImpl() {
         boolean check = true;
         while (check) {
-            System.out.print("1.Add New Villa \n" +
+            System.out.print("---Menu Add Facility--- \n"+
+                    "1.Add New Villa \n" +
                     "2.Add New House \n" +
                     "3.Add New Room \n" +
                     "4.Back to menu \n" +
@@ -183,7 +190,8 @@ public class FuramaController {
     public void choiceBooking() {
         boolean check = true;
         while (check) {
-            System.out.print("1.Add new booking \n" +
+            System.out.print("---Menu Booking Management---\n"+
+                    "1.Add new booking \n" +
                     "2.Display list booking \n" +
                     "3.Create new constracts \n" +
                     "4.Display list contracts \n" +
@@ -194,7 +202,11 @@ public class FuramaController {
             choice = CheckException.checkInt(choice);
             switch (choice) {
                 case 1:
+                    iBookingService.add();
+                    break;
                 case 2:
+                    iBookingService.display();
+                    break;
                 case 3:
                 case 4:
                 case 5:

@@ -1,7 +1,8 @@
 package hau.case_study_furama_resort.model.bookings;
 
 public class Contract {
-    private Integer someContracts;
+    private static final String COMMA = ",";
+    private Long someContracts;
     private String bookingCode;
     private Double advanceDepositAmount;
     private Double totalPaymentAmount;
@@ -10,7 +11,7 @@ public class Contract {
     public Contract(){
     }
 
-    public Contract(Integer someContracts, String bookingCode, Double advanceDepositAmount, Double totalPaymentAmount,
+    public Contract(Long someContracts, String bookingCode, Double advanceDepositAmount, Double totalPaymentAmount,
                     String customerCode) {
         this.someContracts = someContracts;
         this.bookingCode = bookingCode;
@@ -19,11 +20,11 @@ public class Contract {
         this.customerCode = customerCode;
     }
 
-    public Integer getSomeContracts() {
+    public Long getSomeContracts() {
         return someContracts;
     }
 
-    public void setSomeContracts(Integer someContracts) {
+    public void setSomeContracts(Long someContracts) {
         this.someContracts = someContracts;
     }
 
@@ -68,5 +69,9 @@ public class Contract {
                 ", totalPaymentAmount=" + totalPaymentAmount +
                 ", customerCode='" + customerCode + '\'' +
                 '}';
+    }
+    public String getInFoContract(){
+        return this.getSomeContracts() + COMMA + this.getBookingCode() + COMMA + this.getAdvanceDepositAmount() +
+                COMMA + this.getTotalPaymentAmount() + COMMA + this.getCustomerCode();
     }
 }

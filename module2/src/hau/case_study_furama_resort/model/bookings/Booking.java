@@ -1,24 +1,27 @@
 package hau.case_study_furama_resort.model.bookings;
 
 public class Booking {
+    private static final String COMMA = ",";
     private String bookingcode;
     private String startDay;
     private String endDate;
     private String customerCode;
     private String serviceName;
     private String typeOfService;
+    private String serviceCode;
 
     public Booking(){
     }
 
     public Booking(String bookingcode, String startDay, String endDate, String customerCode, String serviceName,
-                   String typeOfService) {
+                   String typeOfService,String serviceCode) {
         this.bookingcode = bookingcode;
         this.startDay = startDay;
         this.endDate = endDate;
         this.customerCode = customerCode;
         this.serviceName = serviceName;
         this.typeOfService = typeOfService;
+        this.serviceCode = serviceCode;
     }
 
     public String getBookingcode() {
@@ -69,6 +72,14 @@ public class Booking {
         this.typeOfService = typeOfService;
     }
 
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
@@ -78,6 +89,13 @@ public class Booking {
                 ", customerCode='" + customerCode + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", typeOfService='" + typeOfService + '\'' +
+                ", serviceCode='"+ serviceCode + '\'' +
                 '}';
+    }
+
+    public String getInFoBooking(){
+        return this.getBookingcode() + COMMA + this.getStartDay() + COMMA + this.getEndDate() + COMMA +
+                this.getCustomerCode() + COMMA + this.getServiceName() + COMMA + this.getTypeOfService() + COMMA +
+                this.getServiceCode();
     }
 }

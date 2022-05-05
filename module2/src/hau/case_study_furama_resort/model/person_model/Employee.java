@@ -1,5 +1,7 @@
 package hau.case_study_furama_resort.model.person_model;
 
+import java.util.Date;
+
 public class Employee extends Person{
     private static final String COMMA = ",";
     private String employeeCode;
@@ -7,7 +9,7 @@ public class Employee extends Person{
     private String location;
     private Double wage;
 
-    public Employee(){
+    public Employee(String fullName, Date date, String sex, long idNumber, long phoneNumber, String email, String employeeCode, String level, String location, double wage){
     }
 
     public Employee(String employeeCode, String level, String location, Double wage) {
@@ -62,15 +64,12 @@ public class Employee extends Person{
     public String toString() {
         return "Employee: " +
                 super.toString() +
-                "employeeCode='" + employeeCode +
-                ", level='" + level +
-                ", location='" + location +
+                ", employeeCode=" + employeeCode +
+                ", level=" + level +
+                ", location=" + location +
                 ", wage=" + wage;
     }
-    public String getInfoToCSV(){
-        return this.getEmployeeCode()+","+this.getEmployeeCode()+
-                ","+this.getLocation()+","+this.getLocation();
-    }
+
     public String getInfoEmployee(){
         return super.getInfoPerson() + COMMA + this.getEmployeeCode() + COMMA + this.getLevel() + COMMA +
                 this.getLocation() + COMMA + this.getWage();

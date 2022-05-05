@@ -1,5 +1,6 @@
 package hau.case_study_furama_resort.model.facility_model;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public abstract class Facility {
@@ -90,14 +91,26 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return " serviceCode= " + serviceCode +
-                "serviceName= " + serviceName +
+        return "serviceCode= " + serviceCode +
+                ", serviceName= " + serviceName +
                 ", usableArea= " + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maximumPerson= " + maximumPerson +
                 ", rentalType= " + rentalType;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Facility facility = (Facility) o;
+        return Objects.equals(serviceCode, facility.serviceCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serviceCode);
+    }
 
     public String getInfoFacility(){
         return this.getServiceCode() + COMMA + this.getServiceName() + COMMA + this.getUsableArea() + COMMA +

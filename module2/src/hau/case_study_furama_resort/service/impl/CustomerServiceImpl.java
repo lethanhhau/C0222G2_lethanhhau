@@ -1,27 +1,27 @@
 package hau.case_study_furama_resort.service.impl;
 
 import hau.case_study_furama_resort.common.exception.CheckException;
+import hau.case_study_furama_resort.common.validate.Validate;
 import hau.case_study_furama_resort.model.person_model.Customer;
 import hau.case_study_furama_resort.service.ICustomerService;
 import hau.case_study_furama_resort.common.write_read_file.WriteReadFile;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CustomerServiceImpl implements ICustomerService {
     private Scanner scanner = new Scanner(System.in);
-    public static List<Customer> customerList = new LinkedList<>();
+    public static List<Customer> customerList = new ArrayList<>();
 
-    {
-        customerList.add(new Customer("le van A", "6/8/1996", "nam", 1242l,
-                728362l, "email.com", "123", "đqư", "dn"));
+    static {
+        Customer customer = new Customer("le van A", "6/8/1996", "nam", 1242l,
+                728362l, "email.com", "123", "A12d", "dn");
+        customerList.add(customer);
         customerList.add(new Customer("nguyen van B", "1/2/1990", "nam", 1864l,
-                942351l, "email.com", "38", "hhd", "Qn"));
-
-        WriteReadFile.writeCustomer(customerList,false);
+                942351l, "email.com", "38", "B23f", "Qn"));
+        WriteReadFile.writeCustomer(customerList, false);
 
     }
+
 
     @Override
     public void display() {
@@ -33,28 +33,56 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void add() {
-        System.out.print("enter fullName: ");
+        customerList = WriteReadFile.readFileCustomer();
+        System.out.print("enter full Name: ");
         String fullName = scanner.nextLine();
-        System.out.print("enter dateOfBirth: ");
-        String dateOfBirth = scanner.nextLine();
+        while (!Validate.isName(fullName)) {
+            System.err.println("fullName malformed!");
+            System.out.println();
+            System.out.print("retype fullName: ");
+            fullName = scanner.nextLine();
+        }
+
+        System.out.print("enter date Of Birth: ");
+        Date date = null;
+        date = CheckException.checkDayofbirth(date);
+
         System.out.print("enter sex: ");
         String sex = scanner.nextLine();
+
         System.out.print("enter idNumber: ");
         long idNumber = 0;
         idNumber = CheckException.checkLong(idNumber);
+
         System.out.print("enter phoneNumber: ");
         long phoneNumber = 0;
         phoneNumber = CheckException.checkLong(phoneNumber);
+        while (!Validate.isPhone(String.valueOf(phoneNumber))) {
+            System.err.println("email malformed!");
+            System.out.println();
+            System.out.print("retype email: ");
+            phoneNumber = CheckException.checkLong(phoneNumber);
+        }
+
         System.out.print("enter email: ");
         String email = scanner.nextLine();
+        while (!Validate.isEmail(email)) {
+            System.err.println("email malformed!");
+            System.out.println();
+            System.out.print("retype email: ");
+            email = scanner.nextLine();
+        }
+
         System.out.print("enter customerCode: ");
         String customerCode = scanner.nextLine();
+
         System.out.print("enter typeOfGuest: ");
         String typeOfGuest = scanner.nextLine();
+
         System.out.print("enter address: ");
         String address = scanner.nextLine();
 
-        Customer customer = new Customer(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, customerCode, typeOfGuest, address);
+        Customer customer = new Customer(fullName, date, sex, idNumber, phoneNumber, email, customerCode, typeOfGuest, address);
         customerList.add(customer);
 
         WriteReadFile.writeCustomer(customerList,false);

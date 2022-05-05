@@ -1,11 +1,13 @@
 package hau.case_study_furama_resort.service.impl;
 
 import hau.case_study_furama_resort.common.exception.CheckException;
+import hau.case_study_furama_resort.common.validate.Validate;
 import hau.case_study_furama_resort.model.person_model.Employee;
 import hau.case_study_furama_resort.service.IEmployeeService;
 import hau.case_study_furama_resort.common.write_read_file.WriteReadFile;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,11 +15,11 @@ public class EmployeeServiceImpl implements IEmployeeService {
     private Scanner scanner = new Scanner(System.in);
     private static List<Employee> employeeList = new ArrayList<>();
 
-    {
-        employeeList.add(new Employee("le thanh hau", "12/8/95", "nam", 1l,
-                848776545l, "email@.com", "gda", "đại học", "giám đốc1", 100000000d));
-        employeeList.add(new Employee("Trần phương", "23/2/99", "nam", 2l,
-                847686575l, "email@.com", "fsfs", "đại học", "giám đốc2", 100000000d));
+    static {
+        employeeList.add(new Employee("trần văn A", "12/8/95", "nam", 1l,
+                848776545l, "email@.com", "FLI296", "đại học", "trưởng phòng", 1000d));
+        employeeList.add(new Employee("Nguyễn văn H", "23/2/99", "nam", 2l,
+                847686575l, "email@.com", "GDA146", "cao đẳng", "giám đốc2", 10000d));
 
        WriteReadFile.writeEmployee(employeeList,false);
 
@@ -33,10 +35,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void add() {
+        employeeList = WriteReadFile.readFileEmployee();
         System.out.print("enter fullName: ");
         String fullName = scanner.nextLine();
+        while (!Validate.isName(fullName)) {
+            System.err.println("fullName malformed!");
+            System.out.println();
+            System.out.print("retype fullName: ");
+            fullName = scanner.nextLine();
+        }
+
         System.out.print("enter dateOfBirth: ");
-        String dateOfBirth = scanner.nextLine();
+        Date date = null;
+        date = CheckException.checkDayofbirth(date);
         System.out.print("enter sex: ");
         String sex = scanner.nextLine();
         System.out.print("enter idNumber: ");
@@ -57,7 +68,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         double wage = 0.0;
         wage = CheckException.checkDouble(wage);
 
-        Employee employee = new Employee(fullName, dateOfBirth, sex, idNumber, phoneNumber, email, employeeCode, level,
+        Employee employee = new Employee(fullName, date, sex, idNumber, phoneNumber, email, employeeCode, level,
                 location, wage);
         employeeList.add(employee);
 
