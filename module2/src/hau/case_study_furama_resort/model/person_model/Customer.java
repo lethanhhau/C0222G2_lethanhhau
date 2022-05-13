@@ -8,20 +8,15 @@ public class Customer extends Person{
     private String typeOfGuest;
     private String address;
 
-    public Customer(String fullName, Date date, String sex, long idNumber, long phoneNumber, String email, String customerCode, String typeOfGuest, String address){
+    public Customer( ){
     }
 
-    public Customer(String customerCode, String typeOfGuest, String address) {
-        this.customerCode = customerCode;
-        this.typeOfGuest = typeOfGuest;
-        this.address = address;
-    }
-
-    public Customer(String fullName, String dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email, String customerCode, String typeOfGuest, String address) {
+    public Customer(String fullName, Date dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email, String customerCode, String typeOfGuest, String address) {
         super(fullName, dateOfBirth, sex, idNumber, phoneNumber, email);
         this.customerCode = customerCode;
         this.typeOfGuest = typeOfGuest;
         this.address = address;
+
     }
 
     public String getCustomerCode() {

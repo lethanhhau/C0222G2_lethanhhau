@@ -1,6 +1,6 @@
 package le_thanh_hau.comparable_and_comparator.comparable;
 
-class Student extends Comparable<Student> {
+class Student implements Comparable<Student> {
     private int id;
     private String name;
     private int age;

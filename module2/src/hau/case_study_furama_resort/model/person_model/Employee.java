@@ -1,5 +1,6 @@
 package hau.case_study_furama_resort.model.person_model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee extends Person{
@@ -9,17 +10,9 @@ public class Employee extends Person{
     private String location;
     private Double wage;
 
-    public Employee(String fullName, Date date, String sex, long idNumber, long phoneNumber, String email, String employeeCode, String level, String location, double wage){
-    }
+    public Employee(){}
 
-    public Employee(String employeeCode, String level, String location, Double wage) {
-        this.employeeCode = employeeCode;
-        this.level = level;
-        this.location = location;
-        this.wage = wage;
-    }
-
-    public Employee(String fullName, String dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email,
+    public Employee(String fullName, Date dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email,
                     String employeeCode, String level, String location, Double wage) {
         super(fullName, dateOfBirth, sex, idNumber, phoneNumber, email);
         this.employeeCode = employeeCode;

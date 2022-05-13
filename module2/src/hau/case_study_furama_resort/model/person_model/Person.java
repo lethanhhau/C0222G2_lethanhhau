@@ -1,9 +1,13 @@
 package hau.case_study_furama_resort.model.person_model;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public abstract class Person {
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private static final String COMMA = ",";
     private String fullName;
-    private String dateOfBirth;
+    private Date dateOfBirth;
     private String sex;
     private Long idNumber;
     private Long phoneNumber;
@@ -12,7 +16,7 @@ public abstract class Person {
     public Person(){
     }
 
-    public Person(String fullName, String dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email) {
+    public Person(String fullName, Date dateOfBirth, String sex, Long idNumber, Long phoneNumber, String email) {
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
@@ -29,11 +33,11 @@ public abstract class Person {
         this.fullName = fullName;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -72,7 +76,7 @@ public abstract class Person {
     @Override
     public String toString() {
         return "fullName= " + fullName +
-                ", dateOfBirth= " + dateOfBirth +
+                ", dateOfBirth= " + simpleDateFormat.format(dateOfBirth) +
                 ", sex= " + sex +
                 ", idNumber= " + idNumber +
                 ", phoneNumber= " + phoneNumber +
@@ -80,7 +84,7 @@ public abstract class Person {
     }
 
     public String getInfoPerson(){
-        return this.getFullName() + COMMA + this.getDateOfBirth() + COMMA + this.getSex() + COMMA + this.getIdNumber() +
+        return this.getFullName() + COMMA + simpleDateFormat.format(this.getDateOfBirth()) + COMMA + this.getSex() + COMMA + this.getIdNumber() +
                COMMA + this.getPhoneNumber() + COMMA + this.getEmail();
     }
 }

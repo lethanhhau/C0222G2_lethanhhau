@@ -84,13 +84,13 @@ public class CheckException {
                 CheckDateException(value);
                 check = false;
             } catch (ParseException e) {
-                System.out.println("Error: "+e.getMessage());
+                System.err.println("Error: "+e.getMessage());
                 System.out.println();
-                System.out.println("Enter day of birth again! (dd-MM-yyyy): ");
+                System.out.print("Enter day of birth again! (dd/MM/yyyy): ");
             }catch (DateOfBirthException e){
                 System.err.println(e.getMessage());
                 System.out.println();
-                System.out.print("Enter day of birth again! (dd-MM-yyyy): ");
+                System.out.print("Enter day of birth again! (dd/MM/yyyy): ");
             }
         }
         return value;

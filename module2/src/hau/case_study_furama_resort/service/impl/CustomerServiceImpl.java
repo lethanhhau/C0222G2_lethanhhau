@@ -6,17 +6,29 @@ import hau.case_study_furama_resort.model.person_model.Customer;
 import hau.case_study_furama_resort.service.ICustomerService;
 import hau.case_study_furama_resort.common.write_read_file.WriteReadFile;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class CustomerServiceImpl implements ICustomerService {
     private Scanner scanner = new Scanner(System.in);
     public static List<Customer> customerList = new ArrayList<>();
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     static {
-        Customer customer = new Customer("le van A", "6/8/1996", "nam", 1242l,
+        Date date1 = null;
+        Date date2 = null;
+        try {
+            date1 = simpleDateFormat.parse("6/8/1996");
+            date2 = simpleDateFormat.parse("1/2/1996");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        Customer customer = new Customer("le van A",date1 , "nam", 1l,
                 728362l, "email.com", "123", "A12d", "dn");
         customerList.add(customer);
-        customerList.add(new Customer("nguyen van B", "1/2/1990", "nam", 1864l,
+        customerList.add(new Customer("nguyen van B", date2, "nam", 2l,
                 942351l, "email.com", "38", "B23f", "Qn"));
         WriteReadFile.writeCustomer(customerList, false);
 
@@ -37,7 +49,7 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.print("enter full Name: ");
         String fullName = scanner.nextLine();
         while (!Validate.isName(fullName)) {
-            System.err.println("fullName malformed!");
+            System.err.println("full Name malformed!");
             System.out.println();
             System.out.print("retype fullName: ");
             fullName = scanner.nextLine();
@@ -50,11 +62,11 @@ public class CustomerServiceImpl implements ICustomerService {
         System.out.print("enter sex: ");
         String sex = scanner.nextLine();
 
-        System.out.print("enter idNumber: ");
+        System.out.print("enter id Number: ");
         long idNumber = 0;
         idNumber = CheckException.checkLong(idNumber);
 
-        System.out.print("enter phoneNumber: ");
+        System.out.print("enter phone Number: ");
         long phoneNumber = 0;
         phoneNumber = CheckException.checkLong(phoneNumber);
         while (!Validate.isPhone(String.valueOf(phoneNumber))) {
@@ -66,17 +78,11 @@ public class CustomerServiceImpl implements ICustomerService {
 
         System.out.print("enter email: ");
         String email = scanner.nextLine();
-        while (!Validate.isEmail(email)) {
-            System.err.println("email malformed!");
-            System.out.println();
-            System.out.print("retype email: ");
-            email = scanner.nextLine();
-        }
 
-        System.out.print("enter customerCode: ");
+        System.out.print("enter customer Code: ");
         String customerCode = scanner.nextLine();
 
-        System.out.print("enter typeOfGuest: ");
+        System.out.print("enter type Of Guest: ");
         String typeOfGuest = scanner.nextLine();
 
         System.out.print("enter address: ");
@@ -106,23 +112,31 @@ public class CustomerServiceImpl implements ICustomerService {
             for (int i = 0; i < customerList.size(); i++) {
                 if (customerList.get(i).getCustomerCode().equals(customerCodeEdit)) {
                     System.out.print("enter fullName: ");
-                    customerList.get(i).setFullName(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setFullName(scanner.nextLine());
                     System.out.print("enter dateOfBirth: ");
-                    customerList.get(i).setDateOfBirth(scanner.nextLine());
+                    System.out.print("Enter End Day: ");
+                    String endDayStr = scanner.nextLine();
+                    Date dateOfBirth = null;
+                    try {
+                        dateOfBirth = simpleDateFormat.parse(endDayStr);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    CustomerServiceImpl.customerList.get(i).setDateOfBirth(dateOfBirth);
                     System.out.print("enter sex: ");
-                    customerList.get(i).setSex(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setSex(scanner.nextLine());
                     System.out.print("enter idNumber: ");
-                    customerList.get(i).setIdNumber(Long.parseLong(scanner.nextLine()));
+                    CustomerServiceImpl.customerList.get(i).setIdNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter phoneNumber: ");
-                    customerList.get(i).setPhoneNumber(Long.parseLong(scanner.nextLine()));
+                    CustomerServiceImpl.customerList.get(i).setPhoneNumber(Long.parseLong(scanner.nextLine()));
                     System.out.print("enter email: ");
-                    customerList.get(i).setEmail(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setEmail(scanner.nextLine());
                     System.out.print("enter customerCode: ");
-                    customerList.get(i).setCustomerCode(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setCustomerCode(scanner.nextLine());
                     System.out.print("enter typeOfGuest: ");
-                    customerList.get(i).setTypeOfGuest(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setTypeOfGuest(scanner.nextLine());
                     System.out.print("enter address: ");
-                    customerList.get(i).setAddress(scanner.nextLine());
+                    CustomerServiceImpl.customerList.get(i).setAddress(scanner.nextLine());
                     break;
                 }
             }

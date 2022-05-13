@@ -9,7 +9,10 @@ import hau.case_study_furama_resort.model.person_model.Customer;
 import hau.case_study_furama_resort.model.person_model.Employee;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class WriteReadFile {
@@ -21,6 +24,7 @@ public class WriteReadFile {
     private static final String FILE_BOOKING = "src/hau/case_study_furama_resort/common/data/booking.csv";
     private static final String FILE_CONTRACT = "src/hau/case_study_furama_resort/common/data/contract.csv";
 
+    private static  SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     /**
      * ghi File
      * Hàm dùng chung
@@ -156,7 +160,14 @@ public class WriteReadFile {
         // chuyển listSTring => listEmployee
         for (String str: stringList) {
             array = str.split(",");
-            employee = new Employee(array[0], array[1], array[2], Long.parseLong(array[3]),Long.parseLong(array[4])
+            Date date1 = null;
+            try {
+                date1 = simpleDateFormat.parse(array[1]);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            employee = new Employee(array[0], date1, array[2], Long.parseLong(array[3]),Long.parseLong(array[4])
                     ,array[5],array[6],array[7],array[8],Double.parseDouble(array[9]));
             employeeList.add(employee);
         }
@@ -173,12 +184,20 @@ public class WriteReadFile {
         Customer customer  = null;
         for (String str:stringList) {
             array = str.split(",");
-            customer = new Customer(array[0], array[1], array[2], Long.parseLong(array[3]),Long.parseLong(array[4]),
+
+            Date date1 = null;
+            try {
+                date1 = simpleDateFormat.parse(array[1]);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            customer = new Customer(array[0], date1, array[2], Long.parseLong(array[3]),Long.parseLong(array[4]),
                     array[5],array[6],array[7],array[8] );
             customerList.add(customer);
         }
         return customerList;
     }
+
 
     public static List<Vila> readFileVila() {
         List<String> stringList = readFile(FILE_VILA);
@@ -193,6 +212,7 @@ public class WriteReadFile {
         }
         return vilaList;
     }
+
 
     public static List<House> readFileHouse() {
         List<String> stringList = readFile(FILE_HOUSE);
@@ -229,7 +249,16 @@ public class WriteReadFile {
         Booking booking = null;
         for (String str : stringList){
             array = str.split(",");
-            booking = new Booking(array[0],array[1],array[2],array[3],array[4],array[5],array[6]);
+
+            Date date1 = null;
+            Date date2 = null;
+            try {
+                date1 = simpleDateFormat.parse(array[1]);
+                date2 = simpleDateFormat.parse(array[2]);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            booking = new Booking(array[0],date1,date2,array[3],array[4],array[5],array[6]);
             bookingList.add(booking);
         }
         return bookingList;

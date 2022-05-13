@@ -12,6 +12,8 @@ public class VdComparable {
         listStudents.add(new Student(3, "Phu", 20, "Hanoi"));
         listStudents.add(new Student(4, "Quy", 22, "Hanoi"));
 
+        Collections.sort(listStudents);
+
         for (Student student : listStudents) {
             System.out.println(student.toString());
         }

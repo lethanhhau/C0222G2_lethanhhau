@@ -10,11 +10,11 @@ public class Validate {
     private static final String REGEX_NUMBER_OF_FLOORS = "^(([1-9])|([1-9][0-9]+))$";
     private static final String REGEX_MAXIMUM_PERSON = "^(([1-9])|([1][0-9]))$";
     private static final String REGEX_EMAIL = "^[a-z0-9]+@gmail.com$";
-    private static final String REGEX_PHONE = "^0[0-9]{9}$";
+    private static final String REGEX_PHONE = "^[1-9]{2}[0-9]{8}$";
     /**
-     * Regex test data
+     * Regex test date
      */
-    private static final String REGEX_TEST = "^((([1-9])|([1-2][0-9])|([3][0-1]))/(([1-9])|([1][0-2])))/(([1][9][2-9]{2})|([2][0][0][1-4]))$";
+    private static final String REGEX_TEST_DATE = "^((([1-9])|([1-2][0-9])|([3][0-1]))/(([1-9])|([1][0-2])))/(([1][9][2-9]{2})|([2][0][0][1-4]))$";
     private static final String REGEX_NAME = "^(([A-Z][a-z0-9]+)|([A-Z][a-z0-9]+( [A-Z][a-z0-9]+)+))$";
 
     public static Boolean isName(String name){
@@ -59,7 +59,7 @@ public class Validate {
     }
 
     public static Boolean isTest(String maximumPerson) {
-        return maximumPerson.matches(REGEX_TEST);
+        return maximumPerson.matches(REGEX_TEST_DATE);
     }
 
 

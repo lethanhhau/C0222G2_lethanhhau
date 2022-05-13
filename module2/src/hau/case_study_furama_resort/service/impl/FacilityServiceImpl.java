@@ -23,16 +23,16 @@ public class FacilityServiceImpl implements IFacilityService {
 
    static  {
 
-        House house = new House("SVHO-1234", "house1", "200m", 600, 6,
+        House house = new House("SVHO-1234", "house", "200m", 600, 6,
                 "theo năm", "3*", 2);
-       Room room = new Room("SVRO-8934", "room", "100m", 200, 2, "theo giờ",
+       Room room = new Room("SVRO-1234", "room", "100m", 200, 2, "theo giờ",
                 "bữa sáng");
-       Vila vila = new Vila("SVVL-7932", "villa", "600m", 1800, 12, "Theo tháng",
+       Vila vila = new Vila("SVVL-1234", "villa", "600m", 1800, 12, "Theo tháng",
                 "4*", 120d, 1);
 
         facilityMap.put(house,1);
         facilityMap.put(room,1);
-        facilityMap.put(vila,1);
+        facilityMap.put(vila,4);
 
         vilaList.add(vila);
         WriteReadFile.writeVila(vilaList,false);
@@ -42,8 +42,30 @@ public class FacilityServiceImpl implements IFacilityService {
         WriteReadFile.writeHouse(houseList,false);
     }
 
+    /**
+     * tạo hàm dùng chung
+     * add từ list vào map
+     */
+    public void readFileMap(){
+        vilaList = WriteReadFile.readFileVila();
+        houseList = WriteReadFile.readFileHouse();
+        roomList = WriteReadFile.readFileRoom();
+        facilityMap.clear();
+        for (Vila vila: vilaList) {
+            this.add(vila);
+        }
+        for (House house:houseList) {
+            this.add(house);
+        }
+        for (Room room:roomList){
+            this.add(room);
+        }
+    }
+
     @Override
     public void display() {
+
+        readFileMap();
         Set<Facility> facilitySet = facilityMap.keySet();
         for (Facility facility:facilitySet) {
             System.out.println(facility + "\n" + facilityMap.get(facility));
@@ -321,11 +343,9 @@ public class FacilityServiceImpl implements IFacilityService {
     @Override
     public void maintenanceCheck(Facility facility) {
         if (facilityMap.get(facility) >= 5) {
-            System.out.println("Service is under maintenance!");
+            System.err.println("Service is under maintenance!");
             maintenancefacilities.add(facility);
             facilityMap.put(facility, 0);
         }
     }
-
-
 }

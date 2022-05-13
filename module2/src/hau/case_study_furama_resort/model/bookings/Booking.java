@@ -1,10 +1,14 @@
 package hau.case_study_furama_resort.model.bookings;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Booking {
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private static final String COMMA = ",";
     private String bookingcode;
-    private String startDay;
-    private String endDate;
+    private Date startDay;
+    private Date endDate;
     private String customerCode;
     private String serviceName;
     private String typeOfService;
@@ -13,7 +17,7 @@ public class Booking {
     public Booking(){
     }
 
-    public Booking(String bookingcode, String startDay, String endDate, String customerCode, String serviceName,
+    public Booking(String bookingcode, Date startDay, Date endDate, String customerCode, String serviceName,
                    String typeOfService,String serviceCode) {
         this.bookingcode = bookingcode;
         this.startDay = startDay;
@@ -32,19 +36,19 @@ public class Booking {
         this.bookingcode = bookingcode;
     }
 
-    public String getStartDay() {
+    public Date getStartDay() {
         return startDay;
     }
 
-    public void setStartDay(String startDay) {
+    public void setStartDay(Date startDay) {
         this.startDay = startDay;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -82,20 +86,18 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "bookingcode='" + bookingcode + '\'' +
-                ", startDay='" + startDay + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", customerCode='" + customerCode + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", typeOfService='" + typeOfService + '\'' +
-                ", serviceCode='"+ serviceCode + '\'' +
-                '}';
+        return "bookingcode= " + bookingcode +
+                ", startDay= " + simpleDateFormat.format(startDay) +
+                ", endDate= " + simpleDateFormat.format(endDate) +
+                ", customerCode= " + customerCode +
+                ", serviceName= " + serviceName +
+                ", typeOfService= " + typeOfService +
+                ", serviceCode= "+ serviceCode;
     }
 
     public String getInFoBooking(){
-        return this.getBookingcode() + COMMA + this.getStartDay() + COMMA + this.getEndDate() + COMMA +
-                this.getCustomerCode() + COMMA + this.getServiceName() + COMMA + this.getTypeOfService() + COMMA +
-                this.getServiceCode();
+        return this.getBookingcode() + COMMA + simpleDateFormat.format(this.getStartDay()) + COMMA +
+                simpleDateFormat.format(this.getEndDate()) + COMMA + this.getCustomerCode() + COMMA +
+                this.getServiceName() + COMMA + this.getTypeOfService() + COMMA + this.getServiceCode();
     }
 }
