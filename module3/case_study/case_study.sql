@@ -183,21 +183,29 @@ insert into case_study.hop_dong_chi_tiet value
 (7,1,2,2),
 (8,12,2,2);
 
+-- Task 2 --
 select * from case_study.nhan_vien where ho_ten like 'T%' 
 or ho_ten like 'H%'
 or ho_ten like 'K%'
 and length(ho_ten) <= 15;
 
+-- Task 3--
  SELECT * FROM case_study.khach_hang 
 where ROUND(DATEDIFF(CURDATE(), ngay_sinh) / 365, 0) >18 and
 ROUND(DATEDIFF(CURDATE(), ngay_sinh) / 365, 0) < 50 
 and dia_chi like '%Đà Nẵng'
 or dia_chi like '%Quảng Trị';
 
-select ma_khach_hang, count(ma_khach_hang) as so_lan_dat_phong
-from case_study.hop_dong,case_study.loai_khach
+-- Task 4 --
+select khach_hang.ma_khach_hang,khach_hang.ho_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong
+from khach_hang
+join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
 where ten_loai_khach like '%Diamond%'
-group by ma_khach_hang;
+group by hop_dong.ma_khach_hang
+order by count(ma_khach_hang);
+
+-- Task 5--
 
 
 
