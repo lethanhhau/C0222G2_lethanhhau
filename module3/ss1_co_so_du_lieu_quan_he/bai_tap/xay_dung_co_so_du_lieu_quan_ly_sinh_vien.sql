@@ -1,14 +1,14 @@
-drop database student;
-create database student;
+drop database if exists student;
+create database if not exists student;
 
 create table student.class(
 id int primary key,
 name varchar(100) not null
 );
-create table student.Teacher(
-id int,
+create table student.teacher(
+id int  primary key,
 name varchar(100) not null,
-age int(3) primary key,
+age int(3),
 country varchar(100)
 );
 
