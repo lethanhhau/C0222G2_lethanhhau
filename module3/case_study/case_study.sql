@@ -1,5 +1,6 @@
+drop database case_study;
 create database if not exists case_study;
-
+use case_study;
 create table if not exists case_study.vi_tri(
 ma_vi_tri INT,
 ten_vi_tri VARCHAR(45),
@@ -118,6 +119,8 @@ FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
 FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
 );
 
+-- Task 1.	Thêm mới thông tin cho tất cả các bảng có trong CSDL để có thể thoả mãn các yêu cầu bên dưới.
+
 insert into case_study.vi_tri value (1,'Quản lý'),(2,'Nhân Viên');
 insert into case_study.trinh_do value (1,'trung cấp'),(2,'Cao Đẳng'),(3,'Đại học'),(4,'Sau Đại Học');
 insert into case_study.bo_phan value (1,'Sale-Marketing'),(2,'Hành Chính'),(3,'Phục Vụ'),(4,'Quản Lý');
@@ -163,16 +166,16 @@ insert into case_study.dich_vu_di_kem value
 insert into case_study.hop_dong value
 (1,'2020-12-08','2020-12-08',0,3,1,3),
 (2,'2020-07-14','2020-07-21',200000,7,3,1),
-(3,'2020-03-15','2020-03-17',50000,3,4,2),
-(4,'2020-01-14','2020-01-18',100000,7,5,5),
-(5,'2020-07-14','2020-07-15',0,7,2,6),
-(6,'2020-06-01','2020-06-03',0,7,7,6),
-(7,'2020-09-02','2020-09-05',100000,7,4,4),
-(8,'2021-06-17','2020-06-18',150000,3,4,1),
-(9,'2021-11-19','2020-11-19',0,3,4,3),
-(10,'2021-04-12','2020-04-14',0,10,3,5),
-(11,'2021-04-25','2020-04-25',0,2,2,1),
-(12,'2021-05-25','2020-05-27',0,7,10,1);
+(3,'2021-03-15','2021-03-17',50000,3,4,2),
+(4,'2021-01-14','2021-01-18',100000,7,5,5),
+(5,'2021-07-14','2021-07-15',0,7,2,6),
+(6,'2021-06-01','2021-06-03',0,7,7,6),
+(7,'2021-09-02','2021-09-05',100000,7,4,4),
+(8,'2021-06-17','2021-06-18',150000,3,4,1),
+(9,'2021-11-19','2021-11-19',0,3,4,3),
+(10,'2021-04-12','2021-04-14',0,10,3,5),
+(11,'2021-04-25','2021-04-25',0,2,2,1),
+(12,'2021-05-25','2021-05-27',0,7,10,1);
 insert into case_study.hop_dong_chi_tiet value
 (1,2,4,5),
 (2,2,5,8),
@@ -183,31 +186,94 @@ insert into case_study.hop_dong_chi_tiet value
 (7,1,2,2),
 (8,12,2,2);
 
--- Task 2 --
+-- Task 2 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các 
+-- ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự.
+
 select * from case_study.nhan_vien where ho_ten like 'T%' 
 or ho_ten like 'H%'
 or ho_ten like 'K%'
 and length(ho_ten) <= 15;
 
--- Task 3--
+-- Task 3 3.	Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi 
+-- và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
+
  SELECT * FROM case_study.khach_hang 
 where ROUND(DATEDIFF(CURDATE(), ngay_sinh) / 365, 0) >18 and
 ROUND(DATEDIFF(CURDATE(), ngay_sinh) / 365, 0) < 50 
 and dia_chi like '%Đà Nẵng'
 or dia_chi like '%Quảng Trị';
 
--- Task 4 --
+-- Task 4 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
+-- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng.
+-- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
+
 select khach_hang.ma_khach_hang,khach_hang.ho_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong
 from khach_hang
 join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
 join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
-where ten_loai_khach like '%Diamond%'
+where ten_loai_khach = 'Diamond'
 group by hop_dong.ma_khach_hang
 order by count(ma_khach_hang);
 
--- Task 5--
+-- Task 5 5.	Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong,
+-- ngay_ket_thuc, tong_tien  (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá,
+-- với Số Lượng và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng.
+-- (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
+select khach_hang.ma_khach_hang,khach_hang.ho_ten,loai_khach.ten_loai_khach, hop_dong.ma_hop_dong,dich_vu.ten_dich_vu,
+hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,dich_vu.chi_phi_thue + ifnull((hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia),0)  as tong_tien
+from khach_hang
+join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
+left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
+left join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+group by ma_hop_dong,ten_loai_khach,ten_dich_vu,ma_khach_hang
+order by ma_khach_hang;
 
+-- Task 6 6.	Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu 
+-- của tất cả các loại dịch vụ chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
+
+select dich_vu.ma_dich_vu,dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.chi_phi_thue,loai_dich_vu.ten_loai_dich_vu
+from dich_vu
+join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+join hop_dong on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
+where dich_vu.ma_dich_vu
+not in(
+select dich_vu.ma_dich_vu
+from dich_vu
+join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+join hop_dong on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
+where hop_dong.ngay_lam_hop_dong
+between '2021-01-01' and '2021-03-31'
+)
+group by ma_dich_vu;
+
+-- Task 7.	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu
+-- của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng
+-- đặt phòng trong năm 2021.
+
+select dich_vu.ma_dich_vu,dich_vu.ten_dich_vu,dich_vu.dien_tich,dich_vu.so_nguoi_toi_da,dich_vu.chi_phi_thue,
+loai_dich_vu.ten_loai_dich_vu
+from dich_vu
+join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+join hop_dong on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+where year(hop_dong.ngay_lam_hop_dong) = '2020' and hop_dong.ma_khach_hang
+not in(select hop_dong.ma_khach_hang from dich_vu
+join loai_dich_vu on dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
+join hop_dong on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
+where year(hop_dong.ngay_lam_hop_dong) = '2021'
+);
+
+-- Task 8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
+-- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
+
+-- c1
+select distinct ho_ten from khach_hang;
+-- c2
+select ho_ten from khach_hang
+group by ho_ten;
+-- c3
 
 
 
