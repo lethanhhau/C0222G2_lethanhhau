@@ -172,7 +172,7 @@ insert into case_study.hop_dong value
 (6,'2021-06-01','2021-06-03',0,7,7,6),
 (7,'2021-09-02','2021-09-05',100000,7,4,4),
 (8,'2021-06-17','2021-06-18',150000,3,4,1),
-(9,'2021-11-19','2021-11-19',0,3,4,3),
+(9,'2020-11-19','2021-11-19',0,3,4,3),
 (10,'2021-04-12','2021-04-14',0,10,3,5),
 (11,'2021-04-25','2021-04-25',0,2,2,1),
 (12,'2021-05-25','2021-05-27',0,7,10,1);
@@ -274,6 +274,41 @@ select distinct ho_ten from khach_hang;
 select ho_ten from khach_hang
 group by ho_ten;
 -- c3
+select ho_ten from khach_hang
+union
+select ho_ten from khach_hang;
+
+-- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021
+-- thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+
+select month(hop_dong.ngay_lam_hop_dong) as thang, count(hop_dong.ma_khach_hang) as so_luong_khach_hang
+from hop_dong
+where year(hop_dong.ngay_lam_hop_dong) = 2021
+group by thang
+order by thang;
+-- 10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm.
+-- Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem
+-- (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
+
+select hop_dong.ma_hop_dong,hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,hop_dong.tien_dat_coc,sum(ifnull(hop_dong_chi_tiet.so_luong,0)) 
+as so_luong_dich_vu_di_kem
+from hop_dong
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+group by hop_dong.ma_hop_dong;
+
+-- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond”
+-- và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
+
+select dich_vu_di_kem.ma_dich_vu_di_kem,dich_vu_di_kem.ten_dich_vu_di_kem
+from dich_vu_di_kem
+join hop_dong_chi_tiet on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+join hop_dong on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+join khach_hang on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang
+join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
+where loai_khach.ten_loai_khach = 'Diamond'
+and khach_hang.dia_chi like '%Vinh' or '%Quãng Ngãi';
+
+
 
 
 
