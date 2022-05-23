@@ -361,7 +361,7 @@ and hop_dong.ma_khach_hang
 not in
 (select ma_khach_hang from hop_dong
 where hop_dong.ngay_lam_hop_dong
-between '2021-01-01 00:00:00' and '2021-06-30 00:00:00'
+between '2021-01-01' and '2021-06-30'
 )
 and hop_dong.`status` = 0 
 group by hop_dong.ma_hop_dong;
@@ -432,17 +432,30 @@ where `status` = 1;
 
 
 -- Task 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond,
---  chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ.
+--  chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 
+-- là lớn hơn 10.000.000 VNĐ.
 
-update loai_khach
-set loai_khach.ten_loai_khach = Diamond;
-
-select khach_hang.ma_khach_hang from khach_hang
+SET SQL_SAFE_UPDATES = 0;
+update khach_hang
+set khach_hang.ma_loai_khach = 1
+where khach_hang.ma_khach_hang
+in( select * from (
+select khach_hang.ma_khach_hang  from khach_hang
 join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
 join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
-where year(hop_dong.ngay_lam_hop_dong) = 2021 
-group by khach_hang.ma_khach_hang
-having sum(dich_vu.chi_phi_thue) > 10000000;
+join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
+join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+where  year(hop_dong.ngay_lam_hop_dong) = 2021 and loai_khach.ma_loai_khach = 2 
+and dich_vu.chi_phi_thue + ifnull((hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia),0) > 10000000) table_tam
+);
+SET SQL_SAFE_UPDATES = 1;
+
+
+select khach_hang.ma_khach_hang,khach_hang.ho_ten,loai_khach.ma_loai_khach 
+from khach_hang
+join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
+where loai_khach.ma_loai_khach = 1;
 
 -- Task 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
 
@@ -453,7 +466,7 @@ where  khach_hang.ma_khach_hang
 in( select * from (
 	select khach_hang.ma_khach_hang from khach_hang
 	join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang
-	where year(hop_dong.ngay_lam_hop_dong) < 2021 ) table_temp
+	where year(hop_dong.ngay_lam_hop_dong) < 2021 ) table_tam      -- sql ko cho update trực tiếp nên ta phải khai báo 1 table tạm để update
 );
 SET SQL_SAFE_UPDATES = 1;
 
@@ -481,9 +494,38 @@ select * from dich_vu_di_kem;
 -- Task 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống,
 -- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
 
-select nhan_vien.ma_nhan_vien as `id`,nhan_vien.ho_ten,nhan_vien.email,nhan_vien.so_dien_thoai,nhan_vien.ngay_sinh,nhan_vien.dia_chi from nhan_vien
+select nhan_vien.ma_nhan_vien as `id`,nhan_vien.ho_ten,nhan_vien.email,nhan_vien.so_dien_thoai,nhan_vien.ngay_sinh,nhan_vien.dia_chi,'nhan_vien' as 'role' from nhan_vien
 union all 
-select khach_hang.ma_khach_hang as `id`,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi from khach_hang;
+select khach_hang.ma_khach_hang as `id`,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi,'khach_hang' as 'role' from khach_hang;
+
+-- Task 21.	Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của tất cả các nhân viên có địa chỉ là
+-- “Hải Châu” và đã từng lập hợp đồng cho một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “12/12/2019”.
+
+create view v_nhan_vien as select nhan_vien.*
+from nhan_vien
+join hop_dong on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+where nhan_vien.dia_chi like '%Huế%' and hop_dong.ngay_lam_hop_dong = '2021-07-14';
+
+-- Task 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu”
+-- đối với tất cả các nhân viên được nhìn thấy bởi khung nhìn này
+
+SET SQL_SAFE_UPDATES = 0;
+update v_nhan_vien
+set v_nhan_vien.dia_chi = 'Liên Chiểu';
+SET SQL_SAFE_UPDATES = 1;
+
+select v_nhan_vien.* from v_nhan_vien
+
+-- 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng nào đó với
+-- ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang.
+
+
+
+
+
+
+
+
 
 
 
