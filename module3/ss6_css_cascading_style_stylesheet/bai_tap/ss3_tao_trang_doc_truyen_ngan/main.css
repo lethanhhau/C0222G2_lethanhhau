@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto",sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    background: #cb7802;
+    color: aqua;
+}
+.nav{
+    overflow: hidden;
+    background-color: blue;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+.nav a:hover{
+    background-color: #db7093;
+    font-weight: bold;
+}
+.search{
+    text-align: left;
+}
