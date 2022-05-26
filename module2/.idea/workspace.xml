@@ -5,20 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c405408-4973-4641-9777-b052ed382a81" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/bai_tap/ss1_nhung_css_vao_html/NhungCssVaoTrongHtml.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/bai_tap/ss1_nhung_css_vao_html/TestCss.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/bai_tap/ss2_dinh_dang_van_ban_css/DinhDangVanBan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/thuc_hanh/ss1_su_dung_css/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module3/case_study/case_study.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../module3/case_study/case_study.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss1_tao_layout_voi_cac_the_html5_va_css/TaoLayoutVoiCacTheHtml5VaCss.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss1_tao_layout_voi_cac_the_html5_va_css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/Css-Facebook.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/Facebooks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss3_tao_layout_voi_rwd/TaoLayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss3_tao_layout_voi_rwd/layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/thuc_hanh/ss2_tao_menu_doc/TaoMenuDoc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/thuc_hanh/ss2_tao_menu_doc/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/thuc_hanh/ss3_tao_menu_ngang/TaoMenuNgang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/thuc_hanh/ss3_tao_menu_ngang/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/bai_tap/ss3_tao_trang_doc_truyen_ngan/TrangDocTruyenNgan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module3/ss6_css_cascading_style_stylesheet/bai_tap/ss3_tao_trang_doc_truyen_ngan/TrangDocTruyenNgan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/Facebook.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/Facebook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/facebook-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/facebook-css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/0.5709af07bc1d58fcf6a1.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/1.9d9c2080dba52ad2198a.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/10.08094f6a29182e279d20.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/1525189943-38523.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/18.78fe247d19f5101ec77d.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/1ce05b4b.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/31.43a0b3892e4f05bc0314.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/349cfdf6.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/7.8df030f5bc4eeb2b95dd.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/CKYIV5QM.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/analytics.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/anchor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/api.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/app-00be0e0ee5a06088802939e9beddae83.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/app-e23924a0edb4b571d42fe2a3ca61ab8b.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/app-wa-6972bf07d6b9f99336a9a78bb51ecbc8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/carbon.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/embed.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/inner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/m-outer-1a38b79520d1f12946bcd3ee7bd6d1b4.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/m-outer-649431882ac2f1ed1f457f73c22ec4a1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/main.e07ffa9d.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/monetization.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/out-4.5.42.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/recaptcha__en.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/saved_resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/saved_resource(1)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/saved_resource(2).html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/saved_resource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/settings-fb840945c8c0933b31d2bde8715a7317.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/styles__ltr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/vendor.90fe6783.js.download" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/woff2(1).css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module3/ss7_thiet_ke_bo_cuc_trang_web/bai_tap/ss2_tao_giao_dien_gian_luoc_cua_trang_chu_facebook/img/tivi_files/woff2.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653271204328</updated>
       <workItem from="1653271216382" duration="453000" />
+      <workItem from="1653472471578" duration="34000" />
     </task>
     <servers />
   </component>
