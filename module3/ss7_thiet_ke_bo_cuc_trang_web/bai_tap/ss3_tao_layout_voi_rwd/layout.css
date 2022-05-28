@@ -67,6 +67,7 @@
     height: 50px;
     background-color: #a69c9c;
     color: white;
+    text-align: center;
 }
 .logo {
     padding: 13px;
@@ -90,6 +91,10 @@
 }
 .welcome {
     padding-top: 20px;
+    margin-left: 20px;
+}
+.text{
+    margin-left: 20px;
 }
 .dsa-1 {
     width: 200px;
@@ -98,6 +103,7 @@
     text-align: center;
     margin-top: 20px;
     padding-top: 40px;
+    margin-left: 15px;
 }
 .dsa-2 {
     width: 200px;
@@ -106,13 +112,20 @@
     text-align: center;
     margin-top: 50px;
     padding-top: 40px;
+    margin-left: 15px;
 }
 .col-12-2 {
-    margin-top: 250px;
     background-color: #3a3535;
     height: 50px;
     text-align: center;
     padding-top: 15px;
     color: white;
 }
-
+.col-2-1{
+    background-color: #ece8e0;
+    height: 550px;
+}
+.col-2-2{
+    background-color: #ece8e0;
+    height: 550px;
+}
