@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 @WebServlet(name = "DictionaryServlet", urlPatterns = "/translate")
-class DictionaryServlet extends HttpServlet {
+public class DictionaryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

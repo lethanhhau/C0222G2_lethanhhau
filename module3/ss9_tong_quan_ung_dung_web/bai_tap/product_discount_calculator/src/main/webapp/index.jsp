@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>product_discount_calculator</h2>
-<form action="/Discount" method="post">
+<form action="Discount" method="post">
   <label>Product Description: </label><br/>
   <input type="text" name="productDescription" placeholder="productDescription"/><br/>
   <label>List Price: </label><br/>
