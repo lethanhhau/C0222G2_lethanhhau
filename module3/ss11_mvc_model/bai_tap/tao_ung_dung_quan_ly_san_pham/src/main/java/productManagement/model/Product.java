@@ -18,6 +18,8 @@ public class Product {
         this.producer = producer;
     }
 
+
+
     public Integer getId() {
         return id;
     }

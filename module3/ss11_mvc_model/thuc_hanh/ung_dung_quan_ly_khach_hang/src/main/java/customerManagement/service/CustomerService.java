@@ -5,13 +5,13 @@ import customerManagement.model.Customer;
 import java.util.List;
 
 public interface CustomerService {
-        List<Customer> findAll();
+    List<Customer> findAll();
 
-        void save(Customer customer);
+    void save(Customer customer);
 
-        Customer findById(int id);
+    Customer findById(int id);
 
-        void update(int id, Customer customer);
+    void update(int id, Customer customer);
 
-        void remove(int id);
+    void remove(int id);
 }

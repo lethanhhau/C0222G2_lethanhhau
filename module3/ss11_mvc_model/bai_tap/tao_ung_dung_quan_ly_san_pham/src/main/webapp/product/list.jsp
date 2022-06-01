@@ -11,6 +11,7 @@
 </p>
 <table border="1">
     <tr>
+        <td>Id</td>
         <td>Name</td>
         <td>Price</td>
         <td>Describe</td>
@@ -18,9 +19,10 @@
         <td>Edit</td>
         <td>Delete</td>
     </tr>
-    <c:forEach items='${requestScope["listProduct"]}' var="product">
+    <c:forEach items="${listProduct}" var="product">
         <tr>
-            <td><a href="/customers?action=view&id=${product.id}">${product.name}</a></td>
+            <td><a href="/customers?action=view&id=${product.id}">${product.id}</a></td>
+            <td>${product.name}</td>
             <td>${product.price}</td>
             <td>${product.describe}</td>
             <td>${product.producer}</td>

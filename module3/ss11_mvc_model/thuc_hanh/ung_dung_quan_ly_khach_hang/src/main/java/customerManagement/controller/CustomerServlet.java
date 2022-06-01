@@ -2,28 +2,30 @@ package customerManagement.controller;
 
 import customerManagement.model.Customer;
 import customerManagement.service.CustomerService;
-import customerManagement.service.impl.CustomerServiceImpl;
+import customerManagement.service.CustomerServiceImpl;
+import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customers")
 public class CustomerServlet extends HttpServlet {
 
-    private CustomerService customerService = new CustomerServiceImpl();
+    private final CustomerService customerService = new CustomerServiceImpl();
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if(action == null){
+        if (action == null) {
             action = "";
         }
-        switch (action){
-           
+        switch (action) {
             case "create":
                 createCustomer(request, response);
                 break;
@@ -38,35 +40,11 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if(action == null){
-            action = "";
-        }
-        switch (action){
-            case "create":
-                showCreateForm(request, response);
-                break;
-            case "edit":
-                showEditForm(request, response);
-                break;
-            case "delete":
-                showDeleteForm(request,response);
-                break;
-            case "view":
-                viewCustomer(request, response);
-                break;
-            default:
-                listCustomers(request, response);
-                break;
-        }
-    }
-
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = this.customerService.findById(id);
         RequestDispatcher dispatcher;
-        if(customer == null){
+        if (customer == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             this.customerService.remove(id);
@@ -85,7 +63,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         Customer customer = this.customerService.findById(id);
         RequestDispatcher dispatcher;
-        if(customer == null){
+        if (customer == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             customer.setName(name);
@@ -105,30 +83,11 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Customer customer = this.customerService.findById(id);
-        RequestDispatcher dispatcher;
-        if(customer == null){
-            dispatcher = request.getRequestDispatcher("error-404.jsp");
-        } else {
-            request.setAttribute("customer", customer);
-            dispatcher = request.getRequestDispatcher("customer/edit.jsp");
-        }
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
-        int id = (int)(Math.random() * 10000);
+        int id = (int) (Math.random() * 10000);
 
         Customer customer = new Customer(id, name, email, address);
         this.customerService.save(customer);
@@ -143,6 +102,30 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                showCreateForm(request, response);
+                break;
+            case "edit":
+                showEditForm(request, response);
+                break;
+            case "delete":
+                showDeleteForm(request, response);
+                break;
+            case "view":
+                viewCustomer(request, response);
+                break;
+            default:
+                listCustomers(request, response);
+                break;
+        }
+    }
 
     private void viewCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -167,11 +150,30 @@ public class CustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = this.customerService.findById(id);
         RequestDispatcher dispatcher;
-        if(customer == null){
+        if (customer == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
         } else {
             request.setAttribute("customer", customer);
             dispatcher = request.getRequestDispatcher("customer/delete.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Customer customer = this.customerService.findById(id);
+        RequestDispatcher dispatcher;
+        if (customer == null) {
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        } else {
+            request.setAttribute("customer", customer);
+            dispatcher = request.getRequestDispatcher("customer/edit.jsp");
         }
         try {
             dispatcher.forward(request, response);

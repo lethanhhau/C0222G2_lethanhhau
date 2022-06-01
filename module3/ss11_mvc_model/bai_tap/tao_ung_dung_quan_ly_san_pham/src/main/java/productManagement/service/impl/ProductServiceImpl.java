@@ -1,48 +1,39 @@
 package productManagement.service.impl;
 
 import productManagement.model.Product;
+import productManagement.repository.IProductRepository;
+import productManagement.repository.impl.ProductRepositoryImpl;
 import productManagement.service.IProductService;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 public class ProductServiceImpl implements IProductService {
-        private static Map<Integer, Product> productMap;
-        static {
-            productMap = new HashMap<>();
-            productMap.put(1,new Product(1,"hao hao",4.5d,"ngon","hao hao"));
-            productMap.put(2,new Product(2,"hon da",12.5d,"đẹp","hon da"));
-            productMap.put(3,new Product(3,"toyota",99.5d,"đẹp","toyota"));
-    }
+private IProductRepository iProductRepository = new ProductRepositoryImpl();
 
     @Override
-    public List<Product> findAll() {
-        return new ArrayList<>(productMap.values());
+    public List<Product> getAll() {
+        return iProductRepository.getAll();
     }
 
     @Override
     public void save(Product product) {
-        productMap.put(product.getId(), product);
-    }
-
-    @Override
-    public Product findById(int id) {
-        return productMap.get(id);
+        this.iProductRepository.save(product);
     }
 
     @Override
     public void update(int id, Product product) {
-        productMap.put(id, product);
+        this.iProductRepository.update(id,product);
     }
 
     @Override
-    public void remove(int id) {
-        productMap.remove(id);
+    public Product findById(Integer id) {
+        return iProductRepository.findById(id);
     }
 
     @Override
-    public void search(int id) {
-
+    public void remove(Integer id) {
+        this.iProductRepository.remove(id);
     }
+
 }

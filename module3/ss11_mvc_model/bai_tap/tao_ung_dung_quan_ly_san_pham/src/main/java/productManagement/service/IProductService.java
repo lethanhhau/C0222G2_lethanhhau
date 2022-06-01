@@ -5,15 +5,14 @@ import productManagement.model.Product;
 import java.util.List;
 
 public interface IProductService {
-        List<Product> findAll();
+        List<Product> getAll();
 
-        void save(Product customer);
+        void save(Product product);
 
-        Product findById(int id);
+        void update(int id,Product product);
 
-        void update(int id, Product customer);
 
-        void remove(int id);
+        Product findById(Integer id);
 
-        void search(int id);
+        void remove(Integer id);
 }
