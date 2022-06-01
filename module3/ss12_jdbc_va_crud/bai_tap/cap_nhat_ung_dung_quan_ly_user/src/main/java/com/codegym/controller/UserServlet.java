@@ -14,7 +14,8 @@ import java.util.List;
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private UserRepositoryImpl userRepository;
-    public void init(){
+
+    public void init() {
         userRepository = new UserRepositoryImpl();
     }
 
@@ -27,22 +28,28 @@ public class UserServlet extends HttpServlet {
         try {
             switch (action) {
                 case "create":
-                    insertUser(request, response);
+                    showNewForm(request, response);
                     break;
                 case "edit":
-                    updateUser(request, response);
-                    break;
-                case "viewCountry":
-                    showViewCountry(request,response);
+                    showEditForm(request, response);
                     break;
                 case "delete":
-                    deleteUser(request,response);
+                    deleteUser(request, response);
                     break;
+                case "sortByName":
+                    softByName(request, response);
+                    break;
+                default:
+                    listUser(request, response);
+                    break;
+
+
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
     }
+
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         String name = request.getParameter("name");
@@ -72,7 +79,7 @@ public class UserServlet extends HttpServlet {
         userRepository.findByCountry(country);
         request.setAttribute("listUser", country);
         try {
-            request.getRequestDispatcher("user/searchCountry.jsp").forward(request,response);
+            request.getRequestDispatcher("user/searchCountry.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -80,18 +87,15 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
-        try {
-            userRepository.deleteUser(id);
-            try {
-                response.sendRedirect("/users");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        userRepository.deleteUser(id);
+
+        List<User> listUser = userRepository.selectAllUsers();
+        request.setAttribute("listUser", listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override
@@ -104,20 +108,17 @@ public class UserServlet extends HttpServlet {
         try {
             switch (action) {
                 case "create":
-                    showNewForm(request, response);
+                    insertUser(request, response);
                     break;
                 case "edit":
-                    showEditForm(request, response);
+                    updateUser(request, response);
                     break;
-                case "delete":
-                    showDeleteUser(request, response);
-                    break;
-                case "sortByName":
-                    softByName(request,response);
+                case "viewCountry":
+                    showViewCountry(request, response);
                     break;
                 default:
-                    listUser(request, response);
                     break;
+
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -153,7 +154,7 @@ public class UserServlet extends HttpServlet {
         List<User> users = userRepository.sortByName();
         try {
             request.setAttribute("listUser", users);
-            request.getRequestDispatcher("user/list.jsp").forward(request,response);
+            request.getRequestDispatcher("user/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
