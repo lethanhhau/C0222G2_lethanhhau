@@ -9,7 +9,7 @@
 <center>
     <h1>User Management</h1>
     <h2>
-        <a href="UserServlet">List All Users</a>
+        <a href="UserServlet">Back to User list</a>
     </h2>
 </center>
 <div align="center">

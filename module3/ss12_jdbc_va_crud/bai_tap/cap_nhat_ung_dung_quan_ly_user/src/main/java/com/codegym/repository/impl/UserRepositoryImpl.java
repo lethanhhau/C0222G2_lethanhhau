@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UserRepositoryImpl implements IUserRepository {
     private static final String INSERT_USERS_SQL = "INSERT INTO users (name, email, country) VALUES (?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
@@ -25,8 +26,7 @@ public class UserRepositoryImpl implements IUserRepository {
     @Override
     public void insertUser(User user) throws SQLException {
         Connection connection = this.baseRepository.getConnectionJavaToDB();
-        try
-                ( PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        try ( PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getCountry());
@@ -35,7 +35,20 @@ public class UserRepositoryImpl implements IUserRepository {
         } catch (SQLException e) {
             printSQLException(e);
         }
+    }
+    @Override
+    public boolean updateUser(User user) throws SQLException {
+        boolean rowUpdated;
+        Connection connection = this.baseRepository.getConnectionJavaToDB();
+        try ( PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getEmail());
+            statement.setString(3, user.getCountry());
+            statement.setInt(4, user.getId());
 
+            rowUpdated = statement.executeUpdate() > 0;
+        }
+        return rowUpdated;
     }
 
     private void printSQLException(SQLException e) {
@@ -107,20 +120,7 @@ public class UserRepositoryImpl implements IUserRepository {
         return rowDeleted;
     }
 
-    @Override
-    public boolean updateUser(User user) throws SQLException {
-        boolean rowUpdated;
-        Connection connection = this.baseRepository.getConnectionJavaToDB();
-        try ( PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
-            statement.setString(1, user.getName());
-            statement.setString(2, user.getEmail());
-            statement.setString(3, user.getCountry());
-            statement.setInt(4, user.getId());
 
-            rowUpdated = statement.executeUpdate() > 0;
-        }
-        return rowUpdated;
-    }
 
     @Override
     public List<User> findByCountry(String country) {

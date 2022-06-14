@@ -1,5 +1,7 @@
 package com.codegym.controller;
 
+
+
 import com.codegym.model.User;
 import com.codegym.repository.impl.UserRepositoryImpl;
 
@@ -39,6 +41,9 @@ public class UserServlet extends HttpServlet {
                 case "sortByName":
                     softByName(request, response);
                     break;
+                case "viewCountry":
+                    showViewCountry(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -76,8 +81,7 @@ public class UserServlet extends HttpServlet {
 
     private void showViewCountry(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
-        userRepository.findByCountry(country);
-        request.setAttribute("listUser", country);
+        request.setAttribute("listUser", userRepository.findByCountry(country));
         try {
             request.getRequestDispatcher("user/searchCountry.jsp").forward(request, response);
         } catch (ServletException e) {
@@ -112,9 +116,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     updateUser(request, response);
-                    break;
-                case "viewCountry":
-                    showViewCountry(request, response);
                     break;
                 default:
                     break;

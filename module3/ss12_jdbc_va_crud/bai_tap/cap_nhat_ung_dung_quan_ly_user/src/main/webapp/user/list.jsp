@@ -7,14 +7,16 @@
 <body>
 <center>
     <h1>User Management</h1>
-    <h2>
+    <h3>
         <a href="/UserServlet?action=create">Add New User</a>
-    </h2>
+        <a href="/UserServlet?action=sortByName">Sort By Name</a>
+    </h3>
 </center>
 <div align="center">
-    <form method="post" action="/UserServlet?action=viewCountry">
-        <input type="text" placeholder="Enter the Country" name="country">
-        <input type="submit" name="country" value="search">
+    <form method="get" action="/UserServlet">
+        <input type="hidden" name="action" value="viewCountry">
+        <input type="text" placeholder="Enter Country" name="country">
+        <input type="submit" value="Search" >
     </form>
     <table border="1" cellpadding="5">
         <caption><h2>List of Users</h2></caption>
@@ -36,7 +38,7 @@
             </tr>
         </c:forEach>
     </table>
-    <a href="/UserServlet?action=sortByName">Sort By Name</a>
+
 </div>
 </body>
 </html>
