@@ -6,7 +6,8 @@
   </head>
   <body>
 <form action="/save" method="get">
-<label><b>Sandwich Condiments</b></label>
+<label><h2>Sandwich Condiments</h2></label>
+  <br>
   <input type="checkbox" name="condiment" value="Lettuce">
   <label>Lettuce</label>
   <input type="checkbox" name="condiment" value="Tomato">
@@ -18,6 +19,10 @@
   <br>
   <hr>
   <button>save</button>
+  <br>
+  <c:forEach var="c" items="condiments">
+    ${c}
+  </c:forEach>
 </form>
   </body>
 </html>
