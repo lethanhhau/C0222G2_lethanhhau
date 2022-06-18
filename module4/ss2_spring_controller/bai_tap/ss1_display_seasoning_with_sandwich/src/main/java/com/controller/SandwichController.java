@@ -5,6 +5,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Arrays;
+
 @Controller
 public class SandwichController {
 
@@ -14,8 +16,8 @@ public class SandwichController {
     }
 
     @GetMapping("/save")
-    public String save(@RequestParam("condiment") String[] condiments, ModelMap modelMap) {
-        modelMap.addAttribute("condiment", condiments);
+    public String save(@RequestParam("condiment") String[] condiment, ModelMap modelMap) {
+        modelMap.addAttribute("condiment", Arrays.toString(condiment));
         return "index";
 
     }

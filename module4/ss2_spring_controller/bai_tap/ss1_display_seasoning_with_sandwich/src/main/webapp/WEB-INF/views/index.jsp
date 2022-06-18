@@ -20,9 +20,7 @@
   <hr>
   <button>save</button>
   <br>
-  <c:forEach var="c" items="condiments">
-    ${c}
-  </c:forEach>
+  Result: ${condiment}
 </form>
   </body>
 </html>
