@@ -45,12 +45,12 @@
             <td>Link</td>
             <td>
                 <form:select path="link">
-                    <form:option value="https://youtu.be/UVbv-PJXm14"> Giàu vì bạn sang vì vợ</form:option>
-                    <form:option value="https://www.youtube.com/watch?v=RgKAFK5djSk">See You Again</form:option>
-                    <form:option value="https://www.youtube.com/watch?v=2Vv-BfVoq4g">Perfect</form:option>
-                    <form:option value="https://www.youtube.com/watch?v=XZgiNnGB8m4">Rock</form:option>
-                    <form:option value="https://www.youtube.com/watch?v=yc69qoW5nUA&t=4088s">TikTok top 2022</form:option>
-                    <form:option value="https://www.youtube.com/watch?v=kPnIqaEP2W0"> Bolero</form:option>
+                    <form:option value="https://www.youtube.com/embed/UVbv-PJXm14"> Mang tiền về cho mẹ</form:option>
+                    <form:option value="https://www.youtube.com/embed/vTJdVE_gjI0">Đi về nhà</form:option>
+                    <form:option value="https://www.youtube.com/embed/KdrbBJNFwGw">Anh đếch cần gì nhiều ngoài em</form:option>
+                    <form:option value="https://www.youtube.com/embed/KKc_RMln5UY">lối nhỏ</form:option>
+                    <form:option value="https://www.youtube.com/embed/Ws-QlpSltr8">Trốn tìm</form:option>
+                    <form:option value="https://www.youtube.com/embed/L0NZW6pgSLc">Mười năm</form:option>
                 </form:select>
             </td>
         </tr>

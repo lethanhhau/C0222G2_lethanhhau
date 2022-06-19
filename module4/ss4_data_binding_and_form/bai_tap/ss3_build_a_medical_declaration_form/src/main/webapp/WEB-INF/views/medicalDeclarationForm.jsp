@@ -92,50 +92,50 @@
 </form:form>
 
 <fieldset>
-    <legend>Tờ Khai Chi Tiết</legend>
+    <legend><h1>Tờ Khai Chi Tiết</h1></legend>
     <table>
         <tr>
             <td>Họ tên:</td>
             <td> ${medicalDeclaration.fullName}</td>
         </tr>
         <tr>
-            <td>Năm sinh</td>
+            <td>Năm sinh:</td>
             <td>${medicalDeclaration.birthday}</td>
         </tr>
         <tr>
-            <td>Giới tính</td>
+            <td>Giới tính:</td>
             <td>${medicalDeclaration.gender}</td>
         </tr>
         <tr>
-            <td>Quốc tịch</td>
+            <td>Quốc tịch:</td>
             <td>${medicalDeclaration.nationality}</td>
         </tr>
         <tr>
-            <td>Hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác</td>
+            <td>Hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác:</td>
             <td>${medicalDeclaration.idCard}</td>
         </tr>
         <tr>
-            <td>Thông tin đi lại</td>
+            <td>Phương tiện đi lại:</td>
             <td>${medicalDeclaration.travelInformation}</td>
         </tr>
        <tr>
-           <td>Số hiệu phuowmg tiện</td>
+           <td>Số hiệu phương tiện:</td>
            <td>${medicalDeclaration.vehicleNumber}</td>
        </tr>
         <tr>
-            <td>Số ghế</td>
+            <td>Số ghế:</td>
             <td>${medicalDeclaration.seats}</td>
         </tr>
         <tr>
-            <td>Ngày Khởi hành</td>
+            <td>Ngày Khởi hành:</td>
             <td>${medicalDeclaration.dateStart}</td>
         </tr>
         <tr>
-            <td>Ngày kết thúc</td>
+            <td>Ngày kết thúc:</td>
             <td>${medicalDeclaration.dateEnd}</td>
         </tr>
        <tr>
-           <td>Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/ thành phố nào?</td>
+           <td>Thông tin di chuyển:</td>
            <td>${medicalDeclaration.moveInfo}</td>
        </tr>
     </table>
