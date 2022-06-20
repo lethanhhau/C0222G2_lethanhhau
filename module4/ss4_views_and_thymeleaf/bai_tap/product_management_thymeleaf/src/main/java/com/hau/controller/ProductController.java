@@ -5,10 +5,7 @@ import com.hau.service.IProductService;
 import com.hau.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -69,9 +66,9 @@ public class ProductController {
         return "view";
     }
 
-    @GetMapping("/{name}/viewName")
-    public String viewName(@PathVariable String name, Model model){
-        model.addAttribute("product",productService.findByName());
-        return "/viewName";
+    @GetMapping("/searchByName")
+    public String searchByName(@RequestParam String name, Model model){
+        model.addAttribute("products",productService.findByName(name));
+        return "/index";
     }
 }

@@ -6,8 +6,8 @@
 <div>
     <h3>Products</h3>
 </div>
-<form class="d-flex" style="padding-top: 15px" action="/customer">
-    <input type="text" placeholder="name search" name="action" hidden>
+<form th:action="@{/product/searchByName}" method="get">
+    <input type="text" placeholder="name search" name="name" hidden>
     <button>Search</button>
 </form>
 

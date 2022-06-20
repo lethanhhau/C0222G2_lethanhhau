@@ -44,7 +44,13 @@ public class ProductService implements IProductService{
     }
 
     @Override
-    public List<Product> findByName() {
-        return new ArrayList<>(products.values());
+    public List<Product> findByName(String name) {
+        List<Product> productList = new ArrayList<>();
+        for(Product product : products.values()){
+            if(product.getName().contains(name)){
+                productList.add(product);
+            }
+        }
+        return productList;
     }
 }
