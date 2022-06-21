@@ -32,4 +32,27 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
 
         entityTransaction.commit();
     }
+
+    @Override
+    public Customer findById(int id) {
+        return BaseRepository.entityManager.find(Customer.class, id);
+    }
+
+    @Override
+    public void update(Customer customer) {
+        EntityTransaction entityTransaction =
+                BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.merge(customer);
+        entityTransaction.commit();
+    }
+
+    @Override
+    public void remove(int id) {
+        EntityTransaction entityTransaction =
+                BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.remove(BaseRepository.entityManager.find(Customer.class,id));
+        entityTransaction.commit();
+    }
 }

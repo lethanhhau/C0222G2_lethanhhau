@@ -22,16 +22,16 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public Customer findById(int id) {
-        return null;
+        return iCustomerRepository.findById(id);
     }
 
     @Override
-    public void update(int id, Customer customer) {
-
+    public void update(Customer customer) {
+     iCustomerRepository.update(customer);
     }
 
     @Override
     public void remove(int id) {
-
+     iCustomerRepository.remove(id);
     }
 }

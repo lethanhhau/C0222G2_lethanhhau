@@ -7,10 +7,7 @@ import com.hau.service.ICustomerService;
 import com.hau.service.impl.CustomerServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -35,7 +32,6 @@ public class CustomerController {
 
     @PostMapping("/save")
     public String save(Customer customer) {
-        customer.setId((int) (Math.random() * 10000));
         customerService.save(customer);
         return "redirect:/customer";
     }
@@ -47,8 +43,8 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String update(Customer customer) {
-        customerService.update(customer.getId(), customer);
+    public String update(@ModelAttribute Customer customer) {
+        customerService.update(customer);
         return "redirect:/customer";
     }
 

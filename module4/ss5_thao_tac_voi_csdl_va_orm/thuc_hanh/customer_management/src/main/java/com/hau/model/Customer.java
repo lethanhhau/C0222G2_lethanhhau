@@ -8,27 +8,18 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "product_name")
-    private String productName;
-    @Column(name = "product_email")
-    private String productEmail;
-    @Column(name = "product_address")
-    private String productAddress;
+    private String name;
+    private String email;
+    private String address;
 
     public Customer() {
     }
 
-    public Customer(String productName, String productEmail, String productAddress) {
-        this.productName = productName;
-        this.productEmail = productEmail;
-        this.productAddress = productAddress;
-    }
-
-    public Customer(int id, String productName, String email, String address) {
+    public Customer(int id, String name, String email, String address) {
         this.id = id;
-        this.productName = productName;
-        this.productEmail = productEmail;
-        this.productAddress = productAddress;
+        this.name = name;
+        this.email = email;
+        this.address = address;
     }
 
     public int getId() {
@@ -39,27 +30,27 @@ public class Customer {
         this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProductEmail() {
-        return productEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setProductEmail(String productEmail) {
-        this.productEmail = productEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getProductAddress() {
-        return productAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setProductAddress(String productAddress) {
-        this.productAddress = productAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
