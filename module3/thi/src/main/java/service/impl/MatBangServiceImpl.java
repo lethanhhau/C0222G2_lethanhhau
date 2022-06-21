@@ -24,7 +24,7 @@ private IMatBangRepository iMatBangRepository =new MatBangRepositoryImpl();
         if (errors.isEmpty()){
             iMatBangRepository.addCustomer(matBang);
         }
-        return null;
+        return errors;
     }
 
     @Override

@@ -3,17 +3,10 @@
 <head th:replace="/layout :: head">
 </head>
 <body>
-<div>
-    <h3>Products</h3>
-</div>
-<form class="d-flex" style="padding-top: 15px" action="/customer">
-    <input type="text" placeholder="name search" name="action" hidden>
-    <button>Search</button>
-</form>
-
+<h3>Customers</h3>
 <p>
-    <a th:href="@{/product/create}">
-        Add new product
+    <a th:href="@{/customer/create}">
+        Add new customer
     </a>
 </p>
 <div class="notify">
@@ -21,27 +14,27 @@
         <span th:text="${success}"></span>
     </div>
 </div>
-<table id="products">
+<table id = "customers">
     <thead>
     <tr>
+        <tH>Id</tH>
         <th>Name</th>
-        <th>Price</th>
-        <th>Describe</th>
-        <th>Producer</th>
+        <th>Email</th>
+        <th>Address</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="row,rowStat : ${products}">
+    <tr th:each="row,rowStat : ${customers}">
+        <td th:text="${row.getId()}"></td>
         <td th:text="${row.getName()}"></td>
-        <td th:text="${row.getPrice()}"></td>
-        <td th:text="${row.getDescribe()}"></td>
-        <td th:text="${row.getProducer()}"></td>
-        <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">edit</a></td>
-        <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}">delete</a></td>
-        <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">view</a></td>
+        <td th:text="${row.getEmail()}"></td>
+        <td th:text="${row.getAddress()}"></td>
+        <td><a th:href="@{/customer/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/customer/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/customer/{id}/view(id=${row.getId()})}">view</a></td>
     </tr>
     </tbody>
 </table>

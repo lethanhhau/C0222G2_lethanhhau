@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>View Music</h3>
+<p>
+    <a th:href="@{/music}">
+        Back to music list
+    </a>
+</p>
+<div id="detail">
+    <div class="musicDetail">
+        <label>Name Of The Song:</label>
+        <label th:text="${music.nameOfTheSong}"></label>
+    </div>
+    <div class="musicDetail">
+        <label>Performing Artist:</label>
+        <label th:text="${music.performingArtist}"></label>
+    </div>
+    <div class="musicDetail">
+        <label>Kind Of Music:</label>
+        <label th:text="${music.kindOfMusic}"></label>
+    </div>
+    <div class="musicDetail">
+        <label>Song File Path:</label>
+            <iframe th:src="${music.songFilePath}"
+                    th:title="${music.nameOfTheSong}" frameborder="0"
+                   </iframe>
+    </div>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

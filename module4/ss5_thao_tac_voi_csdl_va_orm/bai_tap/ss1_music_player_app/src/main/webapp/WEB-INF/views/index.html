@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>music</h3>
+<p>
+    <a th:href="@{/music/create}">
+        Add new music
+    </a>
+</p>
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<table id = "musics">
+    <thead>
+    <tr>
+        <tH>Id</tH>
+        <th>Name Of The Song</th>
+        <th>Performing Artist</th>
+        <th>Kind Of Music</th>
+        <th>Song File Path</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${musics}">
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getNameOfTheSong()}"></td>
+        <td th:text="${row.getPerformingArtist()}"></td>
+        <td th:text="${row.getKindOfMusic()}"></td>
+        <td th:text="${row.getSongFilePath()}"></td>
+        <td><a th:href="@{/music/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/music/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/music/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
