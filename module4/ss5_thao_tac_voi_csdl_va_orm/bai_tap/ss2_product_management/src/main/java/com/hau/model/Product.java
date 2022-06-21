@@ -1,9 +1,6 @@
 package com.hau.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -11,20 +8,23 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private Double price;
-    private String describeProduct;
-    private String producer;
+    @Column(name = "product_name")
+    private String productName;
+    @Column(name = "product_price")
+    private Double productPrice;
+    @Column(name = "product_describe")
+    private String productDescribe;
+    private String manufacturer;
 
     public Product() {
     }
 
-    public Product(Integer id, String name, Double price, String describeProduct, String producer) {
+    public Product(Integer id, String productName, Double productPrice, String productDescribe, String manufacturer) {
         this.id = id;
-        this.name = name;
-        this.price = price;
-        this.describeProduct = describeProduct;
-        this.producer = producer;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescribe = productDescribe;
+        this.manufacturer = manufacturer;
     }
 
     public Integer getId() {
@@ -35,46 +35,35 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setProductPrice(Double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public String getDescribeProduct() {
-        return describeProduct;
+    public String getProductDescribe() {
+        return productDescribe;
     }
 
-    public void setDescribeProduct(String describeProduct) {
-        this.describeProduct = describeProduct;
+    public void setProductDescribe(String productDescribe) {
+        this.productDescribe = productDescribe;
     }
 
-    public String getProducer() {
-        return producer;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", describe='" + describeProduct + '\'' +
-                ", producer='" + producer + '\'' +
-                '}';
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }

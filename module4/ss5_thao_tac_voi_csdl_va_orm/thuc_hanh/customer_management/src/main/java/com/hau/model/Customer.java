@@ -1,85 +1,65 @@
 package com.hau.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
-        private String name;
-        private String email;
-        private String address;
+    private int id;
+    @Column(name = "product_name")
+    private String productName;
+    @Column(name = "product_email")
+    private String productEmail;
+    @Column(name = "product_address")
+    private String productAddress;
 
-        public Customer() {
-        }
+    public Customer() {
+    }
 
-        public Customer(String name, String email, String address) {
-            this.name = name;
-            this.email = email;
-            this.address = address;
-        }
+    public Customer(String productName, String productEmail, String productAddress) {
+        this.productName = productName;
+        this.productEmail = productEmail;
+        this.productAddress = productAddress;
+    }
 
-        public Customer(int id, String name, String email, String address) {
-            this.id = id;
-            this.name = name;
-            this.email = email;
-            this.address = address;
-        }
+    public Customer(int id, String productName, String email, String address) {
+        this.id = id;
+        this.productName = productName;
+        this.productEmail = productEmail;
+        this.productAddress = productAddress;
+    }
 
-        public int getId() {
-            return id;
-        }
+    public int getId() {
+        return id;
+    }
 
-        public void setId(int id) {
-            this.id = id;
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getProductName() {
+        return productName;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-        public String getEmail() {
-            return email;
-        }
+    public String getProductEmail() {
+        return productEmail;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setProductEmail(String productEmail) {
+        this.productEmail = productEmail;
+    }
 
-        public String getAddress() {
-            return address;
-        }
+    public String getProductAddress() {
+        return productAddress;
+    }
 
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        @Override
-        public Customer clone() {
-            Customer customer = new Customer();
-            customer.setId(id);
-            customer.setName(name);
-            customer.setEmail(email);
-            customer.setAddress(address);
-            return customer;
-        }
-
-        @Override
-        public String toString() {
-            return "Customer{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", email='" + email + '\'' +
-                    ", address='" + address + '\'' +
-                    '}';
-        }
+    public void setProductAddress(String productAddress) {
+        this.productAddress = productAddress;
+    }
 }

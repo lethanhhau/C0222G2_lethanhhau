@@ -46,7 +46,7 @@ public class MusicRepositoryImpl implements IMusicRepository {
         EntityTransaction entityTransaction =
                 BaseRepository.entityManager.getTransaction();
         entityTransaction.begin();
-        BaseRepository.entityManager.remove(id);
+        BaseRepository.entityManager.remove(BaseRepository.entityManager.find(Music.class,id));
         entityTransaction.commit();
     }
 }

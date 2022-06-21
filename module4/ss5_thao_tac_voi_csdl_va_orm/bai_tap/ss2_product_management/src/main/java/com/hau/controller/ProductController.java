@@ -30,7 +30,6 @@ public class ProductController {
 
     @PostMapping("/save")
     public String save(Product product) {
-        product.setId((int) (Math.random() * 10000));
         productService.save(product);
         return "redirect:/product";
     }
@@ -42,8 +41,8 @@ public class ProductController {
     }
 
     @PostMapping("/update")
-    public String update(Product product) {
-        productService.update(product.getId(), product);
+    public String update(@ModelAttribute Product product) {
+        productService.update(product);
         return "redirect:/product";
     }
 
@@ -66,9 +65,4 @@ public class ProductController {
         return "view";
     }
 
-    @GetMapping("/searchByName")
-    public String searchByName(@RequestParam String name, Model model){
-        model.addAttribute("products",productService.findByName(name));
-        return "/index";
-    }
 }

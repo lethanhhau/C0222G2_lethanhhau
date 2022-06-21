@@ -2,85 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94447b3-e9db-44b2-8af7-f1474c898868" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/modules/ss1_music_player_app.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/config/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/configuration/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/controller/MusicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/model/Music.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/repository/IMusicRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/repository/impl/MusicRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/service/IMusicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/java/com/hau/service/impl/MusicServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/resources/hibernate.conf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/modules/ss2_product_management.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/config/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/configuration/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/repository/IProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/repository/impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/service/IProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/java/com/hau/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bai_tap/ss2_product_management/src/main/resources/hibernate.conf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/customer_management.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/configuration/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/configuration/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/repository/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/repository/impl/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.conf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module3/thi/src/main/java/service/impl/MatBangServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module3/thi/src/main/java/service/impl/MatBangServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_views_and_thymeleaf/thuc_hanh/customer_management_thymeleaf/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_views_and_thymeleaf/thuc_hanh/customer_management_thymeleaf/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hau/config/CharsetFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hau/config/CharsetFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hau/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hau/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hau/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hau/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai_tap/ss1_music_player_app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,19 +59,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss4_views_and_thymeleaf/bai_tap/product_management_thymeleaf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.hau.repository" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\C0222G2_hau\C0222G2_lethanhhau\module4\ss5_thao_tac_voi_csdl_va_orm\thuc_hanh\customer_management\src\main\webapp\WEB-INF" />
       <recent name="D:\C0222G2_hau\C0222G2_lethanhhau\module4\ss5_thao_tac_voi_csdl_va_orm\thuc_hanh\customer_management\src\main\webapp" />
       <recent name="D:\C0222G2_hau\C0222G2_lethanhhau\module4\ss5_thao_tac_voi_csdl_va_orm\thuc_hanh\customer_management\src\main\resources" />
       <recent name="D:\C0222G2_hau\C0222G2_lethanhhau\module4\ss5_thao_tac_voi_csdl_va_orm\thuc_hanh\customer_management\src\main\java\com\hau\repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hau.config" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.hau.repository" />
     </key>
   </component>
   <component name="RunManager">
@@ -233,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655793895838</updated>
       <workItem from="1655793899135" duration="6322000" />
-      <workItem from="1655815933324" duration="3284000" />
+      <workItem from="1655815933324" duration="3731000" />
     </task>
     <servers />
   </component>
@@ -249,10 +179,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1655795914724" />
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1655797001161">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1655820988663">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1655797001161" />
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1655820988663" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1655818197487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

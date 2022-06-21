@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductServiceImpl implements IProductService {
-private IProductRepository iProductRepository = new ProductRepositoryImpl();
+    private IProductRepository iProductRepository = new ProductRepositoryImpl();
 
     @Override
     public List<Product> findAll() {
@@ -20,26 +20,23 @@ private IProductRepository iProductRepository = new ProductRepositoryImpl();
 
     @Override
     public void save(Product product) {
-
+        iProductRepository.save(product);
     }
 
     @Override
     public Product findById(int id) {
-        return null;
+        return iProductRepository.findById(id);
     }
 
     @Override
-    public void update(int id, Product product) {
-
+    public void update(Product product) {
+        iProductRepository.update(product);
     }
 
     @Override
     public void remove(int id) {
+        iProductRepository.remove(id);
 
     }
 
-    @Override
-    public List<Product> findByName(String name) {
-        return null;
-    }
 }
