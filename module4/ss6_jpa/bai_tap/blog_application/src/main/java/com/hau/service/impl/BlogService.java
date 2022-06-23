@@ -4,9 +4,11 @@ import com.hau.model.Blog;
 import com.hau.repository.IBlogRepository;
 import com.hau.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BlogService implements IBlogService {
 
     @Autowired
@@ -15,7 +17,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public List<Blog> findAll() {
-        return  this.iBlogRepository.getAllBlog();
+        return this.iBlogRepository.getAllBlog();
     }
 
     @Override
@@ -25,7 +27,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Blog getBlog(int id) {
-        return null;
+        return this.iBlogRepository.getBlog(id);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.hau.controller;
 
 import com.hau.model.Blog;
 import com.hau.service.IBlogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/blog")
 public class BlogController {
+    @Autowired
     private IBlogService iBlogService;
 
     @GetMapping("")
@@ -30,7 +32,7 @@ public class BlogController {
     @PostMapping("/save")
     public String save(Blog blog) {
         iBlogService.save(blog);
-        return "redirect:/blog";
+        return "redirect:/blog/";
     }
 
     @GetMapping("/{id}/edit")
@@ -42,7 +44,7 @@ public class BlogController {
     @PostMapping("/update")
     public String update(@ModelAttribute Blog blog) {
         iBlogService.save(blog);
-        return "redirect:/blog";
+        return "redirect:/blog/";
     }
 
     @GetMapping("/{id}/delete")
@@ -55,13 +57,13 @@ public class BlogController {
     public String delete(Blog blog, RedirectAttributes redirect) {
         iBlogService.remove(blog.getId());
         redirect.addFlashAttribute("success", "Removed blog successfully!");
-        return "redirect:/blog";
+        return "redirect:/blog/";
     }
 
     @GetMapping("/{id}/view")
     public String view(@PathVariable int id, Model model) {
         model.addAttribute("blog", iBlogService.getBlog(id));
-        return "/view";
+        return "view";
     }
 
 }

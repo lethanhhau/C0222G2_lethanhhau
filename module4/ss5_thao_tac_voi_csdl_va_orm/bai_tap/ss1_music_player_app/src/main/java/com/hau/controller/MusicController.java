@@ -64,5 +64,4 @@ public class MusicController {
         model.addAttribute("music", iMusicService.findById(id));
         return "/view";
     }
-
 }

@@ -7,21 +7,19 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
-import java.beans.Transient;
 import java.util.List;
 
 public interface IBlogRepository extends JpaRepository<Blog, Integer>{
     @Query(value = " select * " +
             " from blog ", nativeQuery = true)
-
     List<Blog> getAllBlog();
 
     @Modifying
     @Transactional
     @Query(value = " delete from blog b " +
             "where b.id = :id", nativeQuery = true)
-
     void delete(int id);
+
     @Query(value = " select * " +
             "from blog b " +
             " where b.id = :id", nativeQuery = true)

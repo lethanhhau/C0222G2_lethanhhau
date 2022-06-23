@@ -32,7 +32,6 @@
         <td th:text="${row.getContent()}"></td>
         <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
-        <td><a th:href="@{/blog/{id}/view(id=${row.getId()})}">view</a></td>
     </tr>
     </tbody>
 </table>
