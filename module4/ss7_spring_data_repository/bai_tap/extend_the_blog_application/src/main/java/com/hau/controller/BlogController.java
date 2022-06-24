@@ -7,6 +7,7 @@ import com.hau.service.category.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,9 +24,24 @@ public class BlogController {
     @Autowired
     private ICategoryService iCategoryService;
 
-    @ModelAttribute("category")
+    @ModelAttribute("categoryList")
     public Iterable<Category> category(){
         return iCategoryService.findAll();
+    }
+
+    @GetMapping("/blog")
+    public ModelAndView listCustomers(@PageableDefault(value = 3)Pageable pageable,
+                                          @RequestParam("search") Optional<String> search){
+        Page<Blog> blogs;
+        if(search.isPresent()){
+            blogs = iBlogService.findAllByTitleContaining(search.get(), pageable);
+        } else {
+            blogs = iBlogService.findAll(pageable);
+        }
+        ModelAndView modelAndView = new ModelAndView("/blog/list");
+        modelAndView.addObject("blogs", blogs);
+        modelAndView.addObject("searchValue", search.orElse(""));
+        return modelAndView;
     }
 
 
@@ -39,37 +55,23 @@ public class BlogController {
     @PostMapping("/create-blog")
     public ModelAndView saveBlog(@ModelAttribute("blog") Blog blog) {
         iBlogService.save(blog);
-        ModelAndView modelAndView = new ModelAndView("/blog/create");
+        ModelAndView modelAndView = new ModelAndView("redirect:/blog");
         modelAndView.addObject("blog", new Blog());
         modelAndView.addObject("message", "New blog created successfully");
         return modelAndView;
     }
 
-    @GetMapping("/blog")
-    public ModelAndView listCustomers(@RequestParam("search") Optional<String> search, Pageable pageable){
-        Page<Blog> blogs;
-        if(search.isPresent()){
-            blogs = iBlogService.findAllByTitleContaining(search.get(), pageable);
-        } else {
-            blogs = iBlogService.findAll(pageable);
-        }
-        ModelAndView modelAndView = new ModelAndView("/blog/list");
-        modelAndView.addObject("blogs", blogs);
-        return modelAndView;
-    }
-
-
     @GetMapping("/edit-blog/{id}")
     public ModelAndView showEditForm(@PathVariable Integer id) {
         Optional<Blog> blog = iBlogService.findById(id);
+        ModelAndView modelAndView;
         if (blog.isPresent()) {
-            ModelAndView modelAndView = new ModelAndView("/blog/edit");
+            modelAndView = new ModelAndView("/blog/edit");
             modelAndView.addObject("blog", blog.get());
-            return modelAndView;
         } else {
-            ModelAndView modelAndView = new ModelAndView("/error.404");
-            return modelAndView;
+            modelAndView = new ModelAndView("/error.404");
         }
+        return modelAndView;
     }
 
     @PostMapping("/edit-blog")
@@ -98,6 +100,6 @@ public class BlogController {
     @PostMapping("/delete-blog")
     public String deleteCustomer(@ModelAttribute("blog") Blog blog) {
         iBlogService.remove(blog.getId());
-        return "redirect:blogs";
+        return "redirect:blog";
     }
 }

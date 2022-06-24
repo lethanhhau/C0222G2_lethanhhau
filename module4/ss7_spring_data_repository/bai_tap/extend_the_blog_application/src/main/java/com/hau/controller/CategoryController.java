@@ -42,7 +42,7 @@ public class CategoryController {
     public ModelAndView saveCategory(@ModelAttribute("category") Category category) {
         iCategoryService.save(category);
 
-        ModelAndView modelAndView = new ModelAndView("/category/create");
+        ModelAndView modelAndView = new ModelAndView("redirect:/category");
         modelAndView.addObject("category", new Category());
         modelAndView.addObject("message", "New category created successfully");
         return modelAndView;
@@ -65,7 +65,7 @@ public class CategoryController {
     @PostMapping("/edit-category")
     public ModelAndView updateCategory(@ModelAttribute("category") Category category) {
         iCategoryService.save(category);
-        ModelAndView modelAndView = new ModelAndView("/category/edit");
+        ModelAndView modelAndView = new ModelAndView("redirect:/category");
         modelAndView.addObject("category", category);
         modelAndView.addObject("message", "category updated successfully");
         return modelAndView;
@@ -88,7 +88,7 @@ public class CategoryController {
     @PostMapping("/delete-category")
     public String deleteCategory(@ModelAttribute("category") Category category) {
         iCategoryService.remove(category.getId());
-        return "redirect:categorys";
+        return "redirect:category";
     }
 
     @GetMapping("/view-category/{id}")
