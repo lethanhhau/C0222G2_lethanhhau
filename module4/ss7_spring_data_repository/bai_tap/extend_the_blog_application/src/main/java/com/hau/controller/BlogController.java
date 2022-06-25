@@ -17,7 +17,6 @@ import java.util.Optional;
 @Controller
 public class BlogController {
 
-
     @Autowired
     private IBlogService iBlogService;
 
@@ -30,7 +29,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog")
-    public ModelAndView listCustomers(@PageableDefault(value = 3)Pageable pageable,
+    public ModelAndView listBlog(@PageableDefault(value = 3)Pageable pageable,
                                           @RequestParam("search") Optional<String> search){
         Page<Blog> blogs;
         if(search.isPresent()){
@@ -77,29 +76,15 @@ public class BlogController {
     @PostMapping("/edit-blog")
     public ModelAndView updateBlog(@ModelAttribute("blog") Blog blog) {
         iBlogService.save(blog);
-        ModelAndView modelAndView = new ModelAndView("/blog/edit");
+        ModelAndView modelAndView = new ModelAndView("redirect:/blog");
         modelAndView.addObject("blog", blog);
         modelAndView.addObject("message", "Blog updated successfully");
         return modelAndView;
     }
-
-    @GetMapping("/delete-blog/{id}")
-    public ModelAndView showDeleteForm(@PathVariable Integer id) {
-        Optional<Blog> blog = iBlogService.findById(id);
-        ModelAndView modelAndView;
-        if (blog.isPresent()) {
-            modelAndView = new ModelAndView("/blog/delete");
-            modelAndView.addObject("blog", blog.get());
-
-        } else {
-            modelAndView = new ModelAndView("/error.404");
-        }
-        return modelAndView;
-    }
-
-    @PostMapping("/delete-blog")
-    public String deleteCustomer(@ModelAttribute("blog") Blog blog) {
-        iBlogService.remove(blog.getId());
+    
+    @PostMapping("/delete-blog/{id}")
+    public String deleteBlog(@PathVariable Integer id) {
+        this.iBlogService.remove(id);
         return "redirect:blog";
     }
 }

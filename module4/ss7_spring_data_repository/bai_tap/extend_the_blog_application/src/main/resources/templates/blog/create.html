@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <th:block th:replace="~{blog/layout-css :: bootstrapCss}"></th:block>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
 </head>
 <body>
 <div class="p-3 text-center bg-image"
@@ -37,10 +37,10 @@
             </select>
         </div>
         <button type="submit" class="btn btn-outline-success">Submit</button>
-        <a href="/bloggers/list" class="btn btn-outline-secondary">Back home</a>
+        <a href="/blog" class="btn btn-outline-secondary">Back home</a>
     </form>
 </div>
 </div>
-<th:block th:replace="~{blog/layout-css :: boostrapScript}"></th:block>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
 </body>
 </html>

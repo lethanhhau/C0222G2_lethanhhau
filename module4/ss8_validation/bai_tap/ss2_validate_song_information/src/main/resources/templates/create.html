@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Create My Music</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/music/create" method="post" th:object="${musicDto}">
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Name Of The Song:</label>
+            <input type="text" class="form-control" placeholder="Enter First Name" th:field="*{nameOfTheSong}">
+        </div>
+
+        <div style="color: red" th:errors = "*{nameOfTheSong}"></div> <div class="mb-3 mt-3">
+
+            <label class="form-label h6">Performing Artist:</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" th:field="*{performingArtist}">
+        </div>
+
+        <div style="color: red" th:errors = "*{performingArtist}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Kind Of Music:</label>
+            <input type="text" class="form-control" placeholder="Enter Phone Number" th:field="*{kindOfMusic}">
+        </div>
+
+        <div style="color: red" th:errors = "*{kindOfMusic}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Song File Path:</label>
+            <input type="text" class="form-control" placeholder="Enter Age" th:field="*{songFilePath}">
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/music/home" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>

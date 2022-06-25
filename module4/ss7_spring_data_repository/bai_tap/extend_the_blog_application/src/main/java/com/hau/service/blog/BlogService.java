@@ -17,22 +17,22 @@ public class BlogService implements IBlogService {
 
     @Override
     public Iterable<Blog> findAll() {
-        return iBlogRepository.findAll();
+        return this.iBlogRepository.findAll();
     }
 
     @Override
     public Optional<Blog> findById(Integer id) {
-        return iBlogRepository.findById(id);
+        return this.iBlogRepository.findById(id);
     }
 
     @Override
     public void save(Blog blog) {
-        iBlogRepository.save(blog);
+        this.iBlogRepository.save(blog);
     }
 
     @Override
     public void remove(Integer id) {
-        iBlogRepository.deleteById(id);
+        this.iBlogRepository.delete(this.iBlogRepository.getById(id));
     }
 
     @Override
@@ -42,11 +42,11 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> findAll(Pageable pageable) {
-        return iBlogRepository.findAll(pageable);
+        return this.iBlogRepository.findAll(pageable);
     }
 
     @Override
     public Page<Blog> findAllByTitleContaining(String title, Pageable pageable) {
-        return iBlogRepository.findAllByTitleContaining(title,pageable);
+        return this.iBlogRepository.findAllByTitleContaining(title,pageable);
     }
 }

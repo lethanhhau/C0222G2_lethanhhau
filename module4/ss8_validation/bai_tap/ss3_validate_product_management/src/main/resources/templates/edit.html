@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Update My Product</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/product/edit" method="post" th:object="${product}">
+        <div class="mb-3 mt-3">
+            <input type="hidden" class="form-control" id="id" placeholder="id" th:field="*{id}">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Name Product:</label>
+            <input type="text" class="form-control" placeholder="Enter First Name" th:field="*{nameProduct}">
+        </div>
+
+        <div style="color: red" th:errors="*{nameProduct}"></div>
+        <div class="mb-3 mt-3">
+
+            <label class="form-label h6">Price Product:</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" th:field="*{priceProduct}">
+        </div>
+
+        <div style="color: red" th:errors="*{priceProduct}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Describe Product:</label>
+            <input type="text" class="form-control" placeholder="Enter Phone Number" th:field="*{describeProduct}">
+        </div>
+
+        <div style="color: red" th:errors="*{describeProduct}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Producer Product:</label>
+            <input type="text" class="form-control" placeholder="Enter Age" th:field="*{producerProduct}">
+        </div>
+
+        <div style="color: red" th:errors="*{producerProduct}"></div>
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/music/home" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>
