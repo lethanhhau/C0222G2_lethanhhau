@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{layout-css :: titleCss}"></th:block>
+
+<header>
+    <div class="p-3 text-center bg-image"
+         style="height: 80px;">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-success">
+                    <h1 class="mb-3">List Customer</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <nav class="navbar navbar-light bg-info">
+            <div class="container-fluid">
+                <a href="" th:href="@{customer/create}" class="btn btn-outline-success btn-lg" role="button">Create Customer</a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" name="searchParam"
+                           placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="name">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container mt-3">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <!--            <th>Detail</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer, loop : ${customers}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${customer.customerId}"></td>
+            <td th:text="${customer.customerCode}"></td>
+            <td th:text="${customer.customerType.customerTypeName}"></td>
+            <td th:text="${customer.customerName}"></td>
+            <td th:text="${customer.customerBirthday}"></td>
+            <td th:text="${customer.customerGender}"></td>
+            <td th:text="${customer.customerPhone}"></td>
+            <td th:text="${customer.customerAddress}"></td>
+            <td>
+                <a th:href="@{/customer/edit/{id}(id=${customer.customerId})}" class="btn btn-outline-success">Edit</a>
+            </td>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        th:data-bs-target="'#staticBackdrop' + ${customer.customerId}">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" th:id="staticBackdrop + ${customer.customerId}" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Do you want delete blog <span th:text="${customer.customerName}" class="text-warning"></span>
+                                with id = <span th:text="${customer.customerId}" class="text-warning"></span> ?
+                            </div>
+                            <div class="modal-footer">
+                                <a href="" th:href="@{/customer/delete/{id}(id=${customer.customerId})}"
+                                   class="btn btn-outline-success">Delete</a>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-10">
+            <a href="/customerType/list" class="btn btn-outline-success">Go To List Customer Type</a>
+        </div>
+        <div class="col-2 ">
+            <ul class="pagination" th:if="${customers.totalPages > 0}">
+                <li class="page-item">
+                    <a class="page-link" th:if="${customers.hasPrevious()}" th:href="@{'/list-customer'(page=${customers.number - 1}, search=${searchValue})}">
+                        Previous
+                    </a>
+                </li>
+                <div th:each="item, loop : ${#numbers.sequence(1, customers.totalPages )}">
+                    <div th:if="${(customers.number + 1) == item}">
+                        <li class="page-item active">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/list-customer(page=(${item}-1), search=${searchValue})}"></a>
+                        </li>
+                    </div>
+                    <div th:unless="${((customers.number + 1) == item)}">
+                        <li class="page-item">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/list-customer(page=(${item}-1), search=${searchValue} )}"></a>
+                        </li>
+                    </div>
+                </div>
+                <li class="page-item">
+                    <a class="page-link" th:if="${customers.hasNext()}" th:href="@{'/list-customer'(page=${customers.number + 1}, search=${searchValue})}">
+                        Next
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>

@@ -81,7 +81,7 @@
                                 with id = <span th:text="${blog.id}" class="text-warning"></span> ?
                             </div>
                             <div class="modal-footer">
-                                <a href="" th:href="@{/delete-blog/__${blog.id}__ }"
+                                <a href="" th:href="@{/delete-blog/{id}(id=${blog.id})}"
                                    class="btn btn-outline-success">Delete</a>
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
                                 </button>

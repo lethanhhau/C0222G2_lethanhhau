@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+
+
+<div class="col-12 row  bg-warning" style="padding: 0px;margin: 0px">
+    <div class="col-2" style="padding-left: 50px"><img
+            src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png" width="65px"></div>
+    <div class="col-10">
+        <div class="col-lg-12 row">
+            <div class="col-lg-10 text-center" style="padding-top: 22px; color: #1c7430"><h2>Furama Management</h2>
+            </div>
+            <div class="col-lg-2">
+                <p style="padding-top: 35px">LÊ THANH HẬU</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12" style="padding: 0px;margin: 0px">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/employee/home-employee">Employee</a>
+            <a class="navbar-brand" href="/list-customer">Customer</a>
+            <a class="navbar-brand" href="/service/home-service">Service</a>
+            <a class="navbar-brand" href="/contract/home-contract">Contract</a>
+        </div>
+    </nav>
+</div>
+
+
+<header>
+    <div class="p-3 text-center bg-image"
+         style="height: 80px;">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-success">
+                    <h1 class="mb-3">List Customer Type</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <nav class="navbar navbar-light bg-info">
+            <div class="container-fluid">
+                <a href="" th:href="@{/customerType/create}" class="btn btn-outline-success btn-lg" role="button">Create Customer Type</a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" name="searchParam"
+                           placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="name">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container mt-3">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Customer Type Id</th>
+            <th>Customer Type Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <!--            <th>Detail</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customerType, loop : ${customerTypes}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${customerType.customerTypeId}"></td>
+            <td th:text="${customerType.customerTypeName}"></td>
+            <td>
+                <a th:href="@{/customerType/edit/{id}(id=${customerType.customerTypeId})}" class="btn btn-outline-success">Edit</a>
+            </td>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        th:data-bs-target="'#staticBackdrop' + ${customerType.customerTypeId}">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" th:id="staticBackdrop + ${customerType.customerTypeId}" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Do you want delete blog <span th:text="${customerType.customerTypeName}" class="text-warning"></span>
+                                with id = <span th:text="${customerType.customerTypeId}" class="text-warning"></span> ?
+                            </div>
+                            <div class="modal-footer">
+                                <a href="" th:href="@{/customerType/delete/{id}(id=${customerType.customerTypeId})}"
+                                   class="btn btn-outline-success">Delete</a>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-10">
+            <a href="/list-customer" class="btn btn-outline-success">Back To List Customer</a>
+        </div>
+        <div class="col-2 ">
+            <ul class="pagination" th:if="${customerTypes.totalPages > 0}">
+                <li class="page-item">
+                    <a class="page-link" th:if="${customerTypes.hasPrevious()}" th:href="@{'/customerType/list'(page=${customerTypes.number - 1}, search=${searchValue})}">
+                        Previous
+                    </a>
+                </li>
+                <div th:each="item, loop : ${#numbers.sequence(1, customerTypes.totalPages )}">
+                    <div th:if="${(customerTypes.number + 1) == item}">
+                        <li class="page-item active">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/customerType/list(page=(${item}-1), search=${searchValue})}"></a>
+                        </li>
+                    </div>
+                    <div th:unless="${((customerTypes.number + 1) == item)}">
+                        <li class="page-item">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/customerType/list(page=(${item}-1), search=${searchValue} )}"></a>
+                        </li>
+                    </div>
+                </div>
+                <li class="page-item">
+                    <a class="page-link" th:if="${customerTypes.hasNext()}" th:href="@{'/customerType/list'(page=${customerTypes.number + 1}, search=${searchValue})}">
+                        Next
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>

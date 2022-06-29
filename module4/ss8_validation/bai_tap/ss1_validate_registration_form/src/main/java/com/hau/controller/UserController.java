@@ -30,7 +30,7 @@ public class UserController {
 
     @GetMapping("/home")
     public String goHome
-            (@PageableDefault(value = 5) Pageable pageable,
+            (@PageableDefault(value = 1) Pageable pageable,
              Model model,
              @RequestParam Optional<String> searchParam) {
         String searchValue = searchParam.orElse("");

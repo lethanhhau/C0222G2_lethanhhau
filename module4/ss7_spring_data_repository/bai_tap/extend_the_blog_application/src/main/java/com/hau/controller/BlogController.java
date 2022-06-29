@@ -30,7 +30,7 @@ public class BlogController {
 
     @GetMapping("/blog")
     public ModelAndView listBlog(@PageableDefault(value = 3)Pageable pageable,
-                                          @RequestParam("search") Optional<String> search){
+                                 @RequestParam("search") Optional<String> search){
         Page<Blog> blogs;
         if(search.isPresent()){
             blogs = iBlogService.findAllByTitleContaining(search.get(), pageable);
@@ -82,7 +82,7 @@ public class BlogController {
         return modelAndView;
     }
     
-    @PostMapping("/delete-blog/{id}")
+    @GetMapping("/delete-blog/{id}")
     public String deleteBlog(@PathVariable Integer id) {
         this.iBlogService.remove(id);
         return "redirect:blog";
