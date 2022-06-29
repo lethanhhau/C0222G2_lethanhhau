@@ -8,52 +8,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
-@SessionAttributes(value = "listProductcart")
+@SessionAttributes("cart")
 public class ProductController {
-
     @Autowired
-    private IProductService iProductService;
+    private IProductService productService;
 
     @ModelAttribute("cart")
     public Cart setupCart() {
         return new Cart();
     }
 
-    @ModelAttribute("listProductCart")
-    public List<Product> listProductCart() {
-        return new ArrayList<>();
-    }
-
-    @GetMapping("")
-    public String home(Model model){
-        List<Product> products = (List<Product>) this.iProductService.findAll();
-        model.addAttribute("products", products);
-        model.addAttribute("product", new Product());
-        return "home";
-    }
-
-    @PostMapping("/create")
-    public String create(@ModelAttribute("product") Product product) {
-        this.iProductService.save(product);
-        return "redirect:/";
-    }
-
     @GetMapping("/shop")
     public ModelAndView showShop() {
         ModelAndView modelAndView = new ModelAndView("/shop");
-        modelAndView.addObject("products", iProductService.findAll());
+        modelAndView.addObject("products", productService.findAll());
         return modelAndView;
     }
 
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
-        Optional<Product> productOptional = iProductService.findById(id);
+        Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
             return "/error.404";
         }
@@ -64,9 +41,13 @@ public class ProductController {
         cart.addProduct(productOptional.get());
         return "redirect:/shop";
     }
-    @GetMapping("/buy")
-    public String buyProduct(@SessionAttribute("listProductCart") List<Product> listProductCart){
-        listProductCart.clear();
-        return "redirect:/show-cart";
+    @GetMapping("/detail")
+    public String showDetail(@RequestParam Integer id, Model model){
+        Optional<Product> productOptional = productService.findById(id);
+        if(productOptional.isPresent()){
+            model.addAttribute("product", productOptional.get());
+            return "detail";
+        }
+        return "error.404";
     }
 }

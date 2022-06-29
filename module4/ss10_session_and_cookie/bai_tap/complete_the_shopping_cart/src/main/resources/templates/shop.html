@@ -1,26 +1,113 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shop</title>
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
 </head>
 <body>
-<p>
-    <a href="/shopping-cart">Your cart</a>
-</p>
-<table border="1">
-    <tr>
-        <td>Name</td>
-        <td>Price</td>
-        <td>Add To Cart</td>
-    </tr>
-    <th:block th:each="product:${products}">
+<header>
+    <div class="p-3 text-center bg-image"
+         style="height: 150px;">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-success">
+                    <h1 class="mb-3">My Product</h1>
+                    <a href="" th:href="@{/product/create}" class="btn btn-outline-success btn-lg" role="button">Create Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container mt-3">
+    <table class="table table-hover">
+        <thead>
         <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>quantity</td>
+            <td>description</td>
+            <td>img</td>
+            <td>detail</td>
+            <td>Add To Cart</td>
+            <!--            <th>Detail</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product, loop : ${products}">
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.img}"></td>
+            <td><a th:href="@{/detail(id=${product.id})}">Detail</a></td>
             <td><a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a></td>
+
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        th:data-bs-target="'#staticBackdrop' + ${product.id}">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" th:id="staticBackdrop + ${product.id}" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Do you want delete blog <span th:text="${product.name}" class="text-warning"></span>
+                                with id = <span th:text="${product.id}" class="text-warning"></span> ?
+                            </div>
+                            <div class="modal-footer">
+                                <a href="" th:href="@{/product/delete/{id}(id=${product.id})}"
+                                   class="btn btn-outline-success">Delete</a>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
         </tr>
-    </th:block>
-</table>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-2 ">
+            <ul class="pagination" th:if="${products.totalPages > 0}">
+                <li class="page-item">
+                    <a class="page-link" th:if="${products.hasPrevious()}" th:href="@{'/user/list'(page=${products.number - 1}, search=${searchValue})}">
+                        Previous
+                    </a>
+                </li>
+                <div th:each="item, loop : ${#numbers.sequence(1, products.totalPages )}">
+                    <div th:if="${(products.number + 1) == item}">
+                        <li class="page-item active">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/products/list(page=(${item}-1), search=${searchValue})}"></a>
+                        </li>
+                    </div>
+                    <div th:unless="${((products.number + 1) == item)}">
+                        <li class="page-item">
+                            <a class="page-link" href="#" th:text="${item}" th:href="@{/products/list(page=(${item}-1), search=${searchValue} )}"></a>
+                        </li>
+                    </div>
+                </div>
+                <li class="page-item">
+                    <a class="page-link" th:if="${products.hasNext()}" th:href="@{'/user/list'(page=${products.number + 1}, search=${searchValue})}">
+                        Next
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
 </body>
 </html>

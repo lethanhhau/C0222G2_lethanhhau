@@ -13,35 +13,15 @@ import java.util.Optional;
 public class ProductService implements IProductService{
 
     @Autowired
-    private IProductRepository iProductRepository;
+    private IProductRepository productRepository;
 
     @Override
-    public Page<Product> findAll(Pageable pageable, String searchValue) {
-        return this.iProductRepository.findByNameProduct(pageable, "%" + searchValue + "%");
-    }
-
-    @Override
-    public void remove(Integer id) {
-        this.iProductRepository.delete(this.iProductRepository.getById(id));
-    }
-
-    @Override
-    public void save(Product product) {
-        this.iProductRepository.save(product);
-    }
-
-    @Override
-    public Product getById(Integer id) {
-        return this.iProductRepository.getById(id);
+    public Iterable<Product> findAll() {
+        return productRepository.findAll();
     }
 
     @Override
     public Optional<Product> findById(Integer id) {
-        return this.iProductRepository.findById(id);
-    }
-
-    @Override
-    public Object findAll() {
-        return this.iProductRepository.findAll();
+        return productRepository.findById(id);
     }
 }

@@ -8,15 +8,6 @@ import java.util.Optional;
 
 public interface IProductService {
 
-    Page<Product> findAll(Pageable pageable, String searchValue);
-
-    void remove(Integer id);
-
-    void save(Product product);
-
-    Product getById(Integer id);
-
+    Iterable<Product> findAll();
     Optional<Product> findById(Integer id);
-
-    Object findAll();
 }
