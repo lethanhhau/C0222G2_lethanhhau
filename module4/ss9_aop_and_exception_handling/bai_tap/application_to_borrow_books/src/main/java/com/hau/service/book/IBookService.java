@@ -13,7 +13,5 @@ public interface IBookService {
 
     Book getById(Integer id);
 
-    void borrowBook(Integer id);
-
-    void setAmount(Integer id);
+    Book findAllBookMax();
 }

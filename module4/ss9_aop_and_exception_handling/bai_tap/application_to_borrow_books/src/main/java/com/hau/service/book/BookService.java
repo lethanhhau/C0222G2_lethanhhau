@@ -30,16 +30,12 @@ public class BookService implements IBookService{
 
     @Override
     public Book getById(Integer id) {
+        return this.iBookRepository.getById(id);
+    }
+
+    @Override
+    public Book findAllBookMax() {
         return null;
     }
 
-    @Override
-    public void borrowBook(Integer id) {
-
-    }
-
-    @Override
-    public void setAmount(Integer id) {
-
-    }
 }

@@ -74,7 +74,7 @@ public class BookController {
         List<BookDetail> bookDetails = iBookDetailsService.findByIdBookDetail(id);
 
         for (BookDetail bookDetail:bookDetails) {
-            if (bookDetail.getStatusBook() == false){
+            if (bookDetail.getStatusBook()){
                 bookDetail.setStatusBook(true);
                 iBookDetailsService.save(bookDetail);
                 Book book=iBookService.getById(id);
@@ -84,6 +84,18 @@ public class BookController {
             }
         }
         redirectAttributes.addFlashAttribute("message","Not borrow");
+        return "redirect:/book/home";
+    }
+
+    @PostMapping("/return")
+    public String save(@ModelAttribute Book bookNew, RedirectAttributes redirectAttributes){
+        iBookService.save(bookNew);
+        Book book = iBookService.findAllBookMax();
+        for (int i = 0; i < book.getBookAmount(); i++) {
+            BookDetail bookDetail = new BookDetail();
+            iBookDetailsService.save(bookDetail);
+        }
+        redirectAttributes.addFlashAttribute("message","return successful");
         return "redirect:/book/home";
     }
 }

@@ -8,13 +8,13 @@
 <body>
 <div class="main">
     <div class="card" th:object="${product}">
-        <img src="https://james.codegym.vn/pluginfile.php/48051/mod_assign/intro/Capture1.PNG" alt="" class="img-card">
+        <img th:src=" *{img} " alt="">
         <div class="card-description">
             <span th:field="*{id}"></span>
             <p th:text="*{name}" th:field="*{name}"></p>
             <p class="card-price" th:text="*{price}" th:field="*{price}"></p>
             <p class="card-quantity" th:text="*{quantity}" th:field="*{quantity}"></p>
-            <p class="card-img" th:text="*{img}" th:field="*{img}"></p>
+
             <p class="card-description" th:text="*{description}" th:field="*{description}"></p>
             <span th:field="*{description}"></span>
         </div>
