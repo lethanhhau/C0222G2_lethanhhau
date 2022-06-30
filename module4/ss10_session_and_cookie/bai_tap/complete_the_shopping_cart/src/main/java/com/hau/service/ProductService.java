@@ -24,4 +24,14 @@ public class ProductService implements IProductService{
     public Optional<Product> findById(Integer id) {
         return productRepository.findById(id);
     }
+
+    @Override
+    public void save(Product product) {
+        this.productRepository.save(product);
+    }
+
+    @Override
+    public void remove(int id) {
+        this.productRepository.delete(this.productRepository.getById(id));
+    }
 }

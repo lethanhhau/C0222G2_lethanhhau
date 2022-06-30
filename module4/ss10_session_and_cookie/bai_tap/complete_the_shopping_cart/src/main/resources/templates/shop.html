@@ -13,7 +13,7 @@
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-success">
                     <h1 class="mb-3">My Product</h1>
-                    <a href="" th:href="@{/product/create}" class="btn btn-outline-success btn-lg" role="button">Create Blog</a>
+                    <a href="" th:href="@{/create}" class="btn btn-outline-success btn-lg" role="button">Create Product</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,6 @@
             <td>description</td>
             <td>img</td>
             <td>detail</td>
-            <td>Add To Cart</td>
             <!--            <th>Detail</th>-->
         </tr>
         </thead>
@@ -41,7 +40,6 @@
             <td th:text="${product.description}"></td>
             <td th:text="${product.img}"></td>
             <td><a th:href="@{/detail(id=${product.id})}">Detail</a></td>
-            <td><a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a></td>
 
             <td>
                 <!-- Button trigger modal -->
@@ -65,7 +63,7 @@
                                 with id = <span th:text="${product.id}" class="text-warning"></span> ?
                             </div>
                             <div class="modal-footer">
-                                <a href="" th:href="@{/product/delete/{id}(id=${product.id})}"
+                                <a href="" th:href="@{/delete/{id}(id=${product.id})}"
                                    class="btn btn-outline-success">Delete</a>
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
                                 </button>
@@ -77,37 +75,11 @@
         </tr>
         </tbody>
     </table>
-    <div class="row">
-        <div class="col-2 ">
-            <ul class="pagination" th:if="${products.totalPages > 0}">
-                <li class="page-item">
-                    <a class="page-link" th:if="${products.hasPrevious()}" th:href="@{'/user/list'(page=${products.number - 1}, search=${searchValue})}">
-                        Previous
-                    </a>
-                </li>
-                <div th:each="item, loop : ${#numbers.sequence(1, products.totalPages )}">
-                    <div th:if="${(products.number + 1) == item}">
-                        <li class="page-item active">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/products/list(page=(${item}-1), search=${searchValue})}"></a>
-                        </li>
-                    </div>
-                    <div th:unless="${((products.number + 1) == item)}">
-                        <li class="page-item">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/products/list(page=(${item}-1), search=${searchValue} )}"></a>
-                        </li>
-                    </div>
-                </div>
-                <li class="page-item">
-                    <a class="page-link" th:if="${products.hasNext()}" th:href="@{'/user/list'(page=${products.number + 1}, search=${searchValue})}">
-                        Next
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div>
+        <a href="/shopping-cart" class="btn btn-outline-success">shopping-cart</a>
     </div>
-
-
 </div>
+
 <th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
 </body>
 </html>

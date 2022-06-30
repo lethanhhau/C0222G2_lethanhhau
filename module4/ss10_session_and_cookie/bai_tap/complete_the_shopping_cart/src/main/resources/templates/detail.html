@@ -8,14 +8,18 @@
 <body>
 <div class="main">
     <div class="card" th:object="${product}">
-        <img src="https://images.unsplash.com/photo-1644982652061-df82282e178d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-card">
+        <img src="https://james.codegym.vn/pluginfile.php/48051/mod_assign/intro/Capture1.PNG" alt="" class="img-card">
         <div class="card-description">
             <span th:field="*{id}"></span>
             <p th:text="*{name}" th:field="*{name}"></p>
             <p class="card-price" th:text="*{price}" th:field="*{price}"></p>
+            <p class="card-quantity" th:text="*{quantity}" th:field="*{quantity}"></p>
+            <p class="card-img" th:text="*{img}" th:field="*{img}"></p>
+            <p class="card-description" th:text="*{description}" th:field="*{description}"></p>
             <span th:field="*{description}"></span>
         </div>
         <a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a>
+        <a href="/shop" class="btn btn-outline-secondary">Back home</a>
     </div>
 </div>
 </body>

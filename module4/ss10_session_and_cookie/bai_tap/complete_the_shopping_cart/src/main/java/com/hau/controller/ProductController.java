@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import java.util.Optional;
 
 @Controller
@@ -22,10 +23,24 @@ public class ProductController {
     }
 
     @GetMapping("/shop")
-    public ModelAndView showShop() {
-        ModelAndView modelAndView = new ModelAndView("/shop");
-        modelAndView.addObject("products", productService.findAll());
-        return modelAndView;
+    public String showShop(Model model) {
+        Iterable<Product> products = this.productService.findAll();
+        model.addAttribute("products", products);
+        return"shop";
+    }
+
+    @GetMapping("/create")
+    public String showCreate(Model model) {
+        model.addAttribute("product", new Product());
+        return "create";
+    }
+
+    @PostMapping("/create")
+    public String create( @ModelAttribute("product") Product product,
+                          RedirectAttributes redirectAttributes) {
+        this.productService.save(product);
+        redirectAttributes.addFlashAttribute("success", "Register success!");
+        return "redirect:/shop";
     }
 
     @GetMapping("/add/{id}")
@@ -49,5 +64,11 @@ public class ProductController {
             return "detail";
         }
         return "error.404";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
+        this.productService.remove(id);
+        return "redirect:/shop";
     }
 }
