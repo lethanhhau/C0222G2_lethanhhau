@@ -33,7 +33,7 @@ public class BlogController {
                                  @RequestParam("search") Optional<String> search){
         Page<Blog> blogs;
         if(search.isPresent()){
-            blogs = iBlogService.findAllByTitleContaining(search.get(), pageable);
+            blogs = iBlogService.getAllBlog(search.get(), pageable);
         } else {
             blogs = iBlogService.findAll(pageable);
         }

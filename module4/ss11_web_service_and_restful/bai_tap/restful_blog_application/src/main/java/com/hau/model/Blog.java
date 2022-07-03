@@ -13,7 +13,7 @@ public class Blog {
     private String content;
 
     @Column(name = "date_of_birth", columnDefinition = "DATE")
-    private String dayOfBirth;
+    private String dateOfBirth;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -22,11 +22,11 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(Integer id, String title, String content, String dayOfBirth, Category category) {
+    public Blog(Integer id, String title, String content, String dateOfBirth, Category category) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.dayOfBirth = dayOfBirth;
+        this.dateOfBirth = dateOfBirth;
         this.category = category;
     }
 
@@ -54,12 +54,12 @@ public class Blog {
         this.content = content;
     }
 
-    public String getDayOfBirth() {
-        return dayOfBirth;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDayOfBirth(String dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
+    public void setDateOfBirth(String dayOfBirth) {
+        this.dateOfBirth = dayOfBirth;
     }
 
     public Category getCategory() {

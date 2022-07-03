@@ -24,6 +24,8 @@
             <div class="container-fluid">
                 <a href="" th:href="@{customer/create}" class="btn btn-outline-success btn-lg" role="button">Create Customer</a>
                 <form class="d-flex">
+                    <!--   name="searchParam" dùng để gửi dữ liệu sang controller-->
+                    <!--   th:value="${searchValue} lấy giá trị gửi sang controller -->
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit" name="name">Search</button>

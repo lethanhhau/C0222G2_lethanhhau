@@ -31,6 +31,11 @@ public class BlogService implements IBlogService {
     }
 
     @Override
+    public Page<Blog> getAllBlog(String searchValue, Pageable pageable) {
+        return this.iBlogRepository.getAllBlog("%" + searchValue + "%" ,pageable );
+    }
+
+    @Override
     public void remove(Integer id) {
         this.iBlogRepository.delete(this.iBlogRepository.getById(id));
     }
@@ -45,8 +50,4 @@ public class BlogService implements IBlogService {
         return this.iBlogRepository.findAll(pageable);
     }
 
-    @Override
-    public Page<Blog> findAllByTitleContaining(String title, Pageable pageable) {
-        return this.iBlogRepository.findAllByTitleContaining(title,pageable);
-    }
 }

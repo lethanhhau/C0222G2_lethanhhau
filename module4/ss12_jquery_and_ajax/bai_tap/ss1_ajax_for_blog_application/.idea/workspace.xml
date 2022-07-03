@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7107f51c-9c55-4d92-9712-438b9e86107b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../module3/demo/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module3/demo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ss1_ajax_for_blog_application.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss1_using_jQuery_to_create_effects/src/main/resources/templates/animate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss1_using_jQuery_to_create_effects/src/main/resources/templates/show_and_hide.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/java/com/com/controller/SmartphoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/java/com/com/model/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/java/com/com/repository/ISmartphoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/java/com/com/repository/SmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/java/com/com/service/ISmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/ss2_manage_phone/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../management_furama/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../management_furama/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/controller/BlogRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/controller/BlogRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/service/blog/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/service/blog/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/service/blog/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/java/com/hau/service/blog/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application/src/main/resources/templates/blog/list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2BKet5UhMlznpqoqVi1tpiuxm3P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss2_complete_phone_management" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7107f51c-9c55-4d92-9712-438b9e86107b" name="Changes" comment="" />
+      <created>1656659415113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656659415113</updated>
+      <workItem from="1656659416913" duration="8371000" />
+      <workItem from="1656680783254" duration="1309000" />
+      <workItem from="1656733276516" duration="321000" />
+      <workItem from="1656734288310" duration="3945000" />
+      <workItem from="1656744853886" duration="2249000" />
+      <workItem from="1656856293831" duration="500000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
