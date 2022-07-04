@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Update My Customer Type</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/customerType/edit" method="post" th:object="${customerType}">
+        <div class="mb-3 mt-3">
+            <input type="hidden" class="form-control" placeholder="id" th:field="*{customerTypeId}">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Customer Type Name:</label>
+            <input type="text" class="form-control" placeholder="Enter customer Type Name" th:field="*{customerTypeName}">
+        </div>
+
+        <div style="color: red" th:errors = "*{customerTypeName}"></div>
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/customerType/list" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>

@@ -29,7 +29,7 @@ public class BlogRestController {
 
     @GetMapping(value = "/blog-list")
     public ResponseEntity<Page<Blog>> getPageBlog(
-            @PageableDefault(value = 1) Pageable pageable) {
+            @PageableDefault(value = 3) Pageable pageable) {
         Page<Blog> blogs = this.iBlogService.findAll(pageable);
 
         if (!blogs.hasContent()) {

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Update My Customer</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/employee/edit" method="post" th:object="${employee}">
+        <div class="mb-3 mt-3">
+            <input type="hidden" class="form-control" placeholder="id" th:field="*{employeeId}">
+        </div>
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Employee Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Employee Name" th:field="*{employeeName}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeName}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Employee Birthday:</label>
+            <input type="date" class="form-control" placeholder="Enter Employee Birthday" th:field="*{employeeBirthday}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeBirthday}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">employee Id Card:</label>
+            <input type="text" class="form-control" placeholder="Enter Cemployee Id Card" th:field="*{employeeIdCard}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeIdCard}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">employee Salary:</label>
+            <input type="text" class="form-control" placeholder="Enter employee Salary" th:field="*{employeeSalary}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeSalary}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">employee Phone:</label>
+            <input type="text" class="form-control" placeholder="Enter employee Phone" th:field="*{employeePhone}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeePhone}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">employee Email:</label>
+            <input type="email" class="form-control" placeholder="Enter employee Email" th:field="*{employeeEmail}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeEmail}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">employee Address:</label>
+            <input type="text" class="form-control" placeholder="Enter employee Address" th:field="*{employeeAddress}">
+        </div>
+
+        <div style="color: red" th:errors = "*{employeeAddress}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Position Id:(select one):</label>
+            <select class="form-select" th:field="*{position}">
+                <option th:each="item,loop : ${positions}" th:text="${item.positionName}" th:value="${item.positionId}"></option>
+            </select>
+        </div>
+
+        <div style="color: red" th:errors = "*{position}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Education Degree Id:(select one):</label>
+            <select class="form-select" th:field="*{educationDegree}">
+                <option th:each="item,loop : ${educationDegrees}" th:text="${item.educationDegreeName}" th:value="${item.educationDegreeId}"></option>
+            </select>
+        </div>
+
+        <div style="color: red" th:errors = "*{educationDegree}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Division Id:(select one):</label>
+            <select class="form-select" th:field="*{division}">
+                <option th:each="item,loop : ${divisions}" th:text="${item.divisionName}" th:value="${item.divisionId}"></option>
+            </select>
+        </div>
+
+        <div style="color: red" th:errors = "*{division}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">User Name:</label>
+            <input type="text" class="form-control" placeholder="Enter User Name" th:field="*{username}">
+        </div>
+
+        <div style="color: red" th:errors = "*{username}"></div>
+
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/employee/home" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</body>
+</html>

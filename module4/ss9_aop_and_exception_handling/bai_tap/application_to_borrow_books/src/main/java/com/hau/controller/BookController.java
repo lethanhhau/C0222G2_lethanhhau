@@ -1,101 +1,70 @@
 package com.hau.controller;
 
 import com.hau.model.Book;
-import com.hau.model.BookDetail;
-import com.hau.service.book.IBookService;
-import com.hau.service.book_details.IBookDetailsService;
+import com.hau.model.DetailBook;
+import com.hau.service.IBookService;
+import com.hau.service.IDetailBookService;
+import com.hau.service.ITrafficService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
-@RequestMapping("/book")
 public class BookController {
+    @Autowired
+    private IBookService bookService;
 
     @Autowired
-    private IBookService iBookService;
+    private IDetailBookService detailBookService;
 
     @Autowired
-    private IBookDetailsService iBookDetailsService;
+    private ITrafficService trafficService;
 
-    @GetMapping("/home")
-    public String goHome(Model model) {
-        List<Book> books = this.iBookService.findAll();
-        model.addAttribute("books", books);
-        return "list";
-    }
-
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable int id) {
-        this.iBookService.remove(id);
-        return "redirect:/book/home";
+    @GetMapping("")
+    public String goHome(Model model){
+        List<Book> bookList = this.bookService.findAll();
+        model.addAttribute("books", bookList);
+        int view = this.trafficService.getById();
+        model.addAttribute("view", view);
+        return "home";
     }
 
     @GetMapping("/create")
-    public String showCreate(Model model) {
+    public String goCreate(Model model){
         model.addAttribute("book", new Book());
         return "create";
     }
 
     @PostMapping("/create")
-    public String create( @ModelAttribute("book") Book book,
-                         RedirectAttributes redirectAttributes) {
-            this.iBookService.save(book);
-            redirectAttributes.addFlashAttribute("success", "Register success!");
-            return "redirect:/book/home";
-        }
+    public String create(@ModelAttribute("book") Book book, Model model){
+        this.bookService.save(book);
+        return "redirect:/";
+    }
 
-    @GetMapping("/edit/{id}")
-    public String showEdit(@PathVariable int id, Model model) {
-        Book book = this.iBookService.getById(id);
-        model.addAttribute("book", book);
+    @GetMapping("/show-detail")
+    public String showDetail(@RequestParam Optional<Integer> id, Model model){
+        if (id.isPresent()) {
+            this.bookService.borrowBook(id.get());
+        }
+        List<DetailBook> detailBooks = this.detailBookService.findAll();
+        model.addAttribute("detailBooks", detailBooks);
         return "borrow";
     }
 
-    @PostMapping("/edit")
-    public String edit(@ModelAttribute Book book) {
-        this.iBookService.save(book);
-        return "redirect:/book/home";
+    @GetMapping("/borrow")
+    public String borrowBook(@RequestParam Integer id, Model model){
+        this.bookService.setQuantity(id);
+        this.detailBookService.setStatus(id);
+        return "redirect:/show-detail";
     }
 
-    @GetMapping("/detail/{id}")
-    public String showDetail(@PathVariable int id, Model model) {
-        Book book = this.iBookService.getById(id);
-        model.addAttribute("book", book);
-        return "details";
-    }
-
-    @GetMapping("/borrow{id}")
-    public String borrow(@PathVariable Integer id,RedirectAttributes redirectAttributes){
-        List<BookDetail> bookDetails = iBookDetailsService.findByIdBookDetail(id);
-
-        for (BookDetail bookDetail:bookDetails) {
-            if (bookDetail.getStatusBook()){
-                bookDetail.setStatusBook(true);
-                iBookDetailsService.save(bookDetail);
-                Book book=iBookService.getById(id);
-                book.setBookAmount(book.getBookAmount()-1);
-                iBookService.save(book);
-                return "redirect:/book/home";
-            }
-        }
-        redirectAttributes.addFlashAttribute("message","Not borrow");
-        return "redirect:/book/home";
-    }
-
-    @PostMapping("/return")
-    public String save(@ModelAttribute Book bookNew, RedirectAttributes redirectAttributes){
-        iBookService.save(bookNew);
-        Book book = iBookService.findAllBookMax();
-        for (int i = 0; i < book.getBookAmount(); i++) {
-            BookDetail bookDetail = new BookDetail();
-            iBookDetailsService.save(bookDetail);
-        }
-        redirectAttributes.addFlashAttribute("message","return successful");
-        return "redirect:/book/home";
+    @GetMapping("/return")
+    public String returnBook(@RequestParam Integer bookCode) throws Exception {
+        this.detailBookService.returnBook(bookCode);
+        return "redirect:/";
     }
 }

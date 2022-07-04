@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <title>Furama Management</title>
+    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{layout-css :: titleCss}"></th:block>
+
+<div class="col-12 row" style="padding: 0px;margin: 0px">
+    <div class="col-3"  style="padding: 0px;margin: 0px">
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn.cet.edu.vn/wp-content/uploads/2018/02/thuat-ngu-resort-la-gi.jpg" class="card-img-top"
+                 alt="..." height="150px">
+            <div class="card-body">
+                <h5 class="card-title">Furama</h5>
+                <p class="card-text">Khu Nghỉ Dưỡng Furama</p>
+                <a href="https://furamavietnam.com/vi/destination/" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; height: 100px">
+            <img src="https://www.hoteljob.vn/uploads/images/18-08-08-16/Resort-la-gi-01.jpeg" class="card-img-top"
+                 alt="..." height="150px">
+            <div class="card-body">
+                <h5 class="card-title">Furama</h5>
+                <p class="card-text">Tiện nghi vươn tầm</p>
+                <a href="https://furamavietnam.com/vi/recreation/" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-9"  style="padding: 0px;margin: 0px">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn.cet.edu.vn/wp-content/uploads/2018/02/thuat-ngu-resort-la-gi.jpg"
+                         class="d-block" width="100%" height="570px" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>First slide label</h4>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.phunu8.vn/PhuNu8DuLieu/PhuNu8HinhAnh/u4678/phu-nu-8-resort-dep-nhat-viet-nam-anh1.jpg"
+                         class="d-block" width="100%" height="570px" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>Second slide label</h4>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.hoteljob.vn/uploads/images/18-08-08-16/Resort-la-gi-01.jpeg" class="d-block"
+                         width="100%" height="570px" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>Third slide label</h4>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<div class="row col-12" style="padding: 0px;margin: 0px">
+    <footer th:fragment="footer" style="padding: 0px;margin: 0px">
+        <center style="background: #45a049;height: 60px;margin-top: 100px">
+            <p style="padding-top: 20px">&copy; 2022 Lê Thanh Hậu</p>
+        </center>
+    </footer>
+    <th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+</div>
+</html>

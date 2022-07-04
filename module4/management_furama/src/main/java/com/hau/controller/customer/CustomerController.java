@@ -44,7 +44,7 @@ public class CustomerController {
    model khai báo để sử dụng model.addAttribute
     */
    @GetMapping("/list-customer")
-    public String goHomeCustomer(@PageableDefault(value = 5) Pageable pageable, Model model,
+    public String goHomeCustomer(@PageableDefault(value = 1) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         /*
         gán giá trị searchValue = "" tránh trường hợp searchParam không có giá trị(khi mới vào chương

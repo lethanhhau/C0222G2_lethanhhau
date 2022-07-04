@@ -5,72 +5,67 @@ import java.util.List;
 
 @Entity
 public class Book {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
-    private Integer bookId;
-    @Column(name = "book_name")
-    private String bookName;
-    @Column(name = "book_amount")
-    private Integer bookAmount;
-    @Column(name = "book_author")
-    private String bookAuthor;
-    @Column(name = "book_year")
-    private String bookYear;
+    private Integer id;
+
+    private String name;
+
+    private String author;
+
+    private Integer quantity;
 
     @OneToMany(mappedBy = "book")
-    @Column(name = "book_details_list")
-    private List<BookDetail> bookDetailList;
+    private List<DetailBook> detailBook;
 
     public Book() {
     }
 
-    public Integer getBookId() {
-        return bookId;
+    public Book(Integer id, String name, String author, Integer quantity, List<DetailBook> detailBook) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.quantity = quantity;
+        this.detailBook = detailBook;
     }
 
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
+    public Integer getId() {
+        return id;
     }
 
-    public String getBookName() {
-        return bookName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public String getName() {
+        return name;
     }
 
-    public Integer getBookAmount() {
-        return bookAmount;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setBookAmount(Integer bookAmount) {
-        this.bookAmount = bookAmount;
+    public String getAuthor() {
+        return author;
     }
 
-    public String getBookAuthor() {
-        return bookAuthor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public String getBookYear() {
-        return bookYear;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
-    public void setBookYear(String bookYear) {
-        this.bookYear = bookYear;
+    public List<DetailBook> getDetailBook() {
+        return detailBook;
     }
 
-    public List<BookDetail> getBookDetailsList() {
-        return bookDetailList;
-    }
-
-    public void setBookDetailsList(List<BookDetail> bookDetailList) {
-        this.bookDetailList = bookDetailList;
+    public void setDetailBook(List<DetailBook> detailBook) {
+        this.detailBook = detailBook;
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce0d8b33-050b-4efa-98d7-277d2fabff4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/aspect/BookAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/model/Traffic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/repository/IDetailBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/repository/ITrafficRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/IDetailBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/ITrafficService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/impl/DetailBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/impl/TrafficService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/assets/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/assets/icon/bootstrap-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/assets/img/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/assets/img/bg-masthead.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/assets/img/portfolio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/js/bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/static/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/model/BookDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/model/DetailBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/repository/IBookDetailsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/repository/IBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/repository/IBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/impl/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/book/IBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/IBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/book_details/BookDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/java/com/hau/service/book_details/IBookDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/borrow.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/borrow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/common.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/layout-css.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module4/ss9_aop_and_exception_handling/bai_tap/application_to_borrow_books/src/main/resources/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2BRDYae3TqfU980bKA6fIW20BS8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce0d8b33-050b-4efa-98d7-277d2fabff4d" name="Changes" comment="" />
+      <created>1656860052677</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656860052677</updated>
+      <workItem from="1656860054444" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

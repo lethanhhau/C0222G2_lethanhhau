@@ -1,132 +1,326 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>List Smartphone</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"-->
+<!--          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--        <div class="container-fluid">-->
+<!--            <a class="navbar-brand" id="btnHome" href="#">Home</a>-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
+<!--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"-->
+<!--                    aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--                    <li class="nav-item">-->
+<!--                        &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"-->
+<!--                                data-bs-target="#exampleModal">-->
+<!--                            Create Product-->
+<!--                        </button>-->
 
-        function addNewSmartPhone() {
-            //lay du lieu
-            let producer = $('#producer').val();
-            let model = $('#model').val();
-            let price = $('#price').val();
-            let newSmartphone = {
-                producer: producer,
-                model: model,
-                price: price
-            };
-            // goi ajax
-            $.ajax({
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                type: "POST",
-                data: JSON.stringify(newSmartphone),
-                //tên API
-                url: "/smartphones",
-                //xử lý khi thành công
-                success: successHandler
+<!--                        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"-->
+<!--                             aria-hidden="true">-->
+<!--                            <div class="modal-dialog">-->
+<!--                                <div class="modal-content">-->
+<!--                                    <div class="modal-header">-->
+<!--                                        <h5 class="modal-title" id="exampleModalLabel">Create Product</h5>-->
+<!--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"-->
+<!--                                                aria-label="Close"></button>-->
+<!--                                    </div>-->
+<!--                                    <form action="" class="form-control">-->
 
-            });
-            //chặn sự kiện mặc định của thẻ
-            event.preventDefault();
-        }
+<!--                                        <div class="modal-body">-->
+<!--                                            <label for="model" class="form-label">Model</label>-->
+<!--                                            <input type="text" class="form-control" id="model">-->
+<!--                                            <label for="price" class="form-label">Price</label>-->
+<!--                                            <input type="text" class="form-control" id="price">-->
+<!--                                            <label for="producer" class="form-label">Producer</label>-->
+<!--                                            <input type="text" class="form-control" id="producer">-->
+<!--                                        </div>-->
+<!--                                        <div class="modal-footer">-->
+<!--                                            <button type="button" class="btn btn-outline-primary" id="btnCreate">Save-->
+<!--                                                changes-->
+<!--                                            </button>-->
+<!--                                            <button type="button" class="btn btn-outline-secondary"-->
+<!--                                                    data-bs-dismiss="modal">Close-->
+<!--                                            </button>-->
+<!--                                        </div>-->
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <div class="d-flex">-->
+<!--                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchVal">-->
+<!--                    <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
 
-        function successHandler() {
-            $.ajax({
-                type: "GET",
-                //tên API
-                url: "/smartphones",
-                //xử lý khi thành công
-                success: function (data) {
-                    // hien thi danh sach o day
-                    let content = '    <tr>\n' +
-                        '        <td>Producer</td>\n' +
-                        '        <td>Model</td>\n' +
-                        '        <td>Price</td>\n' +
-                        '        <td>Delete</td>\n' +
-                        '    </tr>';
-                    for (let i = 0; i < data.length; i++) {
-                        content += getSmartphone(data[i]);
-                    }
-                    document.getElementById('smartphoneList').innerHTML = content;
-                }
-            });
-        }
+<!--    <table class="table table-info">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <td>ID</td>-->
+<!--            <td>Model</td>-->
+<!--            <td>Price</td>-->
+<!--            <td>Producer</td>-->
+<!--            <td>Delete</td>-->
+<!--            <td>Edit</td>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="smartphoneTableBody">-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--    <ul class="pagination" id="paginationTableBody">-->
+<!--    </ul>-->
+<!--</div>-->
 
-        function getSmartphone(smartphone) {
-            return `<tr>
-                        <td >${smartphone.producer}</td>
-                        <td >${smartphone.model}</td>
-                        <td >${smartphone.price}</td>` +
-                        `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td>
-                    </tr>`;
-        }
+<!--<script src="../styles/jquery.min.js"></script>-->
+<!--<script>-->
+<!--    let totalPageTemp = 0;-->
+<!--    let curPage = 0;-->
+<!--    function showListSmartphone(pageNumber, searchParam) {-->
+<!--        $.ajax({-->
+<!--            headers: {-->
+<!--                'Accept': 'application/json',-->
+<!--                'Content-Type': 'application/json'-->
+<!--            },-->
+<!--            type: "GET", //GET, DELETE, PUT...-->
+<!--            url: "http://localhost:8080/smartphones/list?page=" + pageNumber + "&searchValue=" + searchParam,-->
+<!--            success: function (pageSmartphone) {-->
+<!--                totalPageTemp = pageSmartphone.totalPages;-->
+<!--                let smartphoneTable = "";-->
+<!--                for (let i = 0; i < pageSmartphone.content.length; i++) {-->
+<!--                    smartphoneTable += `<tr>-->
+<!--        <td>${pageSmartphone.content[i].id}</td>-->
+<!--        <td>${pageSmartphone.content[i].model}</td>-->
+<!--        <td>${pageSmartphone.content[i].price}</td>-->
+<!--        <td>${pageSmartphone.content[i].producer}</td>-->
+<!--        <td>-->
+<!--        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCreate${pageSmartphone.content[i].id}">-->
+<!--          Delete-->
+<!--        </button>-->
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalCreate${pageSmartphone.content[i].id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--                    <div class="modal-dialog">-->
+<!--                    <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                    <h5 class="modal-title text-warning" id="exampleModalLabel">FBI Warning!</h5>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                    Do you want to delete smartphone ${pageSmartphone.content[i].model} with id = ${pageSmartphone.content[i].id}-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                    <a href="${pageSmartphone.content[i].id}" class="btn btn-outline-success" id="btnDelete" data-bs-dismiss="modal">Success</a>-->
+<!--                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModalEdit${pageSmartphone.content[i].id}">-->
+<!--                    Edit-->
+<!--                    </button>-->
+<!--                        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--                    <div class="modal fade" id="exampleModalEdit${pageSmartphone.content[i].id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--                    <div class="modal-dialog">-->
+<!--                    <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                    <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                    <input type="hidden" class="form-control" id="idEdit" value="${pageSmartphone.content[i].id}">-->
+<!--                    <label for="model" class="form-label">Model</label>-->
+<!--                    <input type="text" class="form-control" id="modelEdit" value="${pageSmartphone.content[i].model}">-->
+<!--                    <label for="price" class="form-label">Price</label>-->
+<!--                    <input type="text" class="form-control" id="priceEdit" value="${pageSmartphone.content[i].price}">-->
+<!--                    <label for="producer" class="form-label">Producer</label>-->
+<!--                    <input type="text" class="form-control" id="producerEdit" value="${pageSmartphone.content[i].producer}">-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                    <a href="${pageSmartphone.content[i].id}" class="btn btn-outline-success" id="btnEdit" data-bs-dismiss="modal">Success</a>-->
+<!--                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    </td>-->
+<!--                    </tr>`;-->
+<!--                    }-->
+<!--                    let paginationTable = "";-->
+<!--                    switch (Number(pageNumber)) {-->
+<!--                    case 0:-->
+<!--                    paginationTable += `<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>`;-->
+<!--                    break;-->
+<!--                    default:-->
+<!--                    paginationTable += `<li class="page-item "><a class="page-link" href="` + pageNumber + `" id="aPrevious">Previous</a></li>`;-->
+<!--                    break;-->
+<!--                    }-->
+<!--                    for (let i = 0; i < pageSmartphone.totalPages; i++) {-->
+<!--                    switch (Number(i)){-->
+<!--                    case Number(pageNumber):-->
+<!--                    curPage = i;-->
+<!--                    paginationTable += `<li class="page-item active"><a class="page-link" id="aItem" href="`+ i +`">`+ (i + 1) +`</a></li>`;-->
+<!--                    break;-->
+<!--                    default:-->
+<!--                    paginationTable += `<li class="page-item"><a class="page-link" id="aItem" href="`+ i +`">`+ (i + 1) +`</a></li>`;-->
+<!--                    break;-->
+<!--                    }-->
+<!--                    }-->
+<!--                    switch (Number(pageNumber)) {-->
+<!--                    case pageSmartphone.totalPages = (Number(pageSmartphone.totalPages) <= 0) ? 0 : Number((pageSmartphone.totalPages - 1)):-->
+<!--                    paginationTable += `<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>`;-->
+<!--                    break;-->
+<!--                    default:-->
+<!--                    paginationTable += `<li class="page-item "><a class="page-link" href="`+ pageNumber +`" id="aNext">Next</a></li>`;-->
+<!--                    break;-->
+<!--                    }-->
+<!--                    $("#paginationTableBody").html(paginationTable);-->
+<!--                    $("#smartphoneTableBody").html(smartphoneTable);-->
+<!--                    },-->
+<!--                    error: function (resultError) {-->
+<!--                    console.log(resultError)-->
+<!--                    }-->
+<!--                    });-->
+<!--                    }-->
 
-        $(document).ready(function () {
-            //sư kiện nào thực hiện Ajax
-            $("#smartphoneList").on('click', '.deleteSmartphone', function (event) {
-                //lay du lieu
-                let a = $(this);
-                let smartphoneId = a.attr("href");
-                // goi ajax
-                $.ajax({
-                    type: "DELETE",
-                    //tên API
-                    url: `/smartphones/${smartphoneId}`,
-                    //xử lý khi thành công
-                    success: function (data) {
-                        a.parent().parent().remove();
-                    }
+<!--                    showListSmartphone(0, "");-->
 
-                });
-                //chặn sự kiện mặc định của thẻ
-                event.preventDefault();
-            })
-        });
+<!--                    $("#btnCreate").click(function () {-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    let modelSP = $("#model").val();-->
+<!--                    let priceSP = $("#price").val();-->
+<!--                    let producerSp = $("#producer").val();-->
 
+<!--                    let smartphone = {-->
+<!--                    model: modelSP,-->
+<!--                    price: priceSP,-->
+<!--                    producer: producerSp-->
+<!--                    }-->
 
-    </script>
-</head>
-<body>
-<form id="add-smartphone">
-    <table>
-        <tr>
-            <td>Producer:</td>
-            <td><input type="text" id="producer" placeholder="producer"></td>
-        </tr>
-        <tr>
-            <td>Model:</td>
-            <td><input type="text" id="model" placeholder="model"></td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td><input type="text" id="price" placeholder="price"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Add" onclick="addNewSmartPhone()"></td>
-        </tr>
-    </table>
-</form>
-<h1>Smartphone List</h1>
-<table id="smartphoneList">
-    <tr>
-        <td>Producer</td>
-        <td>Model</td>
-        <td>Price</td>
-        <td>Delete</td>
-    </tr>
-    <th:block th:each="smartphone: ${smartphones}">
-        <tr>
-            <td th:text="${smartphone.producer}"></td>
-            <td th:text="${smartphone.model}"></td>
-            <td th:text="${smartphone.price}"></td>
-            <td><a class="deleteSmartphone" th:href="${smartphone.getId()}">Delete</a></td>
-        </tr>
-    </th:block>
-</table>
-</body>
-</html>
+<!--                    $.ajax({-->
+<!--                    headers: {-->
+<!--                    'Accept': 'application/json',-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                    },-->
+<!--                    type: "POST", //GET, DELETE, PUT...-->
+<!--                    url: "http://localhost:8080/smartphones/",-->
+<!--                    data: JSON.stringify(smartphone),-->
+<!--                    success: function (resultSuccess) {-->
+<!--                    $("#model").val("");-->
+<!--                    $("#price").val("");-->
+<!--                    $("#producer").val("");-->
+<!--                    showListSmartphone((totalPageTemp-1), searchValue);-->
+<!--                    },-->
+<!--                    error: function (resultError) {-->
+<!--                    console.log(resultError)-->
+<!--                    }-->
+<!--                    });-->
+<!--                    })-->
+
+<!--                    $(document).ready(function () {-->
+<!--                    $("#smartphoneTableBody").on('click', '#btnDelete', function (event) {-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    let idDelete = $(this).attr("href");-->
+<!--                    $.ajax({-->
+<!--                    type: "DELETE",-->
+<!--                        //tên API-->
+<!--                    url: "http://localhost:8080/smartphones/" + idDelete,-->
+<!--                        //xử lý khi thành công-->
+<!--                    success: function (data) {-->
+<!--                    $(this).parent().parent().remove();-->
+<!--                    showListSmartphone(curPage, searchValue);-->
+<!--                    }-->
+<!--                    });-->
+<!--                    event.preventDefault();-->
+<!--                    })-->
+<!--                    });-->
+<!--                    $(document).ready(function () {-->
+<!--                    $("#smartphoneTableBody").on('click', '#btnEdit', function (event) {-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    let idEdit = $(this).attr("href");-->
+<!--                    event.preventDefault();-->
+<!--                    let modelE = $("#exampleModalEdit" + idEdit + " #modelEdit").val();-->
+<!--                    let priceE = $("#exampleModalEdit" + idEdit + " #priceEdit").val();-->
+<!--                    let producerE = $("#exampleModalEdit" + idEdit + " #producerEdit").val();-->
+
+<!--                    let smartphone = {-->
+<!--                    id: idEdit,-->
+<!--                    model: modelE,-->
+<!--                    price: priceE,-->
+<!--                    producer: producerE-->
+<!--                    }-->
+<!--                    $.ajax({-->
+<!--                    headers: {-->
+<!--                    'Accept': 'application/json',-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                    },-->
+<!--                    type: "POST", //GET, DELETE, PUT...-->
+<!--                    url: "http://localhost:8080/smartphones/",-->
+<!--                    data: JSON.stringify(smartphone),-->
+<!--                    success: function (resultSuccess) {-->
+<!--                    showListSmartphone(curPage, searchValue);-->
+<!--                    },-->
+<!--                    error: function (resultError) {-->
+<!--                    console.log(resultError)-->
+<!--                    }-->
+<!--                    });-->
+<!--                    })-->
+
+<!--                    })-->
+<!--                    $(document).ready(function () {-->
+<!--                    $("#paginationTableBody").on('click', '#aNext', function (event) {-->
+<!--                    let numberPage = $(this).attr("href");-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    numberPage++;-->
+<!--                    event.preventDefault();-->
+<!--                    showListSmartphone(numberPage, searchValue);-->
+<!--                    })-->
+<!--                    })-->
+<!--                    $(document).ready(function () {-->
+<!--                    $("#paginationTableBody").on('click', '#aPrevious', function (event) {-->
+<!--                    let numberPage = $(this).attr("href");-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    numberPage&#45;&#45;;-->
+<!--                    event.preventDefault();-->
+<!--                    showListSmartphone(numberPage, searchValue);-->
+<!--                    })-->
+<!--                    })-->
+<!--                    $(document).ready(function () {-->
+<!--                    $("#paginationTableBody").on('click', '#aItem', function (event) {-->
+<!--                    let numberPage = $(this).attr("href");-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    event.preventDefault();-->
+<!--                    showListSmartphone(numberPage, searchValue);-->
+<!--                    })-->
+<!--                    })-->
+<!--                    $("#btnSearch").click(function () {-->
+<!--                    let searchValue = $("#searchVal").val();-->
+<!--                    showListSmartphone(0, searchValue);-->
+<!--                    })-->
+<!--                    $("#btnHome").click(function (event) {-->
+<!--                    showListSmartphone(0, "");-->
+<!--                    $("#searchVal").val("");-->
+<!--                    event.preventDefault();-->
+<!--                    })-->
+
+<!--</script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->

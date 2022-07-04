@@ -120,18 +120,18 @@
         });
     }
 
-    getPageBlog(0,1, "");
+    getPageBlog(0,3, "");
 
     let pageCur = 0;
     $("#btnSearch").click(function (){
         let searchValue = $("#keyword").val();
-        getPageBlog(0,1, searchValue)
-        pageCur = 1;
+        getPageBlog(0,3, searchValue)
+        pageCur = 3;
     })
-    $("loadMore").click(function (){
+    $("#loadMore").click(function (){
         let searchValue = $("#keyword").val();
         if (pageCur < totalPage){
-            pageCur+= 1;
+            pageCur+= 3;
             getPageBlog(0, pageCur,searchValue);
         }
     })
@@ -146,8 +146,12 @@
     });
 
     $("#aNext").click(function () {
-        pageCur++;
-        getPageBlog(pageCur);
+        if (pageCur < totalPage-1) {
+            pageCur++;
+            getPageBlog(pageCur);
+        }else{
+            alert("Khong co trang sau");
+        }
     });
     function getBlog(blog) {
         return `<tr>
