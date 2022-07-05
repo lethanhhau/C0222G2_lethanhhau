@@ -14,7 +14,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +33,7 @@ public class CustomerController {
         return this.iCustomerTypeService.findAllCustomerType();
     }
 
-   @GetMapping("/list-customer")
+   @GetMapping("/customer-list")
     public String goHomeCustomer(@PageableDefault(value = 1) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");
@@ -47,7 +46,7 @@ public class CustomerController {
     @GetMapping("/customer/delete/{id}")
     public String delete(@PathVariable int id) {
         this.iCustomerService.remove(id);
-        return "redirect:/list-customer";
+        return "redirect:/customer-list";
     }
 
     @GetMapping("/customer/create")
@@ -70,7 +69,7 @@ public class CustomerController {
             BeanUtils.copyProperties(customerDto, customer);
             this.iCustomerService.save(customer);
             redirectAttributes.addFlashAttribute("success", "Register success!");
-            return "redirect:/list-customer";
+            return "redirect:/customer-list";
         }
     }
 
@@ -84,6 +83,6 @@ public class CustomerController {
     @PostMapping("/customer/edit")
     public String edit(@ModelAttribute Customer customer) {
         this.iCustomerService.save(customer);
-        return "redirect:/list-customer";
+        return "redirect:/customer-list";
     }
 }

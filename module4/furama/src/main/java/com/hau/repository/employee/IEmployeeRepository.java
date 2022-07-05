@@ -1,6 +1,5 @@
 package com.hau.repository.employee;
 
-import com.hau.model.customer.Customer;
 import com.hau.model.employee.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

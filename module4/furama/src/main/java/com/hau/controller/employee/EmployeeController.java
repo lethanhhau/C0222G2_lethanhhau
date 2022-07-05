@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("employee")
 public class EmployeeController {
 
     @Autowired
@@ -55,7 +54,7 @@ public class EmployeeController {
         return this.iPositionService.findAllPosition();
     }
 
-    @GetMapping("/home")
+    @GetMapping("/employee-list")
     public String goHomeEmployee(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam) {
         String searchValue = searchParam.orElse("");
@@ -65,19 +64,19 @@ public class EmployeeController {
         return "employee/list";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/employee/delete/{id}")
     public String delete(@PathVariable int id) {
         this.iEmployeeService.remove(id);
-        return "redirect:/employee/home";
+        return "redirect:/employee-list";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/employee/create")
     public String showCreate(Model model) {
         model.addAttribute("employeeDto", new EmployeeDto());
         return "employee/create";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/employee/create")
     public String create(@Valid @ModelAttribute("EmployeeDto") EmployeeDto employeeDto,
                          BindingResult bindingResult,
                          RedirectAttributes redirectAttributes,
@@ -93,11 +92,11 @@ public class EmployeeController {
             BeanUtils.copyProperties(employeeDto, employee);
             this.iEmployeeService.save(employee);
             redirectAttributes.addFlashAttribute("success", "Register success!");
-            return "redirect:/employee/home";
+            return "redirect:/employee-list";
         }
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/employee/edit/{id}")
     public String showEdit(@PathVariable int id, Model model) {
         Optional<Employee> employee = this.iEmployeeService.findById(id);
         model.addAttribute("employee", employee);
@@ -107,10 +106,10 @@ public class EmployeeController {
         return "employee/edit";
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/employee/edit")
     public String edit(@ModelAttribute Employee employee) {
         this.iEmployeeService.save(employee);
-        return "redirect:/employee/home";
+        return "redirect:/employee-list";
     }
 
 }

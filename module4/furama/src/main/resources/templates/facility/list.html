@@ -12,7 +12,7 @@
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-success">
-                    <h1 class="mb-3">List Employee</h1>
+                    <h1 class="mb-3">List Facility</h1>
                 </div>
             </div>
         </div>
@@ -20,7 +20,8 @@
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 50px">
-                <a href="" th:href="@{/employee/create}" class="btn btn-outline-success btn-lg" role="button">Create Employee</a>
+                <a href="" th:href="@{/facility/create}" class="btn btn-outline-success btn-lg" role="button">Create
+                    Facility</a>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
@@ -34,42 +35,40 @@
     <table class="table table-hover">
         <thead>
         <tr>
+            <th>STT</th>
             <th>ID</th>
             <th>Name</th>
-            <th>Birthday</th>
-            <th>Salary</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Position Id</th>
-            <th>Education Degree Id</th>
-            <th>Division Id</th>
+            <th>Area</th>
+            <th>Cost</th>
+            <th>Max People</th>
+            <th>Rent Type Id</th>
+            <th>Facility Type Id</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="employee, loop : ${employees}">
-            <td th:text="${employee.employeeId}"></td>
-            <td th:text="${employee.employeeName}"></td>
-            <td th:text="${employee.employeeBirthday}"></td>
-            <td th:text="${employee.employeeSalary}"></td>
-            <td th:text="${employee.employeePhone}"></td>
-            <td th:text="${employee.employeeAddress}"></td>
-            <td th:text="${employee.position.positionName}"></td>
-            <td th:text="${employee.educationDegree.educationDegreeName}"></td>
-            <td th:text="${employee.division.divisionName}"></td>
+        <tr th:each="facility, loop : ${facilities}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${facility.facilityId}"></td>
+            <td th:text="${facility.facilityName}"></td>
+            <td th:text="${facility.facilityArea}"></td>
+            <td th:text="${facility.facilityCost}"></td>
+            <td th:text="${facility.maxPeople}"></td>
+            <td th:text="${facility.rentType.rentTypeName}"></td>
+            <td th:text="${facility.facilityType.facilityTypeName}"></td>
             <td>
-                <a th:href="@{/employee/edit/{id}(id=${employee.employeeId})}" class="btn btn-outline-success">Edit</a>
+                <a th:href="@{/facility/edit/{id}(id=${facility.facilityId})}" class="btn btn-outline-success">Edit</a>
             </td>
             <td>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        th:data-bs-target="'#staticBackdrop' + ${employee.employeeId}">
+                        th:data-bs-target="'#staticBackdrop' + ${facility.facilityId}">
                     Delete
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" th:id="staticBackdrop + ${employee.employeeId}" data-bs-backdrop="static"
+                <div class="modal fade" th:id="staticBackdrop + ${facility.facilityId}" data-bs-backdrop="static"
                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -79,11 +78,12 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Do you want delete blog <span th:text="${employee.employeeName}" class="text-warning"></span>
-                                with id = <span th:text="${employee.employeeId}" class="text-warning"></span> ?
+                                Do you want delete blog <span th:text="${facility.facilityName}"
+                                                              class="text-warning"></span>
+                                with id = <span th:text="${facility.facilityId}" class="text-warning"></span> ?
                             </div>
                             <div class="modal-footer">
-                                <a href="" th:href="@{/employee/delete/{id}(id=${employee.employeeId})}"
+                                <a href="" th:href="@{/facility/delete/{id}(id=${facility.facilityId})}"
                                    class="btn btn-outline-success">Delete</a>
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
                                 </button>
@@ -96,30 +96,34 @@
         </tbody>
     </table>
     <div class="row">
-        <div class="col-10">
-            <a href="/customerType/list" class="btn btn-outline-success">Go To List Customer Type</a>
-        </div>
+<!--        <div class="col-10">-->
+<!--            <a href="/facilityType/list" class="btn btn-outline-success">Go To List Facility Type</a>-->
+<!--        </div>-->
         <div class="col-2 ">
-            <ul class="pagination" th:if="${employees.totalPages > 0}">
+            <ul class="pagination" th:if="${facilities.totalPages > 0}">
                 <li class="page-item">
-                    <a class="page-link" th:if="${employees.hasPrevious()}" th:href="@{'/employee-list'(page=${employees.number - 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${facilities.hasPrevious()}"
+                       th:href="@{'/facility-list'(page=${facilities.number - 1}, search=${searchValue})}">
                         Previous
                     </a>
                 </li>
-                <div th:each="item, loop : ${#numbers.sequence(1, employees.totalPages )}">
-                    <div th:if="${(employees.number + 1) == item}">
+                <div th:each="item, loop : ${#numbers.sequence(1, facilities.totalPages )}">
+                    <div th:if="${(facilities.number + 1) == item}">
                         <li class="page-item active">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/employee-list(page=(${item}-1), search=${searchValue})}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/facility-list(page=(${item}-1), search=${searchValue})}"></a>
                         </li>
                     </div>
-                    <div th:unless="${((employees.number + 1) == item)}">
+                    <div th:unless="${((facilities.number + 1) == item)}">
                         <li class="page-item">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/employee-list(page=(${item}-1), search=${searchValue} )}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/facility-list(page=(${item}-1), search=${searchValue} )}"></a>
                         </li>
                     </div>
                 </div>
                 <li class="page-item">
-                    <a class="page-link" th:if="${employees.hasNext()}" th:href="@{'/employee-list'(page=${employees.number + 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${facilities.hasNext()}"
+                       th:href="@{'/facility-list'(page=${facilities.number + 1}, search=${searchValue})}">
                         Next
                     </a>
                 </li>

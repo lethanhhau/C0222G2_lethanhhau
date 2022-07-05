@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <th:block th:replace="~{layout-css :: bootstrapCss}"></th:block>
+    <th:block th:replace="~{bootstrap-css :: bootstrapCss123}"></th:block>
 </head>
 <body>
 <div class="p-3 text-center bg-image"
@@ -11,7 +11,7 @@
     <div class="mask">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-success">
-                <h1 class="mb-3">Create My Customer</h1>
+                <h1 class="mb-3">Create Customer</h1>
             </div>
         </div>
     </div>
@@ -91,10 +91,10 @@
         <div style="color: red" th:errors = "*{customerAddress}"></div>
 
         <button type="submit" class="btn btn-outline-success">Submit</button>
-        <a href="/list-customer" class="btn btn-outline-secondary">Back home</a>
+        <a href="/customer-list" class="btn btn-outline-secondary">Back home</a>
     </form>
 </div>
 </div>
-<th:block th:replace="~{layout-css :: boostrapScript}"></th:block>
+<th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
 </body>
 </html>
