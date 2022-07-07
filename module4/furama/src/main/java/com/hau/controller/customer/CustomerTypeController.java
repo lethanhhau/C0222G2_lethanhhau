@@ -17,13 +17,12 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/customerType")
 public class CustomerTypeController {
     @Autowired
     private ICustomerTypeService iCustomerTypeService;
 
 
-    @GetMapping("/list")
+    @GetMapping("/customerType-list")
     public String goHomeCustomerType(@PageableDefault(value = 3) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");

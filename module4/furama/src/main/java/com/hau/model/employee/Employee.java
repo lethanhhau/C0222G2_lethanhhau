@@ -1,41 +1,37 @@
 package com.hau.model.employee;
 
-import com.hau.model.customer.CustomerType;
+import com.hau.model.contract.Contract;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "employee_id")
     private Integer employeeId;
-    @Column(name = "employee_name")
     private String employeeName;
-    @Column(name = "employee_birthday")
     private String employeeBirthday;
-    @Column(name = "employee_id_card")
     private String employeeIdCard;
-    @Column(name = "employee_salary")
     private Double employeeSalary;
-    @Column(name = "employee_phone")
     private String employeePhone;
-    @Column(name = "employee_email")
     private String employeeEmail;
-    @Column(name = "employee_address")
     private String employeeAddress;
 
     @ManyToOne
-    @JoinColumn(name = "position_id")
+    @JoinColumn(name = "position_id", referencedColumnName = "positionId")
     private Position position;
 
     @ManyToOne
-    @JoinColumn(name = "education_degree_id")
+    @JoinColumn(name = "education_degree_id", referencedColumnName = "educationDegreeId")
     private EducationDegree educationDegree;
 
     @ManyToOne
-    @JoinColumn(name = "division_id")
+    @JoinColumn(name = "division_id", referencedColumnName = "divisionId")
     private Division division;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Contract> contracts;
 
     private String username;
 

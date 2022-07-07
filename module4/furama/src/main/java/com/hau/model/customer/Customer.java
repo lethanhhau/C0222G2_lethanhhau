@@ -1,34 +1,31 @@
 package com.hau.model.customer;
 
+import com.hau.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
     private Integer customerId;
-    @Column(name = "customer_code")
     private String customerCode;
-    @Column(name = "customer_name")
     private String customerName;
-    @Column(name = "customer_birthday")
     private String customerBirthday;
-    @Column(name = "customer_gender")
     private String customerGender;
-    @Column(name = "customer_id_card")
     private String customerIdCard;
-    @Column(name = "customer_phone")
     private String customerPhone;
-    @Column(name = "customer_email")
     private String customerEmail;
-    @Column(name = "customer_address")
     private String customerAddress;
 
     @ManyToOne
-    @JoinColumn(name = "customer_type_id")
+    @JoinColumn(name = "customer_type_id", referencedColumnName = "customerTypeId")
     private CustomerType customerType;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Contract> contracts;
 
     public Customer() {
     }

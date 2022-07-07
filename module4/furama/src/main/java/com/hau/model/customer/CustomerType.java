@@ -9,12 +9,10 @@ public class CustomerType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_type_id")
     private Integer customerTypeId;
-    @Column(name = "customer_type_name")
     private String customerTypeName;
 
-    @OneToMany(targetEntity = Customer.class)
+    @OneToMany(mappedBy = "customerType")
     private List<Customer> customers;
 
     public CustomerType() {

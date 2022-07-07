@@ -10,7 +10,7 @@ public class FacilityType {
     private Integer facilityTypeId;
     private String facilityTypeName;
 
-    @OneToMany(targetEntity = Facility.class)
+    @OneToMany(mappedBy = "facilityType")
     private List<Facility> facilities;
 
     public FacilityType() {

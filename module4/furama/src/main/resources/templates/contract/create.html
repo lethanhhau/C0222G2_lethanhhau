@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{bootstrap-css :: bootstrapCss123}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Create Contract</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/contract/create" method="post" th:object="${contractDto}">
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Start Date:</label>
+            <input type="date" class="form-control" placeholder="Enter Customer Name" th:field="*{startDate}">
+        </div>
+        <div style="color: red" th:errors = "*{startDate}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">End Date:</label>
+            <input type="date" class="form-control" placeholder="Enter Customer Name" th:field="*{endDate}">
+        </div>
+        <div style="color: red" th:errors = "*{endDate}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Deposits:</label>
+            <input type="text" class="form-control" placeholder="Enter Customer Name" th:field="*{deposits}">
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">total money:</label>
+            <input type="text" class="form-control" placeholder="Enter Customer Name" th:field="*{deposits}">
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Customer:(select one):</label>
+            <select class="form-select" th:field="*{customer}">
+                <option th:each="item,loop : ${customers}" th:text="${item.customerName}" th:value="${item.customerId}"></option>
+            </select>
+        </div>
+        <div style="color: red" th:errors = "*{customer}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Facility:(select one):</label>
+            <select class="form-select" th:field="*{facility}">
+                <option th:each="item,loop : ${facilitis}" th:text="${item.facilityName}" th:value="${item.facilityId}"></option>
+            </select>
+        </div>
+        <div style="color: red" th:errors = "*{facility}"></div>
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/facility-list" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
+</body>
+</html>

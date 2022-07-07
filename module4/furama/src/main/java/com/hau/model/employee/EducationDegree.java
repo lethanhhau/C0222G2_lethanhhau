@@ -1,6 +1,7 @@
 package com.hau.model.employee;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "education_degree")
@@ -8,12 +9,21 @@ public class EducationDegree {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "education_degree_id")
     private Integer educationDegreeId;
-    @Column(name = "education_degree_name")
     private String educationDegreeName;
 
+    @OneToMany(mappedBy = "educationDegree")
+    private List<Employee> employees;
+
     public EducationDegree() {
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 
     public EducationDegree(Integer educationDegreeId, String educationDegreeName) {

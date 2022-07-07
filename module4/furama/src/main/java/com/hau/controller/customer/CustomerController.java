@@ -34,7 +34,7 @@ public class CustomerController {
     }
 
    @GetMapping("/customer-list")
-    public String goHomeCustomer(@PageableDefault(value = 1) Pageable pageable, Model model,
+    public String goHomeCustomer(@PageableDefault(value = 3) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");
         Iterable<Customer> customers = this.iCustomerService.findAll(pageable, searchValue);

@@ -11,7 +11,7 @@ public class RentType {
     private Integer rentTypeId;
     private String rentTypeName;
 
-    @OneToMany(targetEntity = Facility.class)
+    @OneToMany(mappedBy = "rentType")
     private List<Facility> facilities;
 
     public RentType() {

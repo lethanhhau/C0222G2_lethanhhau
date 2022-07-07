@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -32,5 +33,10 @@ public class CustomerService implements ICustomerService {
     @Override
     public void remove(Integer id) {
         this.iCustomerRepository.delete(this.iCustomerRepository.getById(id));
+    }
+
+    @Override
+    public List<Customer> findAllCustomer() {
+        return this.iCustomerRepository.findAll();
     }
 }

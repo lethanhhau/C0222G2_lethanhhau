@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <th:block th:replace="~{bootstrap-css :: bootstrapCss123}"></th:block>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#show").click(function () {
+                $("p").show();
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="p-3 text-center bg-image"
@@ -13,6 +22,11 @@
             <div class="text-success">
                 <h1 class="mb-3">Create My Facility</h1>
             </div>
+            <select>
+                <option id="villa">Villa</option>
+                <option id="house">House</option>
+                <option id="room">Room</option>
+            </select>
         </div>
     </div>
 </div>
@@ -61,28 +75,28 @@
 
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="villa">
             <label class="form-label h6">VH Standard Room:</label>
             <input type="text" class="form-control" placeholder="Enter Standard Room" th:field="*{standardRoom}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="villa">
             <label class="form-label h6">VH Description Other Convenience:</label>
             <input type="text" class="form-control" placeholder="Enter Description Other Convenience"
                    th:field="*{descriptionOtherConvenience}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="villa">
             <label class="form-label h6">V Pool Area:</label>
             <input type="text" class="form-control" placeholder="Enter Pool Area" th:field="*{poolArea}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="villa">
             <label class="form-label h6">VH Number Of Floors:</label>
             <input type="text" class="form-control" placeholder="Enter Number Of Floors" th:field="*{numberOfFloors}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3"id="room">
             <label class="form-label h6">R Facility Free:</label>
             <input type="text" class="form-control" placeholder="Enter Facility Free" th:field="*{facilityFree}">
         </div>
@@ -91,6 +105,8 @@
         <a href="/facility-list" class="btn btn-outline-secondary">Back home</a>
     </form>
 </div>
+
+
 <th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
 </body>
 </html>

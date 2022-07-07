@@ -1,8 +1,9 @@
 package com.hau.model.facility;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.hau.model.contract.Contract;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Facility {
@@ -15,21 +16,19 @@ public class Facility {
     private Double facilityCost;
     private Integer maxPeople;
     @ManyToOne
-    @JoinColumn(name = "rent_type_id")
+    @JoinColumn(name = "rent_type_id", referencedColumnName = "rentTypeId")
     private RentType rentType;
     @ManyToOne
-    @JoinColumn(name = "facility_type_id")
+    @JoinColumn(name = "facility_type_id", referencedColumnName = "facilityTypeId")
     private FacilityType facilityType;
-    @Value("null")
     private String standardRoom;
-    @Value("null")
     private String descriptionOtherConvenience;
-    @Value("0.0")
     private Double poolArea;
-    @Value("0")
     private Integer numberOfFloors;
-    @Value("null")
     private String facilityFree;
+
+    @OneToMany(mappedBy = "facility")
+    private List<Contract> contracts;
 
     public Facility() {
     }
