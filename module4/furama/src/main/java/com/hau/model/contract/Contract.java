@@ -5,6 +5,7 @@ import com.hau.model.employee.Employee;
 import com.hau.model.facility.Facility;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Contract {
@@ -26,6 +27,9 @@ public class Contract {
     @ManyToOne
     @JoinColumn(name = "facility_id",referencedColumnName = "facilityId")
     private Facility facility;
+
+    @OneToMany(mappedBy = "contract")
+    private List<ContractDetail> contractDetails;
 
     public Contract() {
     }

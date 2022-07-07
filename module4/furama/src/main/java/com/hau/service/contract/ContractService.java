@@ -3,6 +3,7 @@ package com.hau.service.contract;
 import com.hau.model.contract.Contract;
 import com.hau.repository.contract.IContractRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class ContractService implements IContractService{
     private IContractRepository iContractRepository;
 
     @Override
-    public Iterable<Contract> findAll(Pageable pageable, String searchValue) {
+    public Page<Contract> findAll(Pageable pageable, String searchValue) {
         return this.iContractRepository.findByIdContract(pageable, "%" + searchValue + "%");
     }
 

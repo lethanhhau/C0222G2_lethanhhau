@@ -3,6 +3,7 @@ package com.hau.service.employee;
 import com.hau.model.employee.Employee;
 import com.hau.repository.employee.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class EmployeeService implements IEmployeeService{
     private IEmployeeRepository iEmployeeRepository;
 
     @Override
-    public Iterable<Employee> findAll(Pageable pageable, String searchValue) {
+    public Page<Employee> findAll(Pageable pageable, String searchValue) {
         return this.iEmployeeRepository.findByNameEmployee(pageable, "%" + searchValue + "%");
     }
 

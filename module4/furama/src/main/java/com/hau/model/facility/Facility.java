@@ -145,4 +145,12 @@ public class Facility {
     public void setFacilityCost(Double facilityCost) {
         this.facilityCost = facilityCost;
     }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
+    }
 }

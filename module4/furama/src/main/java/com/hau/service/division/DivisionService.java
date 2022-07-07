@@ -3,6 +3,7 @@ package com.hau.service.division;
 import com.hau.model.employee.Division;
 import com.hau.repository.division.IDivisionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class DivisionService implements IDivisionService{
     private IDivisionRepository iDivisionRepository;
 
     @Override
-    public Iterable<Division> findAll(Pageable pageable, String searchValue) {
+    public Page<Division> findAll(Pageable pageable, String searchValue) {
         return this.iDivisionRepository.findNameDivision(pageable, "%" + searchValue + "%");
     }
 

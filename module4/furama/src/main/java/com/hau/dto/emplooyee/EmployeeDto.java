@@ -1,5 +1,8 @@
 package com.hau.dto.emplooyee;
 
+import com.hau.model.employee.Division;
+import com.hau.model.employee.EducationDegree;
+import com.hau.model.employee.Position;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -36,11 +39,11 @@ public class EmployeeDto implements Validator {
     @NotBlank
     private String employeeAddress;
     @NotNull
-    private Integer position;
+    private Position position;
     @NotNull
-    private Integer educationDegree;
+    private EducationDegree educationDegree;
     @NotNull
-    private Integer division;
+    private Division division;
     @NotNull
     @NotEmpty
     @NotBlank
@@ -49,9 +52,8 @@ public class EmployeeDto implements Validator {
     public EmployeeDto() {
     }
 
-    public EmployeeDto(Integer employeeId, String employeeName, String employeeBirthday, String employeeIdCard,
-                       Double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress,
-                       Integer position, Integer educationDegree, Integer division, String username) {
+    public EmployeeDto(Integer employeeId, String employeeName, String employeeBirthday, String employeeIdCard, Double employeeSalary, String employeePhone, String employeeEmail,
+                       String employeeAddress, Position position, EducationDegree educationDegree, Division division, String username) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthday = employeeBirthday;
@@ -130,27 +132,27 @@ public class EmployeeDto implements Validator {
         this.employeeAddress = employeeAddress;
     }
 
-    public Integer getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(Integer position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
-    public Integer getEducationDegree() {
+    public EducationDegree getEducationDegree() {
         return educationDegree;
     }
 
-    public void setEducationDegree(Integer educationDegree) {
+    public void setEducationDegree(EducationDegree educationDegree) {
         this.educationDegree = educationDegree;
     }
 
-    public Integer getDivision() {
+    public Division getDivision() {
         return division;
     }
 
-    public void setDivision(Integer division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
 

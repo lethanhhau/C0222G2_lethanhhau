@@ -75,7 +75,7 @@ public class ContractController {
     @GetMapping("/contract/create")
     public String showCreate(Model model) {
         model.addAttribute("contractDto", new ContractDto());
-        return "contract/create";
+        return "contract/list";
     }
 
 
@@ -86,7 +86,7 @@ public class ContractController {
         new ContractDto().validate(contractDto, bindingResult);
         if (bindingResult.hasErrors()){
 
-            return "contract/create";
+            return "contract/list";
         }else {
             Contract contract = new Contract();
             BeanUtils.copyProperties(contractDto, contract);

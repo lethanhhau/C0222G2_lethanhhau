@@ -3,6 +3,7 @@ package com.hau.service.position;
 import com.hau.model.employee.Position;
 import com.hau.repository.IPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class PositionService implements IPositionService{
     private IPositionRepository iPositionRepository;
 
     @Override
-    public Iterable<Position> findAll(Pageable pageable, String searchValue) {
+    public Page<Position> findAll(Pageable pageable, String searchValue) {
         return this.iPositionRepository.findByNamePosition(pageable, "%" + searchValue + "%");
     }
 

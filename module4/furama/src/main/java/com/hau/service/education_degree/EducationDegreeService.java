@@ -3,6 +3,7 @@ package com.hau.service.education_degree;
 import com.hau.model.employee.EducationDegree;
 import com.hau.repository.education_degree.IEducationDegreeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class EducationDegreeService implements IEducationDegreeService{
     private IEducationDegreeRepository iEducationDegreeRepository;
 
     @Override
-    public Iterable<EducationDegree> findAll(Pageable pageable, String searchValue) {
+    public Page<EducationDegree> findAll(Pageable pageable, String searchValue) {
         return null;
     }
 

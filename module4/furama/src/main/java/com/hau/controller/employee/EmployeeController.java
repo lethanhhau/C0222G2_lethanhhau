@@ -12,6 +12,7 @@ import com.hau.service.employee.IEmployeeService;
 import com.hau.service.position.IPositionService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -55,10 +56,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee-list")
-    public String goHomeEmployee(@PageableDefault(value = 5) Pageable pageable, Model model,
+    public String goHomeEmployee(@PageableDefault(value = 20) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam) {
         String searchValue = searchParam.orElse("");
-        Iterable<Employee> employees = this.iEmployeeService.findAll(pageable, searchValue);
+        Page<Employee> employees = this.iEmployeeService.findAll(pageable, searchValue);
         model.addAttribute("searchValue", searchValue);
         model.addAttribute("employees", employees);
         return "employee/list";
@@ -73,7 +74,7 @@ public class EmployeeController {
     @GetMapping("/employee/create")
     public String showCreate(Model model) {
         model.addAttribute("employeeDto", new EmployeeDto());
-        return "employee/create";
+        return  "employee/list";
     }
 
     @PostMapping("/employee/create")
@@ -86,7 +87,7 @@ public class EmployeeController {
                 this.iPositionService.findAllPosition();
                 this.iEducationDegreeService.findAllEducationDegree();
                 this.iDivisionService.findAllDivision();
-            return "employee/create";
+            return "employee/list";
         } else {
             Employee employee = new Employee();
             BeanUtils.copyProperties(employeeDto, employee);
@@ -103,7 +104,7 @@ public class EmployeeController {
             model.addAttribute("positions",this.iPositionService.findAllPosition());
             model.addAttribute("educationDegrees",this.iEducationDegreeService.findAllEducationDegree());
             model.addAttribute("divisions",this.iDivisionService.findAllDivision());
-        return "employee/edit";
+        return "employee/list";
     }
 
     @PostMapping("/employee/edit")

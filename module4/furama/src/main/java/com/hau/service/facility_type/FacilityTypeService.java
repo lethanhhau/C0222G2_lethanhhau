@@ -3,6 +3,7 @@ package com.hau.service.facility_type;
 import com.hau.model.facility.FacilityType;
 import com.hau.repository.facility_type.IFacilityTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class FacilityTypeService implements IFacilityTypeService{
     private IFacilityTypeRepository iFacilityTypeRepository;
 
     @Override
-    public Iterable<FacilityType> findAll(Pageable pageable, String searchValue) {
+    public Page<FacilityType> findAll(Pageable pageable, String searchValue) {
         return this.iFacilityTypeRepository.findByNameFacilityType(pageable, "%" + searchValue + "%");
     }
 

@@ -3,6 +3,7 @@ package com.hau.service.customer;
 import com.hau.model.customer.Customer;
 import com.hau.repository.customer.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class CustomerService implements ICustomerService {
     private ICustomerRepository iCustomerRepository;
 
     @Override
-    public Iterable<Customer> findAll(Pageable pageable, String searchValue) {
+    public Page<Customer> findAll(Pageable pageable, String searchValue) {
         return this.iCustomerRepository.findByNameCustomer(pageable, "%" + searchValue + "%");
     }
 

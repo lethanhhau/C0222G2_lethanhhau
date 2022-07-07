@@ -11,10 +11,18 @@
     <div class="mask">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-success">
-                <h1 class="mb-3">Create My Facility</h1>
+                <h1 class="mb-3">Create New Facility</h1>
             </div>
         </div>
     </div>
+</div>
+<div class=" text-center" style="margin-top: 25px">
+    <select id="choiceFacility"  onchange="selectFacility()" class="btn btn-outline-success" >
+        <option>Choice Facility Type</option>
+        <option value="1">Villa</option>
+        <option value="2">House</option>
+        <option value="3">Room</option>
+    </select>
 </div>
 <div class="container">
     <form action="/facility/create" method="post" th:object="${facilityDto}">
@@ -50,39 +58,32 @@
                 <option th:each="item,loop : ${rentTypes}" th:text="${item.rentTypeName}"
                         th:value="${item.rentTypeId}"></option>
             </select>
-        </div>
-
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Type Id:(select one):</label>
-            <select class="form-select" th:field="*{facilityType}">
-                <option th:each="item,loop : ${facilityTypes}" th:text="${item.facilityTypeName}"
-                        th:value="${item.facilityTypeId}"></option>
-            </select>
 
         </div>
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">VH Standard Room:</label>
+
+        <div class="mb-3 mt-3" id="standardRoom" style="display: none">
+            <label class="form-label h6">Standard Room:</label>
             <input type="text" class="form-control" placeholder="Enter Standard Room" th:field="*{standardRoom}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="descriptionOtherConvenience" style="display: none">
             <label class="form-label h6">VH Description Other Convenience:</label>
-            <input type="text" class="form-control" placeholder="Enter Description Other Convenience"
+            <input  type="text" class="form-control" placeholder="Enter Description Other Convenience"
                    th:field="*{descriptionOtherConvenience}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="poolArea" style="display: none">
             <label class="form-label h6">V Pool Area:</label>
             <input type="text" class="form-control" placeholder="Enter Pool Area" th:field="*{poolArea}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="numberOfFloors" style="display:none;">
             <label class="form-label h6">VH Number Of Floors:</label>
             <input type="text" class="form-control" placeholder="Enter Number Of Floors" th:field="*{numberOfFloors}">
         </div>
 
-        <div class="mb-3 mt-3">
+        <div class="mb-3 mt-3" id="facilityFree" style="display:none;">
             <label class="form-label h6">R Facility Free:</label>
             <input type="text" class="form-control" placeholder="Enter Facility Free" th:field="*{facilityFree}">
         </div>
@@ -91,6 +92,39 @@
         <a href="/facility-list" class="btn btn-outline-secondary">Back home</a>
     </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+</script>
+<script>
+
+    function selectFacility() {
+        let getValue = $('#choiceFacility').val()
+        switch (getValue) {
+            case '1':
+                $('#standardRoom').show()
+                $('#descriptionOtherConvenience').show()
+                $('#poolArea').show()
+                $('#numberOfFloors').show()
+                $('#facilityFree').hide()
+                break;
+            case '2':
+                $('#standardRoom').show()
+                $('#descriptionOtherConvenience').show()
+                $('#poolArea').hide()
+                $('#numberOfFloors').show()
+                $('#facilityFree').hide()
+                break;
+            case '3':
+                $('#standardRoom').hide()
+                $('#descriptionOther').hide()
+                $('#poolArea').hide()
+                $('#numberOfFloors').hide()
+                $('#facilityFree').show()
+                break;
+        }
+    }
+</script>
+
 <th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
 </body>
 </html>

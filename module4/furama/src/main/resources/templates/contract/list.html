@@ -19,8 +19,10 @@
     </div>
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
-            <div class="container-fluid" style="height: 50px">
-                <a href="" th:href="@{/contract/create}" class="btn btn-outline-success btn-lg" role="button">Create Contract</a>
+            <div class="container-fluid" style="height: 60px">
+                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdropCreate">
+                    Create Contract
+                </button>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
@@ -30,18 +32,112 @@
         </nav>
     </div>
 </header>
+
+<div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabelCreate">Create New Contract</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="text-danger" id="tableInputName"></div>
+                    <form id="contactForm" method="post" action="/contact/create">
+                        <!-- name input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="startDate" type="date"
+                                   placeholder="Enter your name..."/>
+                            <label for="startDate">Start Date</label>
+                        </div>
+                        <!-- birthday input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="endDate" type="date"
+                                   placeholder="Enter your birthday..."/>
+                            <label for="endDate">End Date</label>
+                        </div>
+                        <!-- idCard input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="deposits" type="text"
+                                   placeholder="Enter your id card..."/>
+                            <label for="deposits">Deposits</label>
+                        </div>
+
+
+                        <!-- salary input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="totalMoney" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="totalMoney">Total Money</label>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="facility" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="facility">Facility</label>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${customers}"
+                                        th:text="${item.customerName}"
+                                        th:value="${item.customerId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${facilitis}"
+                                        th:text="${item.facilityName}"
+                                        th:value="${item.facilityId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#">
+                                +
+                            </button>
+                        </div>
+
+
+                        <!-- Submit Button-->
+                        <div class="row">
+                            <div class="d-grid col-6">
+                                <button class="btn btn-outline-primary" id="submitButton" type="submit">
+                                    Save
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container mt-3">
     <table class="table table-hover">
         <thead>
         <tr>
             <th>#</th>
-            <th>Dịch Vụ</th>
-            <th>Khách Hàng</th>
-            <th>Ngày Bắt Đầu</th>
-            <th>Ngày Kết Thúc</th>
-            <th>Tiền Đặt Cọc</th>
-            <th>Tổng Tiền</th>
-            <th colspan="2">Các Dịch Vụ Đi Kèm</th>
+            <th>Facility</th>
+            <th>Customer</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Deposits</th>
+            <th>Total Money</th>
+            <th colspan="2">Attach Facility</th>
         </tr>
         </thead>
         <tbody>
@@ -54,45 +150,18 @@
             <td th:text="${contract.deposits}"></td>
             <td th:text="${contract.deposits}"></td>
             <td>
-                <a th:href="@{/contract/edit/{id}(id=${contract.contractId})}" class="btn btn-outline-success">Edit</a>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit">+</button>
+
             </td>
             <td>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        th:data-bs-target="'#staticBackdrop' + ${contract.contractId}">
-                    Delete
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" th:id="staticBackdrop + ${contract.contractId}" data-bs-backdrop="static"
-                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Do you want delete blog <span th:text="${contract.customer.customerName}" class="text-warning"></span>
-                                with id = <span th:text="${contract.contractId}" class="text-warning"></span> ?
-                            </div>
-                            <div class="modal-footer">
-                                <a href="" th:href="@{/contract/delete/{id}(id=${contract.contractId})}"
-                                   class="btn btn-outline-success">Delete</a>
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a th:href="@{/contract/edit/{id}(id=${contract.contractId})}" class="btn btn-outline-success">Danh Sách Các Dịch Vụ Đi Kèm</a>
             </td>
         </tr>
         </tbody>
     </table>
     <div class="row">
         <div class="col-10">
-            <a href="/customerType-list" class="btn btn-outline-success">Go To List Customer Type</a>
+            <a href="/...-list" class="btn btn-outline-success">Go To List </a>
         </div>
         <div class="col-2 ">
             <ul class="pagination" th:if="${contracts.totalPages > 0}">

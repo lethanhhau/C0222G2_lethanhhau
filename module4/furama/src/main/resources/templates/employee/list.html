@@ -19,8 +19,10 @@
     </div>
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
-            <div class="container-fluid" style="height: 50px">
-                <a href="" th:href="@{/employee/create}" class="btn btn-outline-success btn-lg" role="button">Create Employee</a>
+            <div class="container-fluid" style="height: 60px">
+                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdropCreate">
+                Create Employee
+                </button>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
@@ -30,36 +32,249 @@
         </nav>
     </div>
 </header>
+
+<div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabelCreate">Create New Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="text-danger" id="tableInputName"></div>
+                    <form id="contactForm" method="post" action="/employee/create">
+                        <!-- name input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeName" type="text"
+                                   placeholder="Enter your name..."/>
+                            <label for="employeeName">Employee Name</label>
+                        </div>
+                        <!-- birthday input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeBirthday" type="date"
+                                   placeholder="Enter your birthday..."/>
+                            <label for="employeeBirthday">employee Birth day</label>
+                        </div>
+                        <!-- idCard input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeIdCard" type="text"
+                                   placeholder="Enter your id card..."/>
+                            <label for="employeeIdCard">Employee Id Card</label>
+                        </div>
+
+
+                        <!-- salary input-->
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeSalary" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeeSalary">Employee Salary</label>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeePhone" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeePhone">Employee Salary</label>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeEmail" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeeEmail">Employee Email</label>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="employeeAddress" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeeAddress">Employee Address</label>
+                        </div>
+
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${positions}"
+                                        th:text="${item.positionName}"
+                                        th:value="${item.positionId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${educationDegrees}"
+                                        th:text="${item.educationDegreeName}"
+                                        th:value="${item.educationDegreeId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${divisions}"
+                                        th:text="${item.divisionName}"
+                                        th:value="${item.divisionId}"></option>
+                            </select>
+                        </div>
+
+
+                        <!-- Submit Button-->
+                        <div class="row">
+                            <div class="d-grid col-6">
+                                <button class="btn btn-outline-primary" id="submitButton" type="submit">
+                                    Save
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container mt-3">
     <table class="table table-hover">
         <thead>
         <tr>
+            <th>STT</th>
             <th>ID</th>
             <th>Name</th>
             <th>Birthday</th>
             <th>Salary</th>
             <th>Phone</th>
             <th>Address</th>
-            <th>Position Id</th>
-            <th>Education Degree Id</th>
-            <th>Division Id</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="employee, loop : ${employees}">
+            <td th:text="${loop.count}"></td>
             <td th:text="${employee.employeeId}"></td>
             <td th:text="${employee.employeeName}"></td>
             <td th:text="${employee.employeeBirthday}"></td>
             <td th:text="${employee.employeeSalary}"></td>
             <td th:text="${employee.employeePhone}"></td>
             <td th:text="${employee.employeeAddress}"></td>
-            <td th:text="${employee.position.positionName}"></td>
-            <td th:text="${employee.educationDegree.educationDegreeName}"></td>
-            <td th:text="${employee.division.divisionName}"></td>
             <td>
-                <a th:href="@{/employee/edit/{id}(id=${employee.employeeId})}" class="btn btn-outline-success">Edit</a>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit">Edit</button>
+
+                <div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabelEdit">Edit Employee</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="text-danger" id="tableInputNameEdit"></div>
+                                    <form id="contactFormEdit" method="post" action="/employee/edit">
+                                        <!-- name input-->
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeNameEdit" type="text"
+                                                   placeholder="Enter your name..."/>
+                                            <label for="employeeName">Employee Name</label>
+                                        </div>
+                                        <!-- birthday input-->
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeBirthdayEdit" type="date"
+                                                   placeholder="Enter your birthday..."/>
+                                            <label for="employeeBirthday">employee Birth day</label>
+                                        </div>
+                                        <!-- idCard input-->
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeIdCardEdit" type="text"
+                                                   placeholder="Enter your id card..."/>
+                                            <label for="employeeIdCard">Employee Id Card</label>
+                                        </div>
+
+
+                                        <!-- salary input-->
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeSalaryEdit" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeeSalary">Employee Salary</label>
+                                        </div>
+
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeePhoneEdit" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeePhone">Employee Salary</label>
+                                        </div>
+
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeEmailEdit" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeeEmail">Employee Email</label>
+                                        </div>
+
+                                        <div class="form-floating mb-2">
+                                            <input class="form-control" id="employeeAddressEdit" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeeAddress">Employee Address</label>
+                                        </div>
+
+
+                                        <div class="form-floating mb-2">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;">
+                                                <option th:each="item,loop : ${positions}"
+                                                        th:text="${item.positionName}"
+                                                        th:value="${item.positionId}"></option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-floating mb-2">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;">
+                                                <option th:each="item,loop : ${educationDegrees}"
+                                                        th:text="${item.educationDegreeName}"
+                                                        th:value="${item.educationDegreeId}"></option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-floating mb-2">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;">
+                                                <option th:each="item,loop : ${divisions}"
+                                                        th:text="${item.divisionName}"
+                                                        th:value="${item.divisionId}"></option>
+                                            </select>
+                                        </div>
+
+
+                                        <!-- Submit Button-->
+                                        <div class="row">
+                                            <div class="d-grid col-6">
+                                                <button class="btn btn-outline-primary" id="submitButton" type="submit">
+                                                    Save
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit" class="btn btn-outline-secondary"
+                                                        data-bs-dismiss="modal">Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
             <td>
                 <!-- Button trigger modal -->
@@ -79,7 +294,8 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Do you want delete blog <span th:text="${employee.employeeName}" class="text-warning"></span>
+                                Do you want delete blog <span th:text="${employee.employeeName}"
+                                                              class="text-warning"></span>
                                 with id = <span th:text="${employee.employeeId}" class="text-warning"></span> ?
                             </div>
                             <div class="modal-footer">
@@ -97,29 +313,33 @@
     </table>
     <div class="row">
         <div class="col-10">
-            <a href="/customerType/list" class="btn btn-outline-success">Go To List Customer Type</a>
+            <a href="/customerType/list" class="btn btn-outline-success">Go To List </a>
         </div>
         <div class="col-2 ">
             <ul class="pagination" th:if="${employees.totalPages > 0}">
                 <li class="page-item">
-                    <a class="page-link" th:if="${employees.hasPrevious()}" th:href="@{'/employee-list'(page=${employees.number - 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${employees.hasPrevious()}"
+                       th:href="@{'/employee-list'(page=${employees.number - 1}, search=${searchValue})}">
                         Previous
                     </a>
                 </li>
                 <div th:each="item, loop : ${#numbers.sequence(1, employees.totalPages )}">
                     <div th:if="${(employees.number + 1) == item}">
                         <li class="page-item active">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/employee-list(page=(${item}-1), search=${searchValue})}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/employee-list(page=(${item}-1), search=${searchValue})}"></a>
                         </li>
                     </div>
                     <div th:unless="${((employees.number + 1) == item)}">
                         <li class="page-item">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/employee-list(page=(${item}-1), search=${searchValue} )}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/employee-list(page=(${item}-1), search=${searchValue} )}"></a>
                         </li>
                     </div>
                 </div>
                 <li class="page-item">
-                    <a class="page-link" th:if="${employees.hasNext()}" th:href="@{'/employee-list'(page=${employees.number + 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${employees.hasNext()}"
+                       th:href="@{'/employee-list'(page=${employees.number + 1}, search=${searchValue})}">
                         Next
                     </a>
                 </li>

@@ -19,7 +19,7 @@ public class CustomerTypeService implements ICustomerTypeService{
 
 
     @Override
-    public Iterable<CustomerType> findAll(Pageable pageable, String searchValue) {
+    public Page<CustomerType> findAll(Pageable pageable, String searchValue) {
         return this.iCustomerTypeRepository.findNameCustomerType(pageable, "%" + searchValue + "%");
     }
 
