@@ -9,6 +9,7 @@ import com.hau.service.facility_type.IFacilityTypeService;
 import com.hau.service.rent_type.IRentTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -44,10 +45,10 @@ public class FacilityController {
     }
 
     @GetMapping("facility-list")
-    public String goHomeFacility(@PageableDefault(value = 3) Pageable pageable, Model model,
+    public String goHomeFacility(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam) {
         String searchValue = searchParam.orElse("");
-        Iterable<Facility> facilities = this.iFacilityService.findAll(pageable, searchValue);
+        Page<Facility> facilities = this.iFacilityService.findAll(pageable, searchValue);
         model.addAttribute("searchValue", searchValue);
         model.addAttribute("facilities", facilities);
         return "facility/list";
@@ -83,14 +84,16 @@ public class FacilityController {
     }
 
     @PostMapping("/facility/edit")
-    public String editFacility(@ModelAttribute Facility facility) {
+    public String editFacility(@ModelAttribute Facility facility, RedirectAttributes redirectAttributes) {
         this.iFacilityService.save(facility);
+        redirectAttributes.addFlashAttribute("msgEdit", "successful fix!");
         return "redirect:/facility-list";
     }
 
     @GetMapping("/facility/delete/{id}")
-    public String deleteFacility(@PathVariable int id) {
+    public String deleteFacility(@PathVariable int id, RedirectAttributes redirectAttributes) {
         this.iFacilityService.remove(id);
+        redirectAttributes.addFlashAttribute("msgDelete","Successful deletion!");
         return "redirect:/facility-list";
     }
 

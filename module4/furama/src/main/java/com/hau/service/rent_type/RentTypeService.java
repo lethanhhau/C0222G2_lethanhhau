@@ -27,13 +27,18 @@ public class RentTypeService implements IRentTypeService{
     }
 
     @Override
-    public void save(RentType rentType) {
-        this.iRentTypeRepository.save(rentType);
+    public RentType save(RentType rentType) {
+        return this.iRentTypeRepository.save(rentType);
     }
 
     @Override
     public void remove(Integer id) {
         this.iRentTypeRepository.delete(this.iRentTypeRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<RentType> findAll() {
+        return this.iRentTypeRepository.findAll();
     }
 
     @Override

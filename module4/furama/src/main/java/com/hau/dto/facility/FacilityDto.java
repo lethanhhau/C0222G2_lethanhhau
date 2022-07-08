@@ -12,7 +12,7 @@ public class FacilityDto implements Validator {
     @NotNull
     private String facilityName;
     @NotNull
-    private Double facilityArea;
+    private Integer facilityArea;
     @NotNull
     private Double facilityCost;
     @NotNull
@@ -33,7 +33,7 @@ public class FacilityDto implements Validator {
     public FacilityDto() {
     }
 
-    public FacilityDto(Integer facilityId, String facilityName, Double facilityArea,Double facilityCost, Integer maxPeople, RentType rentType,
+    public FacilityDto(Integer facilityId, String facilityName, Integer facilityArea,Double facilityCost, Integer maxPeople, RentType rentType,
                        FacilityType facilityType, String standardRoom, String descriptionOtherConvenience, Double poolArea,
                        Integer numberOfFloors, String facilityFree) {
         this.facilityId = facilityId;
@@ -66,11 +66,11 @@ public class FacilityDto implements Validator {
         this.facilityName = facilityName;
     }
 
-    public Double getFacilityArea() {
+    public Integer getFacilityArea() {
         return facilityArea;
     }
 
-    public void setFacilityArea(Double facilityArea) {
+    public void setFacilityArea(Integer facilityArea) {
         this.facilityArea = facilityArea;
     }
 

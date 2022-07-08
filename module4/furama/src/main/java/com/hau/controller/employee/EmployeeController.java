@@ -1,7 +1,7 @@
 package com.hau.controller.employee;
 
-import com.hau.dto.emplooyee.EmployeeDto;;
-import com.hau.model.customer.CustomerType;
+
+import com.hau.dto.emplooyee.EmployeeDto;
 import com.hau.model.employee.Division;
 import com.hau.model.employee.EducationDegree;
 import com.hau.model.employee.Employee;
@@ -14,7 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.PageableDefault;;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -56,7 +56,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee-list")
-    public String goHomeEmployee(@PageableDefault(value = 20) Pageable pageable, Model model,
+    public String goHomeEmployee(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam) {
         String searchValue = searchParam.orElse("");
         Page<Employee> employees = this.iEmployeeService.findAll(pageable, searchValue);

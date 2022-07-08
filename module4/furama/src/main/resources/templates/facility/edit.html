@@ -18,6 +18,7 @@
 </div>
 <div class="container">
     <form action="/facility/edit" method="post" th:object="${facility}">
+
         <div class="mb-3 mt-3">
             <input type="hidden" class="form-control" placeholder="id" th:field="*{facilityId}">
         </div>
@@ -26,78 +27,104 @@
             <label class="form-label h6">Facility Name:</label>
             <input type="text" class="form-control" placeholder="Enter Facility Name" th:field="*{facilityName}">
         </div>
-        <div style="color: red" th:errors = "*{facilityName}"></div>
+        <div style="color: red" th:errors="*{facilityName}"></div>
 
         <div class="mb-3 mt-3">
             <label class="form-label h6">Facility Area:</label>
             <input type="text" class="form-control" placeholder="Enter Facility Area" th:field="*{facilityArea}">
         </div>
-        <div style="color: red" th:errors = "*{facilityArea}"></div>
+        <div style="color: red" th:errors="*{facilityArea}"></div>
 
 
         <div class="mb-3 mt-3">
             <label class="form-label h6">Facility Cost:</label>
             <input type="text" class="form-control" placeholder="Enter Facility Cost" th:field="*{facilityCost}">
         </div>
-        <div style="color: red" th:errors = "*{facilityCost}"></div>
+        <div style="color: red" th:errors="*{facilityCost}"></div>
 
         <div class="mb-3 mt-3">
             <label class="form-label h6">Max People:</label>
             <input type="text" class="form-control" placeholder="Enter Max People" th:field="*{maxPeople}">
         </div>
-        <div style="color: red" th:errors = "*{maxPeople}"></div>
+        <div style="color: red" th:errors="*{maxPeople}"></div>
 
         <div class="mb-3 mt-3">
             <label class="form-label h6">Rent Type Id:(select one):</label>
             <select class="form-select" th:field="*{rentType}">
-                <option th:each="item,loop : ${rentTypes}" th:text="${item.rentTypeName}" th:value="${item.rentTypeId}"></option>
+                <option th:each="item,loop : ${rentTypes}" th:text="${item.rentTypeName}"
+                        th:value="${item.rentTypeId}"></option>
             </select>
-
         </div>
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Type Id:(select one):</label>
-            <select class="form-select" th:field="*{facilityType}">
-                <option th:each="item,loop : ${facilityTypes}" th:text="${item.facilityTypeName}" th:value="${item.facilityTypeId}"></option>
-            </select>
+<!--        <div class="mb-3 mt-3">-->
+<!--            <select id="choiceFacility" class="form-select" th:field="*{facilityType}" onchange="selectFacility()">-->
+<!--                <option th:each="item,loop : ${facilityTypes}" th:text="${item.facilityTypeName}"-->
+<!--                        th:value="${item.facilityTypeId}"></option>-->
+<!--            </select>-->
+<!--        </div>-->
 
-        </div>
+<!--        <div class="mb-3 mt-3" id="standardRoom" style="display: none">-->
+<!--            <label class="form-label h6">Standard Room:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Enter Standard Room" th:field="*{standardRoom}">-->
+<!--        </div>-->
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Standard Room:</label>
-            <input type="text" class="form-control" placeholder="Enter Standard Room" th:field="*{standardRoom}">
-        </div>
-        <div style="color: red" th:errors = "*{standardRoom}"></div>
+<!--        <div class="mb-3 mt-3" id="descriptionOtherConvenience" style="display: none">-->
+<!--            <label class="form-label h6">Description Other Convenience:</label>-->
+<!--            <input  type="text" class="form-control" placeholder="Enter Description Other Convenience"-->
+<!--                    th:field="*{descriptionOtherConvenience}">-->
+<!--        </div>-->
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Description Other Convenience:</label>
-            <input type="text" class="form-control" placeholder="Enter Description Other Convenience" th:field="*{descriptionOtherConvenience}">
-        </div>
-        <div style="color: red" th:errors = "*{descriptionOtherConvenience}"></div>
+<!--        <div class="mb-3 mt-3" id="poolArea" style="display: none">-->
+<!--            <label class="form-label h6">V Pool Area:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Enter Pool Area" th:field="*{poolArea}">-->
+<!--        </div>-->
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Pool Area:</label>
-            <input type="text" class="form-control" placeholder="Enter Pool Area" th:field="*{poolArea}">
-        </div>
-        <div style="color: red" th:errors = "*{poolArea}"></div>
+<!--        <div class="mb-3 mt-3" id="numberOfFloors" style="display:none;">-->
+<!--            <label class="form-label h6">Number Of Floors:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Enter Number Of Floors" th:field="*{numberOfFloors}">-->
+<!--        </div>-->
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Number Of Floors:</label>
-            <input type="text" class="form-control" placeholder="Enter Number Of Floors" th:field="*{numberOfFloors}">
-        </div>
-        <div style="color: red" th:errors = "*{numberOfFloors}"></div>
+<!--        <div class="mb-3 mt-3" id="facilityFree" style="display:none;">-->
+<!--            <label class="form-label h6">Facility Free:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Enter Facility Free" th:field="*{facilityFree}">-->
+<!--        </div>-->
 
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Free:</label>
-            <input type="text" class="form-control" placeholder="Enter Facility Free" th:field="*{facilityFree}">
-        </div>
-        <div style="color: red" th:errors = "*{facilityFree}"></div>
-
-        <button type="submit" class="btn btn-outline-success">Submit</button>
-        <a href="/facility-list" class="btn btn-outline-secondary">Back home</a>
+<!--        <button type="submit" class="btn btn-outline-success">Submit</button>-->
+<!--        <a href="/facility-list" class="btn btn-outline-secondary">Back home</a>-->
     </form>
 </div>
-</div>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">-->
+
+<!--</script>-->
+<!--<script>-->
+
+<!--    function selectFacility() {-->
+<!--        let getValue = $('#choiceFacility').val()-->
+<!--        switch (getValue) {-->
+<!--            case '1':-->
+<!--                $('#standardRoom').show()-->
+<!--                $('#descriptionOtherConvenience').show()-->
+<!--                $('#poolArea').show()-->
+<!--                $('#numberOfFloors').show()-->
+<!--                $('#facilityFree').hide()-->
+<!--                break;-->
+<!--            case '2':-->
+<!--                $('#standardRoom').show()-->
+<!--                $('#descriptionOtherConvenience').show()-->
+<!--                $('#poolArea').hide()-->
+<!--                $('#numberOfFloors').show()-->
+<!--                $('#facilityFree').hide()-->
+<!--                break;-->
+<!--            case '3':-->
+<!--                $('#standardRoom').hide()-->
+<!--                $('#descriptionOtherConvenience').hide()-->
+<!--                $('#poolArea').hide()-->
+<!--                $('#numberOfFloors').hide()-->
+<!--                $('#facilityFree').show()-->
+<!--                break;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 <th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
 </body>
 </html>

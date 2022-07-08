@@ -1,10 +1,13 @@
 package com.hau.model.employee;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "education_degree")
+
 public class EducationDegree {
 
     @Id
@@ -12,6 +15,7 @@ public class EducationDegree {
     private Integer educationDegreeId;
     private String educationDegreeName;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "educationDegree")
     private List<Employee> employees;
 

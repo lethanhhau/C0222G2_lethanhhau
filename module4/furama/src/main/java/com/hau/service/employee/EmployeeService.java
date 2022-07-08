@@ -26,8 +26,8 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
-    public void save(Employee employee) {
-        this.iEmployeeRepository.save(employee);
+    public Employee save(Employee employee) {
+       return this.iEmployeeRepository.save(employee);
     }
 
     @Override
@@ -35,8 +35,11 @@ public class EmployeeService implements IEmployeeService{
         this.iEmployeeRepository.delete(this.iEmployeeRepository.getById(id));
     }
 
+
     @Override
-    public List<Employee> findAllEmployee() {
+    public Iterable<Employee> findAll() {
         return this.iEmployeeRepository.findAll();
     }
+
+
 }

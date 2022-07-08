@@ -27,13 +27,18 @@ public class PositionService implements IPositionService{
     }
 
     @Override
-    public void save(Position position) {
-        this.iPositionRepository.save(position);
+    public Position save(Position position) {
+        return this.iPositionRepository.save(position);
     }
 
     @Override
     public void remove(Integer id) {
         this.iPositionRepository.delete(this.iPositionRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<Position> findAll() {
+        return this.iPositionRepository.findAll();
     }
 
     @Override

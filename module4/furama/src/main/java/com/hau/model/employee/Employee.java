@@ -1,5 +1,6 @@
 package com.hau.model.employee;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hau.model.contract.Contract;
 
 import javax.persistence.*;

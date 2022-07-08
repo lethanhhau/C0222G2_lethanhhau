@@ -1,17 +1,17 @@
 package com.hau.service;
 
+
 import com.hau.model.Smartphone;
 import com.hau.repository.ISmartphoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 
 @Service
-public class SmartphoneService implements ISmartphoneService {
-
+public class SmartPhoneService implements ISmartphoneService {
     @Autowired
     private ISmartphoneRepository smartPhoneRepository;
 
@@ -40,4 +40,3 @@ public class SmartphoneService implements ISmartphoneService {
         return this.smartPhoneRepository.getAllSmartphone("%" + searchParam + "%", pageable);
     }
 }
-

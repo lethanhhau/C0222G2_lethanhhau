@@ -26,13 +26,18 @@ public class DivisionService implements IDivisionService{
     }
 
     @Override
-    public void save(Division division) {
-        this.iDivisionRepository.save(division);
+    public Division save(Division division) {
+        return this.iDivisionRepository.save(division);
     }
 
     @Override
     public void remove(Integer id) {
         this.iDivisionRepository.delete(this.iDivisionRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<Division> findAll() {
+        return this.iDivisionRepository.findAll();
     }
 
     @Override

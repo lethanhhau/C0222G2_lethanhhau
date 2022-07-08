@@ -17,6 +17,19 @@
             </div>
         </div>
     </div>
+
+
+    <div class="text-center" th:if="${success}">
+        <h3 th:utext="${success}" style="color: blue"></h3>
+    </div>
+    <div class="text-center" th:if="${msgDelete}">
+        <h3 th:utext="${msgDelete}" style="color: blue;"></h3>
+    </div>
+    <div class="text-center" th:if="${msgEdit}">
+        <h3 th:utext="${msgEdit}" style="color: blue;"></h3>
+    </div>
+
+
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
@@ -127,6 +140,7 @@
         </div>
     </div>
 </div>
+<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
 <th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
 </body>
 </html>

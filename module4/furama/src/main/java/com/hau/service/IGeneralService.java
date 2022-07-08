@@ -10,9 +10,9 @@ public interface IGeneralService<T> {
 
     Optional<T> findById(Integer id);
 
-    void save(T t);
+    T save(T t);
 
     void remove(Integer id);
 
-
+    Iterable<T> findAll();
 }

@@ -69,6 +69,14 @@ public class Contract {
         this.endDate = endDate;
     }
 
+    public List<ContractDetail> getContractDetails() {
+        return contractDetails;
+    }
+
+    public void setContractDetails(List<ContractDetail> contractDetails) {
+        this.contractDetails = contractDetails;
+    }
+
     public Double getDeposits() {
         return deposits;
     }

@@ -1,15 +1,16 @@
 package com.hau.controller;
 
+
 import com.hau.model.Smartphone;
 import com.hau.service.ISmartphoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 
 @RestController
@@ -24,12 +25,12 @@ public class SmartphoneController {
         return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
     }
 
-    @GetMapping("")
+    @GetMapping
     public ResponseEntity<Iterable<Smartphone>> allPhones() {
         return new ResponseEntity<>(smartphoneService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/list")
+    @GetMapping("/home")
     public ResponseEntity<Page<Smartphone>> getAllSmartphone(@PageableDefault(value = 5) Pageable pageable, Optional<String> searchValue) {
         String searchParam = searchValue.orElse("");
         Page<Smartphone> smartphonePage = this.smartphoneService.getAllSmartphone(searchParam, pageable);

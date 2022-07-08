@@ -7,6 +7,7 @@ import com.hau.service.customer.ICustomerService;
 import com.hau.service.customer_type.ICustomerTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -34,18 +35,19 @@ public class CustomerController {
     }
 
    @GetMapping("/customer-list")
-    public String goHomeCustomer(@PageableDefault(value = 3) Pageable pageable, Model model,
+    public String goHomeCustomer(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");
-        Iterable<Customer> customers = this.iCustomerService.findAll(pageable, searchValue);
+        Page<Customer> customers = this.iCustomerService.findAll(pageable, searchValue);
         model.addAttribute("searchValue", searchValue);
         model.addAttribute("customers", customers);
         return "customer/list";
     }
 
     @GetMapping("/customer/delete/{id}")
-    public String delete(@PathVariable int id) {
+    public String delete(@PathVariable int id, RedirectAttributes redirectAttributes) {
         this.iCustomerService.remove(id);
+        redirectAttributes.addFlashAttribute("msgDelete","Successful deletion!");
         return "redirect:/customer-list";
     }
 
@@ -62,7 +64,6 @@ public class CustomerController {
                          RedirectAttributes redirectAttributes) {
         new CustomerDto().validate(customerDto, bindingResult);
         if (bindingResult.hasErrors()){
-
             return "customer/create";
         }else {
             Customer customer = new Customer();
@@ -81,8 +82,9 @@ public class CustomerController {
     }
 
     @PostMapping("/customer/edit")
-    public String edit(@ModelAttribute Customer customer) {
+    public String edit(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
         this.iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("msgEdit", "successful fix!");
         return "redirect:/customer-list";
     }
 }

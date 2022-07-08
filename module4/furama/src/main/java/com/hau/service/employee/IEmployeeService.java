@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface IEmployeeService extends IGeneralService<Employee> {
 
-    List<Employee> findAllEmployee();
+    Iterable<Employee> findAll();
 }

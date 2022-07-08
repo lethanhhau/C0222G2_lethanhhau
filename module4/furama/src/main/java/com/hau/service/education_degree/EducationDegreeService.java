@@ -27,13 +27,18 @@ public class EducationDegreeService implements IEducationDegreeService{
     }
 
     @Override
-    public void save(EducationDegree educationDegree) {
-        this.iEducationDegreeRepository.save(educationDegree);
+    public EducationDegree save(EducationDegree educationDegree) {
+        return this.iEducationDegreeRepository.save(educationDegree);
     }
 
     @Override
     public void remove(Integer id) {
         this.iEducationDegreeRepository.delete(this.iEducationDegreeRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<EducationDegree> findAll() {
+        return this.iEducationDegreeRepository.findAll();
     }
 
     @Override

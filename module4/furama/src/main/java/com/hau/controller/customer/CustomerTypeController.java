@@ -5,6 +5,7 @@ import com.hau.model.customer.CustomerType;
 import com.hau.service.customer_type.ICustomerTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -23,10 +24,10 @@ public class CustomerTypeController {
 
 
     @GetMapping("/customerType-list")
-    public String goHomeCustomerType(@PageableDefault(value = 3) Pageable pageable, Model model,
+    public String goHomeCustomerType(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");
-        Iterable<CustomerType> customerTypes = this.iCustomerTypeService.findAll(pageable, searchValue);
+        Page<CustomerType> customerTypes = this.iCustomerTypeService.findAll(pageable, searchValue);
         model.addAttribute("searchValue", searchValue);
         model.addAttribute("customerTypes", customerTypes);
         return "customerType/list";

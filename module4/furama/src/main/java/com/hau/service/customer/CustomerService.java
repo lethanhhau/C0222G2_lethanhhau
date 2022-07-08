@@ -27,13 +27,18 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void save(Customer customer) {
-        this.iCustomerRepository.save(customer);
+    public Customer save(Customer customer) {
+        return this.iCustomerRepository.save(customer);
     }
 
     @Override
     public void remove(Integer id) {
         this.iCustomerRepository.delete(this.iCustomerRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<Customer> findAll() {
+        return this.iCustomerRepository.findAll();
     }
 
     @Override

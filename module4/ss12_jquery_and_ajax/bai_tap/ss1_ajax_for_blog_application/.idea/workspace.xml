@@ -2,41 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7107f51c-9c55-4d92-9712-438b9e86107b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/contract/ContractController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/dto/contract/ContractDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/contract/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/contract/IContractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/contract/ContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/contract/IContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/EmployeeRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/contract/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/contract/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/contract/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/employee/RestEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/service/SmartPhoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/static/aa.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/static/styles/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/static/styles/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/static/styles/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/customer/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/customer/CustomerTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/customer/CustomerTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/employee/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/employee/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/facility/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/controller/facility/FacilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/dto/facility/FacilityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/dto/facility/FacilityDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/contract/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/contract/Contract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/customer/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/customer/CustomerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Division.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/EducationDegree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/EducationDegree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/employee/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/Facility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/FacilityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/FacilityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/RentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/model/facility/RentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/customer_type/ICustomerTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/customer_type/ICustomerTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/employee/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/employee/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/customer/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/IGeneralService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/IGeneralService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/contract/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/contract/ContractService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer_type/CustomerTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/customer_type/CustomerTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/division/DivisionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/division/DivisionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/education_degree/EducationDegreeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/education_degree/EducationDegreeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/employee/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/employee/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/employee/IEmployeeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility/FacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility/IFacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility_type/FacilityTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/facility_type/FacilityTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/position/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/position/PositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/rent_type/RentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/java/com/hau/service/rent_type/RentTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/contract/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/contract/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/employee/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/employee/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/facility/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/src/main/resources/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/controller/SmartphoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/controller/SmartphoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/model/Smartphone.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/model/Smartphone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/repository/ISmartphoneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/repository/ISmartphoneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/service/ISmartphoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/service/ISmartphoneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/java/com/hau/service/SmartphoneService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_complete_phone_management/src/main/resources/templates/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss11_web_service_and_restful/bai_tap/restful_blog_application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,6 +93,8 @@
       <workItem from="1656921212986" duration="1798000" />
       <workItem from="1656928956089" duration="477000" />
       <workItem from="1657070695589" duration="1604000" />
+      <workItem from="1657187069099" duration="1006000" />
+      <workItem from="1657211155581" duration="10000" />
     </task>
     <servers />
   </component>

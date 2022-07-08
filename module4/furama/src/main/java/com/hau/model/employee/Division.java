@@ -1,5 +1,7 @@
 package com.hau.model.employee;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class Division {
     private Integer divisionId;
     private String divisionName;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "division")
     private List<Employee> employees;
 

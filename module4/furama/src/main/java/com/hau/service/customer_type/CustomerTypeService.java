@@ -29,13 +29,18 @@ public class CustomerTypeService implements ICustomerTypeService{
     }
 
     @Override
-    public void save(CustomerType customerType) {
-        this.iCustomerTypeRepository.save(customerType);
+    public CustomerType save(CustomerType customerType) {
+        return this.iCustomerTypeRepository.save(customerType);
     }
 
     @Override
     public void remove(Integer id) {
         this.iCustomerTypeRepository.delete(this.iCustomerTypeRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<CustomerType> findAll() {
+        return this.iCustomerTypeRepository.findAll();
     }
 
     @Override

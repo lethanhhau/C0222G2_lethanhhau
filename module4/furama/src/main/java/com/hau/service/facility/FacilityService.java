@@ -26,13 +26,18 @@ public class FacilityService implements IFacilityService{
     }
 
     @Override
-    public void save(Facility facility) {
-        this.iFacilityRepository.save(facility);
+    public Facility save(Facility facility) {
+        return this.iFacilityRepository.save(facility);
     }
 
     @Override
     public void remove(Integer id) {
         this.iFacilityRepository.delete(this.iFacilityRepository.getById(id));
+    }
+
+    @Override
+    public Iterable<Facility> findAll() {
+        return this.iFacilityRepository.findAll();
     }
 
     @Override

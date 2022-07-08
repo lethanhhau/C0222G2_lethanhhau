@@ -20,7 +20,8 @@
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
-                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdropCreate">
+                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdropCreate">
                     Create Contract
                 </button>
                 <form class="d-flex">
@@ -33,6 +34,7 @@
     </div>
 </header>
 
+<!-- Create Hợp đồng-->
 <div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
      tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -46,36 +48,31 @@
                 <div class="container-fluid">
                     <div class="text-danger" id="tableInputName"></div>
                     <form id="contactForm" method="post" action="/contact/create">
-                        <!-- name input-->
+
                         <div class="form-floating mb-2">
                             <input class="form-control" id="startDate" type="date"
                                    placeholder="Enter your name..."/>
                             <label for="startDate">Start Date</label>
                         </div>
-                        <!-- birthday input-->
+
                         <div class="form-floating mb-2">
                             <input class="form-control" id="endDate" type="date"
                                    placeholder="Enter your birthday..."/>
                             <label for="endDate">End Date</label>
                         </div>
-                        <!-- idCard input-->
+
                         <div class="form-floating mb-2">
-                            <input class="form-control" id="deposits" type="text"
-                                   placeholder="Enter your id card..."/>
+                            <input class="form-control" id="deposits" type="text"/>
                             <label for="deposits">Deposits</label>
                         </div>
 
-
-                        <!-- salary input-->
                         <div class="form-floating mb-2">
-                            <input class="form-control" id="totalMoney" type="text"
-                                   placeholder="Enter your salary..."/>
+                            <input class="form-control" id="totalMoney" type="text" readonly/>
                             <label for="totalMoney">Total Money</label>
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input class="form-control" id="facility" type="text"
-                                   placeholder="Enter your salary..."/>
+                            <input class="form-control" id="facility" type="text"/>
                             <label for="facility">Facility</label>
                         </div>
 
@@ -91,28 +88,81 @@
                         <div class="form-floating mb-2">
                             <select class="form-select" aria-label="Default select example"
                                     style="padding-top: 0.625rem !important;">
-                                <option th:each="item,loop : ${facilitis}"
+                                <option th:each="item,loop : ${facilities}"
                                         th:text="${item.facilityName}"
                                         th:value="${item.facilityId}"></option>
                             </select>
                         </div>
 
                         <div class="form-floating mb-2">
-                            <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#">
+                            <label class="form-label h6">Attach Facility:</label>
+                            <button style="margin-left: 200px" type="button" class="btn btn-outline-success btn-lg"
+                                    data-bs-toggle="modal" data-bs-target="#createContractDetail">
                                 +
                             </button>
                         </div>
 
+                        <div class="row text-center">
+
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-danger"
+                                        data-bs-dismiss="modal">Hủy Bỏ
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-outline-success" id="submitContract" type="submit">
+                                    Tạo Hợp Đồng
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Create Contract Detail-->
+<div class="modal fade" id="createContractDetail" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabelEdit">Create Contract Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="text-danger" id="tableInputNameEdit"></div>
+                    <form id="contactFormEdit" method="post" action="/contractDetail/create">
+
+
+                        <div class="form-floating mb-2">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;">
+                                <option th:each="item,loop : ${attachFacilities}"
+                                        th:text="${item.attachFacilityName}"
+                                        th:value="${item.attachFacilityId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="quantity" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="quantity">Quantity</label>
+                        </div>
 
                         <!-- Submit Button-->
-                        <div class="row">
-                            <div class="d-grid col-6">
-                                <button class="btn btn-outline-primary" id="submitButton" type="submit">
+                        <div class="row text-center">
+                            <div class=" col-6 ">
+                                <button class="btn btn-outline-success" id="submitEmployee"
+                                        type="submit">
                                     Save
                                 </button>
                             </div>
                             <div class="col-6">
-                                <button type="submit" class="btn btn-outline-secondary"
+                                <button type="button" class="btn btn-outline-secondary"
                                         data-bs-dismiss="modal">Close
                                 </button>
                             </div>
@@ -124,6 +174,50 @@
     </div>
 </div>
 
+
+<!--Modal ListAttachFacility-->
+<div class="modal fade" id="listAttachFacility" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticListAttachFacility">List Attach Facility</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Cost</th>
+                            <th>Status</th>
+                            <th>Unit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="attachFacility, loop : ${attachFacilities}">
+                            <td th:text="${attachFacility.attachFacilityId}"></td>
+                            <td th:text="${attachFacility.attachFacilityName}"></td>
+                            <td th:text="${attachFacility.cost}"></td>
+                            <td th:text="${attachFacility.status}"></td>
+                            <td th:text="${attachFacility.unit}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-danger"
+                                data-bs-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="container mt-3">
@@ -150,11 +244,14 @@
             <td th:text="${contract.deposits}"></td>
             <td th:text="${contract.deposits}"></td>
             <td>
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit">+</button>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#createContractDetail">+
+                </button>
 
             </td>
             <td>
-                <a th:href="@{/contract/edit/{id}(id=${contract.contractId})}" class="btn btn-outline-success">Danh Sách Các Dịch Vụ Đi Kèm</a>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#listAttachFacility">
+                    Danh Sách Các Dịch Vụ Đi Kèm
+                </button>
             </td>
         </tr>
         </tbody>
@@ -166,24 +263,28 @@
         <div class="col-2 ">
             <ul class="pagination" th:if="${contracts.totalPages > 0}">
                 <li class="page-item">
-                    <a class="page-link" th:if="${contracts.hasPrevious()}" th:href="@{'/contract-list'(page=${contracts.number - 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${contracts.hasPrevious()}"
+                       th:href="@{'/contract-list'(page=${contracts.number - 1}, search=${searchValue})}">
                         Previous
                     </a>
                 </li>
                 <div th:each="item, loop : ${#numbers.sequence(1, contracts.totalPages )}">
                     <div th:if="${(contracts.number + 1) == item}">
                         <li class="page-item active">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/contract-list(page=(${item}-1), search=${searchValue})}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/contract-list(page=(${item}-1), search=${searchValue})}"></a>
                         </li>
                     </div>
                     <div th:unless="${((contracts.number + 1) == item)}">
                         <li class="page-item">
-                            <a class="page-link" href="#" th:text="${item}" th:href="@{/contract-list(page=(${item}-1), search=${searchValue} )}"></a>
+                            <a class="page-link" href="#" th:text="${item}"
+                               th:href="@{/contract-list(page=(${item}-1), search=${searchValue} )}"></a>
                         </li>
                     </div>
                 </div>
                 <li class="page-item">
-                    <a class="page-link" th:if="${contracts.hasNext()}" th:href="@{'contract-list'(page=${contracts.number + 1}, search=${searchValue})}">
+                    <a class="page-link" th:if="${contracts.hasNext()}"
+                       th:href="@{'contract-list'(page=${contracts.number + 1}, search=${searchValue})}">
                         Next
                     </a>
                 </li>
@@ -191,6 +292,7 @@
         </div>
     </div>
 </div>
+<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
 <th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
 </body>
 </html>

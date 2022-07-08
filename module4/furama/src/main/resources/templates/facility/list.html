@@ -17,11 +17,23 @@
             </div>
         </div>
     </div>
+
+    <div class="text-center" th:if="${success}">
+        <h3 th:utext="${success}" style="color: blue"></h3>
+    </div>
+    <div class="text-center" th:if="${msgDelete}">
+        <h3 th:utext="${msgDelete}" style="color: blue;"></h3>
+    </div>
+    <div class="text-center" th:if="${msgEdit}">
+        <h3 th:utext="${msgEdit}" style="color: blue;"></h3>
+    </div>
+
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
                 <a href="" th:href="@{/facility/create}" class="btn btn-outline-success btn-lg" role="button">Create
                     Facility</a>
+
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
@@ -42,7 +54,7 @@
             <th>Cost</th>
             <th>Max People</th>
             <th>Rent Type Id</th>
-            <th>Facility Type Id</th>
+
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -56,7 +68,7 @@
             <td th:text="${facility.facilityCost}"></td>
             <td th:text="${facility.maxPeople}"></td>
             <td th:text="${facility.rentType.rentTypeName}"></td>
-            <td th:text="${facility.facilityType.facilityTypeName}"></td>
+
             <td>
                 <a th:href="@{/facility/edit/{id}(id=${facility.facilityId})}" class="btn btn-outline-success">Edit</a>
             </td>
@@ -78,7 +90,7 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Do you want delete blog <span th:text="${facility.facilityName}"
+                                Do you want delete Facility <span th:text="${facility.facilityName}"
                                                               class="text-warning"></span>
                                 with id = <span th:text="${facility.facilityId}" class="text-warning"></span> ?
                             </div>
@@ -132,6 +144,8 @@
         </div>
     </div>
 </div>
+
+<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
 <th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
 </body>
 </html>

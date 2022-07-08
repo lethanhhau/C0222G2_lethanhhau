@@ -19,7 +19,8 @@ public class Smartphone {
     public Smartphone() {
     }
 
-    public Smartphone(String producer, String model, double price) {
+    public Smartphone(Integer id, String producer, String model, double price) {
+        this.id = id;
         this.producer = producer;
         this.model = model;
         this.price = price;

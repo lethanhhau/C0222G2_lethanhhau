@@ -3,12 +3,16 @@ package com.hau.controller.contract;
 
 import com.hau.dto.contract.ContractDto;
 import com.hau.dto.customer.CustomerDto;
+import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
+import com.hau.model.contract.ContractDetail;
 import com.hau.model.customer.Customer;
 import com.hau.model.customer.CustomerType;
 import com.hau.model.employee.Employee;
 import com.hau.model.facility.Facility;
+import com.hau.service.attach_facility.IAttachFacilityService;
 import com.hau.service.contract.IContractService;
+import com.hau.service.contract_detail.IContractDetailService;
 import com.hau.service.customer.ICustomerService;
 import com.hau.service.employee.IEmployeeService;
 import com.hau.service.facility.IFacilityService;
@@ -41,14 +45,17 @@ public class ContractController {
     @Autowired
     private ICustomerService iCustomerService;
 
-    @ModelAttribute("facilitis")
-    public List<Facility> facilities(){
-        return this.iFacilityService.findAllFacility();
+    @Autowired
+    private IAttachFacilityService iAttachFacilityService;
+
+    @ModelAttribute("attachFacilities")
+    public List<AttachFacility> attachFacilities(){
+        return this.iAttachFacilityService.findAll();
     }
 
-    @ModelAttribute("employees")
-    public List<Employee> employees(){
-        return this.iEmployeeService.findAllEmployee();
+    @ModelAttribute("facilities")
+    public List<Facility> facilities(){
+        return this.iFacilityService.findAllFacility();
     }
 
     @ModelAttribute("customers")
@@ -57,7 +64,7 @@ public class ContractController {
     }
 
     @GetMapping("/contract-list")
-    public String goHomeContract(@PageableDefault(value = 3) Pageable pageable, Model model,
+    public String goHomeContract(@PageableDefault(value = 5) Pageable pageable, Model model,
                                  @RequestParam Optional<String> searchParam){
         String searchValue = searchParam.orElse("");
         Iterable<Contract> contracts = this.iContractService.findAll(pageable, searchValue);
@@ -108,4 +115,5 @@ public class ContractController {
         this.iContractService.save(contract);
         return "redirect:/contract-list";
     }
+
 }

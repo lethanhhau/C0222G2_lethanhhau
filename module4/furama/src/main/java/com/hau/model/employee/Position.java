@@ -1,5 +1,6 @@
 package com.hau.model.employee;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hau.model.contract.Contract;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class Position {
     private Integer positionId;
     private String positionName;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "position")
     private List<Employee> employees;
 

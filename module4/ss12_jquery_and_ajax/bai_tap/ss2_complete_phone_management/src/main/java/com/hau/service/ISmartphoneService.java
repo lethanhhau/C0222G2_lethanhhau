@@ -2,8 +2,8 @@ package com.hau.service;
 
 import com.hau.model.Smartphone;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 
 public interface ISmartphoneService {
