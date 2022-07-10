@@ -22,9 +22,6 @@ public class ContractDto implements Validator {
     @NotEmpty
     @NotBlank
     private String endDate;
-    @NotNull
-    @NotEmpty
-    @NotBlank
     private Double deposits;
     private Employee employee;
     private Customer customer;

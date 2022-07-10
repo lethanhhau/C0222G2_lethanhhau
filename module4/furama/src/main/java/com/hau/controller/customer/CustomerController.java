@@ -31,7 +31,7 @@ public class CustomerController {
 
     @ModelAttribute("customerTypes")
     public List<CustomerType> customerTypes(){
-        return this.iCustomerTypeService.findAllCustomerType();
+        return this.iCustomerTypeService.findAll();
     }
 
    @GetMapping("/customer-list")

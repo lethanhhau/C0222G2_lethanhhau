@@ -1,7 +1,7 @@
 package com.hau.service.division;
 
 import com.hau.model.employee.Division;
-import com.hau.repository.division.IDivisionRepository;
+import com.hau.repository.IDivisionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,33 +15,9 @@ public class DivisionService implements IDivisionService{
     @Autowired
     private IDivisionRepository iDivisionRepository;
 
-    @Override
-    public Page<Division> findAll(Pageable pageable, String searchValue) {
-        return this.iDivisionRepository.findNameDivision(pageable, "%" + searchValue + "%");
-    }
 
     @Override
-    public Optional<Division> findById(Integer id) {
-        return this.iDivisionRepository.findById(id);
-    }
-
-    @Override
-    public Division save(Division division) {
-        return this.iDivisionRepository.save(division);
-    }
-
-    @Override
-    public void remove(Integer id) {
-        this.iDivisionRepository.delete(this.iDivisionRepository.getById(id));
-    }
-
-    @Override
-    public Iterable<Division> findAll() {
-        return this.iDivisionRepository.findAll();
-    }
-
-    @Override
-    public List<Division> findAllDivision() {
+    public List<Division> findAll() {
         return this.iDivisionRepository.findAll();
     }
 }

@@ -1,13 +1,20 @@
 package com.hau.service.employee;
 
 import com.hau.model.employee.Employee;
-import com.hau.service.IGeneralService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
-import java.util.List;
+import java.util.Optional;
 
-public interface IEmployeeService extends IGeneralService<Employee> {
+public interface IEmployeeService  {
 
-    Iterable<Employee> findAll();
+    Page<Employee> findAll(Pageable pageable, String searchParam);
+
+    void save(Employee employee);
+
+    void delete(String idDelete);
+
+    Employee getById(String idEdit);
+
+
 }

@@ -39,9 +39,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer employeeId, String employeeName, String employeeBirthday, String employeeIdCard,
-                    Double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress,
-                    Position position, EducationDegree educationDegree, Division division, String username) {
+    public Employee(Integer employeeId, String employeeName, String employeeBirthday, String employeeIdCard, Double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Position position,
+                    EducationDegree educationDegree, Division division, List<Contract> contracts, String username) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthday = employeeBirthday;
@@ -53,6 +52,7 @@ public class Employee {
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
+        this.contracts = contracts;
         this.username = username;
     }
 
@@ -142,6 +142,14 @@ public class Employee {
 
     public void setDivision(Division division) {
         this.division = division;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 
     public String getUsername() {

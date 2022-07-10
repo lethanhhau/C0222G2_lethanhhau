@@ -16,30 +16,6 @@ public class PositionService implements IPositionService{
     @Autowired
     private IPositionRepository iPositionRepository;
 
-    @Override
-    public Page<Position> findAll(Pageable pageable, String searchValue) {
-        return this.iPositionRepository.findByNamePosition(pageable, "%" + searchValue + "%");
-    }
-
-    @Override
-    public Optional<Position> findById(Integer id) {
-        return this.iPositionRepository.findById(id);
-    }
-
-    @Override
-    public Position save(Position position) {
-        return this.iPositionRepository.save(position);
-    }
-
-    @Override
-    public void remove(Integer id) {
-        this.iPositionRepository.delete(this.iPositionRepository.getById(id));
-    }
-
-    @Override
-    public Iterable<Position> findAll() {
-        return this.iPositionRepository.findAll();
-    }
 
     @Override
     public List<Position> findAllPosition() {

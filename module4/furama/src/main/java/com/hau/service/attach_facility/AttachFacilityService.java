@@ -1,7 +1,7 @@
 package com.hau.service.attach_facility;
 
 import com.hau.model.contract.AttachFacility;
-import com.hau.repository.attach_facility.IAttachFacilityRepository;
+import com.hau.repository.IAttachFacilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

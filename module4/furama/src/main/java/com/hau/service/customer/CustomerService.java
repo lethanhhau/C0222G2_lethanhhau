@@ -1,7 +1,7 @@
 package com.hau.service.customer;
 
 import com.hau.model.customer.Customer;
-import com.hau.repository.customer.ICustomerRepository;
+import com.hau.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,12 +37,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Iterable<Customer> findAll() {
-        return this.iCustomerRepository.findAll();
-    }
-
-    @Override
     public List<Customer> findAllCustomer() {
         return this.iCustomerRepository.findAll();
     }
+
 }

@@ -1,7 +1,9 @@
-package com.hau.repository.contract_detail;
+package com.hau.repository;
 
 import com.hau.model.contract.ContractDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 public interface IContractDetailRepository extends JpaRepository<ContractDetail, Integer> {
+
 }

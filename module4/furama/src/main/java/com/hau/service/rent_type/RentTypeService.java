@@ -1,14 +1,11 @@
 package com.hau.service.rent_type;
 
 import com.hau.model.facility.RentType;
-import com.hau.repository.rent_type.IRentTypeRepository;
+import com.hau.repository.IRentTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class RentTypeService implements IRentTypeService{
@@ -16,33 +13,9 @@ public class RentTypeService implements IRentTypeService{
     @Autowired
     private IRentTypeRepository iRentTypeRepository;
 
-    @Override
-    public Page<RentType> findAll(Pageable pageable, String searchValue) {
-        return this.iRentTypeRepository.findByNameRentType(pageable, "%" + searchValue + "%");
-    }
 
     @Override
-    public Optional<RentType> findById(Integer id) {
-        return this.iRentTypeRepository.findById(id);
-    }
-
-    @Override
-    public RentType save(RentType rentType) {
-        return this.iRentTypeRepository.save(rentType);
-    }
-
-    @Override
-    public void remove(Integer id) {
-        this.iRentTypeRepository.delete(this.iRentTypeRepository.getById(id));
-    }
-
-    @Override
-    public Iterable<RentType> findAll() {
-        return this.iRentTypeRepository.findAll();
-    }
-
-    @Override
-    public List<RentType> findAllRentType() {
+    public List<RentType> findAll() {
         return this.iRentTypeRepository.findAll();
     }
 }

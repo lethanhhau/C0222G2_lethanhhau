@@ -1,7 +1,7 @@
 package com.hau.service.facility;
 
 import com.hau.model.facility.Facility;
-import com.hau.repository.Facility.IFacilityRepository;
+import com.hau.repository.IFacilityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -36,12 +36,8 @@ public class FacilityService implements IFacilityService{
     }
 
     @Override
-    public Iterable<Facility> findAll() {
-        return this.iFacilityRepository.findAll();
-    }
-
-    @Override
     public List<Facility> findAllFacility() {
         return this.iFacilityRepository.findAll();
     }
+
 }

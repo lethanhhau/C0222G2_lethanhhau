@@ -1,4 +1,4 @@
-package com.hau.repository.education_degree;
+package com.hau.repository;
 
 import com.hau.model.customer.CustomerType;
 import com.hau.model.employee.EducationDegree;
@@ -10,6 +10,4 @@ import org.springframework.data.repository.query.Param;
 
 public interface IEducationDegreeRepository extends JpaRepository<EducationDegree, Integer> {
 
-    @Query(value = " select * from education_degree where education_degree_name like :searchValue", nativeQuery = true)
-    Page<EducationDegree> findNameEducationDegree(Pageable pageable, @Param("searchValue") String searchValue);
 }

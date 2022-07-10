@@ -1,116 +1,49 @@
 package com.hau.controller.employee;
 
 
-import com.hau.dto.emplooyee.EmployeeDto;
 import com.hau.model.employee.Division;
 import com.hau.model.employee.EducationDegree;
-import com.hau.model.employee.Employee;
 import com.hau.model.employee.Position;
 import com.hau.service.division.IDivisionService;
 import com.hau.service.education_degree.IEducationDegreeService;
-import com.hau.service.employee.IEmployeeService;
 import com.hau.service.position.IPositionService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;;
+;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class EmployeeController {
 
-    @Autowired
-    private IEmployeeService iEmployeeService;
 
     @Autowired
-    private IDivisionService iDivisionService;
+    private IDivisionService divisionService;
 
     @Autowired
-    private IEducationDegreeService iEducationDegreeService;
+    private IEducationDegreeService educationDegreeService;
 
     @Autowired
-    private IPositionService iPositionService;
+    private IPositionService positionService;
 
-    @ModelAttribute("divisions")
-    public List<Division> divisions() {
-        return this.iDivisionService.findAllDivision();
+    @ModelAttribute("divisionList")
+    public List<Division> getAllDivision() {
+        return this.divisionService.findAll();
     }
 
-    @ModelAttribute("educationDegrees")
-    public List<EducationDegree> educationDegrees() {
-        return this.iEducationDegreeService.findAllEducationDegree();
+    @ModelAttribute("educationDegreeList")
+    public List<EducationDegree> getAllEducationDegree() {
+        return this.educationDegreeService.findAll();
     }
 
-    @ModelAttribute("positions")
-    public List<Position> positions() {
-        return this.iPositionService.findAllPosition();
+    @ModelAttribute("positionList")
+    public List<Position> getAllPosition() {
+        return this.positionService.findAllPosition();
     }
 
     @GetMapping("/employee-list")
-    public String goHomeEmployee(@PageableDefault(value = 5) Pageable pageable, Model model,
-                                 @RequestParam Optional<String> searchParam) {
-        String searchValue = searchParam.orElse("");
-        Page<Employee> employees = this.iEmployeeService.findAll(pageable, searchValue);
-        model.addAttribute("searchValue", searchValue);
-        model.addAttribute("employees", employees);
+    public String goEmployee() {
         return "employee/list";
     }
-
-    @GetMapping("/employee/delete/{id}")
-    public String delete(@PathVariable int id) {
-        this.iEmployeeService.remove(id);
-        return "redirect:/employee-list";
-    }
-
-    @GetMapping("/employee/create")
-    public String showCreate(Model model) {
-        model.addAttribute("employeeDto", new EmployeeDto());
-        return  "employee/list";
-    }
-
-    @PostMapping("/employee/create")
-    public String create(@Valid @ModelAttribute("EmployeeDto") EmployeeDto employeeDto,
-                         BindingResult bindingResult,
-                         RedirectAttributes redirectAttributes,
-                         Model model) {
-        new EmployeeDto().validate(employeeDto, bindingResult);
-        if (bindingResult.hasErrors()) {
-                this.iPositionService.findAllPosition();
-                this.iEducationDegreeService.findAllEducationDegree();
-                this.iDivisionService.findAllDivision();
-            return "employee/list";
-        } else {
-            Employee employee = new Employee();
-            BeanUtils.copyProperties(employeeDto, employee);
-            this.iEmployeeService.save(employee);
-            redirectAttributes.addFlashAttribute("success", "Register success!");
-            return "redirect:/employee-list";
-        }
-    }
-
-    @GetMapping("/employee/edit/{id}")
-    public String showEdit(@PathVariable int id, Model model) {
-        Optional<Employee> employee = this.iEmployeeService.findById(id);
-        model.addAttribute("employee", employee);
-            model.addAttribute("positions",this.iPositionService.findAllPosition());
-            model.addAttribute("educationDegrees",this.iEducationDegreeService.findAllEducationDegree());
-            model.addAttribute("divisions",this.iDivisionService.findAllDivision());
-        return "employee/list";
-    }
-
-    @PostMapping("/employee/edit")
-    public String edit(@ModelAttribute Employee employee) {
-        this.iEmployeeService.save(employee);
-        return "redirect:/employee-list";
-    }
-
 }

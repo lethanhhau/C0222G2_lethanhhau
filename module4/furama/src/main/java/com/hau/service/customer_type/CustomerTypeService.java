@@ -1,8 +1,7 @@
 package com.hau.service.customer_type;
 
-import com.hau.model.customer.Customer;
 import com.hau.model.customer.CustomerType;
-import com.hau.repository.customer_type.ICustomerTypeRepository;
+import com.hau.repository.ICustomerTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,33 +17,9 @@ public class CustomerTypeService implements ICustomerTypeService{
     private ICustomerTypeRepository iCustomerTypeRepository;
 
 
-    @Override
-    public Page<CustomerType> findAll(Pageable pageable, String searchValue) {
-        return this.iCustomerTypeRepository.findNameCustomerType(pageable, "%" + searchValue + "%");
-    }
 
     @Override
-    public Optional<CustomerType> findById(Integer id) {
-        return this.iCustomerTypeRepository.findById(id);
-    }
-
-    @Override
-    public CustomerType save(CustomerType customerType) {
-        return this.iCustomerTypeRepository.save(customerType);
-    }
-
-    @Override
-    public void remove(Integer id) {
-        this.iCustomerTypeRepository.delete(this.iCustomerTypeRepository.getById(id));
-    }
-
-    @Override
-    public Iterable<CustomerType> findAll() {
-        return this.iCustomerTypeRepository.findAll();
-    }
-
-    @Override
-    public List<CustomerType> findAllCustomerType() {
+    public List<CustomerType> findAll() {
         return iCustomerTypeRepository.findAll();
     }
 }

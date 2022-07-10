@@ -23,7 +23,7 @@ public class CustomerDto implements Validator {
     @NotNull
     @NotEmpty
     @NotBlank
-    @Pattern(regexp = "^[A-Z][a-z0-9]+||([A-Z][a-z0-9]+(\\ [A-Z][a-z0-9]+)+)$")
+    @Pattern(regexp = "^[A-Z][a-z]+||([A-Z][a-z]+(\\ [A-Z][a-z]+)+)$")
     private String customerName;
     @NotNull
     private String customerBirthday;

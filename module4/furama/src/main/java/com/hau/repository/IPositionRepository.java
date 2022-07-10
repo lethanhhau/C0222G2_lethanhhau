@@ -9,6 +9,5 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface IPositionRepository extends JpaRepository<Position, Integer> {
-    @Query(value = " select * from position where position_name like :searchValue", nativeQuery = true)
-    Page<Position> findByNamePosition(Pageable pageable, @Param("searchValue") String searchValue);
+
 }

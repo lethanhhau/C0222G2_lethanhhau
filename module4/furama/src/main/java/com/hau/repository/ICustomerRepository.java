@@ -1,4 +1,4 @@
-package com.hau.repository.customer;
+package com.hau.repository;
 
 import com.hau.model.customer.Customer;
 import org.springframework.data.domain.Page;

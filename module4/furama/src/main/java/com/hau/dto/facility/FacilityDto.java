@@ -5,11 +5,18 @@ import com.hau.model.facility.RentType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 public class FacilityDto implements Validator {
     private Integer facilityId;
     @NotNull
+    @NotEmpty
+    @NotBlank
+    @Pattern(regexp = "^[A-Z][a-z0-9]+||([A-Z][a-z0-9]+(\\ [A-Z][a-z0-9]+)+)$")
     private String facilityName;
     @NotNull
     private Integer facilityArea;

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <th:block th:replace="~{bootstrap-css :: bootstrapCss}"></th:block>
+</head>
+<body id="page-top">
+
+<header style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">List Contract</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropCreate">
+          Create Contract
+        </button>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                 name="searchValue" id="inputSearch">
+          <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Facility</th>
+      <th>Customer</th>
+      <th>Star tDay</th>
+      <th>End Day</th>
+      <th>Deposit</th>
+      <th>Total Money</th>
+      <th colspan="2">Attach Facility</th>
+    </tr>
+    </thead>
+    <tbody id="contractTableBody">
+
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Create -->
+<div class="container">
+        <div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
+             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabelCreate">Create Contract</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="text-danger" id="tableInputNameEdit"></div>
+                  <form id="contactFormEdit" method="post" action="/contract/create">
+                    <!-- startDate input-->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="startDate" type="date"
+                             placeholder="Enter your start date..."/>
+                      <label for="startDate">Start Date</label>
+                    </div>
+                    <!-- endDate input-->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="endDate" type="date"
+                             placeholder="Enter your end date..."/>
+                      <label for="endDate">End Date</label>
+                    </div>
+                    <!-- deposit input-->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="deposit" type="text"
+                             placeholder="Enter your deposit..."/>
+                      <label for="deposit">Deposit</label>
+                    </div>
+                    <!-- phoneNumber input-->
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="totalMoney" type="text" readonly/>
+                      <label for="totalMoney">Total Money</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" aria-label="Default select example"
+                              style="padding-top: 0.625rem !important;" id="customer">
+                        <option th:each="item, loop : ${customerList}"
+                                th:text="${item.customerName}"
+                                th:value="${item.customerId}"></option>
+                      </select>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" aria-label="Default select example"
+                              style="padding-top: 0.625rem !important;" id="facility">
+                        <option th:each="item, loop : ${facilityList}"
+                                th:text="${item.facilityName}"
+                                th:value="${item.facilityId}"></option>
+                      </select>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                      <label class="form-label h6">Attach Facility:</label>
+                      <button style="margin-left: 350px" type="button" class="btn btn-outline-success btn-lg"
+                              data-bs-toggle="modal" data-bs-target="#createContractDetail">
+                        +
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success">Save</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdropAttachFacility"
+             data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content border-primary mt-5">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title"
+                    id="staticBackdropLabelAttachFacility">List of
+                  attach facility</h5>
+                <button type="button" class="btn-close btnCloseModalAttachFacility"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-hover text-center">
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Free wifi</td>
+                    <td>
+                      <a href="" class="btn btn-outline-primary">+</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary">Save
+                </button>
+                <button type="button" class="btn btn-outline-secondary btnCloseModalAttachFacility"
+                        data-bs-dismiss="modal">Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Footer-->
+<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
+<th:block th:replace="~{bootstrap-css :: jquery}"></th:block>
+<script>
+  function getPageContract(pageNumber, searchParam) {
+    $.ajax({
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      type: "GET", //GET, DELETE, PUT...
+      url: "http://localhost:8080/rest/contract?page=" + pageNumber + "&searchValue=" + searchParam,
+      success: function (contractPage) {
+        let contractBodyHTML = "";
+
+        for (let i = 0; i < contractPage.content.length; i++) {
+          contractBodyHTML += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${contractPage.content[i].contractId}</td>
+                    <td>${contractPage.content[i].facility.facilityName}</td>
+                    <td>${contractPage.content[i].customer.customerName}</td>
+                    <td>${contractPage.content[i].startDate}</td>
+                    <td>${contractPage.content[i].endDate}</td>
+                    <td>${contractPage.content[i].deposits}</td>
+                    <td>
+                    <a href="${contractPage.content[i].contractId}" class="btn btn-outline-warning" id="btnEdit">
+                    Edit
+                    </a>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+          data-bs-target="#staticBackdropDelete${employeePage.content[i].employeeId}">
+          Delete
+          </button>
+                  <!-- Modal -->
+          <div class="modal fade" id="staticBackdropDelete${employeePage.content[i].employeeId}" data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title fw-bold text-danger" id="staticBackdropLabel">FBI
+          Warning!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          Do you want to delete employee ${employeePage.content[i].employeeName} with id = ${employeePage.content[i].employeeId} ?
+          </div>
+          <div class="modal-footer">
+          <a href="${employeePage.content[i].employeeId}" type="button" class="btn btn-outline-primary" id="btnDelete">Submit</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+          </button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </td>
+          </tr>`
+                    ;
+                }
+</script>
+
+<script>
+  $.ajax({
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    type: "GET", //GET, DELETE, PUT...
+    url: "http://localhost:8080/rest/attach-facility",
+    success: attachFacilityList
+  });
+
+  // $.ajax({
+  //     headers: {
+  //         'Accept': 'application/json',
+  //         'Content-Type': 'application/json'
+  //     },
+  //     type: "GET", //GET, DELETE, PUT...
+  //     url: "http://localhost:8080/rest/contract-detail",
+  //     success: function (resultContractDetailList) {
+  //         contractDetailList = resultContractDetailList;
+  //     },
+  //     error: function (resultError) {
+  //         console.log('Co loi xay ra');
+  //     }
+  // });
+  function attachFacilityList(attachFacilityList) {
+    $.ajax({
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      type: "GET", //GET, DELETE, PUT...
+      url: "http://localhost:8080/rest/contract",
+      success: function (contractPage) {
+        let contractTableHTML = "";
+        for (let i = 0; i < contractPage.content.length; i++) {
+          // console.log(contractPage.content[i].contractDetailList)
+          let totalMoney = 0;
+          for (let j = 0; j < contractPage.content[i].contractDetailList.length; j++) {
+            // console.log(contractPage.content[i].contractDetailList[j])
+            totalMoney += contractPage.content[i].contractDetailList[j].quantity * contractPage.content[i].contractDetailList[j].attachFacility.cost;
+            // console.log(totalMoney)
+          }
+          contractTableHTML += `<tr>
+                    <td>${i}</td>
+                    <td>${contractPage.content[i].facility.name}</td>
+                    <td>${contractPage.content[i].customer.name}</td>
+                    <td>${contractPage.content[i].startDate}</td>
+                    <td>${contractPage.content[i].endDate}</td>
+                    <td>${contractPage.content[i].deposit}</td>
+                    <td>${totalMoney}</td>
+                    <td>
+                        <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop${contractPage.content[i].id}">
+          +
+          </button>
+                  <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop${contractPage.content[i].id}" data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title fw-bold text-danger" id="staticBackdropLabel">List of
+          attach facility</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <table class="table table-hover text-center">
+          <tbody>
+          <tr>
+          <div class="form-floating mb-3">
+          <select class="form-select" aria-label="Default select example"
+          style="padding-top: 0.625rem !important;" id="selectAttachFacility">`
+          for (let k = 0; k < attachFacilityList.length; k++) {
+          contractTableHTML += `<option value="${attachFacilityList[k].id}">${attachFacilityList[k].name}</option>`
+          }
+          contractTableHTML += `</select>
+          <div class="form-floating mt-3" id="inputAttachFacility">
+          <input class="form-control" id="quantityAdd" type="text"" />
+                    <label for="quantityAdd">Quantity</label>
+                    </div>
+                    </div>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" id="btnAddMoreAttachFacility">Save</button>
+                    <button type="button" class="btn btn-outline-secondary"
+                    data-bs-dismiss="modal">Close
+                    </button>
+                </div>
+                </div>
+                </div>
+                </div>
+                </td>
+                <td>
+                <a href="" class="btn btn-outline-primary">List of attach facility</a>
+                </td>
+                </tr>`
+                    ;
+                }
+                $("#contractTableBody").html(contractTableHTML);
+          },
+          error: function (resultError) {
+          console.log('Co loi xay ra');
+          }
+          });
+          }
+
+</script>
+<th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
+</body>
+</html>

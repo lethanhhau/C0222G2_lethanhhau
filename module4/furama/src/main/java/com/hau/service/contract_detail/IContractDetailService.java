@@ -5,7 +5,6 @@ import com.hau.model.contract.ContractDetail;
 import java.util.List;
 
 public interface IContractDetailService {
-    ContractDetail save(ContractDetail contractDetail);
 
     List<ContractDetail> findAll();
 }

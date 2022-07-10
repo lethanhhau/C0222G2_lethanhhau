@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
+    <!--Link Boostrap head-->
     <th:block th:fragment="bootstrapCss123">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap -->
@@ -14,7 +14,7 @@
 
     </th:block>
 
-
+    <!--Link Boostrap head có giao diện-->
     <th:block th:fragment="bootstrapCss">
         <meta content="" name="description">
         <meta content="" name="keywords">
@@ -34,6 +34,7 @@
 </head>
 <body>
 
+<!--Link Boostrap Body có giao diện-->
 <th:block th:fragment="boostrapScript">
     <header id="header" class="fixed-top">
         <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -149,7 +150,7 @@
     </footer>
 </th:block>
 
-
+<!--Link Boostrap body-->
 <th:block th:fragment="boostrapScript123">
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -157,5 +158,11 @@
             crossorigin="anonymous"></script>
 </th:block>
 
+<!--Link Jquery-->
+<th:block th:fragment="jquery">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+    </script>
+</th:block>
 </body>
 </html>

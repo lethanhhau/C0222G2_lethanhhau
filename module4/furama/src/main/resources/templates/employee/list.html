@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns: xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <th:block th:replace="~{bootstrap-css :: bootstrapCss}"></th:block>
 </head>
-<body>
+<body id="page-top">
 <header style="margin-top: 100px">
     <div class="p-3 text-center bg-image"
          style="height: 60px;">
@@ -20,14 +20,15 @@
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
-                <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
                         data-bs-target="#staticBackdropCreate">
                     Create Employee
                 </button>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" name="searchParam"
-                           placeholder="Search By Name" th:value="${searchValue}" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" name="name">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="searchValue" id="inputSearch">
+                    <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
+
                 </form>
             </div>
         </nav>
@@ -49,630 +50,529 @@
             <th>Delete</th>
         </tr>
         </thead>
-        <tbody id="listEmployee">
+        <tbody id="employeeTableBody">
 
         </tbody>
     </table>
-    <ul class="pagination" id="paginationTableBody">
-    </ul>
+    <div>
+        <div id="paginationTable">
+
+        </div>
+    </div>
 </div>
 
+<!-- Modal Create -->
+<div class="container">
+    <section class="page-section" id="facility">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabelCreate">Create new Employee</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="text-danger" id="tableInputName"></div>
+                                    <form id="contactForm" method="post" action="/employee/create">
+                                        <!-- name input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeName" type="text"
+                                                   placeholder="Enter your name..."/>
+                                            <label for="employeeName">Employee name</label>
+                                        </div>
+                                        <!-- birthday input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeBirthday" type="date"
+                                                   placeholder="Enter your birthday..."/>
+                                            <label for="employeeBirthday">Employee Birthday</label>
+                                        </div>
+                                        <!-- idCard input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeIdCard" type="text"
+                                                   placeholder="Enter your id card..."/>
+                                            <label for="employeeIdCard">Employee Id Card</label>
+                                        </div>
+                                        <!-- phoneNumber input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeePhone" type="text"
+                                                   placeholder="Enter your phone number..."/>
+                                            <label for="employeePhone">Employee Phone</label>
+                                        </div>
+                                        <!-- email input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeEmail" type="text"
+                                                   placeholder="Enter your email..."/>
+                                            <label for="employeeEmail">Email</label>
+                                        </div>
+                                        <!-- salary input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeSalary" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeeSalary">Salary</label>
+                                        </div>
+
+                                        <!-- Address input-->
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" id="employeeAddress" type="text"
+                                                   placeholder="Enter your salary..."/>
+                                            <label for="employeeAddress">Address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;" id="educationDegree">
+                                                <option th:each="item, loop : ${educationDegreeList}"
+                                                        th:text="${item.educationDegreeName}"
+                                                        th:value="${item.educationDegreeId}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;" id="position">
+                                                <option th:each="item, loop : ${positionList}"
+                                                        th:text="${item.positionName}"
+                                                        th:value="${item.positionId}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" aria-label="Default select example"
+                                                    style="padding-top: 0.625rem !important;" id="division">
+                                                <option th:each="item, loop : ${divisionList}"
+                                                        th:text="${item.divisionName}"
+                                                        th:value="${item.divisionId}"></option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-success" id="btnSaveCreate">Save</button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabelEdit">Edit Employee</h5>
+                <button type="button" class="btn-close btnCloseEdit" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="text-danger" id="tableInputNameEdit"></div>
+                    <div id="contactFormEdit">
+                        <input type="hidden" id="employeeIdEdit">
+                        <!-- name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeNameEdit" type="text"
+                                   placeholder="Enter your name..."/>
+                            <label for="employeeNameEdit">Employee name</label>
+                        </div>
+                        <!-- birthday input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeBirthdayEdit" type="date"
+                                   placeholder="Enter your birthday..."/>
+                            <label for="employeeBirthdayEdit">Birthday</label>
+                        </div>
+                        <!-- idCard input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeIdCardEdit" type="text"
+                                   placeholder="Enter your id card..."/>
+                            <label for="employeeIdCardEdit">Id Card</label>
+                        </div>
+                        <!-- phoneNumber input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeePhoneEdit" type="text"
+                                   placeholder="Enter your phone number..."/>
+                            <label for="employeePhoneEdit">Phone Number</label>
+                        </div>
+                        <!-- email input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeEmailEdit" type="text"
+                                   placeholder="Enter your email..."/>
+                            <label for="employeeEmailEdit">Email</label>
+                        </div>
+                        <!-- salary input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeSalaryEdit" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeeSalaryEdit">Salary</label>
+                        </div>
+                        <!-- Address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="employeeAddressEdit" type="text"
+                                   placeholder="Enter your salary..."/>
+                            <label for="employeeAddressEdit">Address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;" id="educationDegreeEdit">
+                                <option th:each="item, loop : ${educationDegreeList}"
+                                        th:text="${item.educationDegreeName}"
+                                        th:value="${item.educationDegreeId}"
+                                        th:id="'educationDegreeEdit' + ${item.educationDegreeId}"></option>
+                            </select>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;" id="positionEdit">
+                                <option th:each="item, loop : ${positionList}"
+                                        th:text="${item.positionName}" th:value="${item.positionId}"
+                                        th:id="'positionEdit' + ${item.positionId}"></option>
+                            </select>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;" id="divisionEdit">
+                                <option th:each="item, loop : ${divisionList}"
+                                        th:text="${item.divisionName}" th:value="${item.divisionId}"
+                                        th:id="'divisionEdit' + ${item.divisionId}"></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" id="btnSaveEdit">Save</button>
+                    <button type="button" class="btn btn-outline-secondary btnCloseEdit"
+                            data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Footer-->
+<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 
 </script>
 
 <script>
-    let totalPageTemp = 0;
-    let curPage = 0;
-    function showListEmployee(pageNumber, searchParam) {
+    function getPageEmployee(pageNumber, searchParam) {
         $.ajax({
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             type: "GET", //GET, DELETE, PUT...
-            url: "http://localhost:8080/rest/employee/home?page=" + pageNumber + "&searchValue=" + searchParam,
-            success: function (pageEmployee) {
-                totalPageTemp = pageEmployee.totalPages;
-                let employeeTable = "";
-                for (let i = 0; i < pageEmployee.content.length; i++) {
-                    employeeTable += `<tr>
-        <td>${pageEmployee.content[i].employeeId}</td>
-        <td>${pageEmployee.content[i].employeeName}</td>
-        <td>${pageEmployee.content[i].employeeBirthday}</td>
-        <td>${pageEmployee.content[i].employeeIdCard}</td>
-        <td>${pageEmployee.content[i].employeeSalary}</td>
-        <td>${pageEmployee.content[i].employeePhone}</td>
-        <td>${pageEmployee.content[i].employeeEmail}</td>
-        <td>${pageEmployee.content[i].employeeAddress}</td>
-        <td>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCreate${pageEmployee.content[i].employeeId}">
-          Delete
-        </button>
-        <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCreate${pageEmployee.content[i].employeeId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title text-warning" id="exampleModalLabel">FBI Warning!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    Do you want to delete smartphone ${pageEmployee.content[i].employeeName} with id = ${pageEmployee.content[i].employeeId}
-                    </div>
-                    <div class="modal-footer">
-                    <a href="${pageEmployee.content[i].employeeId}" class="btn btn-outline-success" id="btnDelete" data-bs-dismiss="modal">Success</a>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+            url: "http://localhost:8080/rest/employee?page=" + pageNumber + "&searchValue=" + searchParam,
+            success: function (employeePage) {
+                let employeeBodyHTML = "";
+
+                for (let i = 0; i < employeePage.content.length; i++) {
+                    employeeBodyHTML += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${employeePage.content[i].employeeId}</td>
+                    <td>${employeePage.content[i].employeeName}</td>
+                    <td>${employeePage.content[i].employeeBirthday}</td>
+                    <td>${employeePage.content[i].employeeSalary}</td>
+                    <td>${employeePage.content[i].employeePhone}</td>
+                    <td>${employeePage.content[i].employeeAddress}</td>
+                    <td>
+                    <a href="${employeePage.content[i].employeeId}" class="btn btn-outline-warning" id="btnEdit">
+                    Edit
+                    </a>
                     </td>
                     <td>
                         <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModalEdit${pageEmployee.content[i].employeeId}">
-                    Edit
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropDelete${employeePage.content[i].employeeId}">
+                    Delete
                     </button>
                         <!-- Modal -->
-                    <div class="modal fade" id="exampleModalEdit${pageEmployee.content[i].employeeId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal fade" id="staticBackdropDelete${employeePage.content[i].employeeId}" data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                     <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Employee</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title fw-bold text-danger" id="staticBackdropLabel">FBI
+                    Warning!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <input type="hidden" class="form-control" id="employeeIdEdit" value="${pageEmployee.content[i].employeeId}">
-                    <label for="model" class="form-label">Employee Name</label>
-                    <input type="text" class="form-control" id="employeeNameEdit" value="${pageEmployee.content[i].employeeName}">
-                    <label for="price" class="form-label">Employee Birthday</label>
-                    <input type="text" class="form-control" id="employeeBirthdayEdit" value="${pageEmployee.content[i].employeeBirthday}">
-                    <label for="producer" class="form-label">Employee Id Card</label>
-                    <input type="text" class="form-control" id="employeeIdCardEdit" value="${pageEmployee.content[i].employeeIdCard}">
-                    <label for="producer" class="form-label">Employee Salary</label>
-                    <input type="text" class="form-control" id="employeeSalaryEdit" value="${pageEmployee.content[i].employeeSalary}">
-                     <label for="producer" class="form-label">Employee Phone</label>
-                    <input type="text" class="form-control" id="employeePhoneEdit" value="${pageEmployee.content[i].employeePhone}">
-                    <label for="producer" class="form-label">Employee Email</label>
-                    <input type="text" class="form-control" id="employeeEmailEdit" value="${pageEmployee.content[i].employeeEmail}">
-                     <label for="producer" class="form-label">Employee Address</label>
-                    <input type="text" class="form-control" id="employeeAddressEdit" value="${pageEmployee.content[i].employeeAddress}">
-                    <label for="producer" class="form-label">Position</label>
-                    <input type="text" class="form-control" id="positionEdit" value="${pageEmployee.content[i].position}">
-                    <label for="producer" class="form-label">Education Degree</label>
-                    <input type="text" class="form-control" id="educationDegreeEdit" value="${pageEmployee.content[i].educationDegree}">
-                    <label for="producer" class="form-label">Division</label>
-                    <input type="text" class="form-control" id="divisionEdit" value="${pageEmployee.content[i].division}">
+                    Do you want to delete employee ${employeePage.content[i].employeeName} with id = ${employeePage.content[i].employeeId} ?
                     </div>
                     <div class="modal-footer">
-                    <a href="${pageEmployee.content[i].employeeId}" class="btn btn-outline-success" id="btnEdit" data-bs-dismiss="modal">Success</a>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="${employeePage.content[i].employeeId}" type="button" class="btn btn-outline-primary" id="btnDelete">Submit</a>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Close
+                    </button>
                     </div>
                     </div>
                     </div>
                     </div>
                     </td>
-                    </tr>`;
+                    </tr>`
+                    ;
                 }
-
-                let paginationTable = "";
+                let pagination = "";
+                pagination +=
+                    `<div class="container mt-3">`
+                pagination +=
+                    `<ul class="pagination float-end">`
+                ;
                 switch (Number(pageNumber)) {
                     case 0:
-                        paginationTable += `<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>`;
+                        pagination +=
+                            `<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>`
                         break;
                     default:
-                        paginationTable += `<li class="page-item "><a class="page-link" href="` + pageNumber + `" id="aPrevious">Previous</a></li>`;
+                        pagination +=
+                            `<li class="page-item"><a class="page-link" id="aPrevious" href="${employeePage.number}">Previous</a></li>`
                         break;
                 }
-                for (let i = 0; i < pageEmployee.totalPages; i++) {
-                    switch (Number(i)){
+                for (let i = 0; i < employeePage.totalPages; i++) {
+                    switch (Number(i)) {
                         case Number(pageNumber):
-                            curPage = i;
-                            paginationTable += `<li class="page-item active"><a class="page-link" id="aItem" href="`+ i +`">`+ (i + 1) +`</a></li>`;
+                            pagination +=
+                                `<li class="page-item active"><a class="page-link" id="aItem" href="` + i + `">`
+                                + (i + 1) +
+                                `</a></li>`
                             break;
                         default:
-                            paginationTable += `<li class="page-item"><a class="page-link" id="aItem" href="`+ i +`">`+ (i + 1) +`</a></li>`;
+                            pagination +=
+                                `<li class="page-item"><a class="page-link" id="aItem" href="` + i + `">`
+                                + (i + 1) +
+                                `</a></li>`
                             break;
                     }
                 }
-                switch (Number(pageNumber)) {
-                    case pageEmployee.totalPages = (Number(pageEmployee.totalPages) <= 0) ? 0 : Number((pageEmployee.totalPages - 1)):
-                        paginationTable += `<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>`;
+                switch (Number(employeePage.number)) {
+                    case employeePage.totalPages = (Number(employeePage.totalPages <= 0) ? 0 : Number(employeePage.totalPages - 1)):
+                        pagination +=
+                            `<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>`
                         break;
                     default:
-                        paginationTable += `<li class="page-item "><a class="page-link" href="`+ pageNumber +`" id="aNext">Next</a></li>`;
+                        pagination +=
+                            `<li class="page-item"><a class="page-link" id="aNext" href="${employeePage.number}">Next</a></li>`
                         break;
                 }
-                $("#paginationTableBody").html(paginationTable);
-                $("#employeeTableBody").html(employeeTable);
-            },
+                pagination +=
+                    `</ul>`
+                pagination += `
+         </div>
+                    `;
+                $("#employeeTableBody").html(employeeBodyHTML);
+                $("#paginationTable").html(pagination);
+            }
+            ,
             error: function (resultError) {
-                console.log(resultError)
+                console.log('Co loi xay ra');
             }
         });
     }
+        getPageEmployee(0, "");
 
-        showListEmployee(0, "");
-
-        $("#btnCreate").click(function () {
-            let employeeName = $('#employeeName').val();
-            let employeeBirthday = $('#employeeBirthday').val();
-            let employeeIdCard = $('#employeeIdCard').val();
-            let employeeSalary = $('#employeeSalary').val();
-            let employeePhone = $('#employeePhone').val();
-            let employeeEmail = $('#employeeEmail').val();
-            let employeeAddress = $('#employeeAddress').val();
-            let positionId = $('#positionId').val();
-            let educationDegreeId = $('#educationDegreeId').val();
-            let divisionId = $('#divisionId').val();
-            let newEmployee = {
-                employeeName: employeeName,
-                employeeBirthday: employeeBirthday,
-                employeeIdCard: employeeIdCard,
-                employeeSalary: employeeSalary,
-                employeePhone: employeePhone,
-                employeeEmail: employeeEmail,
-                employeeAddress: employeeAddress,
-                positionId: positionId,
-                educationDegreeId: educationDegreeId,
-                divisionId: divisionId
-            };
-
-
+        $("#btnSaveCreate").click(function () {
+            let eName = $("#employeeName").val();
+            let eBirthday = $("#employeeBirthday").val();
+            let eIdCard = $("#employeeIdCard").val();
+            let ePhoneNumber = $("#employeePhone").val();
+            let eEmail = $("#employeeEmail").val();
+            let eSalary = $("#employeeSalary").val();
+            let eAddress = $("#employeeAddress").val();
+            let eEducationDegree = $("#educationDegree").val();
+            let eDivision = $("#division").val();
+            let ePosition = $("#position").val();
+            let employeeObj = {
+                "employeeName": eName,
+                "employeeBirthday": eBirthday,
+                "employeeIdCard": eIdCard,
+                "employeePhone": ePhoneNumber,
+                "employeeEmail": eEmail,
+                "employeeSalary": eSalary,
+                "employeeAddress": eAddress,
+                "educationDegree": {
+                    "educationDegreeId": eEducationDegree
+                },
+                "division": {
+                    "divisionId": eDivision
+                },
+                "position": {
+                    "positionId": ePosition
+                },
+            }
             $.ajax({
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 type: "POST", //GET, DELETE, PUT...
-                url: "http://localhost:8080/rest/employee/",
-                data: JSON.stringify(newEmployee),
-                success: function (resultSuccess) {
+                url: "http://localhost:8080/rest/employee/create",
+                data: JSON.stringify(employeeObj),
+                success: function (employeePage) {
                     $("#employeeName").val("");
                     $("#employeeBirthday").val("");
                     $("#employeeIdCard").val("");
-                    $("#employeeSalary").val("");
                     $("#employeePhone").val("");
                     $("#employeeEmail").val("");
+                    $("#employeeSalary").val("");
                     $("#employeeAddress").val("");
-                    $("#positionId").val("");
-                    $("#educationDegreeId").val("");
-                    $("#divisionId").val("");
-                    showListEmployee((totalPageTemp-1), searchValue);
+                    $("#division").val("");
+                    $("#educationDegree").val("");
+                    $("#position").val("");
+                    $("#staticBackdropCreate").modal("hide");
+                    getPageEmployee(0, "");
                 },
                 error: function (resultError) {
-                    console.log(resultError)
+                    console.log('Co loi xay ra');
                 }
             });
         })
-
         $(document).ready(function () {
-            $("#employeeTableBody").on('click', '#btnDelete', function (event) {
-                let searchValue = $("#searchVal").val();
+            $("#employeeTableBody").on("click", "#btnDelete", function (event) {
                 let idDelete = $(this).attr("href");
-                $.ajax({
-                    type: "DELETE",
-                    //tên API
-                    url: "http://localhost:8080/rest/employee/" + idDelete,
-                    //xử lý khi thành công
-                    success: function (data) {
-                        $(this).parent().parent().remove();
-                        showListEmployee(curPage, searchValue);
-                    }
-                });
                 event.preventDefault();
-            })
-        });
-        $(document).ready(function () {
-            $("#employeeTableBody").on('click', '#btnEdit', function (event) {
-                let searchValue = $("#searchVal").val();
-                let employeeIdEdit = $(this).attr("href");
-                event.preventDefault();
-                let employeeNameE = $("#exampleModalEdit" + employeeIdEdit + " #employeeNameEdit").val();
-                let employeeBirthdayE = $("#exampleModalEdit" + employeeIdEdit + " #employeeBirthdayEdit").val();
-                let employeeIdCardE = $("#exampleModalEdit" + employeeIdEdit + " #employeeIdCardEdit").val();
-                let employeeSalaryE = $("#exampleModalEdit" + employeeIdEdit + " #employeeSalaryEdit").val();
-                let employeePhoneE = $("#exampleModalEdit" + employeeIdEdit + " #employeePhoneEdit").val();
-                let employeeEmailE = $("#exampleModalEdit" + employeeIdEdit + " #employeeEmailEdit").val();
-                let employeeAddressE = $("#exampleModalEdit" + employeeIdEdit + " #employeeAddressEdit").val();
-                let positionE = $("#exampleModalEdit" + employeeIdEdit + " #positionEdit").val();
-                let educationDegreeE = $("#exampleModalEdit" + employeeIdEdit + " #educationDegreeEdit").val();
-                let divisionE = $("#exampleModalEdit" + employeeIdEdit + " #divisionEdit").val();
-
-                let employee = {
-                    employeeId: employeeIdEdit,
-                    employeeName: employeeNameE,
-                    employeeBirthday: employeeBirthdayE,
-                    employeeIdCard: employeeIdCardE,
-                    employeeSalary: employeeSalaryE,
-                    employeePhone: employeePhoneE,
-                    employeeEmail: employeeEmailE,
-                    employeeAddress: employeeAddressE,
-                    positionE: positionE,
-                    educationDegree: educationDegreeE,
-                    division: divisionE,
-                }
                 $.ajax({
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    type: "POST", //GET, DELETE, PUT...
-                    url: "http://localhost:8080/rest/employee/",
-                    data: JSON.stringify(employee),
+                    type: "DELETE", //GET, DELETE, PUT...
+                    url: "http://localhost:8080/rest/employee/delete/" + idDelete,
                     success: function (resultSuccess) {
-                        showListEmployee(curPage, searchValue);
+                        $("#staticBackdropDelete" + idDelete).modal("hide");
+                        getPageEmployee(0, "");
                     },
                     error: function (resultError) {
-                        console.log(resultError)
+                        console.log('Co loi xay ra');
                     }
                 });
             })
         })
         $(document).ready(function () {
-            $("#paginationTableBody").on('click', '#aNext', function (event) {
-                let numberPage = $(this).attr("href");
-                let searchValue = $("#searchVal").val();
-                numberPage++;
+            $("#employeeTableBody").on("click", "#btnEdit", function (event) {
+                let idEdit = $(this).attr("href");
                 event.preventDefault();
-                showListEmployee(numberPage, searchValue);
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "GET", //GET, DELETE, PUT...
+                    url: "http://localhost:8080/rest/employee/edit/" + idEdit,
+                    success: function (employee) {
+                        $("#employeeIdEdit").val(employee.employeeId);
+                        $("#employeeNameEdit").val(employee.employeeName);
+                        $("#employeeBirthdayEdit").val(employee.employeeBirthday);
+                        $("#employeeIdCardEdit").val(employee.employeeIdCard);
+                        $("#employeePhoneEdit").val(employee.employeePhone);
+                        $("#employeeEmailEdit").val(employee.employeeEmail);
+                        $("#employeeSalaryEdit").val(employee.employeeSalary);
+                        $("#employeeAddressEdit").val(employee.employeeAddress);
+                        let educationDegreeEditId = "educationDegreeEdit" + employee.educationDegree.educationDegreeId;
+                        let positionEditId = "positionEdit" + employee.position.positionId;
+                        let divisionEditId = "divisionEdit" + employee.division.divisionId;
+                        document.getElementById(educationDegreeEditId).setAttribute("selected", "");
+                        document.getElementById(positionEditId).setAttribute("selected", "");
+                        document.getElementById(divisionEditId).setAttribute("selected", "");
+                        $(".btnCloseEdit").click(function (event) {
+                            document.getElementById(educationDegreeEditId).removeAttribute("selected");
+                            document.getElementById(positionEditId).removeAttribute("selected");
+                            document.getElementById(divisionEditId).removeAttribute("selected");
+                        })
+                        $("#staticBackdropEdit").modal("show");
+                    },
+                    error: function (resultError) {
+                        console.log('Co loi xay ra');
+                    }
+                });
             })
         })
-        $(document).ready(function () {
-            $("#paginationTableBody").on('click', '#aPrevious', function (event) {
-                let numberPage = $(this).attr("href");
-                let searchValue = $("#searchVal").val();
-                numberPage--;
-                event.preventDefault();
-                showListEmployee(numberPage, searchValue);
-            })
+        $("#btnSaveEdit").click(function () {
+            let eId = $("#employeeIdEdit").val();
+            let eName = $("#employeeNameEdit").val();
+            let eBirthday = $("#employeeBirthdayEdit").val();
+            let eIdCard = $("#employeeIdCardEdit").val();
+            let ePhoneNumber = $("#employeePhoneEdit").val();
+            let eEmail = $("#employeeEmailEdit").val();
+            let eSalary = $("#employeeSalaryEdit").val();
+            let eAddress = $("#employeeAddressEdit").val();
+            let eEducationDegree = $("#educationDegreeEdit").val();
+            let eDivision = $("#divisionEdit").val();
+            let ePosition = $("#positionEdit").val();
+            let employeeObj = {
+                "employeeId": eId,
+                "employeeName": eName,
+                "employeeBirthday": eBirthday,
+                "employeeIdCard": eIdCard,
+                "employeePhone": ePhoneNumber,
+                "employeeEmail": eEmail,
+                "employeeSalary": eSalary,
+                "employeeAddress": eAddress,
+                "educationDegree": {
+                    "educationDegreeId": eEducationDegree
+                },
+                "division": {
+                    "divisionId": eDivision
+                },
+                "position": {
+                    "positionId": ePosition
+                },
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "PUT", //GET, DELETE, PUT...
+                url: "http://localhost:8080/rest/employee/edit",
+                data: JSON.stringify(employeeObj),
+                success: function (studentPage) {
+                    getPageEmployee(0, "");
+                    $("#staticBackdropEdit").modal("hide");
+                },
+                error: function (resultError) {
+                    console.log('Co loi xay ra');
+                }
+            });
         })
-        $(document).ready(function () {
-            $("#paginationTableBody").on('click', '#aItem', function (event) {
-                let numberPage = $(this).attr("href");
-                let searchValue = $("#searchVal").val();
-                event.preventDefault();
-                showListEmployee(numberPage, searchValue);
-            })
-        })
-        $("#btnSearch").click(function () {
-            let searchValue = $("#searchVal").val();
-            showListEmployee(0, searchValue);
-        })
-        $("#btnHome").click(function (event) {
-            showListEmployee(0, "");
-            $("#searchVal").val("");
+        $("#paginationTable").on("click", "#aNext", function (event) {
+            let numberPage = $(this).attr("href");
+            numberPage++;
             event.preventDefault();
+            getPageEmployee(numberPage, "");
+        })
+        $("#paginationTable").on("click", "#aPrevious", function (event) {
+            let numberPage = $(this).attr("href");
+            numberPage--;
+            event.preventDefault();
+            getPageEmployee(numberPage, "");
+        })
+        $("#paginationTable").on("click", "#aItem", function (event) {
+            let numberPage = $(this).attr("href");
+            event.preventDefault();
+            getPageEmployee(numberPage, "");
+        })
+        $("#btnSearch").click(function (event) {
+            let searchValue = $("#inputSearch").val();
+            getPageEmployee(0, searchValue);
         })
 </script>
-
-
-<!--Create  Modal-->
-
-<!--<div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"-->
-<!--     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title" id="staticBackdropLabelCreate">Create New Employee</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal"-->
-<!--                        aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <div class="container-fluid">-->
-<!--                    <div class="text-danger" id="tableInputName"></div>-->
-<!--                    <form id="contactForm" method="post" action="/employee/create">-->
-<!--                        &lt;!&ndash; name input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeName" type="text"-->
-<!--                                   placeholder="Enter your name..."/>-->
-<!--                            <label for="employeeName">Employee Name</label>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; birthday input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeBirthday" type="date"-->
-<!--                                   placeholder="Enter your birthday..."/>-->
-<!--                            <label for="employeeBirthday">employee Birth day</label>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; idCard input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeIdCard" type="text"-->
-<!--                                   placeholder="Enter your id card..."/>-->
-<!--                            <label for="employeeIdCard">Employee Id Card</label>-->
-<!--                        </div>-->
-
-
-<!--                        &lt;!&ndash; salary input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeSalary" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeSalary">Employee Salary</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeePhone" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeePhone">Employee Salary</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeEmail" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeEmail">Employee Email</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeAddress" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeAddress">Employee Address</label>-->
-<!--                        </div>-->
-
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;" id="positionId">-->
-<!--                                <option th:each="item,loop : ${positions}"-->
-<!--                                        th:text="${item.positionName}"-->
-<!--                                        th:value="${item.positionId}">-->
-
-<!--                                </option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;" id="educationDegreeId">-->
-<!--                                <option th:each="item,loop : ${educationDegrees}"-->
-<!--                                        th:text="${item.educationDegreeName}"-->
-<!--                                        th:value="${item.educationDegreeId}">-->
-
-<!--                                </option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;" id="divisionId">-->
-<!--                                <option th:each="item,loop : ${divisions}"-->
-<!--                                        th:text="${item.divisionName}"-->
-<!--                                        th:value="${item.divisionId}">-->
-
-<!--                                </option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-<!--                        &lt;!&ndash; Submit Button&ndash;&gt;-->
-<!--                        <div class="row text-center">-->
-<!--                            <div class=" col-6">-->
-<!--                                <button class="btn btn-outline-success" type="submit" value="Add" id="btnCreate">-->
-<!--                                    Save-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                            <div class="col-6">-->
-<!--                                <button type="button" class="btn btn-outline-secondary"-->
-<!--                                        data-bs-dismiss="modal">Close-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash;Edit Modal&ndash;&gt;-->
-<!--<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false"-->
-<!--     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title" id="staticBackdropLabelEdit">Edit Employee</h5>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal"-->
-<!--                        aria-label="Close"></button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <div class="container-fluid">-->
-<!--                    <div class="text-danger" id="tableInputNameEdit"></div>-->
-<!--                    <form id="contactFormEdit" method="post" action="/employee/edit">-->
-<!--                        &lt;!&ndash; name input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeNameEdit" type="text"-->
-<!--                                   placeholder="Enter your name..."/>-->
-<!--                            <label for="employeeName">Employee Name</label>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; birthday input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeBirthdayEdit" type="date"-->
-<!--                                   placeholder="Enter your birthday..."/>-->
-<!--                            <label for="employeeBirthday">employee Birth day</label>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; idCard input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeIdCardEdit" type="text"-->
-<!--                                   placeholder="Enter your id card..."/>-->
-<!--                            <label for="employeeIdCard">Employee Id Card</label>-->
-<!--                        </div>-->
-
-
-<!--                        &lt;!&ndash; salary input&ndash;&gt;-->
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeSalaryEdit" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeSalary">Employee Salary</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeePhoneEdit" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeePhone">Employee Salary</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeEmailEdit" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeEmail">Employee Email</label>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <input class="form-control" id="employeeAddressEdit" type="text"-->
-<!--                                   placeholder="Enter your salary..."/>-->
-<!--                            <label for="employeeAddress">Employee Address</label>-->
-<!--                        </div>-->
-
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;">-->
-<!--                                <option th:each="item,loop : ${positions}"-->
-<!--                                        th:text="${item.positionName}"-->
-<!--                                        th:value="${item.positionId}"></option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;">-->
-<!--                                <option th:each="item,loop : ${educationDegrees}"-->
-<!--                                        th:text="${item.educationDegreeName}"-->
-<!--                                        th:value="${item.educationDegreeId}"></option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-<!--                        <div class="form-floating mb-2">-->
-<!--                            <select class="form-select" aria-label="Default select example"-->
-<!--                                    style="padding-top: 0.625rem !important;">-->
-<!--                                <option th:each="item,loop : ${divisions}"-->
-<!--                                        th:text="${item.divisionName}"-->
-<!--                                        th:value="${item.divisionId}"></option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-
-
-<!--                        &lt;!&ndash; Submit Button&ndash;&gt;-->
-<!--                        <div class="row text-center">-->
-<!--                            <div class=" col-6 ">-->
-<!--                                <button class="btn btn-outline-success" id="submitEmployee"-->
-<!--                                        type="submit">-->
-<!--                                    Save-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                            <div class="col-6">-->
-<!--                                <button type="button" class="btn btn-outline-secondary"-->
-<!--                                        data-bs-dismiss="modal">Close-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-
-<!--<script type="text/javascript">-->
-
-<!--    $("#btnCreate").click(function () {-->
-<!--        let employeeName = $('#employeeName').val();-->
-<!--        let employeeBirthday = $('#employeeBirthday').val();-->
-<!--        let employeeIdCard = $('#employeeIdCard').val();-->
-<!--        let employeeSalary = $('#employeeSalary').val();-->
-<!--        let employeePhone = $('#employeePhone').val();-->
-<!--        let employeeEmail = $('#employeeEmail').val();-->
-<!--        let employeeAddress = $('#employeeAddress').val();-->
-<!--        let positionId = $('#positionId').val();-->
-<!--        let educationDegreeId = $('#educationDegreeId').val();-->
-<!--        let divisionId = $('#employeeAddress').val();-->
-<!--        let newEmployee = {-->
-<!--            employeeName: employeeName,-->
-<!--            employeeBirthday: employeeBirthday,-->
-<!--            employeeIdCard: employeeIdCard,-->
-<!--            employeeSalary: employeeSalary,-->
-<!--            employeePhone: employeePhone,-->
-<!--            employeeEmail: employeeEmail,-->
-<!--            employeeAddress: employeeAddress,-->
-<!--            positionId: positionId,-->
-<!--            educationDegreeId: educationDegreeId,-->
-<!--            divisionId: divisionId-->
-<!--            };-->
-
-<!--        $.ajax({-->
-<!--            headers: {-->
-<!--                'Accept': 'application/json',-->
-<!--                'Content-Type': 'application/json'-->
-<!--            },-->
-<!--            type: "POST",-->
-<!--            url: "http://localhost:8080/rest/employee/create",-->
-<!--            data: JSON.stringify(newEmployee),-->
-<!--            success: function(resultSuccess){-->
-<!--                console.log(resultSuccess);-->
-<!--            }, error: function(resultError) {-->
-<!--                console.log('Co loi xay ra');-->
-<!--            }-->
-<!--        });-->
-<!--        console.log(newEmployee);-->
-<!--    })-->
-
-
-//     function getPageEmployee(pageNumber) {
-//         $.ajax({
-//             headers: {
-//                 'Accept': 'application/json',
-//                 'Content-Type': 'application/json'
-//             },
-//             type: "GET", //GET, DELETE, PUT...
-//             url: "http://localhost:8080/rest/employee/list?page=" + pageNumber,
-//             success: function(employeePage){
-//                 console.log(employeePage);
-//                 let employeeBodyHTML = "";
-//
-<!--//                 for (let i = 0; i < employeePage.content.length; i++) {-->
-<!--//                     employeeBodyHTML += `<tr>-->
-<!--//                         <td>${i}</td>-->
-<!--// &lt;!&ndash;                        <td>${employeePage.content[i].employeeId}</td>&ndash;&gt;-->
-<!--//                         <td>${employeePage.content[i].employeeName}</td>-->
-<!--//                         <td>${employeePage.content[i].employeeBirthday}</td>-->
-<!--//                         <td>${employeePage.content[i].employeeSalary}</td>-->
-<!--//                         <td>${employeePage.content[i].employeePhone}</td>-->
-<!--//                         <td>${employeePage.content[i].employeeAddress}</td>-->
-<!--//                         <td>-->
-<!--//                             <a href="#">Edit</a>-->
-<!--//                         </td>-->
-<!--//                         <td>-->
-<!--//                             <a href="#">Delete</a>-->
-<!--//                         </td>-->
-<!--//                     </tr>`;-->
-<!--//                 }-->
-//
-//                 $("#listEmployee").html(employeeBodyHTML);
-//             },
-//             error: function(resultError) {
-//                 console.log('Co loi xay ra');
-//             }
-//         });
-//     }
-//
-//     getPageEmployee(0);
-//
-//     let pageCur = 0;
-//
-//     $("#aPrevious").click(function() {
-//         if (pageCur > 0) {
-//             pageCur--;
-//             getPageEmployee(pageCur);
-//         } else {
-//             alert("Khong co trang truoc");
-//         }
-//     });
-//
-//     $("#aNext").click(function() {
-//         pageCur++;
-//         getPageEmployee(pageCur);
-//     });
-<!--</script>-->
-<th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
+</section>
+</div>
 <th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
 </body>
 </html>

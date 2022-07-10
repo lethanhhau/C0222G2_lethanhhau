@@ -1,4 +1,4 @@
-package com.hau.repository.Facility;
+package com.hau.repository;
 
 import com.hau.model.facility.Facility;
 import org.springframework.data.domain.Page;

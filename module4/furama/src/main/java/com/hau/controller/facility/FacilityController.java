@@ -36,12 +36,12 @@ public class FacilityController {
 
     @ModelAttribute("rentTypes")
     public List<RentType> rentTypes() {
-        return this.iRentTypeService.findAllRentType();
+        return this.iRentTypeService.findAll();
     }
 
     @ModelAttribute("facilityTypes")
     public List<FacilityType> facilityTypes() {
-        return this.iFacilityTypeService.findAllFacilityType();
+        return this.iFacilityTypeService.findAll();
     }
 
     @GetMapping("facility-list")

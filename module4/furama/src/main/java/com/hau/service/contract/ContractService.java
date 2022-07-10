@@ -1,8 +1,7 @@
 package com.hau.service.contract;
 
-import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
-import com.hau.repository.contract.IContractRepository;
+import com.hau.repository.IContractRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,8 +17,9 @@ public class ContractService implements IContractService{
     private IContractRepository iContractRepository;
 
     @Override
-    public Page<Contract> findAll(Pageable pageable, String searchValue) {
-        return this.iContractRepository.findByIdContract(pageable, "%" + searchValue + "%");
+    public Page<Contract> getAllContract(Pageable pageable) {
+        return this.iContractRepository.getAllContract(pageable);
+
     }
 
     @Override
@@ -34,11 +34,11 @@ public class ContractService implements IContractService{
 
     @Override
     public void remove(Integer id) {
-        this.iContractRepository.deleteById(id);
+        this.iContractRepository.delete(this.iContractRepository.getById(id));
     }
 
     @Override
-    public Iterable<Contract> findAll() {
+    public List<Contract> findAllContract() {
         return this.iContractRepository.findAll();
     }
 

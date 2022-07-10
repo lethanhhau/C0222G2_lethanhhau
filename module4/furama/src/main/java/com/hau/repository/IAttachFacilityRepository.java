@@ -1,4 +1,4 @@
-package com.hau.repository.attach_facility;
+package com.hau.repository;
 
 import com.hau.model.contract.AttachFacility;
 import org.springframework.data.jpa.repository.JpaRepository;

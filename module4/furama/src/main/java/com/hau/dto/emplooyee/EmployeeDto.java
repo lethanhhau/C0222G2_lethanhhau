@@ -9,6 +9,7 @@ import org.springframework.validation.Validator;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 
 public class EmployeeDto implements Validator {
@@ -29,6 +30,7 @@ public class EmployeeDto implements Validator {
     @NotNull
     @NotEmpty
     @NotBlank
+    @Pattern(regexp = "^((09)|(\\(84\\)\\+9))[0-1][0-9]{7}$", message = "Phone number must have 9 digits and start with 0 or 84!")
     private String employeePhone;
     @NotNull
     @NotEmpty
