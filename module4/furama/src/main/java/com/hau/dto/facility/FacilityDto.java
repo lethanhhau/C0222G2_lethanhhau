@@ -16,7 +16,7 @@ public class FacilityDto implements Validator {
     @NotNull
     @NotEmpty
     @NotBlank
-    @Pattern(regexp = "^[A-Z][a-z0-9]+||([A-Z][a-z0-9]+(\\ [A-Z][a-z0-9]+)+)$")
+    @Pattern(regexp = "^(([A-Z][a-z0-9]+)||([A-Z][a-z0-9]+(\\ [A-Z][a-z0-9]+)+))$")
     private String facilityName;
     @NotNull
     private Integer facilityArea;
@@ -26,15 +26,11 @@ public class FacilityDto implements Validator {
     private Integer maxPeople;
     private RentType rentType;
     private FacilityType facilityType;
-    @Value("null")
     private String standardRoom;
-    @Value("null")
     private String descriptionOtherConvenience;
-    @Value("0.0")
+
     private Double poolArea;
-    @Value("0")
     private Integer numberOfFloors;
-    @Value("null")
     private String facilityFree;
 
     public FacilityDto() {

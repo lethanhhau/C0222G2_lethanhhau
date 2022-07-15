@@ -31,6 +31,7 @@ public class Employee {
     @JoinColumn(name = "division_id", referencedColumnName = "divisionId")
     private Division division;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "employee")
     private List<Contract> contracts;
 

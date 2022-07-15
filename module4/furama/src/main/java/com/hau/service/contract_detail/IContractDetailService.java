@@ -7,4 +7,7 @@ import java.util.List;
 public interface IContractDetailService {
 
     List<ContractDetail> findAll();
+
+    ContractDetail saveDetailsContract(ContractDetail contractDetail);
+
 }

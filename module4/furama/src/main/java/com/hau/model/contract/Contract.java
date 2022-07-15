@@ -1,5 +1,6 @@
 package com.hau.model.contract;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hau.model.customer.Customer;
 import com.hau.model.employee.Employee;
 import com.hau.model.facility.Facility;
@@ -28,6 +29,7 @@ public class Contract {
     @JoinColumn(name = "facility_id",referencedColumnName = "facilityId")
     private Facility facility;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "contract")
     private List<ContractDetail> contractDetails;
 

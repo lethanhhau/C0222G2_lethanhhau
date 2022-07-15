@@ -36,7 +36,7 @@ public class FacilityService implements IFacilityService{
     }
 
     @Override
-    public List<Facility> findAllFacility() {
+    public List<Facility> findAll() {
         return this.iFacilityRepository.findAll();
     }
 

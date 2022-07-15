@@ -1,5 +1,6 @@
 package com.hau.model.customer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hau.model.contract.Contract;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", referencedColumnName = "customerTypeId")
     private CustomerType customerType;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customer")
     private List<Contract> contracts;
 

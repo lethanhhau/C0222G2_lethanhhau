@@ -1,6 +1,8 @@
 package com.hau.service.contract;
 
+import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
+import com.hau.model.contract.ContractDetail;
 import com.hau.model.customer.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,4 +20,7 @@ public interface IContractService {
     void remove(Integer id);
 
     List<Contract> findAllContract();
+
+    List<AttachFacility> getAllAttachFacility();
+
 }

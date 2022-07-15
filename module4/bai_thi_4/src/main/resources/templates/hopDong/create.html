@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{bootstrap-css :: bootstrapCss123}"></th:block>
+</head>
+<body>
+<div class="p-3 text-center bg-image"
+     style="height: 50px;">
+    <div class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-success">
+                <h1 class="mb-3">Them Moi Hop Dong</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form action="/hopDong/create" method="post" th:object="${hopDongDto}">
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Ma Hop Dong:</label>
+            <input type="text" class="form-control" placeholder="Enter Ma Hop Dong" th:field="*{maHopDong}">
+        </div>
+        <div style="color: red" th:errors = "*{maHopDong}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Ma Phong:(select one):</label>
+            <select class="form-select" th:field="*{phongTro}">
+                <option th:each="item,loop : ${phongTroList}" th:text="${item.maPhong}" th:value="${item.idPhong}"></option>
+            </select>
+
+        </div>
+
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">ten Nguoi Thue:</label>
+            <input type="text" class="form-control" placeholder="Enter ten Nguoi Thue" th:field="*{tenNguoiThue}">
+        </div>
+
+        <div style="color: red" th:errors = "*{tenNguoiThue}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">So CMND:</label>
+            <input type="text" class="form-control" placeholder="Enter So CMND" th:field="*{chungMinhNhanDan}">
+        </div>
+
+        <div style="color: red" th:errors = "*{chungMinhNhanDan}"></div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Ngay Lam Hop Dong:</label>
+            <input type="date" class="form-control" placeholder="Enter gay Lam Hop Dong" th:field="*{ngayLamHopDong}">
+        </div>
+
+        <div style="color: red" th:errors = "*{ngayLamHopDong}"></div>
+
+        <div class="mb-3 mt-3">
+
+            <label class="form-label h6">Thoi Gian Thue:(select one):</label>
+            <select class="form-select" th:field="*{thoiGianThue}">
+                <option value="3 Thang" >3 Thang</option>
+                <option value="6 Thang">6 Thang</option>
+                <option value="12 Thang">12 Thang</option>
+            </select>
+        </div>
+
+        <div style="color: red" th:errors = "*{thoiGianThue}"></div>
+
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+        <a href="/hopDong-list" class="btn btn-outline-secondary">Back home</a>
+    </form>
+</div>
+</div>
+<th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
+</body>
+</html>

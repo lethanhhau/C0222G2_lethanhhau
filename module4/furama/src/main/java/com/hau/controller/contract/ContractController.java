@@ -4,13 +4,13 @@ import com.hau.dto.contract.ContractDto;
 import com.hau.dto.customer.CustomerDto;
 import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
-import com.hau.model.contract.ContractDetail;
 import com.hau.model.customer.Customer;
+import com.hau.model.employee.Employee;
 import com.hau.model.facility.Facility;
 import com.hau.service.attach_facility.IAttachFacilityService;
 import com.hau.service.contract.IContractService;
-import com.hau.service.contract_detail.IContractDetailService;
 import com.hau.service.customer.ICustomerService;
+import com.hau.service.employee.IEmployeeService;
 import com.hau.service.facility.IFacilityService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,49 +25,48 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 
 @Controller
 public class ContractController {
 
     @Autowired
+    private ICustomerService customerService;
+
+    @Autowired
+    private IFacilityService facilityService;
+
+    @Autowired
+    private IAttachFacilityService attachFacilityService;
+
+    @Autowired
+    private IEmployeeService employeeService;
+
+    @Autowired
     private IContractService iContractService;
 
-    @Autowired
-    private ICustomerService iCustomerService;
+    @ModelAttribute("customerList")
+    public List<Customer> getAllCustomer() {
+        return this.customerService.findAll();
+    }
 
-    @Autowired
-    private IFacilityService iFacilityService;
-
-    @Autowired
-    private IAttachFacilityService iAttachFacilityService;
-
-    @Autowired
-    private IContractDetailService iContractDetailService;
-
-    @ModelAttribute("contractDetails")
-    public List<ContractDetail> getAllContractDetail() {
-        return this.iContractDetailService.findAll();
+    @ModelAttribute("facilityList")
+    public List<Facility> getAllFacility() {
+        return this.facilityService.findAll();
     }
 
     @ModelAttribute("attachFacilityList")
     public List<AttachFacility> getAllAttachFacility() {
-        return this.iAttachFacilityService.findAll();
+        return this.attachFacilityService.findAll();
     }
 
-    @ModelAttribute("customers")
-    public List<Customer> getAllCustomer() {
-        return this.iCustomerService.findAllCustomer();
-    }
-
-    @ModelAttribute("facilities")
-    public List<Facility> getAllFacility() {
-        return  this.iFacilityService.findAllFacility();
+    @ModelAttribute("employeeList")
+    public List<Employee> getAllEmployee () {
+        return this.employeeService.findAll();
     }
 
     @GetMapping("/contract-list")
-    public String goHomeContract(@PageableDefault(value = 5) Pageable pageable, Model model){
+    public String goHomeCustomer(@PageableDefault(value = 5) Pageable pageable, Model model){
         Page<Contract> contracts = this.iContractService.getAllContract(pageable);
         model.addAttribute("contracts", contracts);
         return "contract/list";

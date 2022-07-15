@@ -16,5 +16,7 @@ public interface IFacilityService {
 
     void remove(Integer id);
 
-    List<Facility> findAllFacility();
+    List<Facility> findAll();
+
+
 }

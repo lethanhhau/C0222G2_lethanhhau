@@ -1,7 +1,11 @@
 package com.hau.service.contract;
 
+import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
+import com.hau.model.contract.ContractDetail;
 import com.hau.repository.IContractRepository;
+import com.hau.service.attach_facility.IAttachFacilityService;
+import com.hau.service.contract_detail.IContractDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,6 +19,12 @@ public class ContractService implements IContractService{
 
     @Autowired
     private IContractRepository iContractRepository;
+
+    @Autowired
+    private IContractDetailService iContractDetailService;
+
+    @Autowired
+    private IAttachFacilityService iAttachFacilityService;
 
     @Override
     public Page<Contract> getAllContract(Pageable pageable) {
@@ -40,6 +50,11 @@ public class ContractService implements IContractService{
     @Override
     public List<Contract> findAllContract() {
         return this.iContractRepository.findAll();
+    }
+
+    @Override
+    public List<AttachFacility> getAllAttachFacility() {
+        return this.iAttachFacilityService.findAll();
     }
 
 

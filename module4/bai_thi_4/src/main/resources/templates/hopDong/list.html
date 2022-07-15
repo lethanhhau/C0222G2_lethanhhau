@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{bootstrap-css :: bootstrapCss123}"></th:block>
+</head>
+<body>
+<header style="margin-top: 100px">
+    <div class="p-3 text-center bg-image"
+         style="height: 60px;">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-success">
+                    <h1 class="mb-3">Danh Sach Hop Dong</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-center" th:if="${success}">
+        <h3 th:utext="${success}" style="color: blue"></h3>
+    </div>
+    <div class="text-center" th:if="${msgDelete}">
+        <h3 th:utext="${msgDelete}" style="color: blue;"></h3>
+    </div>
+    <div class="text-center" th:if="${msgEdit}">
+        <h3 th:utext="${msgEdit}" style="color: blue;"></h3>
+    </div>
+
+
+    <div class="container mt-3">
+        <nav class="navbar navbar-light bg-info">
+            <div class="container-fluid" style="height: 60px">
+                <a href="" th:href="@{/hopDong/create}" class="btn btn-outline-success btn-lg" role="button"  style="color: white">
+                    Tao Hop Dong
+                </a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" name="searchParam"
+                           placeholder="Search By Name"  aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="container mt-3">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Ma HD</th>
+            <th>Ma Phong</th>
+            <th>Ten Nguoi Thue</th>
+            <th>Ngay Lam HD</th>
+            <th>Thoi Gian Thue</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="hopDong, loop : ${hopDongs}">
+            <td th:text="${hopDong.maHopDong}"></td>
+            <td th:text="${hopDong.phongTro.maPhong}"></td>
+            <td th:text="${hopDong.tenNguoiThue}"></td>
+            <td th:text="${hopDong.ngayLamHopDong}"></td>
+            <td th:text="${hopDong.thoiGianThue}"></td>
+            <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        th:data-bs-target="'#staticBackdrop' + ${hopDong.id}">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" th:id="staticBackdrop + ${hopDong.id}" data-bs-backdrop="static"
+                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Ban co muon xoa hop dong co: <br>
+                                Ma hop dong:<span th:text="${hopDong.maHopDong} " class="text-warning"></span><br>
+                                Ma phong = <span th:text="${hopDong.phongTro.maPhong}" class="text-warning"></span>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="" th:href="@{/hopDong/delete/{id}(id=${hopDong.id})}"
+                                   class="btn btn-outline-success">Delete</a>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<th:block th:replace="~{bootstrap-css :: boostrapScript123}"></th:block>
+</body>
+</html>

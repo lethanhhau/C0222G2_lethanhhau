@@ -1,5 +1,6 @@
 package com.hau.model.facility;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.hau.model.contract.Contract;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Facility {
     private Integer numberOfFloors;
     private String facilityFree;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "facility")
     private List<Contract> contracts;
 

@@ -1,210 +1,217 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns: lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <th:block th:replace="~{bootstrap-css :: bootstrapCss}"></th:block>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{bootstrap-css :: bootstrapCss}"></th:block>
 </head>
 <body id="page-top">
-
 <header style="margin-top: 100px">
-  <div class="p-3 text-center bg-image"
-       style="height: 60px;">
-    <div class="mask">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-success">
-          <h1 class="mb-3">List Contract</h1>
+    <div class="p-3 text-center bg-image"
+         style="height: 60px;">
+        <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-success">
+                    <h1 class="mb-3">List Contract</h1>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="container mt-3">
-    <nav class="navbar navbar-light bg-info">
-      <div class="container-fluid" style="height: 60px">
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                data-bs-target="#staticBackdropCreate">
-          Create Contract
-        </button>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                 name="searchValue" id="inputSearch">
-          <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
-        </form>
-      </div>
-    </nav>
-  </div>
+    <div class="container mt-3">
+        <nav class="navbar navbar-light bg-info">
+            <div class="container-fluid" style="height: 60px">
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdropCreate">
+                    Create Contract
+                </button>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                           name="searchValue" id="inputSearch">
+                    <button class="btn btn-outline-success" type="submit" id="btnSearch">Search</button>
+
+                </form>
+            </div>
+        </nav>
+    </div>
 </header>
 
 <div class="container mt-3">
-  <table class="table table-hover">
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>Facility</th>
-      <th>Customer</th>
-      <th>Star tDay</th>
-      <th>End Day</th>
-      <th>Deposit</th>
-      <th>Total Money</th>
-      <th colspan="2">Attach Facility</th>
-    </tr>
-    </thead>
-    <tbody id="contractTableBody">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Facility</th>
+            <th>Customer</th>
+            <th>Start Day</th>
+            <th>End Day</th>
+            <th>Deposits</th>
+            <th>Total Money</th>
+            <th colspan="2">Action</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody id="contractTableBody">
 
-    </tbody>
-  </table>
-</div>
+        </tbody>
+    </table>
+    <div>
+        <div id="paginationTable">
 
-<!-- Modal Create -->
-<div class="container">
-        <div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
-             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabelCreate">Create Contract</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                  <div class="text-danger" id="tableInputNameEdit"></div>
-                  <form id="contactFormEdit" method="post" action="/contract/create">
-                    <!-- startDate input-->
-                    <div class="form-floating mb-3">
-                      <input class="form-control" id="startDate" type="date"
-                             placeholder="Enter your start date..."/>
-                      <label for="startDate">Start Date</label>
-                    </div>
-                    <!-- endDate input-->
-                    <div class="form-floating mb-3">
-                      <input class="form-control" id="endDate" type="date"
-                             placeholder="Enter your end date..."/>
-                      <label for="endDate">End Date</label>
-                    </div>
-                    <!-- deposit input-->
-                    <div class="form-floating mb-3">
-                      <input class="form-control" id="deposit" type="text"
-                             placeholder="Enter your deposit..."/>
-                      <label for="deposit">Deposit</label>
-                    </div>
-                    <!-- phoneNumber input-->
-                    <div class="form-floating mb-3">
-                      <input class="form-control" id="totalMoney" type="text" readonly/>
-                      <label for="totalMoney">Total Money</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <select class="form-select" aria-label="Default select example"
-                              style="padding-top: 0.625rem !important;" id="customer">
-                        <option th:each="item, loop : ${customerList}"
-                                th:text="${item.customerName}"
-                                th:value="${item.customerId}"></option>
-                      </select>
-                    </div>
-                    <div class="form-floating mb-3">
-                      <select class="form-select" aria-label="Default select example"
-                              style="padding-top: 0.625rem !important;" id="facility">
-                        <option th:each="item, loop : ${facilityList}"
-                                th:text="${item.facilityName}"
-                                th:value="${item.facilityId}"></option>
-                      </select>
-                    </div>
-
-                    <div class="form-floating mb-2">
-                      <label class="form-label h6">Attach Facility:</label>
-                      <button style="margin-left: 350px" type="button" class="btn btn-outline-success btn-lg"
-                              data-bs-toggle="modal" data-bs-target="#createContractDetail">
-                        +
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success">Save</button>
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdropAttachFacility"
-             data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-             aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content border-primary mt-5">
-              <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title"
-                    id="staticBackdropLabelAttachFacility">List of
-                  attach facility</h5>
-                <button type="button" class="btn-close btnCloseModalAttachFacility"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <table class="table table-hover text-center">
-                  <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Free wifi</td>
-                    <td>
-                      <a href="" class="btn btn-outline-primary">+</a>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-primary">Save
-                </button>
-                <button type="button" class="btn btn-outline-secondary btnCloseModalAttachFacility"
-                        data-bs-dismiss="modal">Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 </div>
+
+<!-- Modal Create Contract -->
+<div class="container">
+    <div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false"
+         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabelCreate">Create Contract</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-danger" id="tableInputNameEdit"></div>
+                        <form id="contactFormEdit" method="post" action="/rest/contract/create">
+                            <!-- startDate input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="startDate" type="date"
+                                       placeholder="Enter your start date..."/>
+                                <label for="startDate">Start Date</label>
+                            </div>
+                            <!-- endDate input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="endDate" type="date"
+                                       placeholder="Enter your end date..."/>
+                                <label for="endDate">End Date</label>
+                            </div>
+                            <!-- deposit input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="deposits" type="text"
+                                       placeholder="Enter your deposit..."/>
+                                <label for="deposits">Deposits</label>
+                            </div>
+                            <!-- phoneNumber input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="totalMoney" type="text" readonly/>
+                                <label for="totalMoney">Total Money</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" aria-label="Default select example"
+                                        style="padding-top: 0.625rem !important;" id="customer">
+                                    <option th:each="item, loop : ${customers}"
+                                            th:text="${item.customerName}"
+                                            th:value="${item.customerId}"></option>
+                                </select>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" aria-label="Default select example"
+                                        style="padding-top: 0.625rem !important;" id="facility">
+                                    <option th:each="item, loop : ${facilities}"
+                                            th:text="${item.facilityName}"
+                                            th:value="${item.facilityId}"></option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" id="btnSaveCreate">Save</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Modal Create Contract Detail -->
+</section>
+</div>
+
+<div class="container">
+    <div class="modal fade" id="staticCreateContractDetail" data-bs-backdrop="static" data-bs-keyboard="false"
+         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabelCreateContractDetail">Create Contract Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="text-danger" id="contractId"></div>
+                        <div class="form-floating mb-3">
+                            <select class="form-select" aria-label="Default select example"
+                                    style="padding-top: 0.625rem !important;" id="attachFacility">
+                                <option th:each="item, loop : ${attachFacilityList}"
+                                        th:text="${item.attachFacilityName}"
+                                        th:value="${item.attachFacilityId}"></option>
+                            </select>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="quantity" type="text"
+                                   placeholder="Enter your start date..."/>
+                            <label for="startDate">Quantity</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-success" id="btnSaveCreateContractDetail">Save
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Footer-->
 <th:block th:replace="~{bootstrap-css :: #footer}"></th:block>
 <th:block th:replace="~{bootstrap-css :: jquery}"></th:block>
 <script>
-  function getPageContract(pageNumber, searchParam) {
-    $.ajax({
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      type: "GET", //GET, DELETE, PUT...
-      url: "http://localhost:8080/rest/contract?page=" + pageNumber + "&searchValue=" + searchParam,
-      success: function (contractPage) {
-        let contractBodyHTML = "";
+    function getPageContract(pageNumber) {
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET", //GET, DELETE, PUT...
+            url: "http://localhost:8080/rest/contract-list?page=" + pageNumber,
+            success: function (contractPage) {
+                let contractBodyHTML = "";
 
-        for (let i = 0; i < contractPage.content.length; i++) {
-          contractBodyHTML += `<tr>
-                    <td>${i + 1}</td>
+                for (let i = 0; i < contractPage.content.length; i++) {
+                    contractBodyHTML += `<tr>
                     <td>${contractPage.content[i].contractId}</td>
                     <td>${contractPage.content[i].facility.facilityName}</td>
                     <td>${contractPage.content[i].customer.customerName}</td>
                     <td>${contractPage.content[i].startDate}</td>
                     <td>${contractPage.content[i].endDate}</td>
                     <td>${contractPage.content[i].deposits}</td>
+                    <td>${contractPage.content[i].facility.facilityCost}</td>
                     <td>
-                    <a href="${contractPage.content[i].contractId}" class="btn btn-outline-warning" id="btnEdit">
-                    Edit
-                    </a>
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticCreateContractDetail">
+                    +
+                    </button>
+                    <button class="btn btn-outline-success" id="attachFacility">List Attach Facility</button>
                     </td>
                     <td>
                         <!-- Button trigger modal -->
           <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-          data-bs-target="#staticBackdropDelete${employeePage.content[i].employeeId}">
+          data-bs-target="#staticBackdropDelete${contractPage.content[i].contractId}">
           Delete
           </button>
                   <!-- Modal -->
-          <div class="modal fade" id="staticBackdropDelete${employeePage.content[i].employeeId}" data-bs-backdrop="static"
+          <div class="modal fade" id="staticBackdropDelete${contractPage.content[i].contractId}" data-bs-backdrop="static"
           data-bs-keyboard="false"
           tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -216,12 +223,12 @@
           aria-label="Close"></button>
           </div>
           <div class="modal-body">
-          Do you want to delete employee ${employeePage.content[i].employeeName} with id = ${employeePage.content[i].employeeId} ?
+          Do you want to delete Customer Name ${contractPage.content[i].customer.customerName} with Contract id = ${contractPage.content[i].contractId} ?
           </div>
           <div class="modal-footer">
-          <a href="${employeePage.content[i].employeeId}" type="button" class="btn btn-outline-primary" id="btnDelete">Submit</a>
+          <a href="${contractPage.content[i].contractId}" type="button" class="btn btn-outline-success" id="btnDelete">Yes</a>
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          Close
+          No
           </button>
           </div>
           </div>
@@ -231,121 +238,154 @@
           </tr>`
                     ;
                 }
-</script>
-
-<script>
-  $.ajax({
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    type: "GET", //GET, DELETE, PUT...
-    url: "http://localhost:8080/rest/attach-facility",
-    success: attachFacilityList
-  });
-
-  // $.ajax({
-  //     headers: {
-  //         'Accept': 'application/json',
-  //         'Content-Type': 'application/json'
-  //     },
-  //     type: "GET", //GET, DELETE, PUT...
-  //     url: "http://localhost:8080/rest/contract-detail",
-  //     success: function (resultContractDetailList) {
-  //         contractDetailList = resultContractDetailList;
-  //     },
-  //     error: function (resultError) {
-  //         console.log('Co loi xay ra');
-  //     }
-  // });
-  function attachFacilityList(attachFacilityList) {
-    $.ajax({
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      type: "GET", //GET, DELETE, PUT...
-      url: "http://localhost:8080/rest/contract",
-      success: function (contractPage) {
-        let contractTableHTML = "";
-        for (let i = 0; i < contractPage.content.length; i++) {
-          // console.log(contractPage.content[i].contractDetailList)
-          let totalMoney = 0;
-          for (let j = 0; j < contractPage.content[i].contractDetailList.length; j++) {
-            // console.log(contractPage.content[i].contractDetailList[j])
-            totalMoney += contractPage.content[i].contractDetailList[j].quantity * contractPage.content[i].contractDetailList[j].attachFacility.cost;
-            // console.log(totalMoney)
-          }
-          contractTableHTML += `<tr>
-                    <td>${i}</td>
-                    <td>${contractPage.content[i].facility.name}</td>
-                    <td>${contractPage.content[i].customer.name}</td>
-                    <td>${contractPage.content[i].startDate}</td>
-                    <td>${contractPage.content[i].endDate}</td>
-                    <td>${contractPage.content[i].deposit}</td>
-                    <td>${totalMoney}</td>
-                    <td>
-                        <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop${contractPage.content[i].id}">
-          +
-          </button>
-                  <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop${contractPage.content[i].id}" data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-          <h5 class="modal-title fw-bold text-danger" id="staticBackdropLabel">List of
-          attach facility</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"
-          aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-          <table class="table table-hover text-center">
-          <tbody>
-          <tr>
-          <div class="form-floating mb-3">
-          <select class="form-select" aria-label="Default select example"
-          style="padding-top: 0.625rem !important;" id="selectAttachFacility">`
-          for (let k = 0; k < attachFacilityList.length; k++) {
-          contractTableHTML += `<option value="${attachFacilityList[k].id}">${attachFacilityList[k].name}</option>`
-          }
-          contractTableHTML += `</select>
-          <div class="form-floating mt-3" id="inputAttachFacility">
-          <input class="form-control" id="quantityAdd" type="text"" />
-                    <label for="quantityAdd">Quantity</label>
-                    </div>
-                    </div>
-                    </tr>
-                    </tbody>
-                </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-primary" id="btnAddMoreAttachFacility">Save</button>
-                    <button type="button" class="btn btn-outline-secondary"
-                    data-bs-dismiss="modal">Close
-                    </button>
-                </div>
-                </div>
-                </div>
-                </div>
-                </td>
-                <td>
-                <a href="" class="btn btn-outline-primary">List of attach facility</a>
-                </td>
-                </tr>`
-                    ;
+                let pagination = "";
+                pagination +=
+                    `<div class="container mt-3">`
+                pagination +=
+                    `<ul class="pagination float-end">`
+                ;
+                switch (Number(pageNumber)) {
+                    case 0:
+                        pagination +=
+                            `<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>`
+                        break;
+                    default:
+                        pagination +=
+                            `<li class="page-item"><a class="page-link" id="aPrevious" href="${contractPage.number}">Previous</a></li>`
+                        break;
                 }
-                $("#contractTableBody").html(contractTableHTML);
-          },
-          error: function (resultError) {
-          console.log('Co loi xay ra');
-          }
-          });
-          }
+                for (let i = 0; i < contractPage.totalPages; i++) {
+                    switch (Number(i)) {
+                        case Number(pageNumber):
+                            pagination +=
+                                `<li class="page-item active"><a class="page-link" id="aItem" href="` + i + `">`
+                                + (i + 1) +
+                                `</a></li>`
+                            break;
+                        default:
+                            pagination +=
+                                `<li class="page-item"><a class="page-link" id="aItem" href="` + i + `">`
+                                + (i + 1) +
+                                `</a></li>`
+                            break;
+                    }
+                }
+                switch (Number(contractPage.number)) {
+                    case contractPage.totalPages = (Number(contractPage.totalPages <= 0) ? 0 : Number(contractPage.totalPages - 1)):
+                        pagination +=
+                            `<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>`
+                        break;
+                    default:
+                        pagination +=
+                            `<li class="page-item"><a class="page-link" id="aNext" href="${contractPage.number}">Next</a></li>`
+                        break;
+                }
+                pagination +=
+                    `</ul>`
+                pagination += `
+         </div>
+                    `;
+                $("#contractTableBody").html(contractBodyHTML);
+                $("#paginationTable").html(pagination);
+            }
+            ,
+            error: function (resultError) {
+                console.log('Co loi xay ra');
+            }
+        });
+    }
+        getPageContract(0, "");
 
+        $("#btnSaveCreate").click(function () {
+            let eStartDate = $("#startDate").val();
+            let eEndDate = $("#endDate").val();
+            let eDeposits = $("#deposits").val();
+            let eCustomer = $("#customer").val();
+            let eFacility = $("#facility").val();
+            let contractObj = {
+                "startDate": eStartDate,
+                "endDate": eEndDate,
+                "deposits": eDeposits,
+                "customer": {
+                    "customerId": eCustomer
+                },
+                "facility": {
+                    "facilityId": eFacility
+                },
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST", //GET, DELETE, PUT...
+                url: "http://localhost:8080/rest/contract/create",
+                data: JSON.stringify(contractObj),
+                success: function (contractPage) {
+                    $("#startDate").val("");
+                    $("#endDate").val("");
+                    $("#deposits").val("");
+                    $("#customer").val("");
+                    $("#facility").val("");
+                    $("#staticBackdropCreate").modal("hide");
+                    getPageContract(0, "");
+                },
+                error: function (resultError) {
+                    console.log('Co loi xay ra');
+                }
+            });
+        })
+        $(document).ready(function () {
+            $("#contractTableBody").on("click", "#btnDelete", function (event) {
+                let id = $(this).attr("href");
+                event.preventDefault();
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "DELETE", //GET, DELETE, PUT...
+                    url: "http://localhost:8080/rest/contract/delete/" + id,
+                    success: function (resultSuccess) {
+                        $("#staticBackdropDelete" + id).modal("hide");
+                        getPageContract(0, "");
+                    },
+                    error: function (resultError) {
+                        console.log('Co loi xay ra');
+                    }
+                });
+            })
+        })
+
+
+        $("#btnSaveCreateContractDetail").click(function () {
+            let eAttachFacility = $("#attachFacility").val();
+            let eQuantity = $("#quantity").val();
+            let contractDetailObj = {
+                "attachFacility": {
+                    "attachFacilityId": eAttachFacility
+                },
+                "quantity": eQuantity,
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST", //GET, DELETE, PUT...
+                url: "http://localhost:8080/rest/contractDetail/create",
+                data: JSON.stringify(contractDetailObj),
+                success: function (contractDetailPage) {
+                    $("#attachFacility").val("");
+                    $("#quantity").val("");
+                    $("#staticCreateContractDetail").modal("hide");
+                    // getPageContractDetail(0, "");
+                },
+                error: function (resultError) {
+                    console.log('Co loi xay ra');
+                }
+            });
+        })
 </script>
 <th:block th:replace="~{bootstrap-css :: boostrapScript}"></th:block>
 </body>

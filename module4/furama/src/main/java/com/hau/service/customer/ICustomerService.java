@@ -18,6 +18,6 @@ public interface ICustomerService {
 
     void remove(Integer id);
 
-    List<Customer> findAllCustomer();
+    List<Customer> findAll();
 
 }
