@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-          crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Furama Resort Danang - Lê Thanh Hậu</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="../../static/assets/img/favicon.png" rel="icon">
+    <link href="../../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    <link href="../../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../../static/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+
+<header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <h1 class="logo me-auto me-lg-0"><a href="http://localhost:63342/case_study/templates/home.html?_ijt=l4qo9gnajl0arbkijmupkc4qha&_ij_reload"> <img
+                src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png" style="margin-left: 20px"> </a></h1>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a class="active" href="http://localhost:63342/case_study/templates/home.html?_ijt=l4qo9gnajl0arbkijmupkc4qha&_ij_reload">Home</a></li>
+                <li><a href="">Employee</a></li>
+                <li><a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload">Customer</a></li>
+                <li><a href="http://localhost:63342/case_study/templates/facility/list.html?_ijt=ob07ievcruni22qjfukdhv88oe&_ij_reload">Facility</a></li>
+                <li><a href="/contract-list">Contract</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <div class="header-social-links">
+            <a href="https://twitter.com/?lang=vi" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://vi-vn.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        </div>
+    </div>
+</header>
+
 <header style="margin-top: 100px">
     <div class="p-3 text-center bg-image"
          style="height: 60px;">
@@ -35,7 +72,8 @@
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
-                <a href="" href="/customer/create" class="btn btn-outline-success btn-lg" role="button"  style="color: white">
+                <a href="http://localhost:63342/case_study/templates/customer/create.html?_ijt=tn3up5732i4ikr4o90pjjr7h85&_ij_reload"
+                   class="btn btn-outline-success btn-lg" role="button"  style="color: white">
                     Create Customer
                 </a>
                 <form class="d-flex">
@@ -58,6 +96,7 @@
             <th>Name</th>
             <th>Birthday</th>
             <th>Gender</th>
+            <th>Id Card</th>
             <th>Phone</th>
             <th>Address</th>
             <th>Edit</th>
@@ -65,28 +104,30 @@
         </tr>
         </thead>
         <tbody>
-        <tr each="customer, loop : customers">
-            <td text="loop.count"></td>
-            <td text="customer.customerId"></td>
-            <td text="${customer.customerCode}"></td>
-            <td text="customer.customerType.customerTypeName"></td>
-            <td text="customer.customerName"></td>
-            <td text="customer.customerBirthday"></td>
-            <td text="customer.customerGender"></td>
-            <td text="customer.customerPhone"></td>
-            <td text="customer.customerAddress"></td>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>KH-1234</td>
+            <td>Gold</td>
+            <td>Tai</td>
+            <td>2000/12/12</td>
+            <td>Nu</td>
+            <th>123456789</th>
+            <td>0912345678</td>
+            <td>Da Nang</td>
             <td>
-                <a href="/customer/edit/id(id=customer.customerId)" class="btn btn-outline-warning">Edit</a>
+                <a href="http://localhost:63342/case_study/templates/customer/edit.html?_ijt=faprvav540n9l7n66mi602d7q8&_ij_reload"
+                   class="btn btn-outline-warning">Edit</a>
             </td>
             <td>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="'#staticBackdrop' + customer.customerId">
+                        data-bs-target="#staticBackdrop">
                     Delete
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop + customer.customerId" data-bs-backdrop="static"
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -96,11 +137,11 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Do you want delete Customer <span text="customer.customerName" class="text-warning"></span>
-                                with id = <span text="customer.customerId" class="text-warning"></span> ?
+                                Do you want delete Customer <span class="text-warning"></span>
+                                with id = <span  class="text-warning"></span> ?
                             </div>
                             <div class="modal-footer">
-                                <a href="" href="/customer/delete/id(id=customer.customerId)"
+                                <a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload"
                                    class="btn btn-outline-success">Delete</a>
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
                                 </button>
@@ -113,35 +154,16 @@
         </tbody>
     </table>
     <div class="row">
-        <div class="col-10">
-            <a href="/customerType-list" class="btn btn-outline-success">Go To List</a>
-        </div>
-        <div class="col-2 ">
-            <ul class="pagination" if="customers.totalPages > 0">
-                <li class="page-item">
-                    <a class="page-link" if="customers.hasPrevious()" href="'/customer-list'(page=customers.number - 1, search=searchValue})">
-                        Previous
-                    </a>
-                </li>
-                <div each="item, loop : #numbers.sequence(1, customers.totalPages )">
-                    <div if="(customers.number + 1) == item">
-                        <li class="page-item active">
-                            <a class="page-link" href="#" text="item" href="/customer-list(page=(item}-1), search=searchValue)"></a>
-                        </li>
-                    </div>
-                    <div unless="((customers.number + 1) == item)">
-                        <li class="page-item">
-                            <a class="page-link" href="#" text="item" href="/customer-list(page=(item-1), search=searchValue )"></a>
-                        </li>
-                    </div>
-                </div>
-                <li class="page-item">
-                    <a class="page-link" if="customers.hasNext()" href="'customer-list'(page=customers.number + 1, search=searchValue)">
-                        Next
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div class="row container-fluid mt-3" style="padding-left: 78%">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+
     </div>
 </div>
 
