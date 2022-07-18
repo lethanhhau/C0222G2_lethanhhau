@@ -32,7 +32,7 @@
                 <li><a href="">Employee</a></li>
                 <li><a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload">Customer</a></li>
                 <li><a href="http://localhost:63342/case_study/templates/facility/list.html?_ijt=ob07ievcruni22qjfukdhv88oe&_ij_reload">Facility</a></li>
-                <li><a href="http://localhost:63342/case_study/templates/contract/list.html?_ijt=kst9g3d8f1i5p2tk4met7m0r86&_ij_reload">Contract</a></li>
+                <li><a href="http://localhost:63342/case_study/templates/contract/list.html?_ijt=d92bf6mci9mt4i2dejjsdeuf8b&_ij_reload">Contract</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -45,124 +45,73 @@
     </div>
 </header>
 
-<header style="margin-top: 100px">
+<div style="margin-top: 100px">
     <div class="p-3 text-center bg-image"
          style="height: 60px;">
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-success">
-                    <h1 class="mb-3">List Customer</h1>
+                    <h1 class="mb-3">List Contract</h1>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="text-center" if="success">
-        <h3 utext="success" style="color: blue"></h3>
-    </div>
-    <div class="text-center" if="msgDelete">
-        <h3 utext="msgDelete" style="color: blue;"></h3>
-    </div>
-    <div class="text-center" if="${msgEdit}">
-        <h3 utext="msgEdit" style="color: blue;"></h3>
-    </div>
-
-
     <div class="container mt-3">
         <nav class="navbar navbar-light bg-info">
             <div class="container-fluid" style="height: 60px">
-                <a href="http://localhost:63342/case_study/templates/customer/create.html?_ijt=tn3up5732i4ikr4o90pjjr7h85&_ij_reload"
-                   class="btn btn-outline-success btn-lg" role="button"  style="color: white">
-                    Create Customer
+                <a href="http://localhost:63342/case_study/templates/contract/create.html?_ijt=d92bf6mci9mt4i2dejjsdeuf8b&_ij_reload"
+                   class="btn btn-outline-success btn-lg" role="button" style="color: white">
+                    Create Contract
                 </a>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" name="searchParam"
                            placeholder="Search By Name"  aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+                    <button class="btn btn-outline-success" type="submit" name="name" style="color: white">Search</button>
                 </form>
             </div>
         </nav>
     </div>
-</header>
+</div>
 <div class="container mt-3">
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>STT</th>
-            <th>ID</th>
-            <th>Code</th>
-            <th>Type</th>
-            <th>Name</th>
-            <th>Birthday</th>
-            <th>Gender</th>
-            <th>Id Card</th>
-            <th>Phone</th>
-            <th>Address</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>#</th>
+            <th>Facility</th>
+            <th>Customer</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Deposits</th>
+            <th>Total Money</th>
+            <th colspan="2">Attach Facility</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>1</td>
-            <td>1</td>
-            <td>KH-1234</td>
-            <td>Gold</td>
+            <td>PHÒNG SUITE HƯỚNG BIỂN</td>
             <td>Tai</td>
-            <td>2000/12/12</td>
-            <td>Nu</td>
-            <th>123456789</th>
-            <td>0912345678</td>
-            <td>Da Nang</td>
+            <td>2022/07/18</td>
+            <td>2022/07/20</td>
+            <td>120000</td>
+            <td>1120000</td>
             <td>
-                <a href="http://localhost:63342/case_study/templates/customer/edit.html?_ijt=faprvav540n9l7n66mi602d7q8&_ij_reload"
-                   class="btn btn-outline-warning">Edit</a>
-            </td>
-            <td>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">
-                    Delete
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Do you want delete Customer <span class="text-warning"></span>
-                                with id = <span  class="text-warning"></span> ?
-                            </div>
-                            <div class="modal-footer">
-                                <a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload"
-                                   class="btn btn-outline-success">Delete</a>
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-outline-success" data-bs-toggle="modal"  data-bs-target="#staticBackdropCreate">+</button>
+                <button class="btn btn-outline-success">List Attach Facility</button>
             </td>
         </tr>
         </tbody>
     </table>
     <div class="row">
-            <div class="row container-fluid mt-3" style="padding-left: 78%">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </div>
+        <div class="row container-fluid mt-3" style="padding-left: 78%">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
 
     </div>
 </div>
@@ -244,6 +193,7 @@
 </div>
 
 
+
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
@@ -258,6 +208,5 @@
 
 <!-- Template Main JS File -->
 <script src="/static/assets/js/main.js"></script>
-
 </body>
 </html>

@@ -32,7 +32,7 @@
                 <li><a href="">Employee</a></li>
                 <li><a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload">Customer</a></li>
                 <li><a href="http://localhost:63342/case_study/templates/facility/list.html?_ijt=ob07ievcruni22qjfukdhv88oe&_ij_reload">Facility</a></li>
-                <li><a href="http://localhost:63342/case_study/templates/contract/list.html?_ijt=kst9g3d8f1i5p2tk4met7m0r86&_ij_reload">Contract</a></li>
+                <li><a href="http://localhost:63342/case_study/templates/contract/list.html?_ijt=255nnt72jlfgglacj5och875jo&_ij_reload">Contract</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -45,92 +45,61 @@
     </div>
 </header>
 
+
 <div class="container" style="margin-top: 100px">
     <div class="p-3 text-center bg-image"
          style="height: 50px;">
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-success">
-                    <h1 class="mb-3">Create New Facility</h1>
+                    <h1 class="mb-3">Create New Contract</h1>
                 </div>
             </div>
         </div>
     </div>
-
     <form>
-
         <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Name:</label>
-            <input type="text" class="form-control" placeholder="Enter Facility Name">
+            <label class="form-label h6">Start Date:</label>
+            <input type="date" class="form-control" placeholder="Enter Start Date">
         </div>
 
         <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Area:</label>
-            <input type="text" class="form-control" placeholder="Enter Facility Area">
-        </div>
-
-
-        <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Cost:</label>
-            <input type="text" class="form-control" placeholder="Enter Facility Cost">
+            <label class="form-label h6">End Date:</label>
+            <input type="date" class="form-control" placeholder="Enter End Date">
         </div>
 
         <div class="mb-3 mt-3">
-            <label class="form-label h6">Max People:</label>
-            <input type="text" class="form-control" placeholder="Enter Max People">
+            <label class="form-label h6">Deposits:</label>
+            <input type="text" class="form-control" placeholder="Enter Deposits">
         </div>
 
         <div class="mb-3 mt-3">
-            <label class="form-label h6">Rent Type:(select one):</label>
-            <select class="form-select" name="rentType" id="rentType">
-                <option value="Giờ" >Giờ</option>
-                <option value="Ngày">Ngày</option>
-                <option value="Tháng">Tháng</option>
-                <option value="Năm">Năm</option>
+            <label class="form-label h6">Total Money:</label>
+            <input type="text" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label class="form-label h6">Customer:(select one):</label>
+            <select class="form-select">
+                <option value="1">tai</option>
+                <option value="2">phuong</option>
+                <option value="3">hau</option>
             </select>
         </div>
 
         <div class="mb-3 mt-3">
-            <label class="form-label h6">Facility Type:(select one):</label>
-            <select id="choiceFacility" class="form-select" onchange="selectFacility()">
-                <option value="1" >Villa</option>
-                <option value="2">House</option>
-                <option value="3">Room</option>
+            <label class="form-label h6">Facility:(select one):</label>
+            <select class="form-select">
+                <option value="1">PHÒNG SUITE HƯỚNG BIỂN</option>
+                <option value="2">PHÒNG STUDIO SUITE HƯỚNG BIỂN</option>
+                <option value="3">PHÒNG DELUXE HƯỚNG BIỂN</option>
             </select>
         </div>
-
-        <div class="mb-3 mt-3" id="standardRoom" style="display: none">
-            <label class="form-label h6">Standard Room:</label>
-            <input type="text" class="form-control" placeholder="Enter Standard Room">
-        </div>
-
-        <div class="mb-3 mt-3" id="descriptionOtherConvenience" style="display: none">
-            <label class="form-label h6">Description Other Convenience:</label>
-            <input  type="text" class="form-control" placeholder="Enter Description Other Convenience">
-        </div>
-
-        <div class="mb-3 mt-3" id="poolArea" style="display: none">
-            <label class="form-label h6">Pool Area:</label>
-            <input type="text" class="form-control" placeholder="Enter Pool Area">
-        </div>
-
-        <div class="mb-3 mt-3" id="numberOfFloors" style="display:none;">
-            <label class="form-label h6">Number Of Floors:</label>
-            <input type="text" class="form-control" placeholder="Enter Number Of Floors">
-        </div>
-
-        <div class="mb-3 mt-3" id="facilityFree" style="display:none;">
-            <label class="form-label h6">Facility Free:</label>
-            <input type="text" class="form-control" placeholder="Enter Facility Free">
-        </div>
-
-
         <button type="submit" class="btn btn-outline-success">Submit</button>
-        <a href="http://localhost:63342/case_study/templates/facility/list.html?_ijt=ob07ievcruni22qjfukdhv88oe&_ij_reload"
+        <a href="http://localhost:63342/case_study/templates/contract/list.html?_ijt=255nnt72jlfgglacj5och875jo&_ij_reload"
            class="btn btn-outline-secondary">Back home</a>
     </form>
 </div>
-
 <footer id="footer" style="margin-top: 20px">
     <div class="footer-top">
         <div class="container">
@@ -198,35 +167,6 @@
     </div>
 </footer>
 
-<script>
-    function selectFacility() {
-        let getValue = $('#choiceFacility').val()
-        switch (getValue) {
-            case '1':
-                $('#standardRoom').show()
-                $('#descriptionOtherConvenience').show()
-                $('#poolArea').show()
-                $('#numberOfFloors').show()
-                $('#facilityFree').hide()
-                break;
-            case '2':
-                $('#standardRoom').show()
-                $('#descriptionOtherConvenience').show()
-                $('#poolArea').hide()
-                $('#numberOfFloors').show()
-                $('#facilityFree').hide()
-                break;
-            case '3':
-                $('#standardRoom').hide()
-                $('#descriptionOtherConvenience').hide()
-                $('#poolArea').hide()
-                $('#numberOfFloors').hide()
-                $('#facilityFree').show()
-                break;
-        }
-    }
-</script>
-
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
@@ -241,17 +181,5 @@
 
 <!-- Template Main JS File -->
 <script src="/static/assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
-
-</script>
-<script>
-    $(function () {
-        $('#head_button-bootstrap').load('head_button.html')
-        $('#head_top-bootstrap').load('head_top.html')
-        $('#header-bootstrap').load('header.html')
-        $('#footer-bootstrap').load('footer.html')
-
-    })
-</script>
 </body>
 </html>
