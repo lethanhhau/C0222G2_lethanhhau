@@ -8,10 +8,10 @@ function fibonacci(index) {
     }
     return fibonacci(index - 1) + fibonacci(index - 2);
 }
-var sum = 0;
-var n = 20;
-for (var i = 0; i < n; i++) {
+let sum = 0;
+let n = 20;
+for (let i = 0; i < n; i++) {
     sum += fibonacci(i);
-    console.log(fibonacci(i));
+    console.log(fibonacci(i))
 }
 console.log(sum);
