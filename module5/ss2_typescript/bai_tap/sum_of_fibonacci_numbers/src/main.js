@@ -12,6 +12,6 @@ var sum = 0;
 var n = 20;
 for (var i = 0; i < n; i++) {
     sum += fibonacci(i);
-    console.log(fibonacci(i));
+    console.log(fibonacci(i))
 }
-console.log(sum);
+console.log("sum :" + sum);
