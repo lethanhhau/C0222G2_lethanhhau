@@ -1,6 +1,3 @@
-<app-navigation></app-navigation>
-
-
 <header style="margin-top: 100px">
   <div class="p-3 text-center bg-image"
        style="height: 60px;">
@@ -13,24 +10,12 @@
     </div>
   </div>
 
-
-  <div class="text-center" if="success">
-    <h3 utext="success" style="color: blue"></h3>
-  </div>
-  <div class="text-center" if="msgDelete">
-    <h3 utext="msgDelete" style="color: blue;"></h3>
-  </div>
-  <div class="text-center" if="${msgEdit}">
-    <h3 utext="msgEdit" style="color: blue;"></h3>
-  </div>
-
-
   <div class="container mt-3">
     <nav class="navbar navbar-light bg-info">
       <div class="container-fluid" style="height: 60px">
         <a [routerLink]="['/customerCreate']"
            class="btn btn-outline-success btn-lg" role="button"  style="color: white">
-          Create Customer
+          Create Facility
         </a>
         <form class="d-flex">
           <input class="form-control me-2" type="search" name="searchParam"
@@ -122,5 +107,3 @@
 
   </div>
 </div>
-
-<app-footer></app-footer>

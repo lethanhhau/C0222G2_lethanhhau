@@ -16,6 +16,7 @@ import { DetailFacilityComponent } from './facility/detail-facility/detail-facil
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { ErrorComponent } from './error/error.component';
+import { HomeFacilityComponent } from './facility/home-facility/home-facility.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ErrorComponent } from './error/error.component';
     ListContractComponent,
     CreateContractComponent,
     ErrorComponent,
+    HomeFacilityComponent,
   ],
   imports: [
     BrowserModule,

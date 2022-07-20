@@ -1,165 +1,104 @@
-<app-navigation></app-navigation>
-
-<section id="kindOfRoom" class="d-flex align-items-center">
-  <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
-    <h1 style="color:white; margin-top: 90px"><b>LOẠI PHÒNG</b></h1>
-    <a [routerLink]="['/facilityCreate']"
-       class="btn btn-outline-success btn-lg" role="button" style="color: white"><b>Create Facility</b></a>
-  </div>
-  <div style="height: 60px">
-
-  </div>
-</section>
-
-
-<div class="row" style="margin: 0 auto">
-  <div class="container-fluid row col-12 col-md-12" style="margin-top: 20px">
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee;">
-        <h6><b>PHÒNG SUITE HƯỚNG BIỂN</b></h6>
-        <p>Diện Tích Phòng: 85.8 m<sup>2</sup>
-          <br><br>
-          <a href="aaa" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a [routerLink]="['/facilityEdit']" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a [routerLink]="['/facilityDetail']"  style="float: right">xem thêm</a>
-        </p>
-      </div>
-    </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee">
-        <h6><b>PHÒNG STUDIO SUITE HƯỚNG BIỂN</b></h6>
-        <p>Diện Tích Phòng: 40.1 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
-      </div>
-    </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Deluxe-double-bed-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee">
-        <h6><b>PHÒNG DELUXE HƯỚNG BIỂN</b></h6>
-        <p>Diện Tích Phòng: 43.7 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
+<header style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">List Facility</h1>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid row col-12 col-md-12" style="margin-top: 20px">
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Lagoon-Superior-twin-bed-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee; height: 70px">
-        <h6><b>PHÒNG SUPERIOR HƯỚNG HỒ</b></h6>
-        <p>Diện Tích Phòng: 40.1 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <a [routerLink]="['/facilityCreate']"
+           class="btn btn-outline-success btn-lg" role="button"  style="color: white">
+          Create Customer
+        </a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" name="searchParam"
+                 placeholder="Search By Name"  aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+        </form>
       </div>
-    </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Garden-Superior-TwinBed-1-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee">
-        <h6><b>PHÒNG SUPERIOR HƯỚNG VƯỜN</b></h6>
-        <p>Diện Tích Phòng: 40.1 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
-      </div>
-    </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Garden-Deluxe-twin-bed-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee">
-        <h6><b>PHÒNG DELUXE HƯỚNG VƯỜN</b></h6>
-        <p>Diện Tích Phòng: 43.7 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
-      </div>
-    </div>
+    </nav>
   </div>
+</header>
 
-  <div class="container-fluid row col-12 col-md-12" style="margin-top: 20px">
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/03/Presidential-Suite-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee; height: 70px">
-        <h6><b>PHÒNG PRESIDENTIAL SUITE</b></h6>
-        <p>Diện Tích Phòng: 130 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Area</th>
+      <th>Cost</th>
+      <th>Max People</th>
+      <th>Rent Type Id</th>
+      <th>Facility Type</th>
 
-      </div>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let facility of facilityList">
+      <td>{{facility.id}}</td>
+      <td>{{facility.facilityName}}</td>
+      <td>{{facility.facilityArea}}</td>
+      <td>{{facility.facilityCost}}</td>
+      <td>{{facility.maxPeople}}</td>
+      <td>{{facility.rentType}}</td>
+      <td>{{facility.facilityType}}</td>
+
+      <td>
+        <a [routerLink]="['/facilityEdit']" class="btn btn-outline-warning">Edit</a>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Do you want delete Facility <span
+                class="text-warning"></span>
+                with id = <span class="text-warning"></span> ?
+              </div>
+              <div class="modal-footer">
+                <a href=""
+                   class="btn btn-outline-success">Delete</a>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="row container-fluid mt-3" style="padding-left: 78%">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
     </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee">
-        <h6><b>BIỆT THỰ HƯỚNG BIỂN CÓ HỒ BƠI RIÊNG</b></h6>
-        <p>Diện Tích Phòng: 900 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
-
-      </div>
-    </div>
-    <div class="card col-xs-12 col-md-6 col-lg-4">
-      <img style="height: 250px"
-           src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-370x239.jpg"
-           class="card-img-top" alt="...">
-      <div class="card-body" style="background-color: #e9eeee; height: 70px">
-        <h6><b>BIỆT THỰ HƯỚNG VƯỜN CÓ HỒ BƠI RIÊNG</b></h6>
-        <p>Diện Tích Phòng: 320 m<sup>2</sup>
-          <br><br>
-          <a href="#" class="bi bi-trash" style="font-size: 30px;color: red"></a>
-          <a href="#" class="bi bi-pen" style="font-size: 30px; color: #756308"></a>
-          <a href="#" style="float: right">xem thêm</a>
-        </p>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="row container-fluid mt-3" style="padding-left: 80%">
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
   </div>
 </div>
-
-<app-footer></app-footer>

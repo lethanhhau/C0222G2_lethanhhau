@@ -26,7 +26,6 @@ public class Facility {
     private String descriptionOtherConvenience;
     private Double poolArea;
     private Integer numberOfFloors;
-    private String facilityFree;
 
     @JsonBackReference
     @OneToMany(mappedBy = "facility")
