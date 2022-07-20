@@ -1,0 +1,74 @@
+<app-navigation></app-navigation>
+
+<div style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">List Contract</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <a [routerLink]="['/contractCreate']"
+           class="btn btn-outline-success btn-lg" role="button" style="color: white">
+          Create Contract
+        </a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" name="searchParam"
+                 placeholder="Search By Name"  aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" name="name" style="color: white">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Facility</th>
+      <th>Customer</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Deposits</th>
+      <th>Total Money</th>
+      <th colspan="2">Attach Facility</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>PHÒNG SUITE HƯỚNG BIỂN</td>
+      <td>Tai</td>
+      <td>2022/07/18</td>
+      <td>2022/07/20</td>
+      <td>120000</td>
+      <td>1120000</td>
+      <td>
+        <button class="btn btn-outline-success" data-bs-toggle="modal"  data-bs-target="#staticBackdropCreate">+</button>
+        <button style="margin-left: 5px" class="btn btn-outline-success">List Attach Facility</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="row container-fluid mt-3" style="padding-left: 78%">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

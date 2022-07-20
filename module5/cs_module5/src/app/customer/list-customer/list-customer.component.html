@@ -1,0 +1,126 @@
+<app-navigation></app-navigation>
+
+
+<header style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">List Customer</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-center" if="success">
+    <h3 utext="success" style="color: blue"></h3>
+  </div>
+  <div class="text-center" if="msgDelete">
+    <h3 utext="msgDelete" style="color: blue;"></h3>
+  </div>
+  <div class="text-center" if="${msgEdit}">
+    <h3 utext="msgEdit" style="color: blue;"></h3>
+  </div>
+
+
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <a [routerLink]="['/customerCreate']"
+           class="btn btn-outline-success btn-lg" role="button"  style="color: white">
+          Create Customer
+        </a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" name="searchParam"
+                 placeholder="Search By Name"  aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Id Card</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>KH-1234</td>
+      <td>Gold</td>
+      <td>Tai</td>
+      <td>2000/12/12</td>
+      <td>Nu</td>
+      <th>123456789</th>
+      <td>0912345678</td>
+      <td>Da Nang</td>
+      <td>
+        <a [routerLink]="['/customerEdit']"
+           class="btn btn-outline-warning">Edit</a>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-danger" id="staticBackdropLabel">Warning!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Do you want delete Customer <span class="text-warning"></span>
+                with id = <span  class="text-warning"></span> ?
+              </div>
+              <div class="modal-footer">
+                <a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload"
+                   class="btn btn-outline-success">Delete</a>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row">
+    <div class="row container-fluid mt-3" style="padding-left: 78%">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
