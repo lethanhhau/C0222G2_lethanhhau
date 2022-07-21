@@ -17,6 +17,7 @@ import { ListContractComponent } from './contract/list-contract/list-contract.co
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeFacilityComponent } from './facility/home-facility/home-facility.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HomeFacilityComponent } from './facility/home-facility/home-facility.co
     CreateContractComponent,
     ErrorComponent,
     HomeFacilityComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,

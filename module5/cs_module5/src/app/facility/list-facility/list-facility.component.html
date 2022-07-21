@@ -36,7 +36,7 @@
       <th>Area</th>
       <th>Cost</th>
       <th>Max People</th>
-      <th>Rent Type Id</th>
+      <th>Rent Type</th>
       <th>Facility Type</th>
 
       <th>Edit</th>
@@ -45,12 +45,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let facility of facilityList">
-      <td>{{facility.id}}</td>
+      <td>{{facility.facilityId}}</td>
       <td>{{facility.facilityName}}</td>
       <td>{{facility.facilityArea}}</td>
       <td>{{facility.facilityCost}}</td>
       <td>{{facility.maxPeople}}</td>
-      <td>{{facility.rentType}}</td>
+      <td>{{facility.facilityRentType}}</td>
       <td>{{facility.facilityType}}</td>
 
       <td>

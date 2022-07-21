@@ -19,20 +19,25 @@
         </a>
         <form class="d-flex">
           <input class="form-control me-2" type="search" name="searchParam"
-                 placeholder="Search By Name"  aria-label="Search">
+                 placeholder="Search By Name"  aria-label="Search"  aria-describedby="search-addon">
           <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+
+<!--          <span class="input-group-text border-0" name="name" type="submit" id="search-addon">-->
+<!--        <i class="fas fa-search"></i>-->
+<!--      </span>-->
         </form>
       </div>
     </nav>
   </div>
+
+
+
 </header>
 <div class="container mt-3">
   <table class="table table-hover">
     <thead>
     <tr>
-      <th>STT</th>
       <th>ID</th>
-      <th>Code</th>
       <th>Type</th>
       <th>Name</th>
       <th>Birthday</th>
@@ -45,17 +50,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>KH-1234</td>
-      <td>Gold</td>
-      <td>Tai</td>
-      <td>2000/12/12</td>
-      <td>Nu</td>
-      <th>123456789</th>
-      <td>0912345678</td>
-      <td>Da Nang</td>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.customerId}}</td>
+      <td>{{customer.customerType.customerTypeName}}</td>
+      <td>{{customer.customerName}}</td>
+      <td>{{customer.customerBirthday}}</td>
+      <td>{{customer.customerGender}}</td>
+      <td>{{customer.customerIdCard}}</td>
+      <td>{{customer.customerPhone}}</td>
+      <td>{{customer.customerAddress}}</td>
       <td>
         <a [routerLink]="['/customerEdit']"
            class="btn btn-outline-warning">Edit</a>

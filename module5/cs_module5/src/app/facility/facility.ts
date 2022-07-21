@@ -1,24 +1,17 @@
-// tslint:disable-next-line:class-name
-class rentType {
-id?: number;
-rentTypeName?: string;
-}
-
-// tslint:disable-next-line:class-name
-class facilityType {
-  id?: number;
-  facilityTypeName?: string;
-}
-
-// tslint:disable-next-line:no-empty-interface
 export interface Facility {
-id?: number;
+facilityId?: number;
 facilityName?: string;
 facilityArea?: number;
 facilityCost?: number;
 maxPeople?: number;
-rentType?: rentType;
-facilityType?: facilityType;
+facilityRentType?: {
+  facilityRentTypeId?: number;
+  facilityRentTypeName?: string;
+};
+facilityType?: {
+  FacilityTypeId?: number;
+  facilityTypeName?: string;
+};
 standardRoom?: string;
 descriptionOtherConvenience?: string;
 poolArea?: number;
