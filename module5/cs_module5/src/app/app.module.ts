@@ -18,6 +18,7 @@ import { CreateContractComponent } from './contract/create-contract/create-contr
 import { ErrorComponent } from './error/error.component';
 import { HomeFacilityComponent } from './facility/home-facility/home-facility.component';
 import { TestComponent } from './test/test.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TestComponent } from './test/test.component';
     ErrorComponent,
     HomeFacilityComponent,
     TestComponent,
+    DemoComponent,
   ],
   imports: [
     BrowserModule,

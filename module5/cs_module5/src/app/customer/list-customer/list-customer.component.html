@@ -4,7 +4,9 @@
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-success">
-          <h1 class="mb-3">List Customer</h1>
+          <h1 class="mb-3">
+            <b>List Customer</b>
+          </h1>
         </div>
       </div>
     </div>
@@ -13,23 +15,29 @@
   <div class="container mt-3">
     <nav class="navbar navbar-light bg-info">
       <div class="container-fluid" style="height: 60px">
-        <a [routerLink]="['/customerCreate']"
-           class="btn btn-outline-success btn-lg" role="button"  style="color: white">
-          Create Facility
-        </a>
+        <!--        <a [routerLink]="['/customerCreate']"-->
+        <!--           class="btn btn-outline-success btn-lg" role="button"  style="color: white">-->
+        <!--          Create Facility-->
+        <!--        </a>-->
+
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropCreate" style="color:white;">
+          <b>Create Customer</b>
+        </button>
         <form class="d-flex">
           <input class="form-control me-2" type="search" name="searchParam"
-                 placeholder="Search By Name"  aria-label="Search"  aria-describedby="search-addon">
-          <button class="btn btn-outline-success" type="submit" name="name"  style="color: white">Search</button>
+                 placeholder="Search By Name" aria-label="Search" aria-describedby="search-addon">
+          <button class="btn btn-outline-success" type="submit" name="name" style="color: white">
+            <b>Search</b>
+          </button>
 
-<!--          <span class="input-group-text border-0" name="name" type="submit" id="search-addon">-->
-<!--        <i class="fas fa-search"></i>-->
-<!--      </span>-->
+          <!--          <span class="input-group-text border-0" name="name" type="submit" id="search-addon">-->
+          <!--        <i class="fas fa-search"></i>-->
+          <!--      </span>-->
         </form>
       </div>
     </nav>
   </div>
-
 
 
 </header>
@@ -60,13 +68,15 @@
       <td>{{customer.customerPhone}}</td>
       <td>{{customer.customerAddress}}</td>
       <td>
-        <a [routerLink]="['/customerEdit']"
-           class="btn btn-outline-warning">Edit</a>
+        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropEdit" style="color: black">
+          Edit
+        </button>
       </td>
       <td>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+                data-bs-target="#staticBackdrop" style="color: black">
           Delete
         </button>
 
@@ -82,11 +92,12 @@
               </div>
               <div class="modal-body">
                 Do you want delete Customer <span class="text-warning"></span>
-                with id = <span  class="text-warning"></span> ?
+                with id = <span class="text-warning"></span> ?
               </div>
               <div class="modal-footer">
-                <a href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload"
-                   class="btn btn-outline-success">Delete</a>
+                <a
+                  href="http://localhost:63342/case_study/templates/customer/list.html?_ijt=qcap0j5b4vkvb23gnvg50occ40&_ij_reload"
+                  class="btn btn-outline-success">Delete</a>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
                 </button>
               </div>
@@ -108,5 +119,174 @@
       </ul>
     </div>
 
+  </div>
+</div>
+
+
+<!--Modal Create-->
+<div class="modal fade" id="staticBackdropCreate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center">
+        <h1 class="modal-title" id="staticBackdropLabelCreate" style="color: #29b40a"><b>Create New Customer</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="nameEdit" type="text" placeholder="Enter your name..."/>
+              <label for="name">Customer name</label>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="birthdayEdit" type="date"
+                     placeholder="Enter your birthday..."/>
+              <label for="birthday">Birthday</label>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <select class="form-select" aria-label="Default select example"
+                      style="padding-top: 0.625rem !important;">
+                <option value="" selected disabled>Gender</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="phoneNumberEdit" type="number"
+                     placeholder="Enter your phone number..."/>
+              <label for="phoneNumber">Id Card</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="emailEdit" type="text" placeholder="Enter your email..."/>
+              <label for="email">Phone Number</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="addressEdit" type="text"
+                     placeholder="Enter your address..."/>
+              <label for="address">Email</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <select class="form-select" aria-label="Default select example"
+                      style="padding-top: 0.625rem !important;">
+                <option value="" selected disabled>Choice Customer Type</option>
+                <option value="">Diamond</option>
+                <option value="">Gold</option>
+                <option value="">Iron</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="poolAreaEdit" type="text"
+                     placeholder="Enter your address..."/>
+              <label for="address">Address</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success"><b>Save</b></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal Edit-->
+<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true" style="background-color: blue">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center">
+        <h1 class="modal-title" id="staticBackdropLabelEdit" style="color: #29b40a"><b>Edit Customer</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="name" type="text" placeholder="Enter your name..." value="name"/>
+              <label for="name">Customer name</label>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="birthday" type="date" placeholder="Enter your birthday..."
+                     value="2021-12-12"/>
+              <label for="birthday">Birthday</label>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <select class="form-select" aria-label="Default select example"
+                      style="padding-top: 0.625rem !important;">
+                <option value="" selected disabled>Gender</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="phoneNumber" type="number" placeholder="Enter your phone number..."
+                     value="09123234"/>
+              <label for="phoneNumber">Id Card</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="email" type="text" placeholder="Enter your email..."
+                     value="Tai@123.com"/>
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="address" type="text" placeholder="Enter your address..."
+                     value="0987654321"/>
+              <label for="address">Phone</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <select class="form-select" aria-label="Default select example"
+                      style="padding-top: 0.625rem !important;">
+                <option value="" selected disabled>Choice Customer Type</option>
+                <option value="">Diamond</option>
+                <option value="">Gold</option>
+                <option value="">Iron</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating mb-3">
+              <input class="form-control" id="poolArea" type="text"
+                     placeholder="Enter your address..." value="Thanh Hoa"/>
+              <label for="address">Address</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success"><b>Save</b></button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="p-3 text-center bg-image"
+       style="height: 50px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">Registration Form</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="registrationFormReactive" (ngSubmit)="registrationWithReactive()">
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Email:</label>
+      <input formControlName="email" name="email" type="email" class="form-control" placeholder="Enter Email">
+      <p style="color: red"
+         *ngIf="registrationFormReactive.controls.email.hasError('required') && registrationFormReactive.controls.email.touched">
+        Email không được để trống</p>
+      <p style="color: red" *ngIf="registrationFormReactive.controls.email.hasError('pattern')
+        && registrationFormReactive.controls.email.touched">Email không đúng định dạng</p>
+    </div>
+    <div formGroupName="pass">
+      <div class="mb-3 mt-3">
+        <label class="form-label h6">Password:</label>
+        <input formControlName="password" name="password" type="text" class="form-control" placeholder="Enter password">
+        <p style="color: red"
+           *ngIf="registrationFormReactive.controls.pass.get('password').hasError('required')
+          && registrationFormReactive.controls.pass.get('password').touched">password không được để trống</p>
+
+        <p style="color: red" *ngIf="registrationFormReactive.controls.pass.get('password').hasError('minlength')
+          && registrationFormReactive.controls.pass.get('password').touched">password không được ít hơn 6 ký tự</p>
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label class="form-label h6">Confirm Password:</label>
+        <input type="text" class="form-control" placeholder="Enter confirm password" formControlName="confirmPassword" name="confirmPassword">
+        <p style="color: red"
+           *ngIf="registrationFormReactive.controls.pass.get('confirmPassword').hasError('required')
+            && registrationFormReactive.controls.pass.get('confirmPassword').touched"> confirm Password không được để
+          trống</p>
+        <p style="color: red"
+           *ngIf="registrationFormReactive.controls.pass.get('confirmPassword').hasError('minlength')
+          && registrationFormReactive.controls.pass.get('confirmPassword').touched">confirmPassword không được ít hơn 6 ký tự</p>
+                <p style="color: red"
+                   *ngIf="registrationFormReactive.controls.pass.hasError('confirmPassword')
+                  && registrationFormReactive.controls.pass.get('confirmPassword').touched">confirmPassword Phải giống Password</p>
+      </div>
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Country (Select one):</label>
+      <select class="form-select">
+        <option value="1">Việt Nam</option>
+        <option value="2">Trung Quốc</option>
+        <option value="3">Lào</option>
+        <option value="4">Thái Lan</option>
+        <option value="5">Hàn Quốc</option>
+      </select>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Age:</label>
+      <input formControlName="age" name="age" type="text" class="form-control" placeholder="Enter Age">
+      <p style="color: red" *ngIf="registrationFormReactive.controls.age.hasError('min')
+      && registrationFormReactive.controls.age.touched">Age Không được nhỏ hơn 18</p>
+      <p style="color: red" *ngIf="registrationFormReactive.controls.age.hasError('max')
+       && registrationFormReactive.controls.age.touched">Age Không được lớn hơn 100</p>
+      <p style="color: red"
+         *ngIf="registrationFormReactive.controls.age.hasError('required') && registrationFormReactive.controls.age.touched">
+        Age Không được để trống</p>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Phone:</label>
+      <input formControlName="phone" name="phone" type="text" class="form-control" placeholder="Enter Phone">
+      <p style="color: red"
+         *ngIf="registrationFormReactive.controls.phone.hasError('required') && registrationFormReactive.controls.phone.touched">
+        Phone Không được để trống</p>
+      <p style="color: red" *ngIf="registrationFormReactive.controls.phone.hasError('pattern')
+      && registrationFormReactive.controls.phone.touched">Phone Không đúng định dạng</p>
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Gender:</label>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="Male" name="optradio" value="option1" checked>Male
+        <label class="form-check-label" for="Male"></label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="Female" name="optradio" value="option2">Female
+        <label class="form-check-label" for="Female"></label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="Other" name="optradio" value="option3">Other
+        <label class="form-check-label" for="Other"></label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-success">Login</button>
+  </form>
+</div>
+
+
