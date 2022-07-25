@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <form [formGroup]="customerFormReactive" (ngSubmit)="createCustomerWithReactive()" )]>
+  <form [formGroup]="customerFormReactive" (ngSubmit)="createCustomerWithReactive()")]>
     <div class="mb-3 mt-3">
       <label class="form-label h6">Customer Type ID (select one):</label>
       <select formControlName = "customerTypeId" class="form-select">
@@ -24,7 +24,7 @@
 
     <div class="mb-3 mt-3">
       <label class="form-label h6">Customer Name:</label>
-      <input formControlName = "customerName" type="text" class="form-control" placeholder="Enter Customer Name">
+      <input formControlName = "customerName" name="customerName" type="text" class="form-control" placeholder="Enter Customer Name">
       <p style="color: red" *ngIf="customerFormReactive.controls.customerName.hasError('required')
       && customerFormReactive.controls.customerName.touched">Tên Không được để trống</p>
       <p style="color: red" *ngIf="customerFormReactive.controls.customerName.hasError('pattern')
@@ -35,8 +35,8 @@
     <div class="mb-3 mt-3">
       <label class="form-label h6">Customer Birthday:</label>
       <input formControlName = "customerBirthday" type="date" class="form-control" placeholder="Enter Customer Birthday">
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerBirthday.hasError('required')
-      && customerFormReactive.controls.customerBirthday.touched">Ngày Sinh Không được để trống</p>
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerBirthday.hasError('required')-->
+<!--      && customerFormReactive.controls.customerBirthday.touched">Ngày Sinh Không được để trống</p>-->
     </div>
 
 
@@ -54,28 +54,28 @@
     <div class="mb-3 mt-3">
       <label class="form-label h6">customer Id Card:</label>
       <input formControlName = "customerIdCar" type="text" class="form-control" placeholder="Enter customer Id Card">
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerIdCar.hasError('required')
-      && customerFormReactive.controls.customerIdCar.touched">Số chứng minh Không được để trống</p>
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerIdCar.hasError('pattern')
-      && customerFormReactive.controls.customerIdCar.touched">Số chứng minh Không đúng định dạng</p>
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerIdCar.hasError('required')-->
+<!--      && customerFormReactive.controls.customerIdCar.touched">Số chứng minh Không được để trống</p>-->
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerIdCar.hasError('pattern')-->
+<!--      && customerFormReactive.controls.customerIdCar.touched">Số chứng minh Không đúng định dạng</p>-->
     </div>
 
     <div class="mb-3 mt-3">
       <label class="form-label h6">Customer Phone:</label>
       <input formControlName = "customerPhone" type="text" class="form-control" placeholder="Enter customer Phone">
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerPhone.hasError('required')
-      && customerFormReactive.controls.customerPhone.touched">Số điện thoại Không được để trống</p>
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerPhone.hasError('pattern')
-      && customerFormReactive.controls.customerPhone.touched">Số điện thoại Không đúng định dạng</p>
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerPhone.hasError('required')-->
+<!--      && customerFormReactive.controls.customerPhone.touched">Số điện thoại Không được để trống</p>-->
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerPhone.hasError('pattern')-->
+<!--      && customerFormReactive.controls.customerPhone.touched">Số điện thoại Không đúng định dạng</p>-->
     </div>
 
     <div class="mb-3 mt-3">
       <label class="form-label h6">Customer Email:</label>
       <input formControlName = "customerEmail" type="email" class="form-control" placeholder="Enter customer Email">
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerEmail.hasError('required')
-      && customerFormReactive.controls.customerEmail.touched">Email Không được để trống</p>
-      <p style="color: red" *ngIf="customerFormReactive.controls.customerEmail.hasError('pattern')
-      && customerFormReactive.controls.customerEmail.touched">Email Không đúng định dạng</p>
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerEmail.hasError('required')-->
+<!--      && customerFormReactive.controls.customerEmail.touched">Email Không được để trống</p>-->
+<!--      <p style="color: red" *ngIf="customerFormReactive.controls.customerEmail.hasError('pattern')-->
+<!--      && customerFormReactive.controls.customerEmail.touched">Email Không đúng định dạng</p>-->
     </div>
 
 

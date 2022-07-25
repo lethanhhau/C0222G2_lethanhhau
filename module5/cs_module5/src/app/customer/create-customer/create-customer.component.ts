@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Customer} from '../customer';
+
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Customer} from '../../model/customer/customer';
 
 @Component({
   selector: 'app-create-customer',
@@ -14,7 +15,6 @@ export class CreateCustomerComponent implements OnInit {
 
   constructor() {
     this.customerFormReactive = new FormGroup({
-      customerId: new FormControl('',[Validators.required]),
       customerName: new FormControl('',[Validators.required, Validators.pattern("^(([A-Z][a-z0-9]+)||([A-Z][a-z0-9]+(\\ [A-Z][a-z0-9]+)+))$")]),
       customerBirthday: new FormControl('',[Validators.required]),
       customerGender: new FormControl(),
@@ -23,6 +23,7 @@ export class CreateCustomerComponent implements OnInit {
       customerEmail: new FormControl('',[Validators.required, Validators.pattern("^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$")]),
       customerAddress: new FormControl(),
       customerType: new FormControl(),
+
     })
   }
 

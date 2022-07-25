@@ -1,6 +1,6 @@
-// @ts-ignore
-import {Facility} from '../facility/facility';
-import {Customer} from '../customer/customer';
+import {Customer} from '../model/customer/customer';
+import {Facility} from '../model/facility/facility';
+
 
 export interface Contract {
   contractId?: number;

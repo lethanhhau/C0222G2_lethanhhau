@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from '../customer';
+import {Customer} from '../../model/customer/customer';
+import {CustomerType} from '../../model/customer/customerType';
+import {FormControl, FormGroup} from '@angular/forms';
+import {CustomerService} from '../../service/customer.service';
+import {$} from 'protractor';
+
 
 @Component({
   selector: 'app-list-customer',
@@ -8,18 +13,48 @@ import {Customer} from '../customer';
 })
 export class ListCustomerComponent implements OnInit {
 customers: Customer[] = [];
-  constructor() {
-    this.customers.push({customerId: 1, customerName: 'Tài', customerBirthday: '2000-12-01', customerGender: 'nữ', customerIdCard: 123456789,
-      customerPhone: 912345678, customerEmail: 'tai@123.com', customerAddress: 'thanh hóa', customerType: {customerTypeId: 1, customerTypeName: 'gold'}});
+customerTypes: CustomerType[] = [];
+customerFormCreate: FormGroup;
 
-    this.customers.push({customerId: 2, customerName: 'Phương', customerBirthday: '2001-01-01', customerGender: 'nam', customerIdCard: 123456789012,
-      customerPhone: 84912345678, customerEmail: 'phuong@123.com', customerAddress: 'quãng trị', customerType: {customerTypeId: 2, customerTypeName: 'Diamond'}});
-
-    this.customers.push({customerId: 3, customerName: 'Hậu', customerBirthday: '2002-02-20', customerGender: 'nam', customerIdCard: 789012,
-      customerPhone: 84987654321, customerEmail: 'hau@123.com', customerAddress: 'quãng nam', customerType: {customerTypeId: 2, customerTypeName: 'Diamond'}});
-  }
+constructor(private customerService: CustomerService) {
+  this.customerFormCreate = new FormGroup({
+    customerId: new FormControl(),
+    customerName: new FormControl(),
+    customerBirthday: new FormControl(),
+    customerGender: new FormControl(),
+    customerIdCard: new FormControl(),
+    customerPhone: new FormControl(),
+    customerEmail: new FormControl(),
+    customerAddress: new FormControl(),
+    customerType: new FormControl(),
+  })
+  // this.getAllCustomer();
+}
 
   ngOnInit(): void {
   }
 
+  // private getAllCustomer() {
+  //   this.customerService.findAll(0,'').subscribe(data =>{
+  //     data.content.map(value =>{
+  //       this.customers.push(value)
+  //     })
+  //   })
+  // }
+
+  createCustomer() {
+    // console.log(this.customerFormCreate.value.customerType);
+    if (this.customerFormCreate.valid) {
+      let max = 0;
+      for (const e of this.customers) {
+        if (e.customerId > max) {
+          max = e.customerId;
+        }
+      }
+      this.customerFormCreate.value.id = (max + 1);
+      this.customers.push(this.customerFormCreate.value);
+      this.customerFormCreate.reset();
+      $('#staticBackdrop').modal('hide');
+    }
+  }
 }

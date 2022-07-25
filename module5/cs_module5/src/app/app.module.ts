@@ -17,9 +17,7 @@ import { ListContractComponent } from './contract/list-contract/list-contract.co
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeFacilityComponent } from './facility/home-facility/home-facility.component';
-import { TestComponent } from './test/test.component';
-import { DemoComponent } from './demo/demo.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,14 +36,13 @@ import {ReactiveFormsModule} from '@angular/forms';
     CreateContractComponent,
     ErrorComponent,
     HomeFacilityComponent,
-    TestComponent,
-    DemoComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

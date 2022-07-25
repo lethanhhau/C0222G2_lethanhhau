@@ -16,11 +16,11 @@
            class="btn btn-outline-success btn-lg" role="button" style="color: white">
           Create Contract
         </a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" name="searchParam"
-                 placeholder="Search By Name"  aria-label="Search">
-          <button class="btn btn-outline-success" type="submit" name="name" style="color: white">Search</button>
-        </form>
+<!--        <form>-->
+<!--          <input class="form-control me-2" type="search" name="searchParam"-->
+<!--                 placeholder="Search By Name"  aria-label="Search">-->
+<!--          <button class="btn btn-outline-success" type="submit" name="name" style="color: white">Search</button>-->
+<!--        </form>-->
       </div>
     </nav>
   </div>
@@ -40,14 +40,22 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let contract of contracts">
-      <td>{{contract.contractId}}</td>
-      <td>{{contract.facility.facilityName}}</td>
-      <td>{{contract.customer.customerName}}</td>
-      <td>{{contract.startDate | date: 'dd-mm-yyyy'}}</td>
-      <td>{{contract.endDate | date: 'dd-mm-yyyy'}}</td>
-      <td>{{contract.deposits | currency}}</td>
-      <td>{{contract.facility.facilityCost | currency}}</td>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+
+<!--    <tr *ngFor="let contract of contracts">-->
+<!--      <td>{{contract.contractId}}</td>-->
+<!--      <td>{{contract.facility}}</td>-->
+<!--&lt;!&ndash;      <td>{{contract.customer.customerName}}</td>&ndash;&gt;-->
+<!--      <td>{{contract.startDate | date: 'dd-mm-yyyy'}}</td>-->
+<!--      <td>{{contract.endDate | date: 'dd-mm-yyyy'}}</td>-->
+<!--      <td>{{contract.deposits | currency}}</td>-->
+<!--      <td>{{contract.facility | currency}}</td>-->
       <td>
         <button class="btn btn-outline-success" data-bs-toggle="modal"  data-bs-target="#staticBackdropCreate">+</button>
         <button style="margin-left: 5px" class="btn btn-outline-success">List Attach Facility</button>
