@@ -19,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
 import { HomeFacilityComponent } from './facility/home-facility/home-facility.component';
 import { TestComponent } from './test/test.component';
 import { DemoComponent } from './demo/demo.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,10 +41,11 @@ import { DemoComponent } from './demo/demo.component';
     TestComponent,
     DemoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

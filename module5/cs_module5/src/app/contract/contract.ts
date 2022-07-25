@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Facility} from '../facility/facility';
 import {Customer} from '../customer/customer';
 

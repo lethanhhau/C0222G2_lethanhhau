@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Facility} from '../facility';
+import {Facility} from '../model/Facility';
+
 
 @Component({
   selector: 'app-home-facility',

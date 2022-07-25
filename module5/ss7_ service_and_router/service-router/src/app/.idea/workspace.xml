@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="69a3dc5b-77ee-4efd-a7f8-5ad0fbc8afa8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/contract.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/customer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/facility.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/footer/footer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/home/home.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../case_study_module5/case-study-module5/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ss6_angular_form/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ss6_angular_form/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ss6_angular_form/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ss6_angular_form/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ lookup-dictionary/model/dictionary.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ lookup-dictionary/service/dictionary.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/contract/contract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/contract/contract.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/create-customer/create-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/create-customer/create-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/create-customer/create-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/create-customer/create-customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/list-customer/list-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/customer/list-customer/list-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/facility.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/home-facility/home-facility.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/home-facility/home-facility.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/home-facility/home-facility.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/home-facility/home-facility.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/list-facility/list-facility.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/facility/list-facility/list-facility.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../cs_module5/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../cs_module5/src/app/home/home.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CR8MjFnkbeNMMhCB3R4YTI4Osd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="69a3dc5b-77ee-4efd-a7f8-5ad0fbc8afa8" name="Changes" comment="" />
+      <created>1658753991399</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658753991399</updated>
+      <workItem from="1658753993838" duration="29000" />
+      <workItem from="1658754068245" duration="402000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
