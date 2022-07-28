@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ProductService} from '../../service/product.service';
-import {Route, Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProductService} from "../../service/product.service";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-create',
@@ -10,7 +10,7 @@ import {Route, Router} from '@angular/router';
 })
 export class ProductCreateComponent implements OnInit {
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,7 @@ export class ProductCreateComponent implements OnInit {
   })
 
   get id() {
-    return this.productForm.get('id');
+    return this.productForm.get('id')
   }
 
   get name() {

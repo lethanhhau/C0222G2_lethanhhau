@@ -2,68 +2,121 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba80fa7-85ab-4067-abff-04db73ee6952" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/contract.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/create-contract/create-contract.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/contract/list-contract/list-contract.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/create-customer/create-customer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/customer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/edit-customer/edit-customer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/customer/list-customer/list-customer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/create-facility/create-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/detail-facility/detail-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/edit-facility/edit-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/facility.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/home-facility/home-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/facility/list-facility/list-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/home/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../case_study_module5/case-study-module5/src/app/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss6_angular_form/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss6_angular_form/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss6_angular_form/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss6_angular_form/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-router/src/app/model/dictionary.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-router/src/app/service/dictionary.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/contract/contract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/contract/contract.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/customer/create-customer/create-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/customer/create-customer/create-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/app/data/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/app/model/customer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/app/model/customerType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/hero-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-details-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-details-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/portfolio/portfolio-details-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/testimonials/testimonials-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/testimonials/testimonials-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/testimonials/testimonials-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/testimonials/testimonials-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/img/testimonials/testimonials-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/aos/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/aos/aos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap-icons/bootstrap-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap-icons/bootstrap-icons.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap-icons/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/css/animations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/css/boxicons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/css/boxicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/css/transformations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/fonts/boxicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/fonts/boxicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/fonts/boxicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/fonts/boxicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/boxicons/fonts/boxicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/glightbox/css/glightbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/glightbox/css/glightbox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/glightbox/js/glightbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/glightbox/js/glightbox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/isotope-layout/isotope.pkgd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/isotope-layout/isotope.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/php-email-form/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/purecounter/purecounter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/swiper/swiper-bundle.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/swiper/swiper-bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_study_angular/case-study/src/assets/vendor/waypoints/noframework.waypoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss8_connect_back_end/connect-back-end/src/app/data/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss8_connect_back_end/connect-back-end/src/app/model/category.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss8_connect_back_end/connect-back-end/src/app/model/product.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss8_connect_back_end/connect-back-end/src/app/service/product.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/contract/contract.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/contract/list-contract/list-contract.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/contract/list-contract/list-contract.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/customer/create-customer/create-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/customer/create-customer/create-customer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/customer/list-customer/list-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/customer/list-customer/list-customer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/facility/facility.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/facility/home-facility/home-facility.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/facility/home-facility/home-facility.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/customer/list-customer/list-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/customer/list-customer/list-customer.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/facility/home-facility/home-facility.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/facility/home-facility/home-facility.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/facility/list-facility/list-facility.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/facility/list-facility/list-facility.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/facility/service/FacilityService.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/model/contract/contract.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/model/contract/contract.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cs_module5/src/app/service/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_module5/src/app/service/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-router/src/app/product-management/product/product-create/product-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service-router/src/app/product-management/product/product-create/product-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-router/src/app/product-management/product/product-delete/product-delete.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service-router/src/app/product-management/product/product-delete/product-delete.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-router/src/app/product-management/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service-router/src/app/product-management/service/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +139,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/service-router/src/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -103,6 +156,11 @@
       <updated>1658752624230</updated>
       <workItem from="1658752628459" duration="1123000" />
       <workItem from="1658753915584" duration="80000" />
+      <workItem from="1658766109190" duration="383000" />
+      <workItem from="1658766690406" duration="413000" />
+      <workItem from="1658797155248" duration="30000" />
+      <workItem from="1658891164642" duration="33000" />
+      <workItem from="1658912383350" duration="42000" />
     </task>
     <servers />
   </component>

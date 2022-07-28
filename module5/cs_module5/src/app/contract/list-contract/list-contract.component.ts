@@ -1,6 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Contract} from '../contract';
-import {FormGroup, NgForm} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-list-contract',

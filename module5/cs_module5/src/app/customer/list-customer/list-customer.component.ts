@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer} from '../../model/customer/customer';
-import {CustomerType} from '../../model/customer/customerType';
 import {FormControl, FormGroup} from '@angular/forms';
-import {CustomerService} from '../../service/customer.service';
 import {$} from 'protractor';
+import {Customer} from '../../model/customer/customer';
+import {CustomerService} from '../../service/customer.service';
+import {CustomerType} from '../../model/customer/customerType';
+
+
 
 
 @Component({

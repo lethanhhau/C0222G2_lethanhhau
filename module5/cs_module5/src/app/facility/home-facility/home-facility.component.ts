@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Facility} from '../model/Facility';
+import {Facility} from '../../model/facility/facility';
+
+
 
 
 @Component({

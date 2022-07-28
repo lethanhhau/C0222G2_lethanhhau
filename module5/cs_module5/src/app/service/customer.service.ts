@@ -9,8 +9,8 @@ export class CustomerService {
 
   constructor(private httpClient: HttpClient) {
   }
-    findAll(page: number, search: string) {
-      let url = 'http://localhost:8080/rest/customer?page=' + page + '&searchValue=' + search;
-      return this.httpClient.get(url);
-    }
+    // findAll(page: number, search: string) {
+    //   let url = 'http://localhost:8080/rest/customer?page=' + page + '&searchValue=' + search;
+    //   return this.httpClient.get(url);
+    // }
 }

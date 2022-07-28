@@ -1,0 +1,102 @@
+<div class="container" style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 50px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">Create New Customer</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="customerForm" *ngIf="customerForm" (ngSubmit)="createCustomer()">
+
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Name:</label>
+      <input formControlName = "customerName" name="customerName" type="text" class="form-control" placeholder="Enter Customer Name">
+    </div>
+    <div *ngIf="!customerName.valid && (customerName.dirty || customerName.touched)">
+      <div class="text-danger" [hidden]="!customerName.errors.required">Customer Name cannot be blank!</div>
+      <div class="text-danger" [hidden]="!customerName.errors.pattern">Customer name malformed!</div>
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Birthday:</label>
+      <input formControlName = "customerBirthday" type="date" class="form-control" placeholder="Enter Customer Birthday">
+    </div>
+    <div *ngIf="!customerBirthday.valid && (customerBirthday.dirty || customerBirthday.touched)">
+      <div class="text-danger" [hidden]="!customerBirthday.errors.required">Customer Birthday cannot be blank!</div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Gender:(select one):</label>
+      <select id="customerGender" class="form-select js-input" type="text" formControlName="customerGender">
+        <option value="">Choice Gender</option>
+        <option value="1">Male</option>
+        <option value="0">FeMale</option>
+        <option value="2">Other</option>
+      </select>
+    </div>
+    <div *ngIf="!customerGender.valid && (customerGender.dirty || customerGender.touched)">
+      <div class="text-danger" [hidden]="!customerGender.errors.required"> Customer Gender cannot be blank!</div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">customer Id Card:</label>
+      <input formControlName = "customerIdCard" type="text" class="form-control" placeholder="Enter customer Id Card">
+    </div>
+    <div *ngIf="!customerIdCard.valid && (customerIdCard.dirty || customerIdCard.touched)">
+      <div class="text-danger" [hidden]="!customerIdCard.errors.required"> customer Id Card cannot be blank!</div>
+      <div class="text-danger" [hidden]="!customerIdCard.errors.pattern">Customer Id Card malformed!</div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Phone:</label>
+      <input formControlName = "customerPhone" type="text" class="form-control" placeholder="Enter customer Phone">
+    </div>
+    <div *ngIf="!customerPhone.valid && (customerPhone.dirty || customerPhone.touched)">
+      <div class="text-danger" [hidden]="!customerPhone.errors.required">Customer Phone cannot be blank!</div>
+      <div class="text-danger" [hidden]="!customerPhone.errors.pattern">Customer Phone malformed!</div>
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Email:</label>
+      <input formControlName = "customerEmail" type="email" class="form-control" placeholder="Enter customer Email">
+    </div>
+    <div *ngIf="!customerEmail.valid && (customerEmail.dirty || customerEmail.touched)">
+      <div class="text-danger" [hidden]="!customerEmail.errors.required">Customer Email cannot be blank!</div>
+      <div class="text-danger" [hidden]="!customerEmail.errors.pattern">Customer Email malformed!</div>
+
+    </div>
+
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Address:</label>
+      <input formControlName = "customerAddress" type="text" class="form-control" placeholder="Enter customer Address">
+    </div>
+    <div *ngIf="!customerAddress.valid && (customerAddress.dirty || customerAddress.touched)">
+      <div class="text-danger" [hidden]="!customerAddress.errors.required">Customer Address cannot be blank!</div>
+      <div class="text-danger" [hidden]="!customerAddress.errors.pattern">Customer Address malformed!</div>
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Customer Type ID (select one):</label>
+      <select class="form-select" name="customerType" formControlName="customerType" >
+        <option value="" [selected]="true" [disabled]="true">choice customer Type</option>
+        <option *ngFor="let item of customerTypes" [ngValue]="item">{{item.name}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success" [disabled]="!customerForm.valid" (click)="showCreate()">Save</button>
+    <a [routerLink]="['/customer-list']"
+       style="margin-left: 10px" class="btn btn-outline-secondary">Back home</a>
+  </form>
+</div>
+
+
+

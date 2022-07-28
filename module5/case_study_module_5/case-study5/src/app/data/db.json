@@ -1,0 +1,124 @@
+{
+  "customer": [
+    {
+      "id": 3,
+      "customerName": "Tai123",
+      "customerBirthday": "2022-07-07",
+      "customerGender": 1,
+      "customerIdCard": 123456789,
+      "customerPhone": 1912345678,
+      "customerEmail": "tai@123.com",
+      "customerAddress": "Thanh hoa",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "customerName": "Tai",
+      "customerBirthday": "2022-06-28",
+      "customerGender": "0",
+      "customerIdCard": "1232342232",
+      "customerPhone": "0912345678",
+      "customerEmail": "Tai123@mail.com",
+      "customerAddress": "Anh",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 4
+    },
+    {
+      "customerName": "Anh",
+      "customerBirthday": "2022-06-27",
+      "customerGender": "1",
+      "customerIdCard": "123456789",
+      "customerPhone": "0918765432",
+      "customerEmail": "Anh123@gmai.com",
+      "customerAddress": "Anh",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "id": 5
+    },
+    {
+      "customerName": "Anh",
+      "customerBirthday": "2022-06-28",
+      "customerGender": "2",
+      "customerIdCard": "123456789",
+      "customerPhone": "0912345678",
+      "customerEmail": "Anh@gmail.com",
+      "customerAddress": "Anh",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "id": 6
+    },
+    {
+      "customerName": "Phuong",
+      "customerBirthday": "2022-07-05",
+      "customerGender": "0",
+      "customerIdCard": "123456789",
+      "customerPhone": "0912345678",
+      "customerEmail": "Phuong@gmail.com",
+      "customerAddress": "Quang Tri",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "id": 7
+    },
+    {
+      "customerName": "Hau",
+      "customerBirthday": "2022-07-18",
+      "customerGender": "0",
+      "customerIdCard": "123456789",
+      "customerPhone": "0912345678",
+      "customerEmail": "Hau123@gmail.com",
+      "customerAddress": "Quang Nam",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 8
+    },
+    {
+      "customerName": "Anh",
+      "customerBirthday": "2022-07-12",
+      "customerGender": "0",
+      "customerIdCard": "123456789",
+      "customerPhone": "0912345678",
+      "customerEmail": "Anh@gmail.com",
+      "customerAddress": "Anh",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 9
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

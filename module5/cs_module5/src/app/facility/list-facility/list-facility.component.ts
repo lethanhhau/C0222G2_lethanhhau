@@ -3,6 +3,7 @@ import {Facility} from '../../model/facility/facility';
 
 
 
+
 @Component({
   selector: 'app-list-facility',
   templateUrl: './list-facility.component.html',

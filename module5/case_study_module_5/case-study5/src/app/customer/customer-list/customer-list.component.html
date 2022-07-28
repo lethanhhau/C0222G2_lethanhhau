@@ -1,0 +1,107 @@
+<header style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">
+            <b>List Customer</b>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <a [routerLink]="['/customer-create']"
+           class="btn btn-outline-success btn-lg" role="button" style="color: white">
+          Create Customer
+        </a>
+        <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="getFormSearch()">
+          <input class="form-control me-2" type="search" name="searchParam" formControlName="searchCustomerName"
+                 placeholder="Search By Name" aria-label="Search" aria-describedby="search-addon">
+          <button class="btn btn-outline-success" type="submit" name="name" style="color: black">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>Id Card</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Type</th>
+      <th colspan="2" style="text-align: center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customers| paginate: { itemsPerPage: 5, currentPage: p },index as loop ">
+      <td>{{loop + 1}}</td>
+      <td>{{customer.customerName}}</td>
+      <td>{{customer.customerBirthday|date: 'dd-MM-yyyy'}}</td>
+      <td>
+          <span [ngSwitch]="customer.customerGender">
+            <span *ngSwitchCase="0"> Female</span>
+              <span *ngSwitchCase="1"> Male</span>
+              <span *ngSwitchCase="2"> Other</span>
+          </span>
+      </td>
+      <td>{{customer.customerIdCard}}</td>
+      <td>{{customer.customerPhone}}</td>
+      <td>{{customer.customerAddress}}</td>
+      <td>{{customer.customerType.name}}</td>
+      <td>
+        <a [routerLink]="['/customer-edit',customer.id]"
+           class="btn btn-outline-warning" type="button" style="color: black">
+          <i class="bi bi-pencil"></i>
+        </a>
+      </td>
+
+      <td>
+        <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#deleteModal' + customer.id">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+        <div class="modal fade" id="deleteModal{{customer.id}}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title text-danger"><h1>Warning!</h1></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <h3>Do you want delete:</h3> <br>
+                <span class="text-warning"></span>Customer with id = <span class="text-warning">{{customer.id}}</span> ?
+                <br>
+                <span class="text-warning"></span>Customer with Name = <span
+                class="text-warning">{{customer.customerName}}</span> ?
+              </div>
+              <div class="modal-footer">
+                <button type="button"  class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="showCancel()">Cancel</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        (click)="deleteCustomer(customer.id)" (click)="showDelete()">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="margin-left: 70%">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+</div>

@@ -1,63 +1,41 @@
-import {Injectable} from '@angular/core';
-import {Product} from '../model/product';
+import { Injectable } from '@angular/core';
+import {Product} from "../model/product";
+import {AbstractControl} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
 
   constructor() {
-  }
+    this.products.push( {id: 1, name: 'hao hao', price: 3.5 , description: 'chua cay'},
+      {id: 2, name: 'omo', price: 30, description: 'trang sang'})
 
-  getAll() {
+  }
+  products: Product[] = [];
+
+  getAll(){
     return this.products;
   }
 
-  saveProduct(product) {
-    this.products.push(product);
+  saveProduct(product){
+    this.products.push(product)
   }
 
   findById(id: number) {
-    return this.products.find(product => product.id === id);
+    return this.products.filter(product => product.id === id);
   }
 
-  updateProduct(id: number, product: Product) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id === id) {
-        this.products[i] = product;
+  updateProduct(productEdit) {
+    for (let i = 0; i < this.products.length ; i++) {
+      if(this.products[i].id === productEdit.id){
+        this.products[i] = productEdit;
       }
     }
   }
 
-  deleteProduct(id: number) {
-    this.products = this.products.filter(product => {
-      return product.id !== id;
-    });
+  deleteProduct(id) {
+    this.products = this.products.filter(product => product.id !== id);
   }
+
 }
