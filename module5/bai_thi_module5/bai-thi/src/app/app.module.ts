@@ -13,6 +13,7 @@ import { ListComponent } from './lo-hang/list/list.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { EditComponent } from './lo-hang/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NavBarComponent,
     ErrorComponent,
     CreateComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

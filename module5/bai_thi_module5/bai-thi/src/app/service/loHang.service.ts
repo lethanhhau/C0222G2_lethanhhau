@@ -9,11 +9,10 @@ import {SanPham} from '../model/sanPham';
   providedIn: 'root'
 })
 export class LoHangService {
-  private URL_LO_HANG = 'http://localhost:3000/loHang';
-  private URL_SAN_PHAM = 'http://localhost:3000/sanPham';
+  private URL_LO_HANG = 'http://localhost:8080/rest/loHang';
+  private URL_SAN_PHAM = 'http://localhost:8080/rest/sanPham';
 
   constructor(private httpClient: HttpClient) {
-    // this.customers.push({});
   }
 
   getAll(): Observable<LoHang[]> {
@@ -37,7 +36,11 @@ export class LoHangService {
     return this.httpClient.delete(this.URL_LO_HANG + '/' + id);
   }
 
-  loHangListBySearch(searchCustomerName: string, searchAddress: string): Observable<LoHang[]>{
-    return this.httpClient.get<LoHang[]>("http://localhost:3000/loHang?customerName_like=" + searchCustomerName + "&customerAddress_like=" + searchAddress);
+  editLoHang(loHang: LoHang): Observable<LoHang> {
+    return this.httpClient.patch(this.URL_LO_HANG + '/update', loHang)
   }
+
+  // loHangListBySearch(searchCustomerName: string, searchAddress: string): Observable<LoHang[]>{
+  //   return this.httpClient.get<LoHang[]>("http://localhost:3000/loHang?customerName_like=" + searchCustomerName + "&customerAddress_like=" + searchAddress);
+  // }
 }
