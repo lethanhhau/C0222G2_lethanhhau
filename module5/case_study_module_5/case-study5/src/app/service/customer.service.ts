@@ -40,7 +40,7 @@ export class CustomerService {
     return this.httpClient.delete(this.URL_CUSTOMERS + '/' + id);
   }
 
-  customerListBySearch(searchCustomerName: string): Observable<Customer[]>{
-    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?customerName_like=" + searchCustomerName);
+  customerListBySearch(searchCustomerName: string, searchAddress: string): Observable<Customer[]>{
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?customerName_like=" + searchCustomerName + "&customerAddress_like=" + searchAddress);
   }
 }

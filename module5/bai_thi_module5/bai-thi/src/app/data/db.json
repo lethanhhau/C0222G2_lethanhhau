@@ -1,0 +1,57 @@
+{
+  "loHang": [
+    {
+      "id": 3,
+      "maLoHang": "LH-1234",
+      "sanPham": {
+        "id": 2,
+        "tenSanPham": "Tiger",
+        "xuatXu": "Viet Nam",
+        "giaTien": 220000,
+        "donVi": "thung"
+      },
+      "soLuong": "1234",
+      "ngayNhapHang": "2022-07-06",
+      "ngaySanXuat": "2022-07-06",
+      "ngayHetHan": "2022-07-07"
+    },
+    {
+      "id": 4,
+      "maLoHang": "LH-9999",
+      "sanPham": {
+        "id": 2,
+        "tenSanPham": "Tiger",
+        "xuatXu": "Viet Nam",
+        "giaTien": 220000,
+        "donVi": "thung"
+      },
+      "soLuong": "99",
+      "ngayNhapHang": "2022-07-20",
+      "ngaySanXuat": "2022-07-12",
+      "ngayHetHan": "2022-07-12"
+    }
+  ],
+  "sanPham": [
+    {
+      "id": 1,
+      "tenSanPham": "Sting",
+      "xuatXu": "Viet Nam",
+      "giaTien": 250000,
+      "donVi": "thung"
+    },
+    {
+      "id": 2,
+      "tenSanPham": "Tiger",
+      "xuatXu": "Viet Nam",
+      "giaTien": 220000,
+      "donVi": "thung"
+    },
+    {
+      "id": 3,
+      "tenSanPham": "Oshi",
+      "xuatXu": "Viet Nam",
+      "giaTien": 100000,
+      "donVi": "thung"
+    }
+  ]
+}

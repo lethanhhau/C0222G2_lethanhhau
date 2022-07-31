@@ -15,6 +15,7 @@ export class CustomerListComponent implements OnInit {
   p: number = 1;
   searchForm: FormGroup;
   customerName: string;
+  customerAddress: string;
 
 
   constructor(private customerService: CustomerService,
@@ -41,11 +42,13 @@ export class CustomerListComponent implements OnInit {
   formSearch(){
     this.searchForm = new FormGroup({
       searchCustomerName: new FormControl(""),
+      searchCustomerAddress: new FormControl("")
     });
   }
 
   getFormSearch() {
-    this.customerService.customerListBySearch(this.searchForm.value.searchCustomerName).subscribe(data => {
+    this.customerService.customerListBySearch(this.searchForm.value.searchCustomerName,
+      this.searchForm.value.searchCustomerAddress).subscribe(data => {
       this.customers = data;
       console.log(data);
     }, error => {

@@ -1,0 +1,74 @@
+<div class="container" style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 50px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">Create New Lo Hang</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="loHangForm" *ngIf="loHangForm" (ngSubmit)="createLoHang()">
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ma Lo Hang:</label>
+      <input formControlName="maLoHang" name="maLoHang" type="text" class="form-control" placeholder="Enter ma Lo Hang">
+    </div>
+    <div *ngIf="!maLoHang.valid && (maLoHang.dirty || maLoHang.touched)">
+      <div class="text-danger" [hidden]="!maLoHang.errors.required">Ma Lo Hang khong duoc de trong</div>
+      <div class="text-danger" [hidden]="!maLoHang.errors.pattern">Ma Lo Hang khong dung dinh dang</div>
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">San Pham(select one):</label>
+      <select class="form-select" name="sanPham" formControlName="sanPham">
+        <option value="" [selected]="true" [disabled]="true">chon San Pham</option>
+        <option *ngFor="let item of sanPhams" [ngValue]="item">{{item.tenSanPham}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">So Luong:</label>
+      <input formControlName="soLuong" type="text" class="form-control" placeholder="Enter So Luong">
+    </div>
+    <div *ngIf="!soLuong.valid && (soLuong.dirty || soLuong.touched)">
+      <div class="text-danger" [hidden]="!soLuong.errors.required"> So Luong khong duoc de trong</div>
+      <div class="text-danger" [hidden]="!soLuong.errors.pattern">So Luong khong dung dinh dang</div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Nhap Hang:</label>
+      <input formControlName="ngayNhapHang" type="date" class="form-control" placeholder="Enter Ngay Nhap Hang">
+    </div>
+    <div *ngIf="!ngayNhapHang.valid && (ngayNhapHang.dirty || ngayNhapHang.touched)">
+      <div class="text-danger" [hidden]="!ngayNhapHang.errors.required">Ngay Nhap Hang khong duoc de trong</div>
+
+    </div>
+
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay San Xuat:</label>
+      <input formControlName="ngaySanXuat" type="date" class="form-control" placeholder="Enter Ngay San Xuat">
+    </div>
+    <div *ngIf="!ngaySanXuat.valid && (ngaySanXuat.dirty || ngaySanXuat.touched)">
+      <div class="text-danger" [hidden]="!ngaySanXuat.errors.required">Ngay San Xuat khong duoc de trong</div>
+
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Het Han:</label>
+      <input formControlName="ngayHetHan" type="date" class="form-control" placeholder="Enter ngay Het Han">
+    </div>
+    <div *ngIf="!ngayHetHan.valid && (ngayHetHan.dirty || ngayHetHan.touched)">
+      <div class="text-danger" [hidden]="!ngayHetHan.errors.required">Ngay Het Han khong duoc de trong</div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success" [disabled]="!loHangForm.valid" (click)="showCreate()">Save
+    </button>
+    <a [routerLink]="['/list']"
+       style="margin-left: 10px" class="btn btn-outline-secondary">Back home</a>
+  </form>
+</div>
+
+
