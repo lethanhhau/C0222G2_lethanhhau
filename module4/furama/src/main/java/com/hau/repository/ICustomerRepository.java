@@ -11,5 +11,5 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
     @Query(value = " select * from customer where customer_name like :searchValue", nativeQuery = true,
     countQuery = "select count(*) from (select * from customer where customer_name like :searchValue) temp_table")
-    Page<Customer> findAll(Pageable pageable, @Param("searchValue") String searchValue);
+    Page<Customer> findByNameCustomer(Pageable pageable, @Param("searchValue") String searchValue);
 }

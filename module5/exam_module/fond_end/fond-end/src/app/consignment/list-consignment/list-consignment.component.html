@@ -5,7 +5,7 @@
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-success">
           <h1 class="mb-3">
-            <b>Danh Sach Lo Hang</b>
+            <b>List Consignment</b>
           </h1>
         </div>
       </div>
@@ -14,10 +14,10 @@
 
   <div class="container mt-3">
     <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="getFormSearch()">
-      <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchParam"
-             placeholder="Search Ten San Pham" aria-label="Search" aria-describedby="search-addon">
-<!--      <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchCustomerAddress"-->
-<!--             placeholder="Search Ngay Nhap Hang" aria-label="Search" aria-describedby="search-addon">-->
+      <input class="form-control me-2 buttons1" type="search" name="searchProductName" formControlName="searchProductName"
+             placeholder="Search Product Name" aria-label="Search" aria-describedby="search-addon">
+      <!--      <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchCustomerAddress"-->
+      <!--             placeholder="Search Ngay Nhap Hang" aria-label="Search" aria-describedby="search-addon">-->
       <button class="btn btn-outline-success buttons1" type="submit" name="name" style="color: black">
         <i class="bi bi-search"></i>
       </button>
@@ -27,9 +27,9 @@
   <div class="container mt-3">
     <nav class="navbar navbar-light bg-info">
       <div class="container-fluid" style="height: 60px">
-        <a [routerLink]="['/create']"
+        <a [routerLink]="['/create-consignment']"
            class="btn btn-outline-success btn-lg" role="button" style="color: white">
-          Nhập Hàng
+          Create Consignment
         </a>
         <!--        <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="getFormSearch()">-->
         <!--          <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchCustomerName"-->
@@ -48,36 +48,39 @@
   <table class="table table-hover">
     <thead>
     <tr>
-      <th>mã lô hàng</th>
-      <th>Tên sản Phẩm</th>
-      <th>Giá Tiền</th>
-      <th>Đơn Vị</th>
-      <th>Số Lượng</th>
-      <th>Ngày Nhập Hàng</th>
+      <th>STT</th>
+      <th>Code</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Unit</th>
+      <th>Amount</th>
+      <th>Import Date</th>
+      <th>Date Of Manufacture</th>
       <th colspan="2" style="text-align: center">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let lh of loHangs">
-      <td>{{lh.maLoHang}}</td>
-      <td>{{lh.sanPham.tenSanPham}}</td>
-      <td>{{lh.sanPham.giaTien| currency: 'VND'}}</td>
-      <td>{{lh.sanPham.donVi}}</td>
-      <td>{{lh.soLuong}}</td>
-      <td>{{lh.ngayNhapHang|date: 'dd-MM-yyyy'}}</td>
+    <tr *ngFor="let consignment of consignments">
+      <td>{{consignment.code}}</td>
+      <td>{{consignment.product.productName}}</td>
+      <td>{{consignment.product.price| currency: 'VND'}}</td>
+      <td>{{consignment.product.unit}}</td>
+      <td>{{consignment.amount}}</td>
+      <td>{{consignment.importDate|date: 'dd-MM-yyyy'}}</td>
+      <td>{{consignment.dateOfManufacture|date: 'dd-MM-yyyy'}}</td>
       <td>
-        <a [routerLink]="['/edit',lh.id]"
-          class="btn btn-outline-warning" type="button" style="color: black">
+        <a [routerLink]="['/edit-consignment',consignment.id]"
+           class="btn btn-outline-warning" type="button" style="color: black">
           <i class="bi bi-pencil"></i>
         </a>
       </td>
 
       <td>
         <button class="btn btn-outline-danger" data-bs-toggle="modal"
-                [attr.data-bs-target]="'#deleteModal' + lh.id">
+                [attr.data-bs-target]="'#deleteModal' + consignment.id">
           <i class="bi bi-trash-fill"></i>
         </button>
-        <div class="modal fade" id="deleteModal{{lh.id}}">
+        <div class="modal fade" id="deleteModal{{consignment.id}}">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -87,15 +90,15 @@
               <div class="modal-body">
                 <!--                <h3>Do you want delete:</h3> <br>-->
                 <span class="text-warning"></span>Bạn có chắc muốn xóa thông tin lô hàng <span
-                class="text-warning">{{lh.sanPham.tenSanPham}}</span> <br>
-                nhập ngày {{lh.ngayNhapHang}}
+                class="text-warning">{{consignment.product.productName}}</span> <br>
+                nhập ngày {{consignment.importDate}}
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="showCancel()">
                   Cancel
                 </button>
                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
-                        (click)="deleteLoHang(lh.id)" (click)="showDelete()">
+                        (click)="deleteConsignment(consignment.id)" (click)="showDelete()">
                   Delete
                 </button>
               </div>

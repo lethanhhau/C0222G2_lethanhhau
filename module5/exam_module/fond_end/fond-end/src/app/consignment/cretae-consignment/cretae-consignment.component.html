@@ -1,0 +1,74 @@
+<div class="container" style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 50px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">Create New Lo Hang</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="consignmentForm" *ngIf="consignmentForm" (ngSubmit)="createConsignment()">
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ma Lo Hang:</label>
+      <input formControlName="maLoHang" name="maLoHang" type="text" class="form-control" placeholder="Enter ma Lo Hang">
+    </div>
+    <div *ngIf="!code.valid && (code.dirty || code.touched)">
+      <div class="text-danger" [hidden]="!code.errors.required">Ma Lo Hang khong duoc de trong</div>
+      <div class="text-danger" [hidden]="!code.errors.pattern">Ma Lo Hang khong dung dinh dang</div>
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">San Pham(select one):</label>
+      <select class="form-select" name="sanPham" formControlName="sanPham">
+        <option value="" [selected]="true" [disabled]="true">chon San Pham</option>
+        <option *ngFor="let item of products" [ngValue]="item">{{item.productName}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">So Luong:</label>
+      <input formControlName="soLuong" type="text" class="form-control" placeholder="Enter So Luong">
+    </div>
+    <div *ngIf="!amount.valid && (amount.dirty || amount.touched)">
+      <div class="text-danger" [hidden]="!amount.errors.required"> So Luong khong duoc de trong</div>
+      <div class="text-danger" [hidden]="!amount.errors.pattern">So Luong khong dung dinh dang</div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Nhap Hang:</label>
+      <input formControlName="ngayNhapHang" type="date" class="form-control" placeholder="Enter Ngay Nhap Hang">
+    </div>
+    <div *ngIf="!importDate.valid && (importDate.dirty || importDate.touched)">
+      <div class="text-danger" [hidden]="!importDate.errors.required">Ngay Nhap Hang khong duoc de trong</div>
+
+    </div>
+
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay San Xuat:</label>
+      <input formControlName="ngaySanXuat" type="date" class="form-control" placeholder="Enter Ngay San Xuat">
+    </div>
+    <div *ngIf="!dateOfManufacture.valid && (dateOfManufacture.dirty || dateOfManufacture.touched)">
+      <div class="text-danger" [hidden]="!dateOfManufacture.errors.required">Ngay San Xuat khong duoc de trong</div>
+
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Het Han:</label>
+      <input formControlName="ngayHetHan" type="date" class="form-control" placeholder="Enter ngay Het Han">
+    </div>
+    <div *ngIf="!expirationDate.valid && (expirationDate.dirty || expirationDate.touched)">
+      <div class="text-danger" [hidden]="!expirationDate.errors.required">Ngay Het Han khong duoc de trong</div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-success" [disabled]="!consignmentForm.valid">Save
+    </button>
+    <a [routerLink]="['/list-consignment']"
+       style="margin-left: 10px" class="btn btn-outline-secondary">Back home</a>
+  </form>
+</div>
+
+

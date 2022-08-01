@@ -15,8 +15,8 @@ export class LoHangService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Observable<LoHang[]> {
-    return this.httpClient.get<LoHang[]>(this.URL_LO_HANG);
+  getAll(searchName: string, page: number): Observable<LoHang[]> {
+    return this.httpClient.get<LoHang[]>(this.URL_LO_HANG + '/page?page='+ page + "&keyWord=" + searchName);
   }
 
   getAllSanPham(): Observable<SanPham[]>{
@@ -24,23 +24,25 @@ export class LoHangService {
   }
 
   saveLoHang(loHang: LoHang) {
-    return this.httpClient.post(this.URL_LO_HANG, loHang);
+    return this.httpClient.post(this.URL_LO_HANG + '/create', loHang);
   }
 
   findById(id: number): Observable<LoHang> {
-    return this.httpClient.get<LoHang>(this.URL_LO_HANG + '/' + id);
+    return this.httpClient.get<LoHang>(this.URL_LO_HANG + '/find/' + id);
   }
 
 
   deleteLOHang(id) {
-    return this.httpClient.delete(this.URL_LO_HANG + '/' + id);
+    return this.httpClient.delete(this.URL_LO_HANG + '/delete' + id);
   }
 
   editLoHang(loHang: LoHang): Observable<LoHang> {
-    return this.httpClient.patch(this.URL_LO_HANG + '/update', loHang)
+    return this.httpClient.patch(this.URL_LO_HANG + '/update' , loHang)
   }
 
-  // loHangListBySearch(searchCustomerName: string, searchAddress: string): Observable<LoHang[]>{
-  //   return this.httpClient.get<LoHang[]>("http://localhost:3000/loHang?customerName_like=" + searchCustomerName + "&customerAddress_like=" + searchAddress);
+  // loHangListBySearch(searchTenSanPham: string): Observable<LoHang[]>{
+  //   return this.httpClient.get<LoHang[]>("http://localhost:3000/loHang?tenSanPham_like=" + searchTenSanPham );
   // }
 }
+
+// + "&customerAddress_like=" + searchAddress

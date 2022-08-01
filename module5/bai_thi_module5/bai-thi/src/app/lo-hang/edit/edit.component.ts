@@ -27,20 +27,21 @@ export class EditComponent implements OnInit {
       const id = paramMap.get('id');
       this.loHangService.findById(parseInt(id)).subscribe(data => {
         this.loHangService.getAllSanPham().subscribe(value => {
+          console.log(value);
           this.sanPhams = value;
         }, error => {
         }, () => {
           this.loHang = data,
             this.loHangForm = new FormGroup({
               id: new FormControl(this.loHang.id),
-              maLoHang: new FormControl('', [Validators.required,
+              maLoHang: new FormControl(this.loHang.maLoHang, [Validators.required,
                 Validators.pattern('^(LH-)[0-9]{4}$')]),
-              sanPham: new FormControl('', [Validators.required]),
-              soLuong: new FormControl('', [Validators.required,
+              sanPham: new FormControl(this.loHang.sanPham, [Validators.required]),
+              soLuong: new FormControl(this.loHang.soLuong, [Validators.required,
                 Validators.pattern('^(([1-9]+)|([1-9][0-9]+))$')]),
-              ngayNhapHang: new FormControl('', [Validators.required]),
-              ngaySanXuat: new FormControl('', [Validators.required]),
-              ngayHetHan: new FormControl('', [Validators.required]),
+              ngayNhapHang: new FormControl(this.loHang.ngayNhapHang, [Validators.required]),
+              ngaySanXuat: new FormControl(this.loHang.ngaySanXuat, [Validators.required]),
+              ngayHetHan: new FormControl(this.loHang.ngayHetHan, [Validators.required]),
             })
         })
       })
@@ -73,10 +74,11 @@ export class EditComponent implements OnInit {
   }
 
   updateLoHang() {
+    console.log(this.loHangForm.value);
     const loHangEdit = this.loHangForm.value;
     this.loHangService.editLoHang(loHangEdit).subscribe(data => {}, error => {
     }, () => {
-      this.router.navigateByUrl("/edit");
+      this.router.navigateByUrl("/list");
     });
   }
 

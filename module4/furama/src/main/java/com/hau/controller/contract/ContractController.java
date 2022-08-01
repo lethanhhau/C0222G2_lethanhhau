@@ -1,7 +1,6 @@
 package com.hau.controller.contract;
 
 import com.hau.dto.contract.ContractDto;
-import com.hau.dto.customer.CustomerDto;
 import com.hau.model.contract.AttachFacility;
 import com.hau.model.contract.Contract;
 import com.hau.model.customer.Customer;

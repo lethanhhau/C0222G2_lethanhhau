@@ -9,7 +9,7 @@ import {EditComponent} from './lo-hang/edit/edit.component';
 const routes: Routes = [
   {path: 'list',component: ListComponent},
   {path: 'create',component: CreateComponent},
-  {path: 'edit',component: EditComponent},
+  {path: 'edit/:id',component: EditComponent},
   {path: '**', component: ErrorComponent}
 ];
 
