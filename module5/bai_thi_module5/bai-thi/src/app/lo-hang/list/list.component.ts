@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
 
   getAllLoHang(searchName:string, page: number) {
 
-    this.loHangService.getAll(searchName, page).subscribe((data: LoHang[]) => {
+    this.loHangService.getAllLoHang(searchName, page).subscribe((data: LoHang[]) => {
       // @ts-ignore
       this.totalPages = data.totalPages;
       // @ts-ignore
@@ -41,6 +41,10 @@ export class ListComponent implements OnInit {
       this.loHangs = data.content;
     });
   }
+
+  // getAllPDF(){
+  //   this.loHangService.getAllPDF();
+  // }
 
   goPrevious() {
     let numberPages: number = this.number;

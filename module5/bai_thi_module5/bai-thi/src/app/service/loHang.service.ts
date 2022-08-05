@@ -15,8 +15,12 @@ export class LoHangService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(searchName: string, page: number): Observable<LoHang[]> {
+  getAllLoHang(searchName: string, page: number): Observable<LoHang[]> {
     return this.httpClient.get<LoHang[]>(this.URL_LO_HANG + '/page?page='+ page + "&keyWord=" + searchName);
+  }
+
+  getAllPDF(): Observable<LoHang[]>{
+    return this.httpClient.get<LoHang[]>(this.URL_LO_HANG)
   }
 
   getAllSanPham(): Observable<SanPham[]>{

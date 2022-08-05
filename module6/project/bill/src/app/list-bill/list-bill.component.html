@@ -1,0 +1,95 @@
+<header>
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">
+            <b>Danh Sách Hóa Đơn</b>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <form>
+      <input class="form-control me-2 buttons1" type="search" name="searchParam"
+             placeholder="Search số hóa đơn" aria-label="Search" aria-describedby="search-addon">
+            <input class="form-control me-2 buttons1" type="search" name="searchParam"
+                   placeholder="Search Ngay tạo" aria-label="Search" aria-describedby="search-addon">
+      <button class="btn btn-outline-success buttons1" type="submit" name="name" style="color: black">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+</header>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th>Số Hóa Đơn</th>
+      <th>Ngày Tạo</th>
+      <th>Người Tạo</th>
+      <th>Số Bàn</th>
+      <th>Tổng Tiền</th>
+<!--      <th>Xuất Hóa Đơn</th>-->
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>HD01</td>
+      <td>20/10/2021</td>
+      <td>Nguyễn Văn A</td>
+      <td>TB001</td>
+      <td>100.000 vnd</td>
+<!--      <td>-->
+<!--        <a><i class="bi bi-box-arrow-right"></i> </a>-->
+<!--      </td>-->
+      <td>
+        <a [routerLink]= "['/detail-list']" style="color: black">
+          <i class="bi bi-eye-fill"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<!--  <div class="container-fluid mt-3">-->
+<!--    <ul class="pagination float-end">-->
+<!--      <div *ngIf="number == 0">-->
+<!--        <li class="page-item disabled">-->
+<!--          <button class="page-link" (click)="goPrevious()">Previous</button>-->
+<!--        </li>-->
+<!--      </div>-->
+<!--      <div *ngIf="number != 0">-->
+<!--        <li class="page-item">-->
+<!--          <button class="page-link" (click)="goPrevious()">Previous</button>-->
+<!--        </li>-->
+<!--      </div>-->
+<!--      <div *ngFor="let count of countTotalPages; index as i">-->
+<!--        <div *ngIf="i == number">-->
+<!--          <li class="page-item active">-->
+<!--            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>-->
+<!--          </li>-->
+<!--        </div>-->
+<!--        <div *ngIf="i != number">-->
+<!--          <li class="page-item">-->
+<!--            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>-->
+<!--          </li>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div *ngIf="number == totalPages - 1">-->
+<!--        <li class="page-item disabled">-->
+<!--          <button class="page-link" (click)="goNext()">Next</button>-->
+<!--        </li>-->
+<!--      </div>-->
+<!--      <div *ngIf="number != totalPages - 1">-->
+<!--        <li class="page-item">-->
+<!--          <button class="page-link" (click)="goNext()">Next</button>-->
+<!--        </li>-->
+<!--      </div>-->
+<!--    </ul>-->
+<!--  </div>-->
+</div>

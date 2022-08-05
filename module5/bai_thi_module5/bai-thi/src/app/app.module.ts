@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EditComponent } from './lo-hang/edit/edit.component';
+import { PdfComponent } from './lo-hang/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EditComponent } from './lo-hang/edit/edit.component';
     ErrorComponent,
     CreateComponent,
     ListComponent,
-    EditComponent
+    EditComponent,
+    PdfComponent
   ],
   imports: [
     BrowserModule,

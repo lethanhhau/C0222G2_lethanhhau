@@ -6,9 +6,11 @@ import com.hau.service.ILoHangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 public class LoHangService implements ILoHangService {
@@ -36,4 +38,11 @@ public class LoHangService implements ILoHangService {
     public LoHang findById(Integer id) {
         return this.iLoHangRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public List<LoHang> findAllPDF() {
+        return iLoHangRepository.findAll(Sort.by("id").ascending());
+    }
+
+
 }

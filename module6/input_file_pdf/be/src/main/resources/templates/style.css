@@ -1,0 +1,47 @@
+#search{
+    width: 300px;
+}
+.table_wrapper{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+body{
+    background: #7A5523;
+    background: -webkit-linear-gradient(45deg, #756561, #7A5523);
+    background: -o-linear-gradient(45deg, #756561, #7A5523);
+    background: -moz-linear-gradient(45deg, #756561, #7A5523);
+    background: linear-gradient(45deg, #756561, #7A5523);
+}
+
+table {
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table thead tr {
+    height: 60px;
+    background: #804707;
+}
+
+.table100-head th {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+a, th,td {
+    font-weight: 600;
+    font-family: 'Lobster', cursive;
+}
+
+.wrap-table100 {
+    width: 100%;
+}

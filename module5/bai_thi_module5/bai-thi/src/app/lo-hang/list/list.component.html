@@ -34,8 +34,6 @@
         <!--        <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="getFormSearch()">-->
         <!--          <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchCustomerName"-->
         <!--                 placeholder="Search By Name" aria-label="Search" aria-describedby="search-addon">-->
-        <!--          <input class="form-control me-2 buttons1" type="search" name="searchParam" formControlName="searchCustomerAddress"-->
-        <!--                 placeholder="Search By Address" aria-label="Search" aria-describedby="search-addon">-->
         <!--          <button class="btn btn-outline-success buttons1" type="submit" name="name" style="color: black">-->
         <!--            <i class="bi bi-search"></i>-->
         <!--          </button>-->
@@ -106,6 +104,12 @@
     </tr>
     </tbody>
   </table>
+
+  <a href="http://localhost:8080/rest/pdf/export/pdf"
+     class="btn btn-outline-warning" type="button" style="color: black">
+    PDF
+  </a>
+
   <div class="container-fluid mt-3">
     <ul class="pagination float-end">
       <div *ngIf="number == 0">

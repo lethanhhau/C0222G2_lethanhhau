@@ -1,0 +1,51 @@
+#search{
+    width: 300px;
+}
+.table_wrapper{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+table {
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#fate{
+    position: relative;
+    height: 1000px;
+    padding: 70px;
+}
+
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../bill_list/img.jpg");
+}
+
+table thead tr {
+    height: 60px;
+    background: #6c5c48;
+}
+
+.table100-head th {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+a, th,td {
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrap-table100 {
+    width: 100%;
+}
+
+
