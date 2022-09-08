@@ -25,6 +25,12 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
     private IUserRoleRepository IUserRoleRepository;
 
+    /**
+     *
+     * @param userName
+     * @return username, password, roles list
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         AppUser appUser = this.IAppUserRepository.findAppUserByUserName(userName);

@@ -1,9 +1,9 @@
 <div id="top-bar" class="container">
   <div class="row">
     <div class="span4">
-      <form method="POST" class="search_form">
-        <input type="text" class="input-block-level search-query" Placeholder="Tìm Kiếm">
-      </form>
+<!--      <form action="#" class="search_form">-->
+<!--        <input type="text" class="input-block-level search-query" style="color: black" Placeholder="Tìm Kiếm">-->
+<!--      </form>-->
     </div>
     <div class="span8">
       <div class="account pull-right">
@@ -11,7 +11,8 @@
           <li><a href="#">Tài Khoản</a></li>
           <li><a class="nav-link" routerLink="/cart">Giỏ Hàng</a></li>
           <li><a href="checkout.html">Thanh Toán</a></li>
-          <li><a class="nav-link" routerLink="/login">Đăng nhập</a></li>
+<!--          <a class="text-white mr-1 " *ngIf="token === ''" [routerLink]="['/login']">Đăng ký |</a>-->
+          <li><a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']">Đăng nhập</a></li>
         </ul>
       </div>
     </div>
@@ -34,5 +35,4 @@
       </nav>
     </div>
   </section>
-
 </div>

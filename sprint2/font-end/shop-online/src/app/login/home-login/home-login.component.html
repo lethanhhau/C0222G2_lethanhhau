@@ -1,45 +1,99 @@
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
-      <h1>Create Account</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <h1>Tạo Tài Khoản</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <span>or use your email for registration</span>
-      <input type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Sign Up</button>
+      <span>Sử Dụng Email Để Đăng Ký</span>
+      <input type="text" placeholder="Tên Tài Khoản"/>
+      <input type="email" placeholder="Email"/>
+      <input type="password" placeholder="Mật Khẩu"/>
+      <input type="password" placeholder="Nhập lại mật khẩu" />
+      <button>Đăng Ký</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form action="#">
-      <h1>Sign in</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <h1 class="text-dark">Đăng Nhập</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <span>or use your account</span>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <a href="#">Forgot your password?</a>
-      <button>Sign In</button>
+      <span>Tài Khoản Của Bạn</span>
+      <input type="email" placeholder="Email"/>
+      <input type="password" placeholder="Mật Khẩu"/>
+
+      <!-- Button trigger modal -->
+      <a class="button" data-bs-toggle="modal" data-bs-target="#staticBackdropForgot">
+        Quên mật khẩu?
+      </a>
+
+      <div *ngIf="activeLogin">
+        <button>Đăng nhập</button>
+      </div>
+
+      <div *ngIf="!activeLogin">
+        <div *ngIf="realTimeSecond < 10">
+          <div class="col-12 mb-3 w-100">
+            <button class="btn btn-lg w-100 fs-6 btn-secondary disabled" type="button">0{{realTimeMinute}} :0{{realTimeSecond}}</button>
+          </div>
+        </div>
+        <div *ngIf="realTimeSecond >= 10">
+          <div class="col-12 mb-3 w-100">
+            <button class="btn btn-lg w-100 fs-6 btn-secondary disabled" type="button">0{{realTimeMinute}}: {{realTimeSecond}}</button>
+          </div>
+        </div>
+      </div>
     </form>
+    <div class="modal fade" id="staticBackdropForgot" data-bs-backdrop="static" data-bs-keyboard="false"
+         tabindex="-1" aria-labelledby="staticBackdropLabelForgot" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title h3 fw-bold text-brown" id="staticBackdropLabel">Tìm tài khoản
+              của bạn</h5>
+          </div>
+          <form [formGroup]="forgotForm" (ngSubmit)="onForgot()">
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="username"
+                         placeholder="name@example.com" formControlName="username">
+                  <label for="username">Nhập tài khoản cần khôi phục <span class="text-danger">(*)</span> :
+                    <span class="text-danger fs-10"
+                          *ngIf="forgotForm.controls.username.hasError('required') && forgotForm.controls.username.touched">
+                            Vui lòng nhập tên tài khoản
+                          </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-yellow" data-bs-dismiss="modal">Gửi</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeForgot()">Đóng
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="overlay-container">
     <div class="overlay">
       <div class="overlay-panel overlay-left">
-        <h1>Welcome Back!</h1>
-        <p>To keep connected with us please login with your personal info</p>
-        <button class="ghost" id="signIn" (click)="sing()">Sign In</button>
+        <h1>Chào Mừng Trở Lại</h1>
+        <p>Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+        <button class="ghost" id="signIn" (click)="sing()">Đăng Nhập</button>
       </div>
       <div class="overlay-panel overlay-right">
-        <h1>Hello, Friend!</h1>
-        <p>Enter your personal details and start journey with us</p>
-        <button class="ghost" id="signUp" (click)="sing()">Sign Up</button>
+        <h1>Chào Bạn!</h1>
+        <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+        <button class="ghost" id="signUp" (click)="sing()">Đăng Ký</button>
       </div>
     </div>
   </div>

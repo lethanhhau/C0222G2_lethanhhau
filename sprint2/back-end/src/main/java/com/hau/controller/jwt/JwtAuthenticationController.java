@@ -3,10 +3,10 @@ package com.hau.controller.jwt;
 import com.hau.model.account.AppUser;
 import com.hau.model.jwt.JwtRequest;
 import com.hau.model.jwt.JwtResponse;
-import com.hau.service.account.IAppUserService;
+import com.hau.security.util.JwtTokenUtil;
+import com.hau.security.util.LoginUtil;
+import com.hau.service.IAppUserService;
 import com.hau.service.jwt.JwtUserDetailsService;
-import com.hau.util.JwtTokenUtil;
-import com.hau.util.LoginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +45,11 @@ public class JwtAuthenticationController {
     @Autowired
     private LoginUtil loginUtil;
 
+    /**
+     * @param authenticationRequest
+     * @return token, roles list, username, status 200 if AUTHORIZED or return status 401 if UNAUTHORIZED
+     * @throws Exception
+     */
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody JwtRequest authenticationRequest,
                                                        BindingResult bindingResult) throws Exception {
@@ -69,7 +74,7 @@ public class JwtAuthenticationController {
         SecurityContextHolder.getContext()
                 .setAuthentication(authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 
-        AppUser appUser = this.appUserService.findAppUserByUsername(authenticationRequest.getUsername());
+        AppUser appUser = this.appUserService.findAppUserByUserName(authenticationRequest.getUsername());
         Date date = new Date(System.currentTimeMillis());
 
         if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
@@ -86,6 +91,11 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token, grantList, userDetails.getUsername()));
     }
 
+    /**
+     * @param username
+     * @param password
+     * @throws Exception
+     */
     private Authentication authenticate(String username, String password) throws Exception {
         try {
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
