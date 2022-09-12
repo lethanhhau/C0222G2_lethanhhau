@@ -74,12 +74,14 @@ public class JwtAuthenticationController {
         SecurityContextHolder.getContext()
                 .setAuthentication(authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 
+        // start kiểm tra ngày tạo quá 30 ngày tạo lại
         AppUser appUser = this.appUserService.findAppUserByUserName(authenticationRequest.getUsername());
         Date date = new Date(System.currentTimeMillis());
 
         if (date.toLocalDate().compareTo(appUser.getCreationDate().toLocalDate().plusDays(30)) >= 0) {
             return new ResponseEntity<>("PasswordExpired", HttpStatus.UNAUTHORIZED);
         }
+        // end
 
         List<String> grantList = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)

@@ -18,31 +18,31 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(columnDefinition = "text")
     private String content;
+
+    private Integer rating;
 
     private Date feedbackDate;
 
-    @Column(columnDefinition = "text")
-    private String image;
-
-    private Integer rate;
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customer customer;
 
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDeleted;
-
-    @OneToOne(mappedBy = "feedback")
-    private Bill bill;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Feedback feedback = (Feedback) o;
-        return id != null && Objects.equals(id, feedback.id);
+        Feedback feedBack = (Feedback) o;
+        return id != null && Objects.equals(id, feedBack.id);
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
+
 }

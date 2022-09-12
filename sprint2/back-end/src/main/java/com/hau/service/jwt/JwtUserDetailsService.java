@@ -1,7 +1,7 @@
 package com.hau.service.jwt;
 
 import com.hau.repository.IAppUserRepository;
-import com.hau.repository.account.IUserRoleRepository;
+import com.hau.repository.IUserRoleRepository;
 import com.hau.model.account.AppUser;
 import com.hau.model.account.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;

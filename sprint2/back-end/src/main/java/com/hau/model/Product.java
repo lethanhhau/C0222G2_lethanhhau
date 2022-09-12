@@ -19,51 +19,34 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    private String image;
     private String name;
-
-    private Date releaseTime;
-
-    private Date manufactureTime;
-
-    private String origin;
-
-    private Double price;
-
-    private String warrantyPeriod;
-
+    @Column(columnDefinition = "DATE")
+    private Date dateIn;
+    private double price;
+    private String manufacturer;
+    private String guaranteeTime;
+    private String discount;
     private Integer quantity;
 
-    @Column(columnDefinition = "double default 0")
-    private Double discountPercent;
-
-    @Column(columnDefinition = "longtext")
-    private String specifications;
-
-    @Column(columnDefinition = "longtext")
-    private String description;
+    @Column(columnDefinition = "text")
+    private String specification;
 
     @Column(columnDefinition = "text")
-    private String image;
+    private String description;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
 
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDeleted;
 
-    @ManyToOne
     @JsonIgnore
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private Category category;
-
     @OneToMany(mappedBy = "product")
-    private List<ProductCoupon> productCouponList;
-
-    @OneToMany(mappedBy = "product")
-    @JsonIgnore
-    private List<Promotion>  promotionList;
-
-    @OneToMany(mappedBy = "product")
-    @JsonIgnore
-    private List<Order> productOrderList;
+    List<OrderService> orderServiceList;
 
     @Override
     public boolean equals(Object o) {
@@ -77,4 +60,5 @@ public class Product {
     public int hashCode() {
         return getClass().hashCode();
     }
+
 }

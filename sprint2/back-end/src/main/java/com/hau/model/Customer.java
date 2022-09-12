@@ -9,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,32 +22,29 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String name;
-
-    private String phoneNumber;
-
-    @Column(columnDefinition = "text")
-    private String address;
-
     @Column(columnDefinition = "text")
     private String image;
+    private String email;
+    @Column(columnDefinition = "date")
+    private Date birthday;
+    private String phone;
+    private String hobbies;
 
-    @Column(columnDefinition = "bit(1) default 0")
-    private Boolean status;
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private AppUser appUser;
 
     @Column(columnDefinition = "bit(1) default 0")
     private Boolean isDeleted;
 
-    private String email;
-
-    @OneToMany(mappedBy = "customer")
-    private List<Order> OrderList;
-
-    @OneToOne
     @JsonIgnore
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private AppUser appUser;
+    @OneToMany(mappedBy = "customer")
+    List<OrderService> orderServiceList;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer")
+    List<Feedback> feedbackList;
 
     @Override
     public boolean equals(Object o) {

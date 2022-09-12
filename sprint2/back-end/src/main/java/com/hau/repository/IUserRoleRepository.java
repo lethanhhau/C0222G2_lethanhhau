@@ -1,4 +1,4 @@
-package com.hau.repository.account;
+package com.hau.repository;
 
 import com.hau.model.account.AppUser;
 import com.hau.model.account.UserRole;

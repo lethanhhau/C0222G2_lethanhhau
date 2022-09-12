@@ -1,7 +1,6 @@
 package com.hau.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,6 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-
 @Entity
 @Getter
 @Setter
@@ -20,17 +18,11 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String name;
 
-    @Column(columnDefinition = "text")
-    private String image;
-
-    @Column(columnDefinition = "bit(1) default 0")
-    private Boolean isDeleted;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
-    private List<Product> productList;
+    List<Product> productList;
 
     @Override
     public boolean equals(Object o) {

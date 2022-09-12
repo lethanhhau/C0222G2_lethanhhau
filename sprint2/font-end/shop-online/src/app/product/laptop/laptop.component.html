@@ -1,0 +1,188 @@
+<div id="wrapper1" class="container">
+  <section class="homepage-slider" id="home-slider">
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="assets/bootstrap/img/img.png" alt=""/>
+        </li>
+        <li>
+          <img src="assets/bootstrap/img/img_3.png" alt=""/>
+        </li>
+        <li>
+          <img src="assets/bootstrap/img/img_2.png" alt=""/>
+        </li>
+        <li>
+          <img src="assets/bootstrap/img/img_1.png" alt=""/>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div class="main-content">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span12">
+            <div id="myCarousel" class="myCarousel carousel slide" style="margin-top: 12px">
+              <div class="carousel-inner">
+                <div class="active item span2" *ngFor="let product of laptopProduct">
+                  <div class="product-box mt-3">
+                    <span class="sale_tag"></span>
+                    <p><a class="nav-link" [routerLink]="['/detail-product', product.id]"><img src="{{product.image}}" alt=""/></a></p>
+                    <a class="title" [routerLink]="['/detail-product', product.id]">{{product.name}}</a><br/>
+                    <a [routerLink]="['/detail-product', product.id]" class="category"
+                       style="text-decoration-line: line-through">21.990.000 VNĐ</a>
+                    <p class="price">{{product.price| currency: "VND": ''}}đ</p>
+
+
+                    <div class="col-sm-12 row text-center m-0" *ngIf="role === 'ROLE_ADMIN'">
+                      <a class="btn-outline-dark btn-square col-sm-6  item-text" style="margin-left: 12%"
+                         [routerLink]="['/edit-product',product.id]">
+                        <i class="fa-sharp fa-solid fa-pen text-primary " style="font-size: 22px"></i></a>
+                      <a class="btn-outline-dark btn-square col-sm-6 item-text " style="margin-left: 30%"
+                         data-bs-toggle="modal"
+                         [attr.data-bs-target]="'#staticBackdropDelete' + product.id">
+                        <i class="fa-sharp fa-solid fa-trash text-danger " style="font-size: 22px"></i></a>
+                    </div>
+                    <!--Modal Delete-->
+                    <div class="modal fade" id="staticBackdropDelete{{product.id}}" data-bs-backdrop="static"
+                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelDelete"
+                         aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title text-danger" id="staticBackdropLabelDelete">Xóa sản phẩm</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Bạn có muốn xóa sản phẩm <span class="text-danger">{{product.name}}</span> của hãng
+                            <span>{{product.manufacturer}}</span> không?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary" (click)="deleteProduct(product.id)">
+                              Xóa
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row feature_box">
+            <div class="span4">
+              <div class="service">
+                <div class="responsive">
+                  <img src="assets/themes/images/feature_img_2.png" alt=""/>
+                  <h4>Sản Phẩm Chất Lượng</h4>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="span4">
+              <div class="service">
+                <div class="customize">
+                  <img src="assets/themes/images/feature_img_1.png" alt=""/>
+                  <h4>Miễn Phí Vận Chuyển</h4>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="span4">
+              <div class="service">
+                <div class="support">
+                  <img src="assets/themes/images/feature_img_3.png" alt=""/>
+                  <h4>24/7 Hỗ Trợ Trực Tuyến</h4>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <h4 class="title">
+    <span class="pull-left"><span class="text"><span
+      class="line">Sản Xuất</span></span></span>
+    <span class="pull-right">
+										<a class="left button" href="#myCarousel-3" data-slide="prev"></a><a
+      class="right button" href="#myCarousel-3" data-slide="next"></a>
+									</span>
+  </h4>
+  <div id="myCarousel-3" class="myCarousel carousel slide">
+    <div class="carousel-inner">
+      <div class="active item">
+        <ul class="thumbnails">
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_1.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_2.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_3.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_4.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_5.png"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item">
+        <ul class="thumbnails">
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_8.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_9.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_6.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_7.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_10.png"></a>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="span2">
+              <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_11.png"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

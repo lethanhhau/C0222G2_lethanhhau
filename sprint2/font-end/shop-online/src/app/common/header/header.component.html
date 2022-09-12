@@ -1,19 +1,27 @@
 <div id="top-bar" class="container">
   <div class="row">
     <div class="span4">
-<!--      <form action="#" class="search_form">-->
-<!--        <input type="text" class="input-block-level search-query" style="color: black" Placeholder="Tìm Kiếm">-->
-<!--      </form>-->
+      <div action="#" class="search_form">
+        <input type="text" class="input-block-level search-query" style="color: black" Placeholder="Tìm Kiếm">
+
+      </div>
     </div>
     <div class="span8">
       <div class="account pull-right">
-        <ul class="user-menu">
-          <li><a href="#">Tài Khoản</a></li>
-          <li><a class="nav-link" routerLink="/cart">Giỏ Hàng</a></li>
-          <li><a href="checkout.html">Thanh Toán</a></li>
-<!--          <a class="text-white mr-1 " *ngIf="token === ''" [routerLink]="['/login']">Đăng ký |</a>-->
-          <li><a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']">Đăng nhập</a></li>
-        </ul>
+        <a class=" dropdown" *ngIf="token !== ''">
+          <a class=" dropdown-toggle tk" data-toggle="dropdown">{{username}} |
+            <!--              <span class="caret"></span>-->
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Chi tiết tài khoản</a></li>
+            <li><a class="dropdown-item" (click)="onLogout()">Đăng xuất</a></li>
+          </ul>
+        </a>
+         <a class="nav-link" routerLink="/cart">Giỏ Hàng |</a>
+         <a href="checkout.html">Thanh Toán |</a>
+         <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> Đăng Ký |</a>
+         <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> Đăng nhập</a>
+
       </div>
     </div>
   </div>
@@ -24,7 +32,7 @@
       <a href="index.html" class="logo pull-left"><img src="assets/themes/images/logo.png" class="site_logo" alt=""></a>
       <nav id="menu" class="pull-right">
         <ul>
-          <li><a href="/">Laptop</a></li>
+          <li><a routerLink="/laptop">Laptop</a></li>
           <li><a href="/">Tủ Lạnh</a></li>
           <li><a href="/">Tivi</a></li>
           <li><a href="/">Điện Thoại</a></li>

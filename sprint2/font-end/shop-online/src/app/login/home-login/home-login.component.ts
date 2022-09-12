@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {CookieService} from '../service/cookie.service';
 import {Router} from '@angular/router';
@@ -15,6 +15,7 @@ import {Title} from '@angular/platform-browser';
   templateUrl: './home-login.component.html',
   styleUrls: ['./home-login.component.css']
 })
+
 export class HomeLoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
@@ -27,17 +28,17 @@ export class HomeLoginComponent implements OnInit, OnDestroy {
   public realTimeMinute = 2;
   registerForm: FormGroup;
 
-  constructor(
-    private cookieService: CookieService,
-    private router: Router,
-    private toastrService: ToastrService,
-    private loginService: LoginService,
-    private authService: AuthService,
-    private forgotService: ForgotService,
-    private commonService: CommonService,
-    private title: Title) {
+  constructor(private cookieService: CookieService,
+              private router: Router,
+              private toastrService: ToastrService,
+              private loginService: LoginService,
+              private authService: AuthService,
+              private forgotService: ForgotService,
+              private commonService: CommonService,
+              private title: Title) {
 
     const timePrevious = Number(localStorage.getItem('time'));
+
     // tslint:disable-next-line:triple-equals
     if (timePrevious != 0) {
       const realTimeInterval = setInterval(() => {
@@ -126,7 +127,7 @@ export class HomeLoginComponent implements OnInit, OnDestroy {
       }, () => {
         this.router.navigateByUrl('/home').then(() => {
           // this.notificationService.requestPermission();
-          this.toastrService.success('Đăng nhập thành công!');
+          // this.toastrService.success('Đăng nhập thành công!');
         });
         setTimeout(() => {
           this.router.navigateByUrl('/home').then(() => {
@@ -185,8 +186,6 @@ export class HomeLoginComponent implements OnInit, OnDestroy {
     }
   }
 
-
-
   sing() {
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
@@ -201,10 +200,6 @@ export class HomeLoginComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.subscriptionName.unsubscribe();
-  }
-
   sendMessage(): void {
     // send message to subscribers via observable subject
     this.commonService.sendUpdate('Đăng Nhập thành công!');
@@ -214,7 +209,13 @@ export class HomeLoginComponent implements OnInit, OnDestroy {
     this.forgotForm.reset();
   }
 
+  ngOnDestroy(): void {
+    this.subscriptionName.unsubscribe();
+  }
+
   onRegister() {
 
   }
+
+
 }
