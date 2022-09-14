@@ -1,5 +1,6 @@
 package com.hau.controller;
 
+import com.hau.dto.ErrorDTO;
 import com.hau.dto.IProductDTO;
 import com.hau.dto.ProductDTO;
 import com.hau.model.Category;
@@ -33,65 +34,77 @@ public class ProductRestController {
     @Autowired
     private ICategoryService iCategoryService;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/product")
-    public ResponseEntity<Page<IProductDTO>> getPageProduct(@PageableDefault(12) Pageable pageable,
-                                                            Optional<String> searchPrice,
-                                                            Optional<String> searchOrigin,
-                                                            Optional<String> searchName) {
-        String searchByName = searchName.orElse("");
-        String searchByPrice = searchPrice.orElse("");
-        String searchByOrigin = searchOrigin.orElse("");
-
-        Page<IProductDTO> productDTOPage = iProductService.getAllProduct(pageable, searchByName, searchByOrigin, searchByPrice);
-        if (productDTOPage.isEmpty()) {
+    @GetMapping( "/product/list")
+    public ResponseEntity<List<Product>> getAllListProducts() {
+        List<Product> productList = this.iProductService.findAll();
+        if (productList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(productDTOPage, HttpStatus.OK);
+        return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+    @GetMapping(value = "/new/products")
+    public ResponseEntity<List<Product>> getNewProducts() {
+        List<Product> productList = this.iProductService.getNewProducts();
+        return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
+    @GetMapping("/products")
+    public ResponseEntity<Page<Product>> getPageProduct(@PageableDefault(30)Pageable pageable,
+                                                        Optional<String> searchName){
+        String searchByName = searchName.orElse("");
+        Page<Product> productDTOPage = iProductService.getAllProduct(pageable,searchByName);
+        if(productDTOPage.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(productDTOPage,HttpStatus.OK);
+    }
+
+
     @GetMapping("/findById/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Integer id) {
-        Product product = iProductService.findById(id);
-        if (product.getId() == null) {
+    public ResponseEntity<Product> findById(@PathVariable Integer id){
+
+        if(id == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        return new ResponseEntity<>(iProductService.findById(id),HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/product/create")
-    public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+    public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO , BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Product product = new Product();
-        BeanUtils.copyProperties(productDTO, product);
+        BeanUtils.copyProperties(productDTO,product);
         iProductService.save(product);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PatchMapping("/product/edit")
-    public ResponseEntity<?> editProduct(@Valid @RequestBody ProductDTO productDTO, BindingResult bindingResult) {
-        Product product = iProductService.findById(productDTO.getId());
-        if (bindingResult.hasErrors()) {
+    public ResponseEntity<?> editProduct(@Valid @RequestBody ProductDTO productDTO , BindingResult bindingResult){
+        Product product  = iProductService.findById(productDTO.getId());
+        if(bindingResult.hasErrors()){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        BeanUtils.copyProperties(productDTO, product);
+        BeanUtils.copyProperties(productDTO,product);
         iProductService.save(product);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
-    @GetMapping("/delete/{id}")
-    public ResponseEntity<Product> deleteProduct(@PathVariable Integer id) {
-        this.iProductService.deleteProduct(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+    //    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteProduct(@PathVariable String id) {
+        Boolean check = this.iProductService.deleteProduct(id);
+        if (check) {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        ErrorDTO errorDto = new ErrorDTO();
+        errorDto.setMessage("idnotfound");
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/category")
     public ResponseEntity<List<Category>> getAllCategory() {
         List<Category> categoryList = iCategoryService.getAllCategory();
@@ -101,54 +114,46 @@ public class ProductRestController {
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/smart-phone")
-    public ResponseEntity<List<Product>> getSmartPhone() {
-        List<Product> productList = this.iProductService.getSmartPhone();
-        if (productList.isEmpty()) {
+    @GetMapping("/phone")
+    public ResponseEntity<List<Product>> getSmartPhone(){
+        List<Product> productList = this.iProductService.getPhone();
+        if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/laptop")
-    public ResponseEntity<List<Product>> getLaptop() {
+    public ResponseEntity<List<Product>> getLaptop(){
         List<Product> productList = this.iProductService.getLaptop();
-        if (productList.isEmpty()) {
+        if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/tivi")
-    public ResponseEntity<List<Product>> getTivi() {
+    public ResponseEntity<List<Product>> getTivi(){
         List<Product> productList = this.iProductService.getTivi();
-        if (productList.isEmpty()) {
+        if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/camera")
-    public ResponseEntity<List<Product>> getCamera() {
+    public ResponseEntity<List<Product>> getCamera(){
         List<Product> productList = this.iProductService.getCamera();
-        if (productList.isEmpty()) {
+        if (productList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+    @GetMapping("/device-sup")
+    public ResponseEntity<List<Product>> getDevice(){
+        List<Product> productList = this.iProductService.getDevice();
+        if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/device-sup")
-    public ResponseEntity<List<Product>> getDevice() {
-        List<Product> productList = this.iProductService.getDevice();
-        if (productList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(productList, HttpStatus.OK);
-    }
 }
 

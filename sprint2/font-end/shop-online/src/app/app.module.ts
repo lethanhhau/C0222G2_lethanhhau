@@ -15,6 +15,7 @@ import {ProductModule} from './product/product.module';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -34,11 +35,12 @@ import {AngularFireModule} from '@angular/fire';
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule{
+export class AppModule {
 }

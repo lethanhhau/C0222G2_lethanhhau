@@ -12,17 +12,21 @@ import {ConditioningComponent} from './conditioning/conditioning.component';
 import {FanComponent} from './fan/fan.component';
 import {FridgeComponent} from './fridge/fridge.component';
 import {HomeComponent} from './home/home.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [CreateComponent, EditComponent, DetailComponent, PhoneComponent, TiviComponent, LaptopComponent,
   ConditioningComponent, FanComponent, FridgeComponent, HomeComponent],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    ReactiveFormsModule,
-    // CKEditorModule
-  ]
-  , exports: [
+    imports: [
+        CommonModule,
+        ProductRoutingModule,
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        CKEditorModule,
+        // CKEditorModule
+    ]
+    , exports: [
     CreateComponent,
     EditComponent,
     DetailComponent,

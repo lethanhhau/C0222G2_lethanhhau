@@ -18,28 +18,15 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number, searchName, searchOrigin, searchPrice) {
+  getAll(page: number, searchName) {
     let productName;
-    let productOrigin;
-    let productPrice;
+
     if (searchName == null) {
       productName = '';
     } else {
       productName = searchName;
     }
-    if (searchOrigin == null) {
-      productOrigin = '';
-    } else {
-      productOrigin = searchOrigin;
-    }
-
-    if (searchPrice == null) {
-      productPrice = '';
-    } else {
-      productPrice = searchPrice;
-    }
-    return this.httpClient.get<Product[]>(this.URL_CONNECT + '/product?page=' + page + '&searchName=' + productName +
-      '&searchOrigin=' + productOrigin + '&searchPrince=' + productPrice);
+    return this.httpClient.get<Product[]>(this.URL_CONNECT + '/products?page=' + page + '&searchName=' + productName);
   }
 
   createProduct(product: Product): Observable<Product> {
@@ -47,7 +34,7 @@ export class ProductService {
   }
 
   editProduct(product: Product): Observable<Product> {
-    return this.httpClient.patch<Product>(this.URL_CONNECT + '/product/edit' , product);
+    return this.httpClient.patch<Product>(this.URL_CONNECT + '/product/edit', product);
   }
 
   findById(id): Observable<Product> {
@@ -62,8 +49,8 @@ export class ProductService {
     return this.httpClient.get<Category[]>(this.URL_CONNECT + '/category');
   }
 
-  getSmartPhone() {
-    return this.httpClient.get(this.URL_CONNECT + '/smart-phone');
+  getPhone() {
+    return this.httpClient.get(this.URL_CONNECT + '/phone');
   }
 
   getLaptop() {

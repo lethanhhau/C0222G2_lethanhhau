@@ -1,17 +1,30 @@
 package com.hau.service.impl;
 
+import com.hau.dto.RegisterDTO;
+import com.hau.model.account.AppRole;
 import com.hau.model.account.AppUser;
+import com.hau.model.account.UserRole;
 import com.hau.repository.IAppUserRepository;
+import com.hau.security.util.EncrytedPasswordUtils;
 import com.hau.service.IAppUserService;
+import com.hau.service.IUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class AppUserServiceImpl implements IAppUserService {
     @Autowired
     private IAppUserRepository iUserRepository;
+
+    @Autowired
+    private EncrytedPasswordUtils encrytedPasswordUtils;
+
+    @Autowired
+    private IUserRoleService userRoleService;
 
     /**
      * @creator TaiLV
@@ -34,9 +47,24 @@ public class AppUserServiceImpl implements IAppUserService {
         iUserRepository.saveAppUser(appUser);
     }
 
+    @Override
+    public void registerUser(RegisterDTO registerDTO) {
+        AppUser appUser = new AppUser();
+        appUser.setUserName(registerDTO.getUsername());
+        appUser.setPassword(this.encrytedPasswordUtils.encrytePassword(registerDTO.getPassword()));
+        appUser.setCreationDate(Date.valueOf(LocalDate.now()));
+        appUser.setIsDeleted(false);
+        AppUser appUserDone = this.iUserRepository.save(appUser);
+        AppRole appRole = new AppRole();
+        appRole.setId(2);
+        UserRole userRole = new UserRole();
+        userRole.setAppRole(appRole);
+        userRole.setAppUser(appUserDone);
+        userRole.setIsDeleted(false);
+        this.userRoleService.save(userRole);
+    }
+
     /**
-     * @creator: PhuongTD
-     * @date-create 9/8/2022
      * @param appUser
      */
     @Override

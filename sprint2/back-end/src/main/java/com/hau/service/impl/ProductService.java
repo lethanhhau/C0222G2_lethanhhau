@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,19 +17,17 @@ public class ProductService implements IProductService {
     @Autowired
     private IProductRepository iProductRepository;
 
-    @Override
-    public Page<IProductDTO> getAllProduct(Pageable pageable, String searchByName, String searchByOrigin, String searchByPrice) {
-        return iProductRepository.getAllProduct(pageable, "%"+ searchByName + "%", "%"+ searchByOrigin + "%","%"+ searchByPrice + "%");
-    }
 
     @Override
-    public List<Product> getAllPro() {
-        return iProductRepository.findAll();
-    }
-
-    @Override
-    public void deleteProduct(Integer id) {
-        iProductRepository.deleteProduct(id);
+    public Boolean deleteProduct(String id) {
+        List<Product> productList = this.iProductRepository.findAll();
+        for (Product product : productList) {
+            if (product.getId().equals(Integer.parseInt(id)) && !product.getIsDeleted()) {
+                this.iProductRepository.deleteProduct(id);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -44,8 +41,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getSmartPhone() {
-        return iProductRepository.getSmartPhone();
+    public List<Product> getPhone() {
+        return iProductRepository.getPhone();
     }
 
     @Override
@@ -69,5 +66,20 @@ public class ProductService implements IProductService {
     public List<Product> getDevice() {
         return iProductRepository.getDevice();
 
+    }
+
+    @Override
+    public List<Product> getNewProducts() {
+        return this.iProductRepository.getNewProducts();
+    }
+
+    @Override
+    public List<Product> findAll() {
+        return iProductRepository.findAll();
+    }
+
+    @Override
+    public Page<Product> getAllProduct(Pageable pageable, String searchByName) {
+        return iProductRepository.getAllProduct(pageable, "%"+ searchByName + "%");
     }
 }

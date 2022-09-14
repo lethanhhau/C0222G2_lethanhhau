@@ -14,6 +14,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Chi tiết tài khoản</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
             <li><a class="dropdown-item" (click)="onLogout()">Đăng xuất</a></li>
           </ul>
         </a>
@@ -35,7 +36,7 @@
           <li><a routerLink="/laptop">Laptop</a></li>
           <li><a href="/">Tủ Lạnh</a></li>
           <li><a href="/">Tivi</a></li>
-          <li><a href="/">Điện Thoại</a></li>
+          <li><a routerLink="/phone">Điện Thoại</a></li>
           <li><a href="/">Máy Giặt</a></li>
           <li><a href="/">Quạt</a></li>
           <li><a href="/">Điều Hòa</a></li>

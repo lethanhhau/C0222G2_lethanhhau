@@ -1,8 +1,8 @@
 package com.hau.model.account;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.hau.model.Customer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -37,6 +37,11 @@ public class AppUser {
     @OneToMany(mappedBy = "appUser")
     @JsonIgnore
     private List<UserRole> userRoles;
+
+
+    @OneToOne(mappedBy = "appUser")
+    @JsonIgnore
+    private Customer customer;
 
     @Override
     public boolean equals(Object o) {

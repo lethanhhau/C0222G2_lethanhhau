@@ -35,7 +35,6 @@ public class JwtTokenUtil implements Serializable {
     /**
      * @param token
      * @return
-     * @creator: PhuongTD
      */
     //retrieve expiration date from jwt token
     public Date getExpirationDateFromToken(String token) {

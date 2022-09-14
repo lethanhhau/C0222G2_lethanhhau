@@ -10,7 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface IAppUserRepository extends JpaRepository<AppUser, Integer> {
-
+    /**
+     * @creator TaiLV
+     * Date 09/08/2022
+     * @param
+     * @return  AppUser list
+     */
     @Query(value = " select app_user.id, app_user.user_name,app_user.creation_date, app_user.password, app_user.is_deleted from app_user " +
             " where is_deleted = 0 ", nativeQuery = true)
     List<AppUser> findAllUser();

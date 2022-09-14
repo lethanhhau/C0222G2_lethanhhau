@@ -12,7 +12,7 @@ import {ProductService} from '../../service/product.service';
   styleUrls: ['./laptop.component.css']
 })
 export class LaptopComponent implements OnInit {
-
+  // p: number = 1;
   role: string = '';
   username: string = '';
   token: string = '';
@@ -56,5 +56,4 @@ export class LaptopComponent implements OnInit {
       this.router.navigateByUrl('/home').then();
     });
   }
-
 }
