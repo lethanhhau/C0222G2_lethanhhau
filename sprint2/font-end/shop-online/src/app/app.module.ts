@@ -5,7 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './common/header/header.component';
 import {FooterComponent} from './common/footer/footer.component';
-import {CartComponent} from './cart/cart.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -22,9 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    CartComponent,
-  ],
+    FooterComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

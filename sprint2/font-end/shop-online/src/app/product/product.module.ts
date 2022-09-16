@@ -8,23 +8,20 @@ import {CommonModule} from '@angular/common';
 import {ProductRoutingModule} from './product-routing.module';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ConditioningComponent} from './conditioning/conditioning.component';
-import {FanComponent} from './fan/fan.component';
-import {FridgeComponent} from './fridge/fridge.component';
 import {HomeComponent} from './home/home.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [CreateComponent, EditComponent, DetailComponent, PhoneComponent, TiviComponent, LaptopComponent,
-  ConditioningComponent, FanComponent, FridgeComponent, HomeComponent],
+    HomeComponent, CartComponent],
     imports: [
         CommonModule,
         ProductRoutingModule,
         ReactiveFormsModule,
         NgxPaginationModule,
         CKEditorModule,
-        // CKEditorModule
     ]
     , exports: [
     CreateComponent,
@@ -33,9 +30,6 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
     PhoneComponent,
     TiviComponent,
     LaptopComponent,
-    ConditioningComponent,
-    FanComponent,
-    FridgeComponent,
     HomeComponent
   ]
 })

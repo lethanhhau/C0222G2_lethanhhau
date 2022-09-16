@@ -1,9 +1,9 @@
 <div id="top-bar" class="container">
   <div class="row">
     <div class="span4">
-      <div action="#" class="search_form">
-        <input type="text" class="input-block-level search-query" style="color: black" Placeholder="Tìm Kiếm">
-
+      <div class="search_form" >
+        <input type="text" class="input-block-level search-query"
+               style="color: black" Placeholder="Tìm Kiếm">
       </div>
     </div>
     <div class="span8">
@@ -14,7 +14,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Chi tiết tài khoản</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
+            <li><a class="dropdown-item" *ngIf="token === ''" [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
             <li><a class="dropdown-item" (click)="onLogout()">Đăng xuất</a></li>
           </ul>
         </a>

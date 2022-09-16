@@ -22,9 +22,7 @@
           <div class="span5">
             <div class="form-inline">
               <p>&nbsp;</p>
-              <label>Số Lượng:</label>
-              <input type="text" class="span1" placeholder="1"><br><br>
-              <button class="btn btn-inverse " type="submit">Thêm Vào Giỏ Hàng</button>
+              <a *ngIf="role == 'ROLE_USER'" class="btn" type="submit" [routerLink]="" (click)="addToCart(product)">Thêm Vào Giỏ Hàng</a>
             </div>
           </div>
         </div>

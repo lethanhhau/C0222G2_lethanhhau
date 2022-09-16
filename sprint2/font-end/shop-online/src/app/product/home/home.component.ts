@@ -4,7 +4,7 @@ import {Title} from '@angular/platform-browser';
 import {CookieService} from '../../login/service/cookie.service';
 import {ProductService} from '../../service/product.service';
 import {ToastrService} from 'ngx-toastr';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Category} from '../../model/category';
 import {LogoutService} from '../../login/service/logout.service';
@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit {
   number: number;
   countTotalPages: number[];
   customer: Customer;
-  startPrice: string = '0';
-  endPrice: string = '200000000';
   category: Category;
   sort: string = '';
   categoryId: string = '';
@@ -44,12 +42,16 @@ export class HomeComponent implements OnInit {
               private logoutService: LogoutService,
               private router: Router,
               private orderService: OrderService,
+              private activatedRoute: ActivatedRoute,
               private customerService: CustomerService,
               private commonService: CommonService) {
-    this.title.setTitle("Trang chủ FateShop")
+    this.title.setTitle("Trang chủ")
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      this.getAll(0, paramMap.get('name'))
+    })
   }
 
   readCookieService(key: string): string {

@@ -1,7 +1,6 @@
 package com.hau.controller;
 
 import com.hau.dto.ErrorDTO;
-import com.hau.dto.IProductDTO;
 import com.hau.dto.ProductDTO;
 import com.hau.model.Category;
 import com.hau.model.Product;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @CrossOrigin

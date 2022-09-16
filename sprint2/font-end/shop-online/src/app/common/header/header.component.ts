@@ -5,6 +5,9 @@ import {ToastrService} from 'ngx-toastr';
 import {LogoutService} from '../../login/service/logout.service';
 import {Router} from '@angular/router';
 import {CommonService} from '../../login/service/common.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ProductService} from '../../service/product.service';
+import {Product} from '../../model/product';
 
 @Component({
   selector: 'app-header',
@@ -12,17 +15,21 @@ import {CommonService} from '../../login/service/common.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  products: Product[] = [];
   role: string = '';
   username: string = '';
   token: string = '';
   messageReceived: any;
+  searchForm: FormGroup;
+  searchName: string;
   private subscriptionName: Subscription;
 
   constructor(private cookieService: CookieService,
               private toastrService: ToastrService,
               private logoutService: LogoutService,
               private router: Router,
-              private commonService: CommonService) {
+              private commonService: CommonService,
+              private productService: ProductService) {
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
@@ -37,7 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   }
-
 
   readCookieService(key: string): string {
     return this.cookieService.getCookie(key);
@@ -91,5 +97,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   sendMessage(): void {
     // send message to subscribers via observable subject
     this.commonService.sendUpdate('Đăng Xuất thành công!');
+  }
+
+  formSearch(){
+    this.searchForm = new FormGroup({
+      productName: new FormControl(""),
+    });
+  }
+
+  getFormSearch() {
+    let search = this.searchForm.value.searchName
+    if (search = null){
+      search = " "
+    }
+    this.router.navigate(['/home/',search])
+    // this.productService.getAll(0, this.searchForm.value.productName).subscribe(data => {
+    //   this.products = data;
+    //   console.log(data);
+    // }, error => {
+    // }, () => {
+    // })
   }
 }
