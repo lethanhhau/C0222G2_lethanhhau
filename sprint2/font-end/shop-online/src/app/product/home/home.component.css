@@ -1,3 +1,14 @@
+
+.text-danger{
+  color: red;
+}
+.btn-delete{
+  background: red;
+}
+.btn-close{
+  background: goldenrod;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

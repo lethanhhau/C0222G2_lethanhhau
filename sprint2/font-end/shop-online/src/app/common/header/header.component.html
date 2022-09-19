@@ -14,7 +14,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Chi tiết tài khoản</a></li>
-            <li><a class="dropdown-item" *ngIf="token === ''" [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
+            <li><a class="dropdown-item" *ngIf="role === 'ROLE_ADMIN'"  [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
             <li><a class="dropdown-item" (click)="onLogout()">Đăng xuất</a></li>
           </ul>
         </a>

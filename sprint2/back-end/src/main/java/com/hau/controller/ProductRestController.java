@@ -57,7 +57,6 @@ public class ProductRestController {
         return new ResponseEntity<>(productDTOPage,HttpStatus.OK);
     }
 
-
     @GetMapping("/findById/{id}")
     public ResponseEntity<Product> findById(@PathVariable Integer id){
 
@@ -67,7 +66,7 @@ public class ProductRestController {
         return new ResponseEntity<>(iProductService.findById(id),HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/product/create")
     public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO , BindingResult bindingResult){
         if(bindingResult.hasErrors()){
@@ -79,7 +78,7 @@ public class ProductRestController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PatchMapping("/product/edit")
     public ResponseEntity<?> editProduct(@Valid @RequestBody ProductDTO productDTO , BindingResult bindingResult){
         Product product  = iProductService.findById(productDTO.getId());
@@ -113,21 +112,23 @@ public class ProductRestController {
     }
 
     @GetMapping("/phone")
-    public ResponseEntity<List<Product>> getSmartPhone(){
-        List<Product> productList = this.iProductService.getPhone();
+    public ResponseEntity<Page<Product>> getSmartPhone(@PageableDefault(18)Pageable pageable){
+        Page<Product> productList = this.iProductService.getPhone(pageable);
         if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
     @GetMapping("/laptop")
-    public ResponseEntity<List<Product>> getLaptop(){
-        List<Product> productList = this.iProductService.getLaptop();
+    public ResponseEntity<Page<Product>> getLaptop(@PageableDefault(18)Pageable pageable){
+        Page<Product> productList = iProductService.getLaptop(pageable);
         if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
     @GetMapping("/tivi")
     public ResponseEntity<List<Product>> getTivi(){
         List<Product> productList = this.iProductService.getTivi();

@@ -49,12 +49,12 @@ export class ProductService {
     return this.httpClient.get<Category[]>(this.URL_CONNECT + '/category');
   }
 
-  getPhone() {
-    return this.httpClient.get(this.URL_CONNECT + '/phone');
+  getPhone(page: number) {
+    return this.httpClient.get(this.URL_CONNECT + '/phone?page=' + page);
   }
 
-  getLaptop() {
-    return this.httpClient.get(this.URL_CONNECT + '/laptop');
+  getLaptop(page: number) {
+    return this.httpClient.get(this.URL_CONNECT + '/laptop?page=' + page);
   }
 
   getTivi() {

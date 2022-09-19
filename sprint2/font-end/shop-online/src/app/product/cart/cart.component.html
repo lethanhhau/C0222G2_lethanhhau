@@ -29,7 +29,7 @@
             <td class="align-middle">
               <div class="input-group quantity mx-auto" style="width: 100px;">
                 <div class="input-group-btn">
-                  <button class="btn btn-sm btn-minus" (click)="minusQuantity(product)"
+                  <button class="btn btn-sm btn-primary btn-minus" (click)="minusQuantity(product)"
                           *ngIf="product.quantity > 1">
                     <i class="fa fa-minus"></i>
                   </button>
@@ -50,7 +50,7 @@
                       </div>
                       <div class="modal-body">
                         <p style="font-size: 20px"> Bạn có muốn xóa sản phẩm <span class="text-danger">{{product.product.name}}</span>
-                          <br>của hãng <span>{{product.product.manufacturer}}</span> không?</p>
+                          <br>của hãng <span class="text-danger">{{product.product.manufacturer}}</span> không?</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal"
@@ -96,7 +96,7 @@
                     </div>
                     <div class="modal-body">
                       <p style="font-size: 20px"> Bạn có muốn xóa sản phẩm <span class="text-danger">{{product.product.name}}</span>
-                        <br>của hãng <span>{{product.product.manufacturer}}</span> không?</p>
+                        <br>của hãng <span class="text-danger">{{product.product.manufacturer}}</span> không?</p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-outline-primary" data-dismiss="modal"

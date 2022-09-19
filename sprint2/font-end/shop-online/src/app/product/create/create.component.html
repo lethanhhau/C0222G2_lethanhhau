@@ -15,7 +15,7 @@
     <div class="col-xl-8 m-0 ">
       <h1 class="text-center text-white pt-5 pb-4"> Thêm Mới Sản Phẩm</h1>
 
-      <form class="needs-validation" [formGroup]="productForm" (ngSubmit)="onCreateProduct()" *ngIf="productForm">
+      <form class="needs-validation" id="test" [formGroup]="productForm" (ngSubmit)="onCreateProduct()" *ngIf="productForm">
         <div class="row g-3">
           <div class="col-xl-4 mt-3" data-bs-toggle="name" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
             <label for="name" class="form-label title-input">Tên sản phẩm<span class="text-white">(*)</span>: </label>
@@ -117,8 +117,9 @@
         </div>
 
         <div class=" text-center pt-4 pb-5">
-          <button class="btn btn-success  btn-lg mr-2 col-4" type="submit" [disabled]="isLoading">
-            <img width="26px" src="assets/img/loading-symbol.gif" *ngIf="isLoading">Thêm</button>
+          <button class="btn btn-lg mr-2 col-4" type="submit" [disabled]="isLoading">
+            <img width="26px" >Thêm</button>
+<!--          src="assets/img/loading-symbol.gif" *ngIf="isLoading"-->
           <button class="btn btn-dark  btn-lg col-4" [routerLink]="'/home'"><i class="fas fa-sync-alt"></i>Quay lại</button>
         </div>
       </form>

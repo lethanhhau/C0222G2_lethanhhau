@@ -41,13 +41,13 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getPhone() {
-        return iProductRepository.getPhone();
+    public Page<Product> getPhone(Pageable pageable) {
+        return iProductRepository.getPhone(pageable);
     }
 
     @Override
-    public List<Product> getLaptop() {
-        return iProductRepository.getLaptop();
+    public Page<Product> getLaptop(Pageable pageable) {
+        return this.iProductRepository.getLaptop(pageable);
 
     }
 

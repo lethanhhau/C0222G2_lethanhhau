@@ -12,10 +12,12 @@ import {ProductService} from '../../service/product.service';
   styleUrls: ['./laptop.component.css']
 })
 export class LaptopComponent implements OnInit {
-  // p: number = 1;
   role: string = '';
   username: string = '';
   token: string = '';
+  totalPages: number;
+  number: number;
+  countTotalPages: number[];
 
   laptopProduct: Product[] = [];
 
@@ -24,7 +26,7 @@ export class LaptopComponent implements OnInit {
               private productService: ProductService,
               private toastrService: ToastrService,
               private router: Router) {
-    this.title.setTitle('Trang Sản Phẩm LapTop');
+    this.title.setTitle('LapTop');
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
@@ -35,13 +37,26 @@ export class LaptopComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLaptop();
+    this.getLaptop(0);
   }
 
-  getLaptop() {
-    this.productService.getLaptop().subscribe(data => {
-      // @ts-ignore
-      this.laptopProduct = data;
+  getLaptop(page: number) {
+    this.productService.getLaptop(page).subscribe(data => {
+      console.log(data)
+      if (data != null) {
+        // @ts-ignore
+        this.laptopProduct = data.content;
+      } else {
+        this.laptopProduct = [];
+      }
+      if (this.laptopProduct.length !== 0) {
+        // @ts-ignore
+        this.totalPages = data.totalPages;
+        // @ts-ignore
+        this.countTotalPages = new Array(data.totalPages);
+        // @ts-ignore
+        this.number = data.number;
+      }
     });
   }
 
@@ -53,7 +68,28 @@ export class LaptopComponent implements OnInit {
       $('#staticBackdropDelete' + id).modal('hide');
       this.toastrService.error('deleted', 'SOS!!!');
       this.ngOnInit();
-      this.router.navigateByUrl('/home').then();
+      this.router.navigateByUrl('/laptop').then();
     });
   }
+
+  goPrevious() {
+    let numberPage: number = this.number;
+    if (numberPage > 0) {
+      numberPage--;
+      this.getLaptop(numberPage);
+    }
+  }
+
+  goNext() {
+    let numberPage: number = this.number;
+    if (numberPage < this.totalPages - 1) {
+      numberPage++;
+      this.getLaptop(numberPage);
+    }
+  }
+
+  goItem(i: number) {
+    this.getLaptop(i);
+  }
+
 }

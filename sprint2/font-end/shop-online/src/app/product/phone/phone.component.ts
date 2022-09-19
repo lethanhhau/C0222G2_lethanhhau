@@ -15,6 +15,9 @@ export class PhoneComponent implements OnInit {
   role: string = '';
   username: string = '';
   token: string = '';
+  totalPages: number;
+  number: number;
+  countTotalPages: number[];
 
   phoneProduct: Product[] = [];
 
@@ -23,7 +26,7 @@ export class PhoneComponent implements OnInit {
               private productService: ProductService,
               private toastrService: ToastrService,
               private router: Router) {
-    this.title.setTitle('Trang Sản Phẩm Điện Thoại');
+    this.title.setTitle('Điện Thoại');
     this.role = this.readCookieService('role');
     this.username = this.readCookieService('username');
     this.token = this.readCookieService('jwToken');
@@ -34,14 +37,26 @@ export class PhoneComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPhone();
+    this.getPhone(0);
   }
 
-  getPhone() {
-    this.productService.getPhone().subscribe(data => {
-      console.log(data);
-      // @ts-ignore
-      this.phoneProduct = data;
+  getPhone(page: number) {
+    this.productService.getPhone(page).subscribe(data => {
+      console.log(data)
+      if (data != null) {
+        // @ts-ignore
+        this.phoneProduct = data.content;
+      } else {
+        this.phoneProduct = [];
+      }
+      if (this.phoneProduct.length !== 0) {
+        // @ts-ignore
+        this.totalPages = data.totalPages;
+        // @ts-ignore
+        this.countTotalPages = new Array(data.totalPages);
+        // @ts-ignore
+        this.number = data.number;
+      }
     });
   }
 
@@ -56,6 +71,27 @@ export class PhoneComponent implements OnInit {
       this.ngOnInit();
       this.router.navigateByUrl('/home').then();
     });
+  }
+
+
+  goPrevious() {
+    let numberPage: number = this.number;
+    if (numberPage > 0) {
+      numberPage--;
+      this.getPhone(numberPage);
+    }
+  }
+
+  goNext() {
+    let numberPage: number = this.number;
+    if (numberPage < this.totalPages - 1) {
+      numberPage++;
+      this.getPhone(numberPage);
+    }
+  }
+
+  goItem(i: number) {
+    this.getPhone(i);
   }
 
 }

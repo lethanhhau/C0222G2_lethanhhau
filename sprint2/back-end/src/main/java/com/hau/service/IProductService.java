@@ -14,9 +14,9 @@ public interface IProductService {
 
     void save(Product product);
 
-    List<Product> getPhone();
+    Page<Product> getPhone(Pageable pageable);
 
-    List<Product> getLaptop();
+    Page<Product> getLaptop(Pageable pageable);
 
     List<Product> getTivi();
 

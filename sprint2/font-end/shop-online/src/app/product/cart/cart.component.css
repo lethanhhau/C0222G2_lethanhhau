@@ -7050,4 +7050,8 @@ button.bg-dark:focus {
   color: #fff !important;
 }
 
+.text-danger{
+  color: red;
+}
+
 

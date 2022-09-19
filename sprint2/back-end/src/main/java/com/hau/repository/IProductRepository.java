@@ -33,13 +33,17 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     void deleteProduct(@Param("id") String id);
 
 
-    @Query(value = "select * from product join category on category.id = product.category_id " +
-            " where product.category_id = 1 and product.is_deleted = 0", nativeQuery = true)
-    List<Product> getPhone();
+    @Query(value = "select p.* from product p join category c on c.id = p.category_id " +
+            " where p.category_id = 1 and p.is_deleted = 0",
+            countQuery = "select count(*) from (select p.* from product p join category c on c.id = p.category_id" +
+                    "          where p.category_id = 1 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
+    Page<Product> getPhone(Pageable pageable);
 
-    @Query(value = "select * from product join category on category.id = product.category_id " +
-            " where product.category_id = 2 and product.is_deleted = 0", nativeQuery = true)
-    List<Product> getLaptop();
+    @Query(value = "select p.* from product p join category c on c.id = p.category_id " +
+            " where p.category_id = 2 and p.is_deleted = 0",
+            countQuery = "select count(*) from (select p.* from product p join category c on c.id = p.category_id" +
+                    "          where p.category_id = 2 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
+    Page<Product> getLaptop(Pageable pageable);
 
     @Query(value = "select * from product join category on category.id = product.category_id " +
             " where product.category_id = 3 and product.is_deleted = 0", nativeQuery = true)
@@ -57,7 +61,7 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     @Modifying
     @Transactional
     @Query(value = " UPDATE `product` SET `quantity` = (`quantity` - :quantity) WHERE (`id` = :id) ", nativeQuery = true)
-    void updateQuantity(@Param("quantity") Integer quantity,@Param("id") Integer id);
+    void updateQuantity(@Param("quantity") Integer quantity, @Param("id") Integer id);
 
     @Modifying
     @Transactional
