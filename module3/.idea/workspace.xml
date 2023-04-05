@@ -5,214 +5,141 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e927e498-20d2-4cce-b14a-e5c0dcb2e455" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../module2/src/hau/case_study_furama_resort/case_study_furama_resort.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/config/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/model/CustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/repository/ConnectionDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/repository/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/service/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/java/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/bootstrap413/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/customer/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/customer/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/datatables/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case_study_furama/src/main/webapp/jquery/jquery-3.5.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/config/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/controller/CustomerControllerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/controller/EmployeeControllerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/AttachService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/ContractDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/CustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Divition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/EducationDegree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/RentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/ServiceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/repository/connection/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/repository/customer/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/repository/customer/impl/CustomerRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/repository/employee/IEmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/repository/employee/impl/EmployeeRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/service/customer/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/service/customer/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/service/employee/IEmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/service/employee/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/java/furama/com/validate/validate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bookstrap/FuramaBookStrap.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bookstrap/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/bootstrap413/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/customer/createCustomer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/customer/editCustomer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/customer/listCustomer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/datatables/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/employee/createEmployee.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/employee/editEmployee.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/employee/listEmployee.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furama/src/main/webapp/jquery/jquery-3.5.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss13_transaction_&amp;_callable_statement/thuc_hanh/ss1_goi_mysql_stored_procedures_tu_jdbc/src/main/java/config/CharsetFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss13_transaction_&amp;_callable_statement/thuc_hanh/ss1_goi_mysql_stored_procedures_tu_jdbc/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss8_bootstrap/bai_tap/ss2_xay_dung_landing_page/.idea/ss2_xay_dung_landing_page.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/case_study.sql" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_sql/case_study.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/classes/java/main/productManagement/controller/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/classes/java/main/productManagement/controller/ProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/libs/tao_ung_dung_quan_ly_san_pham-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/libs/tao_ung_dung_quan_ly_san_pham-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/controller/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/repository/impl/BaseRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/repository/impl/BaseRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/repository/impl/UserRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/classes/java/main/com/codegym/repository/impl/UserRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/libs/quan_ly_user_su_dung_jsp_servlet_jdbc_mysql-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/libs/quan_ly_user_su_dung_jsp_servlet_jdbc_mysql-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/impl/BaseRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/impl/BaseRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/java/com/codegym/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/delete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/searchCountry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/cap_nhat_ung_dung_quan_ly_user/src/main/webapp/user/searchCountry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/out/production/untitled/GiaiThuat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/src/GiaiThuat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss12_jdbc_va_crud/bai_tap/untitled/untitled.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module1/ss18_case_study/.idea/ss18_case_study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module2/src/module2/module2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module2/src/test/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/case_study_furama.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case_study_furama/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10_jsp_va_jstl/bai_tap/ss2_ung_dung_calculator/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss10_jsp_va_jstl/bai_tap/ss2_ung_dung_calculator/.idea/ss2_ung_dung_calculator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.idea/tao_ung_dung_quan_ly_san_pham.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thi/.idea/thi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module4/ss12_jquery_and_ajax/.idea/ss12_jquery_and_ajax.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/input_file_pdf/fe/.idea/fe.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../module6/project/create_prototype/bill_list/.idea/bill_list.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/HistoryRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/OauthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/StatisticalRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/dto/ICustomerTopDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/dto/IStatisticDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/dto/Rol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/dto/TokenDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/dto/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/enums/RolNombre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IRolRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IUsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/UsuarioPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/UsuarioPrincipalFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/jwt/JwtProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/RolService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/customer/customer-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/customer/customer.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/bill.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/customer-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/firebase-chat.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/quantity-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/token-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/firebase-chat.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module1/ss18_case_study/yeu_cau_1_ve_hinh/Bai4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study_furama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/case_study_furama/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furama/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/furama/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furama/.idea/furama.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/furama/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/furama/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/furama/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module4/ss12_jquery_and_ajax/bai_tap/ss1_ajax_for_blog_application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../module4/ss12_jquery_and_ajax/bai_tap/ss1_ajax_for_blog_application/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/bai_thi_be/src/main/java/com/hau/controller/LoHangRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/bai_thi_be/src/main/java/com/hau/controller/LoHangRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/lo-hang/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/lo-hang/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/service/loHang.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module5/bai_thi_module5/bai-thi/src/app/service/loHang.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/controller/SanPhamRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/controller/SanPhamRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/HoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/KhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/NhanVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/NhanVien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/SanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/SanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/ViTri.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/model/ViTri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/repository/ISanPhamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/repository/ISanPhamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/service/ISanPhamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/service/ISanPhamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/service/impl/SanPhamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/back_end/src/main/java/com/hau/service/impl/SanPhamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/app/model/sanPham.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/app/model/sanPham.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/app/service/sanPham.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/app/service/sanPham.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/exam/front_end/exam/src/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project/[C0222G2]_Prototype_HauLT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project/[C0222G2]_Prototype_HauLT.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project/create_prototype/bill_list/list-bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project/create_prototype/bill_list/list-bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project/create_prototype/bill_list/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project/create_prototype/bill_list/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/controller/BillRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/controller/BillRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/dto/BillDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/dto/BillDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/model/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/model/DishOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/model/DishOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/repository/IBillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/repository/IBillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/service/IBillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/service/IBillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/service/impl/BillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/project_module6/src/main/java/com/hau/service/impl/BillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/test_pdf/pdf/src/app/data/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../module6/test_pdf/pdf/src/assets/jspdf.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../module6/test_pdf/pdf/src/assets/jspdf.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/CustomerRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/CustomerRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/OrderRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/ProductRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/jwt/JwtAuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/controller/jwt/JwtAuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Coupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IOrderServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IOrderServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/util/EncrytedPasswordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/security/util/EncrytedPasswordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/java/com/hau/service/impl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/main/resources/local.env" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/main/resources/local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/back-end/src/test/java/com/hau/BackEndApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/back-end/src/test/java/com/hau/BackEndApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/model/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/cart/cart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/create/create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/create/create.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/create/create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/create/create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/detail/detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/detail/detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/edit/edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/common/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/phone/phone.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/phone/phone.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/product-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/product-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/app/service/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sprint2/font-end/shop-online/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +164,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../module2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -247,6 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654612181251</updated>
       <workItem from="1654612185150" duration="30000" />
+      <workItem from="1680610366465" duration="26000" />
     </task>
     <servers />
   </component>

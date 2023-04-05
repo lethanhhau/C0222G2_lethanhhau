@@ -1,6 +1,5 @@
 package com.hau.service.impl;
 
-import com.hau.dto.IProductDTO;
 import com.hau.model.Product;
 import com.hau.repository.IProductRepository;
 import com.hau.service.IProductService;
@@ -52,19 +51,28 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getTivi() {
-        return iProductRepository.getTivi();
+    public Page<Product> getTivi(Pageable pageable) {
+        return this.iProductRepository.getTivi(pageable);
     }
 
     @Override
-    public List<Product> getCamera() {
-        return iProductRepository.getCamera();
-
+    public Page<Product> getCamera(Pageable pageable) {
+        return this.iProductRepository.getCamera(pageable);
     }
 
     @Override
-    public List<Product> getDevice() {
-        return iProductRepository.getDevice();
+    public List<Product> getWashingMachine() {
+        return this.iProductRepository.getWashingMachine();
+    }
+
+    @Override
+    public List<Product> getFridge() {
+        return this.iProductRepository.getFridge();
+    }
+
+    @Override
+    public Page<Product> getDevice(Pageable pageable) {
+        return this.iProductRepository.getDevice(pageable);
 
     }
 
@@ -79,7 +87,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Page<Product> getAllProduct(Pageable pageable, String searchByName) {
-        return iProductRepository.getAllProduct(pageable, "%"+ searchByName + "%");
+    public Page<Product> getAllProduct(Pageable pageable, String searchName) {
+        return iProductRepository.getAllProduct(pageable, "%"+ searchName + "%");
     }
 }

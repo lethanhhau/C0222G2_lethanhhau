@@ -20,9 +20,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   username: string = '';
   token: string = '';
   messageReceived: any;
-  searchForm: FormGroup;
-  searchName: string;
+  selected = false;
   private subscriptionName: Subscription;
+  searchForm: FormGroup;
+  product: Product[] = [];
+  page: number = 0;
 
   constructor(private cookieService: CookieService,
               private toastrService: ToastrService,
@@ -43,6 +45,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.formSearch();
   }
 
   readCookieService(key: string): string {
@@ -99,23 +102,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.commonService.sendUpdate('Đăng Xuất thành công!');
   }
 
+  searchProduct(){
+   let nameSearch = this.searchForm.value.searchName;
+   if (nameSearch == null){
+     nameSearch = "";
+   }
+   this.router.navigate(['/home', nameSearch]);
+  }
+
   formSearch(){
     this.searchForm = new FormGroup({
-      productName: new FormControl(""),
+      searchName: new FormControl()
     });
   }
 
-  getFormSearch() {
-    let search = this.searchForm.value.searchName
-    if (search = null){
-      search = " "
-    }
-    this.router.navigate(['/home/',search])
-    // this.productService.getAll(0, this.searchForm.value.productName).subscribe(data => {
-    //   this.products = data;
-    //   console.log(data);
-    // }, error => {
-    // }, () => {
-    // })
-  }
 }

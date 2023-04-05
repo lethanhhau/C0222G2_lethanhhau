@@ -15,11 +15,11 @@ import java.util.List;
 public interface IProductRepository extends JpaRepository<Product, Integer> {
 
     @Query(value = "select product.* from product join category on category.id = product.category_id where " +
-            " product.name like :searchByName and product.is_deleted = 0" +
+            " product.name like :searchName and product.is_deleted = 0" +
             "", countQuery = "select count(*) from (select product.* from product  " +
-            " join category on category.id = product.category_id where product.name like :searchByName " +
+            " join category on category.id = product.category_id where product.name like :searchName " +
             " and product.is_deleted = 0 ) temp_table", nativeQuery = true)
-    Page<Product> getAllProduct(Pageable pageable, String searchByName);
+    Page<Product> getAllProduct(Pageable pageable, @Param("searchName") String searchName);
 
     @Query(value = " SELECT * FROM product where is_deleted = 0 order by date_in desc limit 30 ", nativeQuery = true)
     List<Product> getNewProducts();
@@ -45,18 +45,31 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
                     "          where p.category_id = 2 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
     Page<Product> getLaptop(Pageable pageable);
 
-    @Query(value = "select * from product join category on category.id = product.category_id " +
-            " where product.category_id = 3 and product.is_deleted = 0", nativeQuery = true)
-    List<Product> getCamera();
+    @Query(value = "select p.* from product p join category c on c.id = p.category_id " +
+            " where p.category_id = 3 and p.is_deleted = 0",
+            countQuery = "select count(*) from (select p.* from product p join category c on c.id = p.category_id" +
+                    "          where p.category_id = 3 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
+    Page<Product> getCamera(Pageable pageable);
+
+    @Query(value = "select p.* from product p join category c on c.id = p.category_id " +
+            " where p.category_id = 4 and p.is_deleted = 0",
+            countQuery = "select count(*) from (select p.* from product p join category c on c.id = p.category_id" +
+                    "          where p.category_id = 4 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
+    Page<Product> getDevice(Pageable pageable);
+
+    @Query(value = "select p.* from product p join category c on c.id = p.category_id " +
+            " where p.category_id = 5 and p.is_deleted = 0",
+            countQuery = "select count(*) from (select p.* from product p join category c on c.id = p.category_id" +
+                    "          where p.category_id = 5 and p.is_deleted = 0 ) temp_table", nativeQuery = true)
+    Page<Product> getTivi(Pageable pageable);
 
     @Query(value = "select * from product join category on category.id = product.category_id " +
-            " where product.category_id = 4 and product.is_deleted = 0", nativeQuery = true)
-    List<Product> getDevice();
+            " where product.category_id = 6 and product.is_deleted = 0", nativeQuery = true)
+    List<Product> getWashingMachine();
 
     @Query(value = "select * from product join category on category.id = product.category_id " +
-            " where product.category_id = 5 and product.is_deleted = 0", nativeQuery = true)
-    List<Product> getTivi();
-
+            " where product.category_id = 7 and product.is_deleted = 0", nativeQuery = true)
+    List<Product> getFridge();
 
     @Modifying
     @Transactional

@@ -1,0 +1,78 @@
+<div class="container" style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 50px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">Them Moi San Pham</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="sanPhamForm" *ngIf="sanPhamForm" (ngSubmit)="createSanPham()">
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ma San Pham:</label>
+      <input formControlName="maSanPham" name="maSanPham" type="text" class="form-control" placeholder="Enter ma San Pham">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ten San Pham:</label>
+      <input formControlName="tenSanPham"  type="text" class="form-control" placeholder="Nhap Ten San Pham">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Don Gia:</label>
+      <input formControlName="donGia"  type="text" class="form-control" placeholder="Nhap Don Gia">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Tinh Trang:</label>
+      <input formControlName="donGia"  type="text" class="form-control" placeholder="nhap tinh trang">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Nhap Hang:</label>
+      <input formControlName="ngayNhapHang"  type="date" class="form-control" placeholder="Nhap ngay nhap hang">
+    </div>
+
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Xuat Xu:</label>
+      <input formControlName="xuatXu"  type="text" class="form-control" placeholder="Nhap xuat xu">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Loai Do Uong:</label>
+      <input formControlName="loaiDoUong"  type="text" class="form-control" placeholder="Nhap loai do uong">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Loai Do An:</label>
+      <input formControlName="loaiDoAn"  type="text" class="form-control" placeholder="Nhap loai do an">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Tac Gia:</label>
+      <input formControlName="tacGia"  type="text" class="form-control" placeholder="Nhap tac gia">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">The Loai:</label>
+      <input formControlName="theLoai"  type="text" class="form-control" placeholder="Nhap the loai">
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label class="form-label h6">Ngay Xuat Ban:</label>
+      <input formControlName="ngayXuatBan"  type="text" class="form-control" placeholder="Nhap ngay xuat ban">
+    </div>
+
+    <button type="submit" class="btn btn-outline-success" [disabled]="!sanPhamForm.valid" (click)="showCreate()">Save
+    </button>
+    <a [routerLink]="['/list']"
+       style="margin-left: 10px" class="btn btn-outline-secondary">Back home</a>
+  </form>
+</div>
+
+
+

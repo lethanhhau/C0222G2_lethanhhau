@@ -15,13 +15,24 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { BarChartComponent } from './chart-js/bar-chart/bar-chart.component';
+import { DoughnutChartComponent } from './chart-js/doughnut-chart/doughnut-chart.component';
+import { PieChartComponent } from './chart-js/pie-chart/pie-chart.component';
+import { RadarChartComponent } from './chart-js/radar-chart/radar-chart.component';
+import {ChartsModule} from 'ng2-charts';
+import { AddInfoUserComponent } from './customer/add-info-user/add-info-user/add-info-user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,  ],
+    FooterComponent,
+    BarChartComponent,
+    DoughnutChartComponent,
+    PieChartComponent,
+    RadarChartComponent,
+    AddInfoUserComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,6 +45,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     NgxPaginationModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

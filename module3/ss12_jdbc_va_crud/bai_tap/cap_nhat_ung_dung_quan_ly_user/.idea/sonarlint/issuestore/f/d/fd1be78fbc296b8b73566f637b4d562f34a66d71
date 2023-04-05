@@ -1,0 +1,14 @@
+
+c
+java:S1192S"HDefine a constant instead of duplicating this literal "country" 4 times.(±”¡òÿÿÿÿÿ
+a
+java:S1192R"FDefine a constant instead of duplicating this literal "email" 4 times.(¬äÂøÿÿÿÿ
+k
+java:S2095–"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(òÙ¹ùÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ
+N	java:S1069"9Replace this use of System.out or System.err by a logger.(Îã­Ã
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(™Š½
+N	java:S106;"9Replace this use of System.out or System.err by a logger.(ËÕëõ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(îöÁÑøÿÿÿÿ
+N	java:S106?"9Replace this use of System.out or System.err by a logger.(†ÚÂà
+S	java:S106N"9Replace this use of System.out or System.err by a logger.(µâ£äşÿÿÿÿ

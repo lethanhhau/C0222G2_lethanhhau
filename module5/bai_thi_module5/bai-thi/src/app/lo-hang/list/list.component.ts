@@ -42,9 +42,6 @@ export class ListComponent implements OnInit {
     });
   }
 
-  // getAllPDF(){
-  //   this.loHangService.getAllPDF();
-  // }
 
   goPrevious() {
     let numberPages: number = this.number;
@@ -73,6 +70,7 @@ export class ListComponent implements OnInit {
     }, () => {
       this.ngOnInit();
       this.router.navigateByUrl('/list').then();
+
     });
   }
 

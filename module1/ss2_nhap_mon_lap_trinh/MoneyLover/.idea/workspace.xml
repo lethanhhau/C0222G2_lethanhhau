@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eef71e17-8d77-4167-a73e-233e2c35c5cb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ss18_case_study/.idea/ss18_case_study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module2/.idea/module2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module2/src/module2/module2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module2/src/test/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/.idea/module3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/case_study_furama/.idea/case_study_furama.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/case_study_furama/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/ss10_jsp_va_jstl/bai_tap/ss2_ung_dung_calculator/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/ss10_jsp_va_jstl/bai_tap/ss2_ung_dung_calculator/.idea/ss2_ung_dung_calculator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/ss11_mvc_model/bai_tap/tao_ung_dung_quan_ly_san_pham/.idea/tao_ung_dung_quan_ly_san_pham.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi/.idea/thi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module4/ss12_jquery_and_ajax/.idea/ss12_jquery_and_ajax.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/.idea/module6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/input_file_pdf/fe/.idea/fe.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module6/project/create_prototype/bill_list/.idea/bill_list.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/HistoryRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/OauthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/StatisticalRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/dto/ICustomerTopDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/dto/IStatisticDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/dto/Rol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/dto/TokenDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/dto/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/enums/RolNombre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IRolRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IUsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/UsuarioPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/UsuarioPrincipalFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/jwt/JwtProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/RolService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/UsuarioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/demo-jwt/ang-spring-boot-jwt/MoneyLover/MoneyLover.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/customer/customer-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/customer/customer.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/bill.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/customer-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/firebase-chat.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/quantity-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/token-dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/firebase-chat.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../test/.idea/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss18_case_study/yeu_cau_1_ve_hinh/Bai4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_furama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_furama/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/furama/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/furama/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/furama/.idea/furama.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/furama/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module4/furama/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/furama/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module4/management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/management_furama/src/main/java/com/hau/controller/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module4/ss12_jquery_and_ajax/bai_tap/ss1_ajax_for_blog_application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module4/ss12_jquery_and_ajax/bai_tap/ss1_ajax_for_blog_application/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module5/bai_thi_be/src/main/java/com/hau/controller/LoHangRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module5/bai_thi_be/src/main/java/com/hau/controller/LoHangRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/lo-hang/list/list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/lo-hang/list/list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/service/loHang.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module5/bai_thi_module5/bai-thi/src/app/service/loHang.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/controller/SanPhamRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/controller/SanPhamRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/HoaDon.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/HoaDon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/KhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/NhanVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/NhanVien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/SanPham.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/SanPham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/ViTri.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/model/ViTri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/repository/ISanPhamRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/repository/ISanPhamRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/service/ISanPhamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/service/ISanPhamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/service/impl/SanPhamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/back_end/src/main/java/com/hau/service/impl/SanPhamService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/app/model/sanPham.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/app/model/sanPham.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/app/service/sanPham.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/app/service/sanPham.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/exam/front_end/exam/src/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project/[C0222G2]_Prototype_HauLT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project/[C0222G2]_Prototype_HauLT.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project/create_prototype/bill_list/list-bill.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project/create_prototype/bill_list/list-bill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project/create_prototype/bill_list/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project/create_prototype/bill_list/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/controller/BillRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/controller/BillRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/dto/BillDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/dto/BillDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/model/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/model/DishOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/model/DishOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/repository/IBillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/repository/IBillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/service/IBillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/service/IBillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/service/impl/BillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/project_module6/src/main/java/com/hau/service/impl/BillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/test_pdf/pdf/src/app/data/db.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module6/test_pdf/pdf/src/assets/jspdf.umd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module6/test_pdf/pdf/src/assets/jspdf.umd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/CustomerRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/CustomerRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/OrderRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/OrderRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/ProductRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/jwt/JwtAuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/controller/jwt/JwtAuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Coupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IOrderServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IOrderServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/util/EncrytedPasswordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/security/util/EncrytedPasswordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/IOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/java/com/hau/service/impl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/resources/local.env" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/main/resources/local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/back-end/src/test/java/com/hau/BackEndApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/back-end/src/test/java/com/hau/BackEndApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/customer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/model/product.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/cart/cart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/create/create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/create/create.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/create/create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/create/create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/detail/detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/detail/detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/edit/edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/common/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/laptop/laptop.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/phone/phone.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/phone/phone.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/product-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/product-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/product.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/product/tivi/tivi.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/customer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/app/service/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sprint2/font-end/shop-online/src/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2NzBDbLWkiXdvIdgy6KhGX2zClO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../sprint2/demo-jwt/ang-spring-boot-jwt/MoneyLover" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eef71e17-8d77-4167-a73e-233e2c35c5cb" name="Changes" comment="" />
+      <created>1680656912491</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680656912491</updated>
+      <workItem from="1680656914185" duration="202000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

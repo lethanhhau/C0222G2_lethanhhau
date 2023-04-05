@@ -15,7 +15,7 @@
               <strong>Thương Hiệu: </strong> <span>{{product.manufacturer}}</span><br>
               <strong>Bảo Hành: </strong> <span>{{product.guaranteeTime}}</span><br>
               <strong>Giảm Giá: </strong> <span>{{product.discount}}%</span><br>
-              <strong>Thông Tin: </strong> <span>{{product.specification}}</span><br>
+<!--              <strong>Thông Tin: </strong> <span [innerHTML]="product.specification"></span><br>-->
             </address>
             <h4><strong>Giá: {{product.price| currency: "VND": ''}}đ</strong></h4>
           </div>
@@ -28,190 +28,192 @@
         </div>
         <div class="row">
           <div class="span9">
-<!--            <h4>Mô Tả Sản Phẩm</h4>-->
-<!--            <div [innerHTML]="product.description"></div>-->
             <ul class="nav nav-tabs" id="myTab">
-              <li class="active"><a href="#home">Mô Tả Sản Phẩm</a></li>
+              <li class="active"><a href="#profile">Thông Tin Sản Phẩm</a></li>
+              <li class=""><a href="#home">Mô Tả Sản Phẩm</a></li>
             </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="profile" [innerHTML]="product.specification"></div>
+            </div>
             <div class="tab-content">
               <div class="tab-pane active" id="home" [innerHTML]="product.description"></div>
             </div>
           </div>
-          <div class="span9">
-            <br>
-            <h4 class="title">
-              <span class="pull-left"><span class="text"><strong>Sản Phẩm</strong> Liên Quan</span></span>
-              <span class="pull-right">
-										<a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>
-									</span>
-            </h4>
-            <div id="myCarousel-1" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="active item">
-                  <ul class="thumbnails listing-products">
-                    <li class="span3">
-                      <div class="product-box">
-                        <span class="sale_tag"></span>
-                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_5.png"></a><br/>
-                        <a href="product_detail.html" class="title">Laptop MSI GF63 Thin 11SC
-                          662VN</a><br/>
-                        <a href="#" class="category"
-                           style="text-decoration-line: line-through">22.490.000 VNĐ</a>
-                        <p class="price">17.990.000 VNĐ</p>
-                      </div>
-                    </li>
-                    <li class="span3">
-                      <div class="product-box">
-                        <span class="sale_tag"></span>
-                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_6.png"></a><br/>
-                        <a href="product_detail.html" class="title">Laptop Asus X515EA-BQ1006W -
-                          Silver</a><br/>
-                        <a href="#" class="category"
-                           style="text-decoration-line: line-through">13.990.000 VNĐ</a>
-                        <p class="price">10.190.000 VNĐ</p>
-                      </div>
-                    </li>
-                    <li class="span3">
-                      <div class="product-box">
-                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_7.png"></a><br/>
-                        <a href="product_detail.html" class="title">Laptop HP Pavilion
-                          15-eg2058TU 6K788PA</a><br/>
-                        <a href="#" class="category"
-                           style="text-decoration-line: line-through">17.990.000 VNĐ</a>
-                        <p class="price">16.690.000 VNĐ</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="item">
-                  <ul class="thumbnails listing-products">
-                    <li class="span3">
-                      <div class="product-box">
-                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_8.png"
-                                                              alt=""/></a></p>
-                        <a href="product_detail.html" class="title">Laptop Acer Aspire 3
-                          A315-58-35AG NX.ADDSV.00B</a><br/>
-                        <a href="products.html" class="category"
-                           style="text-decoration-line: line-through">12.490.000 VNĐ</a>
-                        <p class="price">9.790.000 VNĐ</p>
-                      </div>
-                    </li>
-                    <li class="span3">
-                      <div class="product-box">
-                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_9.png"
-                                                              alt=""/></a></p>
-                        <a href="product_detail.html" class="title">Laptop MSI Modern 14 B11MOU
-                          1033VN</a><br/>
-                        <a href="products.html" class="category">20.990.000 VNĐ</a>
-                        <p class="price">16.990.000 VNĐ</p>
-                      </div>
-                    </li>
-                    <li class="span3">
-                      <div class="product-box">
-                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_10.png"
-                                                              alt=""/></a></p>
-                        <a href="product_detail.html" class="title">Laptop Asus X515EA-BQ1006W -
-                          Silver</a><br/>
-                        <a href="products.html" class="category"
-                           style="text-decoration-line: line-through">13.990.000 VNĐ</a>
-                        <p class="price">10.190.000 VNĐ</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div class="span9">-->
+<!--            <br>-->
+<!--            <h4 class="title">-->
+<!--              <span class="pull-left"><span class="text"><strong>Sản Phẩm</strong> Liên Quan</span></span>-->
+<!--              <span class="pull-right">-->
+<!--										<a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>-->
+<!--									</span>-->
+<!--            </h4>-->
+<!--            <div id="myCarousel-1" class="carousel slide">-->
+<!--              <div class="carousel-inner">-->
+<!--                <div class="active item">-->
+<!--                  <ul class="thumbnails listing-products">-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <span class="sale_tag"></span>-->
+<!--                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_5.png"></a><br/>-->
+<!--                        <a href="product_detail.html" class="title">Laptop MSI GF63 Thin 11SC-->
+<!--                          662VN</a><br/>-->
+<!--                        <a href="#" class="category"-->
+<!--                           style="text-decoration-line: line-through">22.490.000 VNĐ</a>-->
+<!--                        <p class="price">17.990.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <span class="sale_tag"></span>-->
+<!--                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_6.png"></a><br/>-->
+<!--                        <a href="product_detail.html" class="title">Laptop Asus X515EA-BQ1006W - -->
+<!--                          Silver</a><br/>-->
+<!--                        <a href="#" class="category"-->
+<!--                           style="text-decoration-line: line-through">13.990.000 VNĐ</a>-->
+<!--                        <p class="price">10.190.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_7.png"></a><br/>-->
+<!--                        <a href="product_detail.html" class="title">Laptop HP Pavilion-->
+<!--                          15-eg2058TU 6K788PA</a><br/>-->
+<!--                        <a href="#" class="category"-->
+<!--                           style="text-decoration-line: line-through">17.990.000 VNĐ</a>-->
+<!--                        <p class="price">16.690.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="item">-->
+<!--                  <ul class="thumbnails listing-products">-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_8.png"-->
+<!--                                                              alt=""/></a></p>-->
+<!--                        <a href="product_detail.html" class="title">Laptop Acer Aspire 3-->
+<!--                          A315-58-35AG NX.ADDSV.00B</a><br/>-->
+<!--                        <a href="products.html" class="category"-->
+<!--                           style="text-decoration-line: line-through">12.490.000 VNĐ</a>-->
+<!--                        <p class="price">9.790.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_9.png"-->
+<!--                                                              alt=""/></a></p>-->
+<!--                        <a href="product_detail.html" class="title">Laptop MSI Modern 14 B11MOU-->
+<!--                          1033VN</a><br/>-->
+<!--                        <a href="products.html" class="category">20.990.000 VNĐ</a>-->
+<!--                        <p class="price">16.990.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                    <li class="span3">-->
+<!--                      <div class="product-box">-->
+<!--                        <p><a href="product_detail.html"><img src="../../assets/bootstrap/img/laptop/img_10.png"-->
+<!--                                                              alt=""/></a></p>-->
+<!--                        <a href="product_detail.html" class="title">Laptop Asus X515EA-BQ1006W - -->
+<!--                          Silver</a><br/>-->
+<!--                        <a href="products.html" class="category"-->
+<!--                           style="text-decoration-line: line-through">13.990.000 VNĐ</a>-->
+<!--                        <p class="price">10.190.000 VNĐ</p>-->
+<!--                      </div>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
-      <div class="span3 col">
-        <div class="block">
-          <ul class="nav nav-list">
-            <li class="nav-header">Danh Mục</li>
-            <li><a href="products.html">Nullam semper elementum</a></li>
-            <li class="active"><a href="products.html">Phasellus ultricies</a></li>
-            <li><a href="products.html">Donec laoreet dui</a></li>
-            <li><a href="products.html">Nullam semper elementum</a></li>
-            <li><a href="products.html">Phasellus ultricies</a></li>
-            <li><a href="products.html">Donec laoreet dui</a></li>
-          </ul>
-          <br/>
-          <ul class="nav nav-list below">
-            <li class="nav-header">Sản Xuất</li>
-            <li><a href="products.html">MSI</a></li>
-            <li><a href="products.html">DELL</a></li>
-            <li><a href="products.html">ASUS</a></li>
-            <li><a href="products.html">APPLE</a></li>
-            <li><a href="products.html">HP</a></li>
-          </ul>
-        </div>
-        <div class="block">
-          <h4 class="title">
-            <span class="pull-left"><span class="text">Gợi Ý</span></span>
-            <span class="pull-right">
-									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button"
-                                                                                     href="#myCarousel"
-                                                                                     data-slide="next"></a>
-								</span>
-          </h4>
-          <div id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="active item">
-                <ul class="thumbnails listing-products">
-                  <li class="span3">
-                    <div class="product-box">
-                      <span class="sale_tag"></span>
-                      <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_7.png"></a><br/>
-                      <a href="product_detail.html" class="title">Laptop HP Pavilion
-                        15-eg2058TU</a><br/>
-                      <a href="#" class="category"
-                         style="text-decoration-line: line-through">17.990.000 VNĐ</a>
-                      <p class="price">16.690.000 VNĐ</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="item">
-                <ul class="thumbnails listing-products">
-                  <li class="span3">
-                    <div class="product-box">
-                      <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_8.png"></a><br/>
-                      <a href="product_detail.html" class="title">Laptop Acer Aspire 3
-                        A315-58-35AG</a><br/>
-                      <a href="#" class="category"
-                         style="text-decoration-line: line-through">12.490.000 VNĐ</a>
-                      <p class="price">9.790.000 VNĐ</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--        <div class="block">-->
-        <!--          <h4 class="title"><strong>Best</strong> Seller</h4>-->
-        <!--          <ul class="small-product">-->
-        <!--            <li>-->
-        <!--              <a href="#" title="Praesent tempor sem sodales">-->
-        <!--                <img src="assets/themes/images/ladies/1.jpg" alt="Praesent tempor sem sodales">-->
-        <!--              </a>-->
-        <!--              <a href="#">Praesent tempor sem</a>-->
-        <!--            </li>-->
-        <!--            <li>-->
-        <!--              <a href="#" title="Luctus quam ultrices rutrum">-->
-        <!--                <img src="assets/themes/images/ladies/2.jpg" alt="Luctus quam ultrices rutrum">-->
-        <!--              </a>-->
-        <!--              <a href="#">Luctus quam ultrices rutrum</a>-->
-        <!--            </li>-->
-        <!--            <li>-->
-        <!--              <a href="#" title="Fusce id molestie massa">-->
-        <!--                <img src="assets/themes/images/ladies/3.jpg" alt="Fusce id molestie massa">-->
-        <!--              </a>-->
-        <!--              <a href="#">Fusce id molestie massa</a>-->
-        <!--            </li>-->
-        <!--          </ul>-->
-        <!--        </div>-->
-      </div>
+<!--      <div class="span3 col">-->
+<!--        <div class="block">-->
+<!--          <ul class="nav nav-list">-->
+<!--            <li class="nav-header">Danh Mục</li>-->
+<!--            <li><a href="products.html">Nullam semper elementum</a></li>-->
+<!--            <li class="active"><a href="products.html">Phasellus ultricies</a></li>-->
+<!--            <li><a href="products.html">Donec laoreet dui</a></li>-->
+<!--            <li><a href="products.html">Nullam semper elementum</a></li>-->
+<!--            <li><a href="products.html">Phasellus ultricies</a></li>-->
+<!--            <li><a href="products.html">Donec laoreet dui</a></li>-->
+<!--          </ul>-->
+<!--          <br/>-->
+<!--          <ul class="nav nav-list below">-->
+<!--            <li class="nav-header">Sản Xuất</li>-->
+<!--            <li><a href="products.html">MSI</a></li>-->
+<!--            <li><a href="products.html">DELL</a></li>-->
+<!--            <li><a href="products.html">ASUS</a></li>-->
+<!--            <li><a href="products.html">APPLE</a></li>-->
+<!--            <li><a href="products.html">HP</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        <div class="block">-->
+<!--          <h4 class="title">-->
+<!--            <span class="pull-left"><span class="text">Gợi Ý</span></span>-->
+<!--            <span class="pull-right">-->
+<!--									<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button"-->
+<!--                                                                                     href="#myCarousel"-->
+<!--                                                                                     data-slide="next"></a>-->
+<!--								</span>-->
+<!--          </h4>-->
+<!--          <div id="myCarousel" class="carousel slide">-->
+<!--            <div class="carousel-inner">-->
+<!--              <div class="active item">-->
+<!--                <ul class="thumbnails listing-products">-->
+<!--                  <li class="span3">-->
+<!--                    <div class="product-box">-->
+<!--                      <span class="sale_tag"></span>-->
+<!--                      <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_7.png"></a><br/>-->
+<!--                      <a href="product_detail.html" class="title">Laptop HP Pavilion-->
+<!--                        15-eg2058TU</a><br/>-->
+<!--                      <a href="#" class="category"-->
+<!--                         style="text-decoration-line: line-through">17.990.000 VNĐ</a>-->
+<!--                      <p class="price">16.690.000 VNĐ</p>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--              <div class="item">-->
+<!--                <ul class="thumbnails listing-products">-->
+<!--                  <li class="span3">-->
+<!--                    <div class="product-box">-->
+<!--                      <a href="product_detail.html"><img alt="" src="../../assets/bootstrap/img/laptop/img_8.png"></a><br/>-->
+<!--                      <a href="product_detail.html" class="title">Laptop Acer Aspire 3-->
+<!--                        A315-58-35AG</a><br/>-->
+<!--                      <a href="#" class="category"-->
+<!--                         style="text-decoration-line: line-through">12.490.000 VNĐ</a>-->
+<!--                      <p class="price">9.790.000 VNĐ</p>-->
+<!--                    </div>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        <div class="block">&ndash;&gt;-->
+<!--        &lt;!&ndash;          <h4 class="title"><strong>Best</strong> Seller</h4>&ndash;&gt;-->
+<!--        &lt;!&ndash;          <ul class="small-product">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#" title="Praesent tempor sem sodales">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <img src="assets/themes/images/ladies/1.jpg" alt="Praesent tempor sem sodales">&ndash;&gt;-->
+<!--        &lt;!&ndash;              </a>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#">Praesent tempor sem</a>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#" title="Luctus quam ultrices rutrum">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <img src="assets/themes/images/ladies/2.jpg" alt="Luctus quam ultrices rutrum">&ndash;&gt;-->
+<!--        &lt;!&ndash;              </a>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#">Luctus quam ultrices rutrum</a>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </li>&ndash;&gt;-->
+<!--        &lt;!&ndash;            <li>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#" title="Fusce id molestie massa">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <img src="assets/themes/images/ladies/3.jpg" alt="Fusce id molestie massa">&ndash;&gt;-->
+<!--        &lt;!&ndash;              </a>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <a href="#">Fusce id molestie massa</a>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </li>&ndash;&gt;-->
+<!--        &lt;!&ndash;          </ul>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
     </div>
   </section>
 </div>

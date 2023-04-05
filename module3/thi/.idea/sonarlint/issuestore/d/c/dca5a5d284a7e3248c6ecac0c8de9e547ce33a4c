@@ -1,0 +1,18 @@
+
+j
+java:S2095;"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒÄ¸¹ùÿÿÿÿ
+j
+java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¥áÚ‡ûÿÿÿÿ
+e
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»üÎ–
+e
+java:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¹œ‘§
+r	java:S116"^Rename this field "SELECT_ALL_MAT_BANG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õék
+o	java:S116"ZRename this field "INSERT_MAT_BANG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Íçë
+o	java:S116"ZRename this field "DELETE_MAT_BANG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§«êŸ
+6
+java:S1170"!Make this final field static too.(Õék
+7
+java:S1170"!Make this final field static too.(¡Íçë
+7
+java:S1170"!Make this final field static too.(§«êŸ

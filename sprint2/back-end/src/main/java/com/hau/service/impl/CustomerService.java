@@ -6,6 +6,8 @@ import com.hau.service.IAppUserService;
 import com.hau.service.ICustomerService;
 import com.hau.service.IUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,20 +16,13 @@ import java.util.List;
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository iCustomerRepository;
-    @Autowired
-    private IAppUserService iAppUserService;
-    @Autowired
-    private IUserRoleService iUserRoleService;
+
 
     @Override
     public Customer getCustomerByUserName(String userName) {
         return iCustomerRepository.getCustomerByUserName(userName);
     }
 
-    @Override
-    public List<Customer> findAll() {
-        return iCustomerRepository.findAll();
-    }
 
     @Override
     public void save(Customer customer) {
@@ -35,7 +30,9 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer findById(Integer id) {
-        return iCustomerRepository.findById(id).orElse(null);
+    public Page<Customer> getListCustomer(Pageable pageable) {
+        return iCustomerRepository.findAllCustomer(pageable);
     }
+
+
 }

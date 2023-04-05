@@ -6,6 +6,8 @@
 </head>
 <body>
 <script>
+
+    let width = 5;
     for (let i = 0; i <= 5; i++) {
         for (let j = 0; j <= i; j++) {
             if (i === 2 && j === 1 || i === 3 && (j === 1 || j === 2) || i===4 && (j===1 || j===2 || j===3)) {
@@ -14,6 +16,20 @@
                 document.write('*');
             }
         } document.write('<br>');
+    }
+
+    document.write("<br>");
+
+
+    for (let i = 0; i < width; i++) {
+        document.write("<br>");
+        for (let j = 0; j <= i; j++) {
+            if (i === 0 || i === width - 1 || j === 0 || j === i) {
+                document.write("*");
+            } else {
+                document.write(" &nbsp ");
+            }
+        }
     }
 </script>
 </body>

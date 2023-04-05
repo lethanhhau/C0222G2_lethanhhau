@@ -1,28 +1,39 @@
 <div id="top-bar" class="container">
   <div class="row">
     <div class="span4">
-      <div class="search_form" >
+      <form [formGroup]="searchForm" (ngSubmit)="searchProduct()" *ngIf="searchForm">
         <input type="text" class="input-block-level search-query"
-               style="color: black" Placeholder="Tìm Kiếm">
-      </div>
+               style="color: black" Placeholder="Tìm Kiếm" formControlName="searchName" name="searchName">
+      </form>
     </div>
     <div class="span8">
       <div class="account pull-right">
         <a class=" dropdown" *ngIf="token !== ''">
-          <a class=" dropdown-toggle tk" data-toggle="dropdown">{{username}} |
+          <a class=" dropdown-toggle tk" data-toggle="dropdown"><b>{{username}}</b> |
             <!--              <span class="caret"></span>-->
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Chi tiết tài khoản</a></li>
-            <li><a class="dropdown-item" *ngIf="role === 'ROLE_ADMIN'"  [routerLink]="['/create-product']">Thêm Mới Sản Phẩm</a></li>
-            <li><a class="dropdown-item" (click)="onLogout()">Đăng xuất</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/info']"><b>Chi tiết tài khoản</b></a></li>
+            <li><a class="dropdown-item" *ngIf="role === 'ROLE_ADMIN'" [routerLink]="['/create-product']"><b>Thêm Mới Sản
+              Phẩm</b></a></li>
+            <li><a class="dropdown-item" *ngIf="role === 'ROLE_USER'" [routerLink]="['/history']"><b>Lịch Sử Mua Hàng</b></a>
+            </li>
+            <li><a class="dropdown-item" (click)="onLogout()"><b>Đăng xuất</b></a></li>
           </ul>
         </a>
-         <a class="nav-link" routerLink="/cart">Giỏ Hàng |</a>
-         <a href="checkout.html">Thanh Toán |</a>
-         <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> Đăng Ký |</a>
-         <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> Đăng nhập</a>
+        <a class="dropdown" >
+          <a class=" dropdown-toggle tk" data-toggle="dropdown" *ngIf="role === 'ROLE_ADMIN'"><b>Thống Kê</b> |</a>
+          <ul class="dropdown-menu" style="width: 220px">
+            <li><a class="dropdown-item"><b>Top 10 Sản Phẩm Bán Chạy</b></a></li>
+            <li><a class="dropdown-item"><b>Top 10 Khách Hàng Mua Nhiều</b></a></li>
+          </ul>
+        </a>
 
+        <a class="nav-link"  routerLink="/cart"><b>Giỏ Hàng</b> |</a>
+
+        <!--         <a href="checkout.html">Thanh Toán |</a>-->
+        <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> <b>Đăng Ký</b> |</a>
+        <a class="nav-link" *ngIf="token === ''" [routerLink]="['/login']"> <b>Đăng nhập</b></a>
       </div>
     </div>
   </div>
@@ -34,12 +45,12 @@
       <nav id="menu" class="pull-right">
         <ul>
           <li><a routerLink="/laptop">Laptop</a></li>
-          <li><a href="/">Tủ Lạnh</a></li>
-          <li><a href="/">Tivi</a></li>
           <li><a routerLink="/phone">Điện Thoại</a></li>
+          <li><a routerLink="/camera">Máy Ảnh</a></li>
+          <li><a routerLink="/tivi">Tivi</a></li>
+          <li><a href="/">Tủ Lạnh</a></li>
           <li><a href="/">Máy Giặt</a></li>
-          <li><a href="/">Quạt</a></li>
-          <li><a href="/">Điều Hòa</a></li>
+          <li><a routerLink="/device">Phụ Kiện</a></li>
         </ul>
       </nav>
     </div>

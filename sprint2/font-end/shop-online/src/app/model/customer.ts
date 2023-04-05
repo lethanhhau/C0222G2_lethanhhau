@@ -9,6 +9,7 @@ export interface Customer {
   email?: string;
   birthday?: string;
   phone?: string;
+  address?: string;
   hobbies?: string;
   isDeleted?: boolean;
   appUser?: AppUser;

@@ -25,19 +25,21 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5" >
             <form>
-                <div class=" row col-12">
-                    <div class="col-2"></div>
+                <div class=" row col-12" >
+                    <div class="col-3"></div>
                     <form class="d-flex center">
-                        <div class="col-4"><input class="form-control w-100 search" type="text"
-                                                  placeholder="Search số hóa đơn"></div>
-                        <div class="col-4"><input class="form-control w-100 search" type="date"
+                        <div class="col-3">
+                            <input class="form-control w-100 search" type="text"
+                                   placeholder="Search số hóa đơn">
+                        </div>
+                        <div class="col-3">
+                            <input class="form-control w-100 search" type="date"
                                                   placeholder="Search Ngày tạo">
                         </div>
-                        <div class="col-2">
-
-                            <button class="btn btn-success" type="submit" name="name" style="color: white">Search
+                        <div class="col-3">
+                            <button class="btn btn-success" type="submit" name="name" style="color: white">Tìm kiếm
                             </button>
                         </div>
                     </form>
@@ -47,9 +49,8 @@
     </div>
 </header>
 
-
-<div class="container  mt-4">
-    <div class="table_wrapper ">
+<div class="container mt-4">
+    <div class="table_wrapper">
         <div class="wrap-table100">
             <table class="table table-hover">
                 <thead>
@@ -59,8 +60,7 @@
                     <th>Ngày Tạo</th>
                     <th>Người Tạo</th>
                     <th>Số Bàn</th>
-                    <th>Tổng Tiền (VND)</th>
-                    <!--            <th>Xuất Hóa Đơn</th>-->
+                    <th class="vnd">Tổng Tiền (VND)</th>
                     <th>Chi Tiết</th>
                 </tr>
                 </thead>
@@ -71,7 +71,7 @@
                     <td>20/10/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB001</td>
-                    <td>100.000</td>
+                    <td class="tien">100.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -86,7 +86,7 @@
                     <td>12/02/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB004</td>
-                    <td>50.000</td>
+                    <td class="tien">50.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -101,7 +101,7 @@
                     <td>11/02/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB005</td>
-                    <td>60.000</td>
+                    <td class="tien">60.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -116,7 +116,7 @@
                     <td>03/02/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB004</td>
-                    <td>70.000</td>
+                    <td class="tien">70.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -131,7 +131,7 @@
                     <td>20/10/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB003</td>
-                    <td>90.000</td>
+                    <td class="tien">90.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -146,7 +146,7 @@
                     <td>12/04/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB012</td>
-                    <td>60.000</td>
+                    <td class="tien">60.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -161,7 +161,7 @@
                     <td>11/09/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB011</td>
-                    <td>100.000</td>
+                    <td class="tien">100.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -176,7 +176,7 @@
                     <td>31/10/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB009</td>
-                    <td>100.000</td>
+                    <td class="tien">100.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -191,7 +191,7 @@
                     <td>22/10/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB003</td>
-                    <td>90.000</td>
+                    <td class="tien">90.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -206,7 +206,7 @@
                     <td>21/05/2021</td>
                     <td>Nguyễn Văn A</td>
                     <td>TB002</td>
-                    <td>100.000</td>
+                    <td class="tien">100.000</td>
                     <td>
                         <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#demo"
                                 style="font-size: 150%">
@@ -221,13 +221,13 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-end">
             <li class="page-item disabled">
-                <a class="page-link">Previous</a>
+                <a class="page-link">Trước</a>
             </li>
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>
             <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+                <a class="page-link" href="#">Sau</a>
             </li>
         </ul>
     </nav>
@@ -235,8 +235,8 @@
 
 <div class="container  offcanvas offcanvas-end" id="demo">
     <div class="offcanvas-header">
-        <h1 class="offcanvas-title text-black">Chi Tiết Hóa Đơn</h1>
-
+        <h1 class="offcanvas-title text-white">Chi Tiết Hóa Đơn</h1>
+        <button type="button" class="btn-close"  data-bs-dismiss="offcanvas"></button>
     </div>
     <table>
         <hr class="mt-0">
@@ -244,32 +244,51 @@
         <tr class="table100-head">
             <th>Món</th>
             <th>Số Lượng</th>
-            <th>Giá</th>
+            <th>Giá(VND)</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>Cafe Sữa:</td>
             <td>1</td>
-            <td>30.000</td>
+            <td class="tien">20.000</td>
         </tr>
         <tr>
             <td>Cafe Đen:</td>
             <td>1</td>
-            <td>25.000</td>
+            <td class="tien">20.000</td>
         </tr>
         <tr>
             <td>Trà Sữa :</td>
             <td>1</td>
-            <td>45.000</td>
+            <td class="tien">30.000</td>
         </tr>
         <tr>
-            <td colspan="2"><b>Tổng Tiền:</b></td>
-            <td>100.000</td>
+            <td>Sting :</td>
+            <td>4</td>
+            <td class="tien">15.000</td>
+        </tr>
+        <tr>
+            <td>trà sữa truyền thống:</td>
+            <td>2</td>
+            <td class="tien">30.000</td>
+        </tr>
+        <tr>
+            <td colspan="1"><b>Tổng Tiền:</b></td>
+            <td></td>
+            <td class="tien">160.000</td>
         </tr>
         </tbody>
     </table>
-        <button type="button" class="btn btn-outline-success mt-5"><b style="color: black">Xuất Hóa Đơn</b></button>
+    <div class="row mt-5" >
+        <div class="col-9"style="text-align: right">
+            <button type="submit" class="btn btn-success "><b style="color: white">Xuất Hóa Đơn</b></button>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-secondary"><b style="color: white">Đóng</b></button>
+        </div>
+    </div>
+
 
 </div>
 

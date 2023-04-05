@@ -18,15 +18,19 @@ public interface IProductService {
 
     Page<Product> getLaptop(Pageable pageable);
 
-    List<Product> getTivi();
+    Page<Product> getTivi(Pageable pageable);
 
-    List<Product> getCamera();
+    Page<Product> getCamera(Pageable pageable);
 
-    List<Product> getDevice();
+    List<Product> getWashingMachine();
+
+    List<Product> getFridge();
+
+    Page<Product> getDevice(Pageable pageable);
 
     List<Product> getNewProducts();
 
     List<Product> findAll();
 
-    Page<Product> getAllProduct(Pageable pageable, String searchByName);
+    Page<Product> getAllProduct(Pageable pageable, String searchName);
 }

@@ -4,6 +4,8 @@ import com.hau.dto.ErrorDTO;
 import com.hau.dto.PaymentDto;
 import com.hau.model.Customer;
 import com.hau.model.OrderService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -20,5 +22,9 @@ public interface IOrderService {
 
     PaymentDto goPayment(Customer customer);
 
-    List<OrderService> getOrderInCustomer(Customer customer);
+    Page<OrderService> getOrderInCustomer(Pageable pageable, Customer customer);
+
+    Page<OrderService> findAll(Pageable pageable);
+
+    Page<OrderService> getListOrderYesterday(Pageable pageable);
 }

@@ -124,10 +124,6 @@ export class CartComponent implements OnInit {
     });
   }
 
-  closeModal(id: number) {
-    $('#exampleModalCenter' + id).modal('hide');
-  }
-
   plusQuantity(productOrder: Order) {
     this.cartService.plusQuantity(productOrder).subscribe(value => {
       this.productOrders = value;

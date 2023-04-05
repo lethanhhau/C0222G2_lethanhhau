@@ -13,7 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +39,7 @@ public class ProductRestController {
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
     @GetMapping(value = "/new/products")
     public ResponseEntity<List<Product>> getNewProducts() {
         List<Product> productList = this.iProductService.getNewProducts();
@@ -48,9 +48,9 @@ public class ProductRestController {
 
     @GetMapping("/products")
     public ResponseEntity<Page<Product>> getPageProduct(@PageableDefault(30)Pageable pageable,
-                                                        Optional<String> searchName){
-        String searchByName = searchName.orElse("");
-        Page<Product> productDTOPage = iProductService.getAllProduct(pageable,searchByName);
+                                                        @RequestParam("searchName") Optional<String> search){
+        String searchName = search.orElse("");
+        Page<Product> productDTOPage = iProductService.getAllProduct(pageable,searchName);
         if(productDTOPage.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -130,24 +130,44 @@ public class ProductRestController {
     }
 
     @GetMapping("/tivi")
-    public ResponseEntity<List<Product>> getTivi(){
-        List<Product> productList = this.iProductService.getTivi();
+    public ResponseEntity<Page<Product>> getTivi(@PageableDefault(18)Pageable pageable){
+        Page<Product> productList = iProductService.getTivi(pageable);
         if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
     @GetMapping("/camera")
-    public ResponseEntity<List<Product>> getCamera(){
-        List<Product> productList = this.iProductService.getCamera();
+    public ResponseEntity<Page<Product>> getCamera(@PageableDefault(18)Pageable pageable){
+        Page<Product> productList = this.iProductService.getCamera(pageable);
         if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+
+    @GetMapping("/washingMachine")
+    public ResponseEntity<List<Product>> getWashingMachine(){
+        List<Product> productList = this.iProductService.getWashingMachine();
+        if (productList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+
+    @GetMapping("/fridge")
+    public ResponseEntity<List<Product>> getFridge(){
+        List<Product> productList = this.iProductService.getFridge();
+        if (productList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+
     @GetMapping("/device-sup")
-    public ResponseEntity<List<Product>> getDevice(){
-        List<Product> productList = this.iProductService.getDevice();
+    public ResponseEntity<Page<Product>> getDevice(@PageableDefault(18)Pageable pageable){
+        Page<Product> productList = this.iProductService.getDevice(pageable);
         if (productList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

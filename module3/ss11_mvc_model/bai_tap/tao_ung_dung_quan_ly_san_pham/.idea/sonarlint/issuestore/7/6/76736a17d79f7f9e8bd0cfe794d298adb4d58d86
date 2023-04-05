@@ -1,0 +1,32 @@
+
+d
+java:S1192+"NDefine a constant instead of duplicating this literal "error-404.jsp" 5 times.(µ²Ä²
+_
+java:S1192"IDefine a constant instead of duplicating this literal "products" 3 times.(Ø°õñ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“Š¬
+P
+java:S1161":Add the "@Override" annotation above this method signature(‘¤ğ‰
+i
+java:S1989"THandle the following exception that could be thrown by "insertProduct": IOException.(ÚÅü4
+T
+java:S1854+">Remove this useless assignment to local variable "dispatcher".(µ²Ä²
+E
+java:S1481)"/Remove this unused "dispatcher" local variable.(º³Í
+Z
+java:S2147N"DCombine this catch with the one at line 76, which has the same body.(ï­£Ä
+D
+java:S2140X")Use "java.util.Random.nextInt()" instead.(×÷é¹ûÿÿÿÿ
+P
+java:S1161^":Add the "@Override" annotation above this method signature(çŒïÄ
+w
+java:S1989e"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÕÌî
+w
+java:S1989s"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(¨€¸›
+\
+java:S2147†"ECombine this catch with the one at line 132, which has the same body.(ï­£Ä
+\
+java:S2147™"ECombine this catch with the one at line 151, which has the same body.(ï­£Ä
+\
+java:S2147¬"ECombine this catch with the one at line 170, which has the same body.(ï­£Ä
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(’³†ä

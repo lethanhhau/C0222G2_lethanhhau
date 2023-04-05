@@ -1,0 +1,172 @@
+<div id="wrapper1" class="container">
+  <div class="main-content">
+    <div class="row">
+      <div class="span12">
+        <div class="myCarousel carousel slide">
+          <div class="carousel-inner" >
+            <div class="active item span12">
+              <div class="product-box span2 d-flex" *ngFor="let product of deviceSupProduct">
+                <span class="sale_tag"></span>
+                <p><a class="nav-link" [routerLink]="['/detail-product', product.id]"><img src="{{product.image}}"
+                                                                                           alt=""/></a></p>
+                <a class="title" [routerLink]="['/detail-product', product.id]">{{product.name}}</a><br/>
+                <p class="price title">{{product.price| currency: "VND": ''}}đ</p>
+                <div class="row text-center m-0" *ngIf="role === 'ROLE_ADMIN'">
+                  <a class="btn-outline-dark btn-square item-text" style="margin-left: 12%"
+                     [routerLink]="['/edit-product',product.id]">
+                    <i class="fa-sharp fa-solid fa-pen text-primary " style="font-size: 22px"></i></a>
+                  <a class="btn-outline-dark btn-square item-text " style="margin-left: 30%"
+                     data-toggle="modal"
+                     [attr.data-target]="'#staticBackdropDelete' + product.id">
+                    <i class="fa-sharp fa-solid fa-trash text-primary " style="font-size: 22px"></i></a>
+                </div>
+                <!--Modal Delete-->
+                <div class="modal fade" id="staticBackdropDelete{{product.id}}" data-backdrop="static"
+                     data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelDelete"
+                     aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title text-danger" id="staticBackdropLabelDelete">Xóa sản phẩm</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p style="font-size: 20px"> Bạn có muốn xóa sản phẩm <span class="text-danger">{{product.name}}</span>
+                          <br>của hãng <span class="text-danger">{{product.manufacturer}}</span> không?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-delete" data-dismiss="modal"
+                                (click)="deleteProduct(product.id)">
+                          Xóa
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary btn-close" data-dismiss="modal">Đóng</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 pb-1 text-center font-weight-bold text-white"
+             style="font-size: 30px !important;" *ngIf="deviceSupProduct.length <= 0">
+          Không có dữ liệu !!!.
+        </div>
+        <div class="col-lg-12" *ngIf="deviceSupProduct.length > 0">
+          <nav>
+            <ul class="pagination justify-content-center">
+              <div *ngIf="number == 0" >
+                <li class="page-item disabled">
+                  <button class="page-link" (click)="goPrevious()" hidden>Trước</button>
+                </li>
+              </div>
+              <div *ngIf="number != 0">
+                <li class="page-item">
+                  <button class="page-link" (click)="goPrevious()">Trước</button>
+                </li>
+              </div>
+              <div *ngFor="let count of countTotalPages; index as i" >
+                <div *ngIf="i == number">
+                  <li class="page-item active">
+                    <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+                  </li>
+                </div>
+                <div *ngIf="i != number">
+                  <li class="page-item">
+                    <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+                  </li>
+                </div>
+              </div>
+              <div *ngIf="number == totalPages - 1">
+                <li class="page-item disabled">
+                  <button class="page-link" (click)="goNext()" hidden>Sau</button>
+                </li>
+              </div>
+              <div *ngIf="number != totalPages - 1">
+                <li class="page-item">
+                  <button class="page-link" (click)="goNext()">Sau</button>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+      <!--      <div>-->
+      <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+      <!--      </div>-->
+
+      <div class="row feature_box">
+        <div class="span4">
+          <div class="service">
+            <div class="responsive">
+              <img src="assets/themes/images/feature_img_2.png" alt=""/>
+              <h4>Sản Phẩm Chất Lượng</h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="service">
+            <div class="customize">
+              <img src="assets/themes/images/feature_img_1.png" alt=""/>
+              <h4>Miễn Phí Vận Chuyển</h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="span4">
+          <div class="service">
+            <div class="support">
+              <img src="assets/themes/images/feature_img_3.png" alt=""/>
+              <h4>24/7 Hỗ Trợ Trực Tuyến</h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h4 class="title">
+    <span class="pull-left"><span class="text"><span
+      class="line">Sản Xuất</span></span></span>
+    </h4>
+    <div id="myCarousel-3" class="myCarousel carousel slide">
+      <div class="carousel-inner">
+        <div class="active item">
+          <ul class="thumbnails">
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_8.png"></a>
+              </div>
+            </li>
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_9.png"></a>
+              </div>
+            </li>
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_6.png"></a>
+              </div>
+            </li>
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_7.png"></a>
+              </div>
+            </li>
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_10.png"></a>
+              </div>
+            </li>
+            <li class="span2">
+              <div class="span2">
+                <a href="#"><img alt="" src="assets/bootstrap/img/logo/img_11.png"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

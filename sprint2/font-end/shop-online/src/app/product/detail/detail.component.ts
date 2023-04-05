@@ -82,7 +82,7 @@ export class DetailComponent implements OnInit {
     };
     this.orderService.addOrder(order).subscribe((po: Order) => {
       this.toastrService.success('Thêm thành công sản phẩm ' + po.product.name);
-      this.sendMessage();
+      // this.sendMessage();
     }, error => {
       if (error.error.message == 'quantity') {
         this.toastrService.warning('Bạn đã thêm vượt quá số lượng sản phẩm!');
@@ -90,11 +90,11 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  sendMessage(): void {
-    this.commonService.sendUpdate('Success!');
-  }
+  // sendMessage(): void {
+  //   this.commonService.sendUpdate('Success!');
+  // }
 
-  addToCartMessage() {
-    this.toastrService.warning('Vui lòng đăng nhập thành viên để thực hiện chức năng này!');
-  }
+  // addToCartMessage() {
+  //   this.toastrService.warning('Vui lòng đăng nhập thành viên để thực hiện chức năng này!');
+  // }
 }

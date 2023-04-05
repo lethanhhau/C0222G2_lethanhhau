@@ -1,6 +1,4 @@
-// @ts-ignore
 import {Category} from './category';
-// @ts-ignore
 import {Order} from './order';
 
 export interface Product {
@@ -15,7 +13,7 @@ export interface Product {
   specification?: string;
   description?: string;
   image?: string;
-  category?: Category[];
+  category?: Category;
   isDeleted?: boolean;
   order?: Order[];
 }

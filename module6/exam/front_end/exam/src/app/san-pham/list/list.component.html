@@ -1,0 +1,146 @@
+<header style="margin-top: 100px">
+  <div class="p-3 text-center bg-image"
+       style="height: 60px;">
+    <div class="mask">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-success">
+          <h1 class="mb-3">
+            <b>Danh Sach San Pham</b>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-info">
+      <div class="container-fluid" style="height: 60px">
+        <a [routerLink]="['/create']"
+           class="btn btn-outline-success btn-lg" role="button" style="color: white">
+          Them San Pham
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="container mt-3">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>STT</th>
+      <th>Ma San Pham</th>
+      <th>Tên sản Phẩm</th>
+      <th>Don Gia</th>
+      <th>Ngày Nhập Hàng</th>
+      <th colspan="2" style="text-align: center">Khac</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let sp of sanPhams index as i">
+      <td>{{i+1}}</td>
+      <td>{{sp.maSanPham}}</td>
+      <td>{{sp.tenSanPham}}</td>
+      <td>{{sp.donGia| currency: "VND": ''}}đ</td>
+      <td>{{sp.ngayNhapHang|date: 'dd-MM-yyyy'}}</td>
+      <td>
+        <a href="#"
+           class="a-bill" data-bs-toggle="offcanvas" [attr.data-bs-target]="'#offcanvas' + sp.idSanPham">
+         Chi tiet
+        </a>
+
+        <div class="container offcanvas offcanvas-end detail aut " id="offcanvas{{sp.idSanPham}}" style="overflow: auto">
+          <div class="row text-center">
+            <h1>{{sp.tenSanPham}}</h1>
+          </div>
+          <table class="table">
+            <thead>
+            <tr>
+              <th class="th-stt"><b>ma san pham</b></th>
+              <th><b>don gia</b></th>
+              <th><b>tinh trang</b></th>
+              <th><b>ngay nhap</b></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sp of sanPhams ">
+              <td>{{sp.maSanPham}}</td>
+              <td class="tien">{{sp.donGia| currency: "VND": ''}}đ</td>
+              <td>{{sp.tinhTrang}}</td>
+              <td>{{sp.ngayNhapHang}}</td>
+            </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+      </td>
+      <td>
+        <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#deleteModal' + sp.idSanPham">
+          Xoa
+        </button>
+        <div class="modal fade" id="deleteModal{{sp.idSanPham}}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title text-danger"><h1>Xác Nhận!</h1></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <span class="text-warning"></span>Bạn có chắc muốn xóa San Pham <span
+                class="text-warning">{{sp.tenSanPham}}</span> <br>
+                nhập ngày {{sp.maSanPham}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="showCancel()">
+                  Huy
+                </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        (click)="deleteSanPham(sp.idSanPham)" (click)="showDelete()">
+                  Xoa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="container-fluid mt-3">
+    <ul class="pagination float-end">
+      <div *ngIf="number == 0">
+        <li class="page-item disabled">
+          <button class="page-link" (click)="goPrevious()">Previous</button>
+        </li>
+      </div>
+      <div *ngIf="number != 0">
+        <li class="page-item">
+          <button class="page-link" (click)="goPrevious()">Previous</button>
+        </li>
+      </div>
+      <div *ngFor="let count of countTotalPages; index as i">
+        <div *ngIf="i == number">
+          <li class="page-item active">
+            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+          </li>
+        </div>
+        <div *ngIf="i != number">
+          <li class="page-item">
+            <button class="page-link" (click)="goItem(i)">{{i + 1}}</button>
+          </li>
+        </div>
+      </div>
+      <div *ngIf="number == totalPages - 1">
+        <li class="page-item disabled">
+          <button class="page-link" (click)="goNext()">Next</button>
+        </li>
+      </div>
+      <div *ngIf="number != totalPages - 1">
+        <li class="page-item">
+          <button class="page-link" (click)="goNext()">Next</button>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

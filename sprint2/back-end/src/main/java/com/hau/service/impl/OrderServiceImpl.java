@@ -11,6 +11,8 @@ import com.hau.repository.IOrderServiceRepository;
 import com.hau.repository.IProductRepository;
 import com.hau.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -101,6 +103,7 @@ public class OrderServiceImpl implements IOrderService {
         bill.setIsDeleted(false);
         bill.setCreationDate(new Date(System.currentTimeMillis()));
         this.billRepository.save(bill);
+
         Bill billReturn = this.billRepository.getBillByCode(randomCode);
         this.productOrderRepository.setBill(customer.getId(), billReturn.getId());
         PaymentDto paymentDto = new PaymentDto();
@@ -118,8 +121,18 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public List<OrderService> getOrderInCustomer(Customer customer) {
-        return this.productOrderRepository.getOrderInCustomer(customer);
+    public Page<OrderService> getOrderInCustomer(Pageable pageable, Customer customer) {
+        return productOrderRepository.getOrderInCustomer(pageable,customer);
+    }
+
+    @Override
+    public Page<OrderService> findAll(Pageable pageable) {
+        return productOrderRepository.findAllOrder(pageable);
+    }
+
+    @Override
+    public Page<OrderService> getListOrderYesterday(Pageable pageable) {
+        return productOrderRepository.getListOrderYesterday(pageable);
     }
 
     private int getRandomNumber(List<Bill> billList) {
@@ -138,5 +151,7 @@ public class OrderServiceImpl implements IOrderService {
         }
         return false;
     }
+
+
 
 }

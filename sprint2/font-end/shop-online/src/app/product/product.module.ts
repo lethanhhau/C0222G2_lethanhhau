@@ -8,14 +8,17 @@ import {CommonModule} from '@angular/common';
 import {ProductRoutingModule} from './product-routing.module';
 import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HomeComponent} from './home/home.component';
+import {HomeComponent} from '../common/home/home.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { CartComponent } from './cart/cart.component';
+import { HistoryOrderComponent } from './history-order/history-order.component';
+import { CameraComponent } from './camera/camera.component';
+import { DeviceSupComponent } from './device-sup/device-sup.component';
 
 @NgModule({
   declarations: [CreateComponent, EditComponent, DetailComponent, PhoneComponent, TiviComponent, LaptopComponent,
-    HomeComponent, CartComponent],
+    HomeComponent, CartComponent, HistoryOrderComponent, CameraComponent, DeviceSupComponent],
     imports: [
         CommonModule,
         ProductRoutingModule,

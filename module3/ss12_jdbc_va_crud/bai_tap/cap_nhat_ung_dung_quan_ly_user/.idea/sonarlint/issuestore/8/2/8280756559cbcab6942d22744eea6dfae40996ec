@@ -1,0 +1,35 @@
+
+^
+java:S1192>"HDefine a constant instead of duplicating this literal "country" 3 times.(ç‰—œ
+d
+java:S1192e"NDefine a constant instead of duplicating this literal "user/list.jsp" 3 times.(Àûú¨
+_
+java:S1192T"IDefine a constant instead of duplicating this literal "listUser" 5 times.(¢äÃé
+P
+java:S1161":Add the "@Override" annotation above this method signature( Üó
+{
+java:S1989!"eHandle the following exceptions that could be thrown by "showNewForm": ServletException, IOException.(ßçÂ›
+|
+java:S1989$"fHandle the following exceptions that could be thrown by "showEditForm": ServletException, IOException.(ÂõÓÁ
+z
+java:S1989'"dHandle the following exceptions that could be thrown by "deleteUser": IOException, ServletException.(…»“‡
+}
+java:S19890"bHandle the following exceptions that could be thrown by "listUser": IOException, ServletException.(ÁÄ›êşÿÿÿÿ
+\
+java:S19896"AHandle the "ServletException" thrown here in a "try/catch" block.(½óæ„úÿÿÿÿ
+Z
+java:S2147Y"DCombine this catch with the one at line 87, which has the same body.(ï­£Ä
+z
+java:S1989s"dHandle the following exceptions that could be thrown by "insertUser": IOException, ServletException.(Ì¼¬Ø
+
+java:S1989v"dHandle the following exceptions that could be thrown by "updateUser": IOException, ServletException.(©ÛÖíùÿÿÿÿ
+\
+java:S1989}"AHandle the "ServletException" thrown here in a "try/catch" block.(½óæ„úÿÿÿÿ
+„
+java:S1130ˆ"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(šáÏ@
+\
+java:S2147¡"ECombine this catch with the one at line 159, which has the same body.(ï­£Ä
+Š
+java:S1130§"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(íú”æûÿÿÿÿ
+I
+java:S1144"3Remove this unused private "showDeleteUser" method.(å§´X

@@ -66,7 +66,7 @@ export class LaptopComponent implements OnInit {
     }, () => {
       // @ts-ignore
       $('#staticBackdropDelete' + id).modal('hide');
-      this.toastrService.error('deleted', 'SOS!!!');
+      this.toastrService.success('Xóa Thành Công', 'Thông Báo');
       this.ngOnInit();
       this.router.navigateByUrl('/laptop').then();
     });

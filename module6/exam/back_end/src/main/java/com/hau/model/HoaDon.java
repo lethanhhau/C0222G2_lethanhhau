@@ -1,5 +1,6 @@
 package com.hau.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -16,10 +17,11 @@ public class HoaDon {
     private Date ngayDatDichVu;
 
     @OneToMany(mappedBy = "hoaDon")
-    @JsonIgnore
+    @JsonBackReference
     private List<SanPham> sanPhams;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "id_khach_hang", referencedColumnName = "idKhachHang")
     private KhachHang khachHang;
 

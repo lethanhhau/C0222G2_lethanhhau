@@ -1,73 +1,79 @@
-<div class="container pt-2 pb-4" >
-  <div class="row  bg-test " style="border-radius: 10px">
-    <div class="col-xl-4 order-md-last  pt-4">
-      <h3 class="text-center text-white pt-5 pb-4"><sub>******* </sub>Ảnh Sản Phẩm<sub> *******</sub></h3>
+<div class="container pt-1 pb-4">
+  <h1 class="font-weight-semi-bold text-uppercase mb-3 text-center"> Thêm Mới Sản Phẩm</h1>
+  <div class="row bg-test" style="border-radius: 10px">
+    <div class="col-xl-4 order-md-last">
+      <h3 class="text-center text-white pt-4 pb-4"><sub>******* </sub>Ảnh Sản Phẩm<sub> *******</sub></h3>
       <ul class="list-group mb-3">
         <li class=" d-flex justify-content-between" *ngIf="imgSrc !== null">
           <img [src]="imgSrc" id="img" class="image-css" (click)="fileUploader.click()">
         </li>
         <li class=" d-flex justify-content-between" *ngIf="imgSrc == null">
-          <img src="#" >
+          <img src="/assets/img.png">
         </li>
       </ul>
     </div>
-
     <div class="col-xl-8 m-0 ">
-      <h1 class="text-center text-white pt-5 pb-4"> Thêm Mới Sản Phẩm</h1>
-
-      <form class="needs-validation" id="test" [formGroup]="productForm" (ngSubmit)="onCreateProduct()" *ngIf="productForm">
+      <form class="needs-validation" id="test" [formGroup]="productForm" (ngSubmit)="onCreateProduct()"
+            *ngIf="productForm">
         <div class="row g-3">
-          <div class="col-xl-4 mt-3" data-bs-toggle="name" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
+          <div class="col-xl-4 mt-3" data-bs-toggle="name" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
             <label for="name" class="form-label title-input">Tên sản phẩm<span class="text-white">(*)</span>: </label>
-            <input (input)="checkErrorName()" type="text" class="form-control border-warning" id="name" value="" placeholder="VD: IPhone 13 Pro Max"
+            <input (input)="checkErrorName()" type="text" class="form-control border-warning" id="name" value=""
+                   placeholder="VD: IPhone 13 Pro Max"
                    formControlName="name">
           </div>
-
-          <div class="col-xl-4 mt-3" data-bs-toggle="price" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
+          <div class="col-xl-4 mt-3" data-bs-toggle="price" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
             <label for="price" class="form-label title-input">Giá (VND) <span class="text-white">(*)</span>: </label>
             <input (input)="checkErrorPrice()" type="text" class="form-control border-primary" id="price" value=""
-                   placeholder="VD: 10000000"  formControlName="price">
+                   placeholder="VD: 10000000" formControlName="price">
           </div>
-
-          <div class="col-xl-4 mt-3" data-bs-toggle="image" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
-            <label for="image" class="form-label title-input">Ảnh sản phẩm <span class="text-white">(*)</span>:
+          <div class="col-xl-4 mt-3" data-bs-toggle="image" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
+            <label for="image" class="form-label title-input"> <span class="text-white">(*)</span>:
             </label>
             <div class="input-group has-validation text-white">
-              <input (input)="chooseFile()" #fileUploader (change)="showPreview($event)" type="file" class="form-control text-dark"
-                     id="image" name="filename" formControlName="image" >
+              <input (input)="chooseFile()" #fileUploader (change)="showPreview($event)" type="file"
+                     class="form-control text-dark"
+                     id="image" name="filename" formControlName="image">
             </div>
           </div>
-
-          <div class="col-xl-4 mt-3" data-bs-toggle="manufacturer" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
-            <label for="manufacturer" class="form-label title-input">Hãng sản xuất <span class="text-white">(*)</span>: </label>
+          <div class="col-xl-4 mt-3" data-bs-toggle="manufacturer" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
+            <label for="manufacturer" class="form-label title-input">Hãng sản xuất <span class="text-white">(*)</span>:
+            </label>
             <div class="input-group has-validation">
               <input (input)="checkErrorOrigin()" type="text" class="form-control border-primary" id="manufacturer"
                      placeholder="VD: Việt Nam" formControlName="manufacturer">
             </div>
           </div>
 
-          <div class="col-xl-4 mt-3" data-bs-toggle="quantity" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
+          <div class="col-xl-4 mt-3" data-bs-toggle="quantity" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
             <label for="quantity" class="form-label title-input">Số lượng <span class="text-white">(*)</span>: </label>
             <div class="input-group has-validation">
               <input (input)="checkErrorQuantity()" type="text" class="form-control border-primary" id="quantity"
-                     placeholder="VD: 99"  formControlName="quantity">
+                     placeholder="VD: 99" formControlName="quantity">
             </div>
           </div>
 
           <div class="col-xl-4 mt-3" data-bs-toggle="dateIn" data-bs-content="" data-bs-trigger="manual"
                data-bs-placement="bottom">
-            <label for="dateIn" class="form-label title-input">Ngày sản xuất <span class="text-white">(*)</span>: </label>
+            <label for="dateIn" class="form-label title-input">Ngày sản xuất <span class="text-white">(*)</span>:
+            </label>
             <div class="input-group has-validation">
               <input (input)="checkErrorDateTime()" type="date" class="form-control border-primary"
                      id="dateIn" formControlName="dateIn">
             </div>
           </div>
 
-          <div class="col-xl-4 mt-3" data-bs-toggle="category" data-bs-content="" data-bs-trigger="manual" data-bs-placement="bottom">
+          <div class="col-xl-4 mt-3" data-bs-toggle="category" data-bs-content="" data-bs-trigger="manual"
+               data-bs-placement="bottom">
             <label for="category" class="form-label title-input">Danh mục <span class="text-white">(*)</span>: </label>
             <select class="form-control border-primary" id="category" formControlName="category"
                     (change)="checkErrorCategory()">
-              <option class="text-dark" value="" [disabled]="true">Chọn danh mục </option>
+              <option class="text-dark" value="" [disabled]="true">Chọn danh mục</option>
               <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
             </select>
           </div>
@@ -77,7 +83,8 @@
             <label for="discount" class="form-label title-input">Ưu đãi (%) <span class="text-white">(*)</span>:
             </label>
             <div class="input-group has-validation">
-              <input (input)="checkErrorDiscount()" type="text" class="form-control border-primary" id="discount" placeholder="VD: 10"
+              <input (input)="checkErrorDiscount()" type="text" class="form-control border-primary" id="discount"
+                     placeholder="VD: 10"
                      formControlName="discount">
             </div>
           </div>
@@ -88,7 +95,7 @@
             </label>
             <div class="input-group has-validation">
               <input (input)="checkErrorGuaranteeTime()" type="text" class="form-control border-primary"
-                     placeholder="VD: 24 tháng"  id="guaranteeTime" formControlName="guaranteeTime">
+                     placeholder="VD: 24 tháng" id="guaranteeTime" formControlName="guaranteeTime">
             </div>
           </div>
 
@@ -102,7 +109,6 @@
                         [editor]="Editor" formControlName="description"></ckeditor>
             </div>
           </div>
-
           <div class="col-xl-12 mt-3" data-bs-toggle="specification" data-bs-content="" data-bs-trigger="manual"
                data-bs-placement="bottom">
             <label for="specification" class="form-label title-input">Thông số kỹ thuật <span
@@ -113,14 +119,15 @@
                         [editor]="Editor" formControlName="specification"></ckeditor>
             </div>
           </div>
-
         </div>
-
         <div class=" text-center pt-4 pb-5">
           <button class="btn btn-lg mr-2 col-4" type="submit" [disabled]="isLoading">
-            <img width="26px" >Thêm</button>
-<!--          src="assets/img/loading-symbol.gif" *ngIf="isLoading"-->
-          <button class="btn btn-dark  btn-lg col-4" [routerLink]="'/home'"><i class="fas fa-sync-alt"></i>Quay lại</button>
+            <img width="26px">Thêm
+          </button>
+          <!--          src="assets/img/loading-symbol.gif" *ngIf="isLoading"-->
+          <button class="btn btn-dark  btn-lg col-4" [routerLink]="'/home'">
+            <i class="fas fa-sync-alt"></i>Quay lại
+          </button>
         </div>
       </form>
     </div>

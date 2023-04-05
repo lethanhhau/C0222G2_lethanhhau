@@ -17,11 +17,11 @@ public class EncrytedPasswordUtils {
         return encoder.encode(password);
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        String password = "123456a@";
 //        String encrytedPassword = new EncrytedPasswordUtils().encrytePassword(password);
 //        System.out.println(encrytedPassword);
 //        System.out.println("Encryted Password: " + encrytedPassword);
-    }
+//    }
 
 }

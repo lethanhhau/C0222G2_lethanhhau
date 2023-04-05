@@ -18,15 +18,8 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number, searchName) {
-    let productName;
-
-    if (searchName == null) {
-      productName = '';
-    } else {
-      productName = searchName;
-    }
-    return this.httpClient.get<Product[]>(this.URL_CONNECT + '/products?page=' + page + '&searchName=' + productName);
+  getAll(page: number, searchName: String): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.URL_CONNECT + '/products?page=' + page + '&searchName=' + searchName);
   }
 
   createProduct(product: Product): Observable<Product> {
@@ -57,15 +50,23 @@ export class ProductService {
     return this.httpClient.get(this.URL_CONNECT + '/laptop?page=' + page);
   }
 
-  getTivi() {
-    return this.httpClient.get(this.URL_CONNECT + '/tivi');
+  getTivi(page: number) {
+    return this.httpClient.get(this.URL_CONNECT + '/tivi?page=' + page);
   }
 
-  getCamera() {
-    return this.httpClient.get(this.URL_CONNECT + '/camera');
+  getCamera(page: number) {
+    return this.httpClient.get(this.URL_CONNECT + '/camera?page' + page);
   }
 
-  getDevice() {
-    return this.httpClient.get(this.URL_CONNECT + '/device-sup');
+  getWashingMachine() {
+    return this.httpClient.get(this.URL_CONNECT + '/washingMachine');
+  }
+
+  getFridge() {
+    return this.httpClient.get(this.URL_CONNECT + '/fridge');
+  }
+
+  getDevice(page: number) {
+    return this.httpClient.get(this.URL_CONNECT + '/device-sup?page' + page);
   }
 }

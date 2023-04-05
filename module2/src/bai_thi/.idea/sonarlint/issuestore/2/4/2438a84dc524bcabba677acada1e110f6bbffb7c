@@ -1,0 +1,19 @@
+
+^
+java:S1192"HDefine a constant instead of duplicating this literal "Error: " 3 times.(˜ŸÚá
+Y
+java:S2166"CRename this class to remove "Exception" or correct its inheritance.(Þ°½
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Þ°½
+N	java:S106"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(™Í…ª
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(˜ŸÚá
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(¦¯áÓûÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿ
+N	java:S106>"9Replace this use of System.out or System.err by a logger.(˜ŸÚá
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(¦¯áÓûÿÿÿÿ
+S	java:S106C"9Replace this use of System.out or System.err by a logger.(ïù¯¯ûÿÿÿÿ

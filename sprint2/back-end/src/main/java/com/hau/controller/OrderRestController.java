@@ -36,6 +36,7 @@ public class OrderRestController {
     @PostMapping("/add/cart")
     public ResponseEntity<?> addToCart(@RequestBody OrderService productOrder) {
         ErrorDTO err = this.productOrderService.saveOrder(productOrder);
+
         if (err.getMessage() != null) {
             return new ResponseEntity<>(err, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -92,16 +93,6 @@ public class OrderRestController {
     }
 
     //    @PreAuthorize("isAuthenticated()")
-    @PostMapping("/cart/history")
-    public ResponseEntity<?> getOrderInCustomer(@RequestBody Customer customer) {
-        List<OrderService> productOrderList = this.productOrderService.getOrderInCustomer(customer);
-        if (productOrderList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(productOrderList, HttpStatus.OK);
-    }
-
-    //    @PreAuthorize("isAuthenticated()")
     @PostMapping("/cart/payment")
     public ResponseEntity<?> goPayment(@RequestBody Customer customer) throws MessagingException {
 
@@ -112,11 +103,12 @@ public class OrderRestController {
         MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
         String htmlMsg = createHTMLMailForm(paymentDto);
+
         message.setContent(htmlMsg, "text/html; charset=UTF-8");
 
         helper.setTo(paymentDto.getCustomer().getEmail());
 
-        helper.setSubject("[Shopper] Hóa đơn thanh toán");
+        helper.setSubject("[Fate Shop] Hóa đơn thanh toán");
 
         this.emailSender.send(message);
 
@@ -273,7 +265,7 @@ public class OrderRestController {
                 "                                        <tbody>\n" +
                 "                                        <tr>\n" +
                 "                                            <td align=\"left\"><span style=\"font-size: 26px\"><strong\n" +
-                "                                                    style=\"text-transform: uppercase; color: #D19C97\">Fate</strong> Shop</span>\n" +
+                "                                                    style=\"text-transform: uppercase; color: #D19C97\">Shopper</span>\n" +
                 "                                            </td>\n" +
                 "                                        </tr>\n" +
                 "                                        <tr class=\"hiddenMobile\">\n" +

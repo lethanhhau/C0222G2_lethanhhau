@@ -19,10 +19,6 @@ export class LoHangService {
     return this.httpClient.get<LoHang[]>(this.URL_LO_HANG + '/page?page='+ page + "&keyWord=" + searchName);
   }
 
-  getAllPDF(): Observable<LoHang[]>{
-    return this.httpClient.get<LoHang[]>(this.URL_LO_HANG)
-  }
-
   getAllSanPham(): Observable<SanPham[]>{
     return this.httpClient.get<SanPham[]>(this.URL_SAN_PHAM);
   }

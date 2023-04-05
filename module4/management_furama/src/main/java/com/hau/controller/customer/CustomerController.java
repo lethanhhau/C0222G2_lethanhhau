@@ -29,7 +29,7 @@ public class CustomerController {
     private ICustomerTypeService iCustomerTypeService;
 
 
-    // hứng dữ liệu (cụ thể ở đây là 1 cía list customerTypes) để bên view lấy và sử dụng
+    // hứng dữ liệu (cụ thể ở đây là 1 cái list customerTypes) để bên view lấy và sử dụng
     @ModelAttribute("customerTypes")
     public List<CustomerType> customerTypes(){
         return this.iCustomerTypeService.findAllCustomerType();

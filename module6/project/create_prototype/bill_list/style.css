@@ -26,6 +26,15 @@ table {
 body{
     background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../bill_list/img.jpg");
 }
+label{
+    color: white;
+}
+.vnd{
+    width: 30px;
+}
+.tien{
+    text-align: right;
+}
 
 table thead tr {
     height: 60px;
@@ -39,13 +48,25 @@ table thead tr {
     font-weight: unset;
 }
 
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+
 a, th,td {
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    /*font-family: "Poppins", sans-serif;*/
 }
 
 .wrap-table100 {
     width: 100%;
 }
 
+#demo{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("../bill_list/img.jpg");
+}
 

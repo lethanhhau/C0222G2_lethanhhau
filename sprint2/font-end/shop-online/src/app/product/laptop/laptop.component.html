@@ -78,12 +78,12 @@
             <ul class="pagination justify-content-center">
               <div *ngIf="number == 0" >
                 <li class="page-item disabled">
-                  <button class="page-link" (click)="goPrevious()" hidden>Quay Lại</button>
+                  <button class="page-link" (click)="goPrevious()" hidden>Trước</button>
                 </li>
               </div>
               <div *ngIf="number != 0">
                 <li class="page-item">
-                  <button class="page-link" (click)="goPrevious()">Quay Lại</button>
+                  <button class="page-link" (click)="goPrevious()">Trước</button>
                 </li>
               </div>
               <div *ngFor="let count of countTotalPages; index as i" >
@@ -100,12 +100,12 @@
               </div>
               <div *ngIf="number == totalPages - 1">
                 <li class="page-item disabled">
-                  <button class="page-link" (click)="goNext()" hidden>Tiếp</button>
+                  <button class="page-link" (click)="goNext()" hidden>Sau</button>
                 </li>
               </div>
               <div *ngIf="number != totalPages - 1">
                 <li class="page-item">
-                  <button class="page-link" (click)="goNext()">Tiếp</button>
+                  <button class="page-link" (click)="goNext()">Sau</button>
                 </li>
               </div>
             </ul>
