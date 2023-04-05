@@ -13,7 +13,7 @@ class SS3 {
         List<List<Integer>> pairs = new ArrayList<>();
         generatePairs(A, new ArrayList<>(), pairs, n, 0);
         System.out.println("Số cặp không trùng nhau là: " + pairs.size());
-        System.out.print("Danh sách các cặp là: ");
+        System.out.print("Danh sách các cặp không trùng nhau là: ");
         for (List<Integer> pair : pairs) {
             for (Integer pairNumber : pair) {
                 System.out.print(pairNumber);

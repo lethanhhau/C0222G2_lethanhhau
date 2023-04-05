@@ -5,7 +5,7 @@ public class SS2 {
     public static void main(String[] args) {
         int n;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập n: ");
+        System.out.print("Nhập n: ");
         n = scanner.nextInt();
         int arr[] = new int[n];
         int a = 1;
@@ -16,6 +16,6 @@ public class SS2 {
             a = a + b;
             b = c;
         }
-        System.out.println("Số thứ " + n + " trong dãy Fibonacci là: " + c);
+        System.out.println("Số thứ " + n + " trong dãy Fibonacci là số : " + c);
     }
 }
